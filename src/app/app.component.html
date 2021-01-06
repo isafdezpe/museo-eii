@@ -1,29 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Museo EII</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;1,300&display=swap">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="row">
-          <img src="" alt="Museum logo" class="logo">
-          <ul class="main-nav">
-            <li><a href="">New</a></li>
-            <li><a href="">Museum</a></li>
-            <li><a href="">About</a></li>
-            <li><input type="text" placeholder="Search..."></li>
-            <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
-  </body>
-</html>
+<header>
+  <nav>
+    <div class="row">
+      <img src="resources/img/eii-logo.png" alt="Museum logo" class="logo">
+      <app-main-nav></app-main-nav>
+    </div>
+  </nav>
+  <div class="home-text-box">
+    <h1>Bienvenido al Museo de la Informática. </h1><br>
+    <p>Escuela de Ingeniería Informática de Oviedo.</p>
+  </div>
+</header>
+<div class="row"><a routerLink="/museum" routerLinkActive="active" class="btn btn-full btn-museum">Ver el museo</a></div>
+<app-footer></app-footer>
+<router-outlet></router-outlet>

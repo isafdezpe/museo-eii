@@ -1,1 +1,173 @@
 /* You can add global styles to this file, and also import other style files */
+/*-----------BASIC SETUP------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; 
+  }
+
+html,
+body {
+  background-color: #fff;
+  color: #555;
+  font-family: 'Lato', 'Arial', sans-serif;
+  font-weight: 300; 
+  font-size: 20px;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+.clearfix { zoom: 1; }
+
+.clearfix::after { 
+  content: '-';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+/*--------REUSABLE COMPONENTS--------*/
+
+.row {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+  
+section { padding: 80px 0; }
+  
+.box { padding: 1%; }
+
+/*---------LINKS---------*/
+
+a:link,
+a:visited {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid #fff;
+  -webkit-transition: border-bottom 0.2s, color 0.2s;
+  -o-transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+/* ------------------ BUTTONS ------------------ */
+
+.btn:link, 
+.btn:visited,
+input[type=submit] {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: 300;
+  text-decoration: none;
+  border-radius: 15px;
+  -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  -o-transition: background-color 0.2s, border 0.2s, color 0.2s;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link, 
+.btn-full:visited,
+input[type=submit] {
+  background-color: #39583d;
+  border: 1px solid #39583d; 
+  color: #fff;
+  margin-right: 50px;
+}
+
+.btn-ghost:link, 
+.btn-ghost:visited {
+  border: 1px solid #39583d; 
+  color: #39583d;
+}
+
+.btn:hover, 
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active { background-color: #2e4731; }
+
+.btn-full:hover, 
+.btn-full:active { border: 1px solid #2e4731; }
+
+.btn-ghost:hover, 
+.btn-ghost:active {
+  border: 1px solid #2e4731;
+  color: #fff;
+}
+
+/*-----main navigation-----*/
+.logo {
+  height: 100px;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+}
+
+.logo-black { 
+  height: 50px;
+  width: auto;
+  float: left;
+  margin: 5px 0;
+  display: none; 
+}
+
+.main-nav { 
+  float: right;
+  list-style: none;
+  margin-top: 55px;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding: 8px 0;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active { border-bottom: 2px solid #fff; }
+
+.main-nav li input {
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.main-nav li ion-icon {
+	font-size: 200%;
+	color: #fff;
+}
+
+/*----mobile navigation----*/
+.mobile-nav-icon {
+  float: right;
+  margin-top: 30px;
+  cursor: pointer;
+  display: none; 
+}
+
+.mobile-nav-icon ion-icon {
+  font-size: 200%;
+  color: #fff;
+}

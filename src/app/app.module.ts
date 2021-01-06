@@ -1,14 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
+import { MuseumComponent } from './museum/museum.component';
+import { FooterComponent } from './footer/footer.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+
+const routes: Routes = [
+  {path: 'museum', component: MuseumComponent},
+  {path: '', redirectTo: '/', pathMatch: 'full'}
+]
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MuseumComponent,
+    FooterComponent,
+    MainNavComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent],
