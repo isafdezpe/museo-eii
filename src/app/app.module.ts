@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MuseumComponent } from './museum/museum.component';
 import { FooterComponent } from './footer/footer.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: 'museum', component: MuseumComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
     AppComponent,
     MuseumComponent,
     FooterComponent,
-    MainNavComponent
+    MainNavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
