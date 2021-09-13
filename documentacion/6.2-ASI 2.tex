@@ -1,0 +1,113 @@
+\subsection{Obtención de los Requisitos del Sistema} 
+
+\subsubsection{Requisitos de interfaces externas}
+
+\paragraph*{Interfaces de usuario}
+	
+	\newlist{myEnumIU}{enumerate}{4}
+	\setlist[myEnumIU,1]{label=\textbf{RIU-\arabic*.}}
+	\setlist[myEnumIU,2]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIU,3]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIU,4]{label*=\textbf{\arabic*.}}
+
+	\begin{myEnumIU}
+		\item El sistema será accesible desde cualquier dispositivo que cuente con conexión a internet y un navegador web.
+		\item El sistema estará disponible en diferentes idiomas.
+		\begin{myEnumIU}
+			\item Español
+			\item Inglés
+		\end{myEnumIU}
+		\item El sistema deberá ser accesible para todos los usuarios a través de los navegadores más comunes.
+		\begin{myEnumIU}
+			\item Google Chrome
+			\item Mozilla Firefox
+			\item Microsoft Edge
+		\end{myEnumIU}
+		\item El usuario podrá utilizar todas las funcionalidades desarrolladas de la aplicación sin inconvenientes.
+		\item El usuario no necesitará de conocimientos tecnológicos avanzados.
+	\end{myEnumIU}
+
+\paragraph*{Interfaces hardware}
+	
+	\newlist{myEnumIH}{enumerate}{4}
+	\setlist[myEnumIH,1]{label=\textbf{RIH-\arabic*.}}
+	\setlist[myEnumIH,2]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIH,3]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIH,4]{label*=\textbf{\arabic*.}}
+
+	\begin{myEnumIH}
+		\item El sistema dispondrá de una base de datos para almacenar la información necesaria.
+	\end{myEnumIH}
+
+%\paragraph*{Interfaces software}
+
+\paragraph*{Interfaces de comunicaciones}
+
+	\newlist{myEnumIC}{enumerate}{4}
+	\setlist[myEnumIC,1]{label=\textbf{RIC-\arabic*.}}
+	\setlist[myEnumIC,2]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIC,3]{label*=\textbf{\arabic*.}}
+	\setlist[myEnumIC,4]{label*=\textbf{\arabic*.}}
+
+	\begin{myEnumIC}
+		\item El sistema contendrá enlaces a diferentes sitios web.
+		\item El sistema mostrará por defecto enlaces a los siguientes sitios web.
+		\begin{myEnumIC}
+			\item Twitter oficial de la Escuela de Ingeniería Informática
+			\item Página web de la Escuela de Ingeniería Informática
+			\item Página web de la Universidad de Oviedo
+		\end{myEnumIC}
+	\end{myEnumIC}
+
+
+
+\subsubsection{Requisitos funcionales}
+
+\newlist{myEnumerate}{enumerate}{9}
+\setlist[myEnumerate,1]{label=\textbf{RF-\arabic*.}}
+\setlist[myEnumerate,2]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,3]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,4]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,5]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,6]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,7]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,8]{label*=\textbf{\arabic*.}}
+\setlist[myEnumerate,9]{label*=\textbf{\arabic*.}}
+
+\begin{myEnumerate}
+\item
+\end{myEnumerate}
+
+
+\subsubsection{Requisitos de rendimiento}
+\subsubsection{Requisitos lógicos de BD}
+\subsubsection{Requisitos de desarrollo}
+\subsubsection{Restricciones de diseño}
+\subsubsection{Atributos del sistema}
+
+
+\subsection{Identificación de Actores del Sistema} 
+\subsubsection{Usuario administrador}
+Actor que interactúa con el sistema. Es responsable de gestionar el sistema y su mantenimiento. Es el único actor con acceso a la base de datos del sistema y capacidad de modificarla. Debe tener amplios conocimientos sobre el sistema.
+\subsubsection{Usuario estándar}
+Actor que interactúa con el sistema. Tiene acceso de lectura a toda la aplicación web, exceptuando la parte dedicada al mantenimiento. Solo debe tener un conocimiento básico para navegar por internet.
+
+\subsection{Especificación de Casos de Uso}
+
+\textcolor[rgb]{0.65,0.16,0}{Ejemplo de tabla para especificación de casos de uso}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 1}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Registro} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{Un usuario no registrado debe poder registrarse en el sistema mediante su cuenta de Google, lo que hará que automáticamente se inicie sesión en la aplicación.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_1}%
+  \vspace{-4mm}
+\end{table}%

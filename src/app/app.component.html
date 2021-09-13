@@ -1,3 +1,43 @@
-<app-home></app-home>
-<app-footer></app-footer>
+
+
+<div class="content" role="main">
+
+  <header>
+    <nav>
+        <div class="row">
+        <img src="../assets/img/eii-logo.png" alt="Museum logo" class="logo">
+          <ul class="main-nav">
+            <!--<li><a href="">New</a></li>
+            <li><a href="">Museum</a></li>
+            <li><a href="">About</a></li>-->
+            <li><input class="search-bar" type="text" placeholder="Search..."></li>
+            <li><button class='btn-menu'><ion-icon name="ellipsis-vertical"></ion-icon></button></li>
+          </ul>
+        </div>
+    </nav>
+    <div class="home-text-box">
+        <h1>Bienvenido al Museo de la Informática. </h1><br>
+        <p>Escuela de Ingeniería Informática de Oviedo.</p>
+    </div>
+    </header>
+    <!-- <div class="row"><a routerLink="/museum" routerLinkActive="active" class="btn btn-full btn-museum">Ver el museo</a></div> -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="row">
+        <div class="col span-1-of-3">
+        <ul class="social-networks">
+            <li><a class="twitter" href="https://twitter.com/ComputingOviedo" title="Ir al Twitter de la escuela"><ion-icon name="logo-twitter"></ion-icon></a> </li>
+            <li><a class="facebook" href="https://www.facebook.com/computingOviedo/ " title="Ir a la página de Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/groups/3086665/" class="linkedin"><ion-icon name="logo-linkedin"></ion-icon></a> </li>
+            <li><a href="http://www.youtube.com/user/ComputingOviedo" class="youtube"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+        </div>
+    </div>
+  </footer>
+
+</div>
+
+
+
 <router-outlet></router-outlet>

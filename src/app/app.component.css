@@ -1,0 +1,95 @@
+/*---------HEADER----------*/
+
+header {
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/img/cpu-3370852_1280.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../assets/img/cpu-3370852_1280.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/img/cpu-3370852_1280.jpg); 
+    background-size: cover; 
+    background-position: center;
+    height: 65vh; 
+    background-attachment: fixed;
+  }
+  
+  .home-text-box {
+    color: #fff;
+    position: absolute;
+    width: 1140px;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); 
+  }
+  
+  .btn-museum {
+    padding: 33px 60px;
+    font-size: 1.2em;
+    margin: 80px 440px 80px 440px;
+  }
+
+
+/*----main nav----*/
+.main-nav {
+    vertical-align: top;
+}
+
+.search-bar {
+    background-color: rgba(204, 204, 204, 0.671);
+    border: none;
+    border-radius: 10px;
+    color: #000;
+    height: 30px;
+    margin-top: 0px;
+}
+
+.search-bar:focus {
+    background-color: #fff;
+    border: 1px  #fff;
+}
+
+.btn-menu {
+    background-color: transparent;
+    border: none;
+    font-size: 80%;
+}
+
+
+
+/*----footer----*/
+footer {
+    position: absolute;
+    background-color: #000;
+    color: #fff;
+    height: 5vh; 
+    font-size: 80%;
+    width: 100%;
+    bottom: 0;
+    padding: 12px;
+  }
+  
+  .social-networks {
+    float: right;
+    list-style: none;
+  }
+  
+  .social-networks li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .social-networks li:last-child {
+    margin-right: 0;
+  }
+  
+  .social-links li a:link,
+  .social-links li a:visited {
+  text-decoration: none;
+  border: 0;
+  color: #ccc;
+  -webkit-transition: color 0.2s;
+  -o-transition: color 0.2s;
+  transition: color 0.2s;
+  }
+  
+  .social-links li a:link,
+  .social-links li a:visited { font-size: 180%; }
