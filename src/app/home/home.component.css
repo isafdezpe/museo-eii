@@ -1,0 +1,28 @@
+/*---------HEADER----------*/
+
+header {
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/cpu-3370852_1280.jpg);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../assets/img/cpu-3370852_1280.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/cpu-3370852_1280.jpg); 
+    background-size: cover; 
+    background-position: center;
+    height: 65vh; 
+    background-attachment: fixed;
+  }
+  
+  .home-text-box {
+    color: #fff;
+    position: absolute;
+    width: 1140px;
+    top: 35%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); 
+  }
+  
+  .btn-museum {
+    padding: 33px 60px;
+    font-size: 1.2em;
+    margin: 80px 440px 80px 440px;
+  }

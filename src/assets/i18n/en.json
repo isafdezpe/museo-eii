@@ -1,0 +1,20 @@
+{
+    "NAV": {
+        "LOGO": "Museum logo",
+        "HOME": "Home",
+        "MUSEUM": "Museum",
+        "ABOUT": "About",
+        "SEARCH": "Search..."
+    },
+    "FOOTER": {
+        "TWITTER": "Go to EII Twitter's account",
+        "FACEBOOK": "Go to EII Facebook's account",
+        "LINKEDIN": "Go to EII LinkedIn's account",
+        "YOUTUBE": "Go to EII YouTube page"
+    },
+    "HOME": {
+        "WELCOME": "Welcome to the Computer Science Museum",
+        "SCHOOL": "School of Computer Science of Oviedo",
+        "MUSEUM": "Go to museum"
+    }
+}

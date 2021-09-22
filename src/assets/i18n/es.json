@@ -1,0 +1,20 @@
+{
+    "NAV": {
+        "LOGO": "Logo del museo",
+        "HOME": "Inicio",
+        "MUSEUM": "Museo",
+        "ABOUT": "Acerca de",
+        "SEARCH": "Buscar..."
+    },
+    "FOOTER": {
+        "TWITTER": "Ir al Twitter de la EII",
+        "FACEBOOK": "Ir al Facebook de la EII",
+        "LINKEDIN": "Ir al LinkedIn's de la EII",
+        "YOUTUBE": "Ir al YouTube de la EII"
+    },
+    "HOME": {
+        "WELCOME": "Bienvenido al Museo de la Informática",
+        "SCHOOL": "Escuela de Ingeniería Informática de Oviedo",
+        "MUSEUM": "Ver el museo"
+    }
+}

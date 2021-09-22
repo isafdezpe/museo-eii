@@ -177,3 +177,6 @@ input[type=submit]:active { background-color: #2e4731; }
 
 
 
+ion-icon {
+  pointer-events: none;
+}
