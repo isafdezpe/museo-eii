@@ -10,7 +10,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'museo-eii';
   
-  selectedLanguage = 'es';
+  languages:string[] = ['es', 'en'];
+  
+  selectedLanguage:string = this.languages[0];
 
   constructor(private translateService: TranslateService) {
     this.translateService.setDefaultLang(this.selectedLanguage);

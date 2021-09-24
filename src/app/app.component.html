@@ -1,4 +1,7 @@
 <div class="content" role="main">
+  <header>
+    <app-main-nav [selectedLang]="selectedLanguage" [langs]="languages" (langEvent)="selectLanguage($event)"></app-main-nav>
+  </header>
   <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>

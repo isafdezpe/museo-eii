@@ -1,6 +1,6 @@
 /*---------HEADER----------*/
 
-header {
+section {
     background-image: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/cpu-3370852_1280.jpg);
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../assets/img/cpu-3370852_1280.jpg);
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/cpu-3370852_1280.jpg); 
@@ -24,5 +24,5 @@ header {
   .btn-museum {
     padding: 33px 60px;
     font-size: 1.2em;
-    margin: 80px 440px 80px 440px;
+    margin: 80px 430px 80px 430px;
   }

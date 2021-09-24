@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-main-nav',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavComponent implements OnInit {
 
+  @Input() selectedLang: string;
+  @Input() langs: string[];
+
+  @Output() langEvent = new EventEmitter<string>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeLanguage(lang: string) {
+    this.langEvent.emit(lang);
   }
 
 }
