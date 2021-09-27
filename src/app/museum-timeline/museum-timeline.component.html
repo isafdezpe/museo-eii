@@ -1,1 +1,5 @@
-<p>museum-timeline works!</p>
+<ul>
+    <li *ngFor="let p of periods">
+        <div><a [routerLink]="['/period', p.id]">{{ p.name }}</a></div>
+    </li>
+</ul>

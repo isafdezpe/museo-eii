@@ -16,5 +16,9 @@
         "WELCOME": "Bienvenido al Museo de la Informática",
         "SCHOOL": "Escuela de Ingeniería Informática de Oviedo",
         "MUSEUM": "Ver el museo"
+    },
+    "PERIOD": {
+        "CHARACTERISTICS": "Características",
+        "TRIVIA": "Sabías que"
     }
 }

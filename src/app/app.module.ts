@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MuseumTimelineComponent } from './museum-timeline/museum-timeline.component';
 import { AboutComponent } from './about/about.component';
+import { PeriodComponent } from './period/period.component';
+import { CompDetailsComponent } from './comp-details/comp-details.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -24,7 +26,9 @@ export function createTranslateLoader(http: HttpClient) {
     FooterComponent,
     MainNavComponent,
     MuseumTimelineComponent,
-    AboutComponent
+    AboutComponent,
+    PeriodComponent,
+    CompDetailsComponent
   ],
   imports: [
     BrowserModule,

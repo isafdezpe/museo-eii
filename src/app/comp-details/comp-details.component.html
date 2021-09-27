@@ -1,0 +1,27 @@
+<div class="col span-1-of-3 box">
+    <!-- TODO: MENÚ -->
+</div>
+
+<div class="col span-2-of-3 box">
+    <h2>{{comp.name}}</h2>
+
+    <!-- TODO: GALERIA -->
+
+    <p>{{ comp.description }}</p>
+</div>
+<div class="col span-3-of-3 box">
+    <p>{{ comp.years }}</p>
+    <ul>
+        <li>{{comp.ramMemory}}, {{comp.programMemory}}</li>
+        <li>{{comp.clockSpeed}}</li>
+        <li>{{comp.passmark}}</li>
+        <li>{{comp.power}}</li>
+        <li>
+            <ion-icon *ngIf="isPortable()" name="phone-portrait"></ion-icon> 
+            <ion-icon *ngIf="isDesktop()" name="desktop"></ion-icon>
+        </li>
+        <li>{{comp.transistors}}</li>
+        <li>{{comp.price}}</li>
+        <li>{{comp.performance}}</li>
+    </ul>
+</div>

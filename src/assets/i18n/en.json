@@ -16,5 +16,9 @@
         "WELCOME": "Welcome to the Computer Science Museum",
         "SCHOOL": "School of Computer Science of Oviedo",
         "MUSEUM": "Go to museum"
+    },
+    "PERIOD": {
+        "CHARACTERISTICS": "Characteristics",
+        "TRIVIA": "Did you know"
     }
 }
