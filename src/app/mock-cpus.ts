@@ -2,7 +2,7 @@ import { Cpu, CpuDevices } from "./cpu";
 
 export const CPUS: Cpu[] = [
  {
-     id: 1,
+    id: 1,
     componentId: 'CPU1',
     name: 'Intel 4004',
     family: 'Intel',
@@ -19,7 +19,8 @@ export const CPUS: Cpu[] = [
     transistors: 2300,
     price: '1800-3600$',
     performance: 0.03,
-    devices: [CpuDevices.desktop, CpuDevices.portable]
+    devices: [CpuDevices.desktop, CpuDevices.portable],
+    imgNames: ['4004-1.jpg', '4004-2.jpg', '4004-3.jpg']
 },
  {
     id: 2,
@@ -39,7 +40,8 @@ export const CPUS: Cpu[] = [
     transistors: 3500,
     price: '120$',
     performance: 0.016,
-    devices: [CpuDevices.desktop]
+    devices: [CpuDevices.desktop],
+    imgNames: ['8008-1.jpg', '8008-2.jpg', '8008-3.jpg']
 },
  {
     id: 3,
@@ -59,6 +61,7 @@ export const CPUS: Cpu[] = [
     transistors: 3000,
     price: '200$',
     performance: 0.03,
-    devices: [CpuDevices.desktop, CpuDevices.portable]
+    devices: [CpuDevices.desktop, CpuDevices.portable],
+    imgNames: ['4040-1.jpg', '4040-2.jpg', '4040-3.jpg']
 }
 ];

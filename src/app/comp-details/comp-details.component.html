@@ -1,3 +1,4 @@
+
 <div class="col span-1-of-3 box">
     <!-- TODO: MENÚ -->
 </div>
@@ -5,7 +6,11 @@
 <div class="col span-2-of-3 box">
     <h2>{{comp.name}}</h2>
 
-    <!-- TODO: GALERIA -->
+    <div class="gallery">
+        <div class="img-container" *ngFor="let i of comp.imgNames">
+            <img src="../../assets/img/{{i}}" alt="{{comp.name}}">
+        </div>
+    </div>
 
     <p>{{ comp.description }}</p>
 </div>

@@ -14,6 +14,7 @@ export class PeriodComponent implements OnInit {
 
   period: Period | undefined;
   cpus: Cpu[] = [];
+  cpuImgs: object[] = [];
 
   constructor(private route: ActivatedRoute, private periodService: PeriodService, private cpuService: CpusService) { }
 
@@ -23,6 +24,7 @@ export class PeriodComponent implements OnInit {
 
     this.getPeriod(idFromRoute);
     this.getCpus(idFromRoute);
+    this.getCpuImgs();
   }
 
   getPeriod(id: number): void {
@@ -31,6 +33,13 @@ export class PeriodComponent implements OnInit {
 
   getCpus(periodId: number): void {
     this.cpus = this.cpuService.getCpusFromPeriod(periodId);
+  }
+
+  getCpuImgs(): void {
+    this.cpus.forEach((c) => this.cpuImgs.push({
+      image: '../../assets/img/'+c.imgNames[0],
+      alt: c.name
+    }))
   }
 
 }

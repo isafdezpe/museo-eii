@@ -2,3 +2,9 @@ a:link, a:visited {
     padding: 8px 0;
     color: #39583d;
 }
+
+.gallery {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}

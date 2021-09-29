@@ -1,20 +1,24 @@
-<div class="col span-1-of-3 box"></div>
+<div class="col span-1-of-3 box">
+    
+</div>
 
 <div class="col span-2-of-3 box">
     <h1>{{ period.name }}</h1>
-    <ul><!-- TODO: ENLACES CON FOTO -->
-        <li *ngFor="let c of cpus">
+    <!--<ng-image-slider [images]="cpuImgs"></ng-image-slider>-->
+    <div class="gallery">
+        <div class="img fade" *ngFor="let c of cpus">
+            <a [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}" alt="{{c.name}}"></a>
             <a [routerLink]="['/cpu', c.id]">{{c.name}}</a>
-        </li>
-    </ul>
-    <h3>{{ 'PERIOD.CHARACTERISTICS' | translate}}:</h3>
+        </div>
+    </div>
+    <h3>{{ 'PERIOD.CHARACTERISTICS' | translate }}:</h3>
     <ul>
         <li *ngFor="let d of period.details">{{d}}</li>
     </ul>
 </div>
 
 <div class="col span-3-of-3 box">
-    <h3>{{ 'PERIOD.TRIVIA' | translate}}...</h3>
+    <h3>{{ 'PERIOD.TRIVIA' | translate }}...</h3>
     <ul>
         <li *ngFor="let t of period.trivia">{{t}}</li>
     </ul>

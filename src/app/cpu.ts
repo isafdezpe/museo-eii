@@ -16,7 +16,8 @@ export interface Cpu {
     transistors: number,
     price: string,
     performance: number,
-    devices: string[]
+    devices: string[],
+    imgNames: string[]
 }
 
 export enum CpuDevices {desktop='DESKTOP', portable='PORTABLE'}
