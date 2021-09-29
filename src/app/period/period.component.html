@@ -1,28 +1,45 @@
-<div class="col span-1-of-3 box">
-    
-</div>
+<div class="row">
+  <div class="col col-lg-2">
+    <!-- MENU -->
+  </div>
 
-<div class="col span-2-of-3 box">
-    <h1>{{ period.name }}</h1>
-    <!--<ng-image-slider [images]="cpuImgs"></ng-image-slider>-->
-    <div class="gallery">
-        <div class="img fade" *ngFor="let c of cpus">
-            <a [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}" alt="{{c.name}}"></a>
-            <a [routerLink]="['/cpu', c.id]">{{c.name}}</a>
-        </div>
+  <div class="col">
+    <div class="row">
+      <h1>{{ period.name }}</h1>
     </div>
-    <h3>{{ 'PERIOD.CHARACTERISTICS' | translate }}:</h3>
-    <ul>
-        <li *ngFor="let d of period.details">{{d}}</li>
-    </ul>
-</div>
-
-<div class="col span-3-of-3 box">
-    <h3>{{ 'PERIOD.TRIVIA' | translate }}...</h3>
-    <ul>
-        <li *ngFor="let t of period.trivia">{{t}}</li>
-    </ul>
-    <ul><!-- TODO: SISTEMAS CON NOMBRE Y FOTO -->
-        <li *ngFor="let s of period.famousSystems">{{s}}</li>
-    </ul>
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <!--<ng-image-slider [images]="cpuImgs"></ng-image-slider>-->
+          <div class="gallery">
+            <div class="img-container" *ngFor="let c of cpus">
+              <a class="img-link" [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}"
+                  alt="{{c.name}}"></a>
+              <a [routerLink]="['/cpu', c.id]">{{c.name}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <h3>{{ 'PERIOD.CHARACTERISTICS' | translate }}:</h3>
+          <ul>
+            <li *ngFor="let d of period.details">{{d}}</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <h3>{{ 'PERIOD.TRIVIA' | translate }}...</h3>
+          <ul>
+            <li *ngFor="let t of period.trivia">{{t}}</li>
+          </ul>
+        </div>
+        <div class="row">
+          <ul>
+            <!-- TODO: SISTEMAS CON NOMBRE Y FOTO -->
+            <li *ngFor="let s of period.famousSystems">{{s}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

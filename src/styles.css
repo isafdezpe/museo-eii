@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
 /*-----------BASIC SETUP------------*/
 
 * {
@@ -58,6 +58,12 @@ a:hover,
 a:active {
   color: #fff;
   border-bottom: 1px solid transparent;
+}
+
+.img-link:hover,
+.img-link:active {
+  color: transparent;
+  border-bottom: none;
 }
 
 /* ------------------ BUTTONS ------------------ */

@@ -1,5 +1,12 @@
-<ul>
-    <li *ngFor="let p of periods">
-        <div><a [routerLink]="['/period', p.id]">{{ p.name }}</a></div>
-    </li>
-</ul>
+<div class="row">
+    <div class="col col-lg-2">
+        <!-- MENU y flitros -->
+    </div>
+    <div class="col-md-auto">
+        <ul>
+            <li *ngFor="let p of periods">
+                <div><a [routerLink]="['/period', p.id]">{{ p.name }}</a></div>
+            </li>
+        </ul>
+    </div>
+</div>

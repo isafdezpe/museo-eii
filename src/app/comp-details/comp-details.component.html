@@ -1,32 +1,44 @@
-
-<div class="col span-1-of-3 box">
+<div class="row">
+  <div class="col col-lg-2">
     <!-- TODO: MENÚ -->
-</div>
-
-<div class="col span-2-of-3 box">
-    <h2>{{comp.name}}</h2>
-
-    <div class="gallery">
-        <div class="img-container" *ngFor="let i of comp.imgNames">
-            <img src="../../assets/img/{{i}}" alt="{{comp.name}}">
-        </div>
+  </div>
+  <div class="col">
+    <div class="row">
+      <h2>{{comp.name}}</h2>
     </div>
-
-    <p>{{ comp.description }}</p>
-</div>
-<div class="col span-3-of-3 box">
-    <p>{{ comp.years }}</p>
-    <ul>
-        <li>{{comp.ramMemory}}, {{comp.programMemory}}</li>
-        <li>{{comp.clockSpeed}}</li>
-        <li>{{comp.passmark}}</li>
-        <li>{{comp.power}}</li>
-        <li>
-            <ion-icon *ngIf="isPortable()" name="phone-portrait"></ion-icon> 
-            <ion-icon *ngIf="isDesktop()" name="desktop"></ion-icon>
-        </li>
-        <li>{{comp.transistors}}</li>
-        <li>{{comp.price}}</li>
-        <li>{{comp.performance}}</li>
-    </ul>
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="gallery">
+            <div class="img-container" *ngFor="let i of comp.imgNames">
+              <img src="../../assets/img/{{i}}" alt="{{comp.name}}">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <p>{{ comp.description }}</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <p>{{ comp.years }}</p>
+        </div>
+        <div class="row">
+          <ul>
+            <li>{{comp.ramMemory}}, {{comp.programMemory}}</li>
+            <li>{{comp.clockSpeed}}</li>
+            <li>{{comp.passmark}}</li>
+            <li>{{comp.power}}</li>
+            <li>
+              <ion-icon *ngIf="isPortable()" name="phone-portrait"></ion-icon>
+              <ion-icon *ngIf="isDesktop()" name="desktop"></ion-icon>
+            </li>
+            <li>{{comp.transistors}}</li>
+            <li>{{comp.price}}</li>
+            <li>{{comp.performance}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
