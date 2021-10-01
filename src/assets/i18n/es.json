@@ -20,5 +20,11 @@
     "PERIOD": {
         "CHARACTERISTICS": "Características",
         "TRIVIA": "Sabías que"
+    },
+    "MENU": {
+        "BACK": "Volver ",
+        "TIMELINE": "a la linea temporal",
+        "PERIOD": "al periodo",
+        "FILTERS": "Filtros"
     }
 }

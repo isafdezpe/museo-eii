@@ -1,3 +1,16 @@
+ul li {
+  list-style: none;
+  padding: 2%;
+}
+  
+ul ul {
+  padding-left: 10%;
+}
+
+ul ul li::before {
+  content: "\003e \00a0";
+}
+
 a:link, a:visited {
     padding: 8px 0;
     color: #39583d;
@@ -7,4 +20,36 @@ a:link, a:visited {
   max-width: 500px;
   position: relative;
   margin: auto;
+  margin-top: 10%;
+  display: flex;
+  float:left;
+}
+
+.gallery img {
+  height: 4em;
+  width: auto;
+}
+
+.trivia, .details {
+  background: linear-gradient(#121700, #414040);
+  padding: 4%;
+  padding-bottom: 1%;
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  color: #1FC91C;
+}
+
+.trivia h3, .details h3 {
+  color: #fff;
+}
+
+.trivia ul li::before {
+  content: "\003e \00a0";
+}
+
+.first-row {
+  margin-bottom: 20%;
+}
+
+.first-col {
+  margin-right: 6%;
 }

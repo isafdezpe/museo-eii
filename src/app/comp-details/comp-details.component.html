@@ -1,41 +1,47 @@
-<div class="row">
-  <div class="col col-lg-2">
-    <!-- TODO: MENÚ -->
+<div class="row container">
+  <div class="col col-lg-2 border-right">
+    <ul>
+      <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li>
+      <li><a [routerLink]="['/period',comp.periodId]">{{ 'MENU.BACK' | translate }}{{ 'MENU.PERIOD' | translate}}: {{periodName}}</a></li>
+      <ul>
+        <li *ngFor="let c of compsFromPeriod" (click)="refresh()"><a [routerLink]="['/cpu', c.id]" >{{c.name}}</a></li>
+      </ul>
+    </ul>
   </div>
   <div class="col">
     <div class="row">
       <h2>{{comp.name}}</h2>
     </div>
     <div class="row">
-      <div class="col">
-        <div class="row">
+      <div class="col first-col">
+        <div class="row first-row">
           <div class="gallery">
             <div class="img-container" *ngFor="let i of comp.imgNames">
               <img src="../../assets/img/{{i}}" alt="{{comp.name}}">
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row second-row description">
           <p>{{ comp.description }}</p>
         </div>
       </div>
-      <div class="col">
-        <div class="row">
-          <p>{{ comp.years }}</p>
+      <div class="col second-col">
+        <div class="row first-row">
+          <h4>{{ comp.years }}</h4>
         </div>
-        <div class="row">
+        <div class="row second-row">
           <ul>
-            <li>{{comp.ramMemory}}, {{comp.programMemory}}</li>
-            <li>{{comp.clockSpeed}}</li>
-            <li>{{comp.passmark}}</li>
-            <li>{{comp.power}}</li>
+            <li><ion-icon name="hardware-chip-outline"></ion-icon> {{comp.ramMemory}}, {{comp.programMemory}}</li>
+            <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.clockSpeed}} (Frecuencia)</li>
+            <li><ion-icon name="hardware-chip"></ion-icon> {{comp.passmark}}</li>
+            <li><ion-icon name="flash-outline"></ion-icon> {{comp.power}}</li>
             <li>
-              <ion-icon *ngIf="isPortable()" name="phone-portrait"></ion-icon>
-              <ion-icon *ngIf="isDesktop()" name="desktop"></ion-icon>
+              <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
+              <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
             </li>
-            <li>{{comp.transistors}}</li>
-            <li>{{comp.price}}</li>
-            <li>{{comp.performance}}</li>
+            <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.transistors}} (Transistores)</li>
+            <li><ion-icon name="cash-outline"></ion-icon> {{comp.price}}</li>
+            <li><ion-icon name="timer-outline"></ion-icon> {{comp.performance}}</li>
           </ul>
         </div>
       </div>

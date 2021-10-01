@@ -1,4 +1,21 @@
+ul li {
+  list-style: none;
+  padding: 2%;
+}
+  
+ul ul {
+  padding-left: 10%;
+}
+
+ul ul li::before {
+  content: "\003e \00a0";
+}
+
 a:link, a:visited {
-    padding: 8px 0;
-    color: #39583d;
+  padding: 8px 0;
+  color: #39583d;
+}
+
+select {
+  margin: 2%;
 }

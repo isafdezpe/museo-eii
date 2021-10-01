@@ -1,8 +1,16 @@
-<div class="row">
-    <div class="col col-lg-2">
-        <!-- MENU y flitros -->
+<div class="row container">
+    <div class="col col-lg-2 border-right">
+        <p>{{ 'MENU.FILTERS' | translate }}</p>
+        <div class="row">
+            <select>
+                <option>Example 1</option>
+            </select>
+            <select>
+                <option>Example 2</option>
+            </select>
+        </div>
     </div>
-    <div class="col-md-auto">
+    <div class="col">
         <ul>
             <li *ngFor="let p of periods">
                 <div><a [routerLink]="['/period', p.id]">{{ p.name }}</a></div>

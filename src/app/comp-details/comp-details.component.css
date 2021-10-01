@@ -1,6 +1,56 @@
+ul li {
+  list-style: none;
+  padding: 2%;
+}
+  
+ul ul {
+  padding-left: 10%;
+}
+
+ul ul li::before {
+  content: "\003e \00a0";
+}
+
+a:link, a:visited {
+  padding: 8px 0;
+  color: #39583d;
+}
 
 .gallery {
-    max-width: 500px;
-    position: relative;
-    margin: auto;
-  }
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  display: flex;
+  float:left;
+}
+
+.gallery img {
+  height: 4em;
+  width: auto;
+}
+
+h2 {
+  margin-top: 2%;
+}
+
+.first-row {
+  margin-top: 2%;
+}
+
+.first-col {
+  margin-right: 10%;
+}
+
+.description {
+  background: linear-gradient(#adadad, #d1d1d1);
+  padding: 4%;
+  padding-bottom: 1%;
+  box-shadow: 5px 5px 7px rgba(95, 95, 95, 0.7);
+  color: #000;
+}
+
+.icon-big{
+  font-size: 2em;
+}

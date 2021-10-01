@@ -20,5 +20,11 @@
     "PERIOD": {
         "CHARACTERISTICS": "Characteristics",
         "TRIVIA": "Did you know"
+    },
+    "MENU": {
+        "BACK": "Go back to ",
+        "TIMELINE": "timeline",
+        "PERIOD": "period",
+        "FILTERS": "Filters"
     }
 }
