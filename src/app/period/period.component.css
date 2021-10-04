@@ -16,19 +16,23 @@ a:link, a:visited {
     color: #39583d;
 }
 
-.gallery {
+.gallery, .systems {
   max-width: 500px;
   position: relative;
   margin: auto;
-  margin-top: 10%;
   display: flex;
   float:left;
 }
 
-.gallery img {
-  height: 4em;
+.gallery {
+  margin-top: 10%;
+}
+
+.gallery img, .systems img {
+  height: 4.5em;
   width: auto;
 }
+
 
 .trivia, .details {
   background: linear-gradient(#121700, #414040);

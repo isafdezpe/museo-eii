@@ -4,5 +4,5 @@ export interface Period {
     trivia: string[],
     details: string[],
     events: string[],
-    famousSystems: string[]
+    famousSystems: {name: string, img: string, sysName: string}[]
 }
