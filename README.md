@@ -2,6 +2,18 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
+## Instalation and running
+
+To run this application in localhost, it is necessary to install Angular by following the next steps:
+
+1. Install Node.js [here](https://nodejs.org/en/download/).
+
+2. Node.js includes the npm package manager, so now we have to install the Angular CLI. Open a terminal window and run the following command:
+
+`npm install -g @angular/cli`
+
+Once we have installed Node.js and Angular, we can run the application using the command `ng serve -o`. If the command ng is not recognised, we can add it to PATH or use `npm run ng serve -o`.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
