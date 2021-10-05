@@ -17,11 +17,26 @@ a:link, a:visited {
 }
 
 .gallery, .systems {
-  max-width: 500px;
+  max-width: 800px;
   position: relative;
   margin: auto;
   display: flex;
   float:left;
+}
+
+.img-container {
+  max-width: 130px;
+  position: relative;
+  min-height: 120px;
+}
+
+.img-systems {
+  min-height: 210px;
+}
+
+.name-link {
+  position: absolute;
+  bottom: 0;
 }
 
 .gallery {
@@ -29,8 +44,8 @@ a:link, a:visited {
 }
 
 .gallery img, .systems img {
-  height: 4.5em;
-  width: auto;
+  width: 120px;
+  height: auto;
 }
 
 

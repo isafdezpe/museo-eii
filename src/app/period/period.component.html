@@ -17,7 +17,7 @@
             <div class="col img-container" *ngFor="let c of cpus">
               <a class=" row img-link" [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}"
                   alt="{{c.name}}"></a>
-              <a class="row" [routerLink]="['/cpu', c.id]">{{c.name}}</a>
+              <a class="row name-link" [routerLink]="['/cpu', c.id]">{{c.name}}</a>
             </div>
           </div>
 
@@ -38,10 +38,10 @@
         </div>
         <div class="row second-row">
           <div class="systems">
-            <div class="col img-container" *ngFor="let s of period.famousSystems">
+            <div class="col img-container img-systems" *ngFor="let s of period.famousSystems">
               <h6 class="row">{{s.name}}</h6>
               <img class="row" src="../../assets/img/{{s.img}}">
-              <p class="row">{{s.sysName}}</p>
+              <p class="row name-link">{{s.sysName}}</p>
             </div>
           </div>
         </div>
