@@ -1,18 +1,38 @@
 .container {
-    margin: 0 auto;
-    align-content: center;
-    text-align: center;
+  margin: 5% auto;
+  align-content: center;
+  text-align: center;
 }
 
 .row {
-    margin-top: 1%;
+  margin-top: 1%;
 }
 
 h2, h3 {
-    text-align: center;
+  margin: 2% auto;
+}
+
+.login {
+  min-width: 300px;
+  max-width: 60%;
+  margin: 0px auto;
+}
+
+.login input {
+  display: block;
+  margin: 2rem 0;
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid black;
 }
 
 button {
-    padding: 1%;
-    margin-top: 5%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2%;
+  margin-top: 5%;
+  background-color: #39583d;
+  color: #fff;
+  border-radius: 0.5em;
 }
