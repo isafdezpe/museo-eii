@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.router.navigateByUrl('/add');
+    this.router.navigateByUrl('/addPeriod');
   }
 
 }

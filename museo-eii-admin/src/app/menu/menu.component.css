@@ -1,0 +1,24 @@
+.main {
+  margin: 3% auto;
+  align-content: center;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+  padding: 2%;
+  text-align: left;
+}
+  
+ul li::before {
+  content: "\003e \00a0";
+}
+  
+a:link, a:visited {
+  padding: 8px 0;
+  color: #39583d;
+}
+
+a:active {
+  font-weight: bold;
+}
