@@ -2,6 +2,25 @@
     <app-menu class="col col-lg-2 border-right"></app-menu>
     <div class="col">
         <h2>Añadir periodo</h2>
-
+        <form class="add" method="post" id="addForm">
+            <div class="row form-row">
+                <label class="col col-lg-2" for="pname">Nombre:</label>
+                <input class="col" type="text" id="pname" name="name" placeholder="Nombre" required="required">
+            </div>
+            
+        
+        </form>
+        <div class="row form-row">
+            <label class="col col-lg-2" for="pdesc">Descripción:</label>
+            <textarea class="col" type="text" id="pdesc" name="description" required="required" form="addForm">Descripción</textarea>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-2" for="ptrivia">Sabías que...</label>
+            <textarea class="col" type="text" id="ptrivia" name="trivia" required="required" form="addForm">Sabías que...</textarea>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-2" for="pevents">Eventos:</label>
+            <textarea class="col" type="text" id="pevents" name="events" required="required" form="addForm">Eventos</textarea>
+        </div>
     </div>
 </div>
