@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'addPeriod', component: FormAddComponent},
   { path: 'addComp', component: FormAddCompComponent},
+  { path: 'addComp/:periodId', component: FormAddCompComponent},
   { path: 'editPeriod', component: FormEditPeriodComponent}, 
   { path: 'editComp', component: FormEditCompComponent}
 ];
