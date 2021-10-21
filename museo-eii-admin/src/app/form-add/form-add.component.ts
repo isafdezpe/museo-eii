@@ -16,7 +16,7 @@ export class FormAddComponent implements OnInit {
   goToAddComp() {
     //save period 
     //get id
-    let periodId: number = 0;
+    let periodId: number = 1;
     this.router.navigateByUrl('/addComp/' + periodId);
   }
 

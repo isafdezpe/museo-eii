@@ -11,19 +11,19 @@
             </div>
             <div class="row form-row">
                 <label class="col col-lg-2" for="pname">Nombre:</label>
-                <input class="col" type="text" id="pname" name="name" placeholder="Nombre" value="{{p.name}}" required="required">
+                <input class="col" type="text" id="pname" name="name" placeholder="Nombre" value="{{p.name}}" required>
             </div>        
             <div class="row form-row">
                 <label class="col col-lg-2" for="pdesc">Descripción:</label>
-                <textarea class="col" type="text" id="pdesc" name="description" required="required" form="editForm" placeholder="Descripción">{{p.details}}</textarea>
+                <textarea class="col" type="text" id="pdesc" name="description" required form="editForm" placeholder="Descripción">{{p.details}}</textarea>
             </div>
             <div class="row form-row">
                 <label class="col col-lg-2" for="ptrivia">Sabías que... <p>Introduzca cada característica en una línea</p></label>
-                <textarea class="col" type="text" id="ptrivia" name="trivia" required="required" form="editForm" placeholder="Sabías que...">{{p.trivia}}</textarea>
+                <textarea class="col" type="text" id="ptrivia" name="trivia"  form="editForm" placeholder="Sabías que...">{{p.trivia}}</textarea>
             </div>
             <div class="row form-row">
                 <label class="col col-lg-2" for="pevents">Eventos: <p>Introduzca cada evento en una línea</p></label>
-                <textarea class="col" type="text" id="pevents" name="events" required="required" form="editForm" placeholder="Eventos">{{p.events}}</textarea>
+                <textarea class="col" type="text" id="pevents" name="events" required form="editForm" placeholder="Eventos">{{p.events}}</textarea>
             </div>
             <div class="row buttons-row">
                 <input class="col col-lg-2" type="reset" value="Cancelar">
