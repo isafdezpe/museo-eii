@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Period } from '../period';
 
 @Component({
   selector: 'app-form-add',
@@ -8,23 +9,25 @@ import { Router } from '@angular/router';
 })
 export class FormAddComponent implements OnInit {
 
+  model: Period = new Period(-1, "", [], [], [], []);
+
   constructor(public router: Router) { }
 
   ngOnInit(): void {
   }
 
-  goToAddComp() {
-    var name = document.getElementById("pname");
+  submit() {
+    /*var name = document.getElementById("pname");
     var desc = document.getElementById("pdesc");
     var trivia = document.getElementById("ptrivia");
     var events = document.getElementById("pevents");
     var isValid = name.innerText.length > 0 && desc.innerText.length > 0 && trivia.innerText.length > 0 && events.innerText.length > 0;
     if (isValid) {
       //save period 
-      //get id
+      //get id*/
       let periodId: number = 1;
       this.router.navigateByUrl('/addComp/' + periodId);
-    }
+    //}
   }
 
 }
