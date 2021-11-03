@@ -44,4 +44,6 @@ export class FormAddCompComponent implements OnInit {
     this.priceUnit = this.priceUnits.filter((e) => e === u)[0];
   }
 
+  submit() {}
+
 }

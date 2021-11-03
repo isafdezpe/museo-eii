@@ -46,5 +46,6 @@ export class FormEditCompComponent implements OnInit {
     this.priceUnit = this.c.priceUnits;
   }
 
+  submit() {}
   
 }

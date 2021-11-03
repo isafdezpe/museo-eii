@@ -22,5 +22,6 @@ export class FormEditPeriodComponent implements OnInit {
     this.p = this.periods.filter((e) => e.name === p)[0];
   }
 
+  submit() {}
 
 }

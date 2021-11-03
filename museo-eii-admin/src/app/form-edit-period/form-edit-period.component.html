@@ -2,7 +2,7 @@
     <app-menu class="col col-lg-2 border-right"></app-menu>
     <div class="col">
         <h2>Editar periodo</h2>
-        <form class="edit" method="post" id="editForm">
+        <form (ngSubmit)="submit()" #editPeriodForm="ngForm" class="edit"id="editForm">
             <div class="row form-row">
                 <label class="col col-lg-5" for="pselect">Seleccione el periodo que desea editar: </label>
                 <select class="col" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">
@@ -27,7 +27,7 @@
             </div>
             <div class="row buttons-row">
                 <input class="col col-lg-2" type="reset" value="Cancelar">
-                <input class="col col-lg-2" type="submit" value="Guardar" class="submit">
+                <input class="col col-lg-2" type="submit" value="Guardar" class="submit" [disabled]="!editPeriodForm.valid">
             </div>
         </form>
     </div>
