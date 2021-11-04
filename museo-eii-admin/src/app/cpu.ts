@@ -3,7 +3,6 @@ import { Component } from "./comp";
 export class Cpu implements Component{
 
     id: number;
-    componentId: string;
     name: string;
     family: string;
     description: string;
@@ -15,61 +14,74 @@ export class Cpu implements Component{
     devices: string[];
     imgNames: string[];
 
-    programMemory: string;
-    ramMemory: string;
-    clockSpeed: string;
-    power: string;
-    wordSize: string;
-    process: string;
-    passmark: string;
+    programMemory: number;
+    programMemoryUnits: string;
+    ramMemory: number;
+    ramMemoryUnits: string;
+    clockSpeed: number;
+    clockSpeedUnits: string;
+    power: number;
+    powerUnits: string;
+    wordSize: number;
+    wordSizeUnits: string;
+    transistorSize: number;
+    transistorSizeUnits: string;
+    passmark: number;
     transistors: number;
-    performance: number;
 
     constructor(
         id: number,
-        componentId: string,
         name: string,
         family: string,
-        programMemory: string,
-        ramMemory: string,
-        clockSpeed: string,
-        power: string,
-        wordSize: string,
-        process: string,
         description: string,
         initYear: number,
         endYear: number,
-        passmark: string,
         periodId: number,
-        transistors: number,
         price: number,
         priceUnits: string,
-        performance: number,
         devices: string[],
-        imgNames: string[]
+        imgNames: string[],
+
+        programMemory: number,
+        programMemoryUnits: string,
+        ramMemory: number,
+        ramMemoryUnits: string,
+        clockSpeed: number,
+        clockSpeedUnits: string,
+        power: number,
+        powerUnits: string,
+        wordSize: number,
+        wordSizeUnits: string,
+        transistorSize: number,
+        transistorSizeUnits: string,
+        passmark: number,
+        transistors: number,
     ){
         this.id = id;
-        this.componentId = componentId;
         this.name = name;
         this.family = family;
-        this.programMemory = programMemory;
-        this.ramMemory = ramMemory;
-        this.clockSpeed = clockSpeed;
-        this.power = power;
-        this.wordSize = wordSize;
-        this.process = process;
         this.description = description;
         this.initYear = initYear;
         this.endYear = endYear;
-        this.passmark = passmark;
         this.periodId = periodId;
-        this.transistors = transistors;
-        this.price = price;
-        this.priceUnits = priceUnits;
-        this.performance = performance;
         this.devices = devices;
         this.imgNames = imgNames;
-
+        this.price = price;
+        this.priceUnits = priceUnits;
+        this.programMemory = programMemory;
+        this.programMemoryUnits = programMemoryUnits;
+        this.ramMemory = ramMemory;
+        this.ramMemoryUnits = ramMemoryUnits;
+        this.clockSpeed = clockSpeed;
+        this.clockSpeedUnits = clockSpeedUnits;
+        this.power = power;
+        this.powerUnits = powerUnits;
+        this.wordSize = wordSize;
+        this.wordSizeUnits = wordSizeUnits;
+        this.transistorSize = transistorSize;
+        this.transistorSizeUnits = transistorSizeUnits;
+        this.passmark = passmark;
+        this.transistors = transistors;
     }
     
 }
