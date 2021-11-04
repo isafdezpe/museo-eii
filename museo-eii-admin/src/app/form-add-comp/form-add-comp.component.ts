@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Cpu } from '../cpu';
 import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
 
@@ -18,6 +19,8 @@ export class FormAddCompComponent implements OnInit {
 
   priceUnits: String[] = ['€', '$'];
   priceUnit: String;
+
+  model: Cpu = new Cpu(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0);
 
   constructor(private route: ActivatedRoute) { }
 

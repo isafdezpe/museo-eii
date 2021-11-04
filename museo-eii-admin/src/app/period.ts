@@ -22,4 +22,5 @@ export class Period {
         this.events = events;
         this.famousSystems = famousSystems;
     }
+
 }
