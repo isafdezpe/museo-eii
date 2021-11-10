@@ -14,20 +14,19 @@ export class FormAddCompComponent implements OnInit {
   periods: Period[] = PERIODS;
   p: Period;
 
-  types: String[] = ['CPU'];
+  types: String[] = ['CPU', 'GPU'];
   t: String;
 
-  priceUnits: String[] = ['€', '$'];
-  priceUnit: String;
+  model: Cpu = new Cpu(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0);
 
-  model: Cpu = new Cpu(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0);
+  /*addFamousSys = false;
+  textAddFamousSys = "Añadir sistema famoso que incluya este componente";*/
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.p = this.periods[0];
     this.t = this.types[0];
-    this.priceUnit = this.priceUnits[0];
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
     if (id) 
@@ -43,9 +42,10 @@ export class FormAddCompComponent implements OnInit {
     //añadir elementos html para el formulario dinámicamente según el tipo
   }
 
-  changePriceUnits(u: string) {
-    this.priceUnit = this.priceUnits.filter((e) => e === u)[0];
-  }
+  /*changeAddSys() {
+    this.addFamousSys = !this.addFamousSys;
+    this.textAddFamousSys = (this.addFamousSys) ? "No añadir" : "Añadir sistema famoso que incluya este componente";
+  }*/
 
   submit() {}
 

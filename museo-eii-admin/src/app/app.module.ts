@@ -14,6 +14,7 @@ import { FormEditPeriodComponent } from './form-edit-period/form-edit-period.com
 import { FormEditCompComponent } from './form-edit-comp/form-edit-comp.component';
 import { CpuTypeFormComponent } from './cpu-type-form/cpu-type-form.component';
 import { PeriodInputsComponent } from './period-inputs/period-inputs.component';
+import { CompInputsComponent } from './comp-inputs/comp-inputs.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PeriodInputsComponent } from './period-inputs/period-inputs.component';
     FormEditPeriodComponent,
     FormEditCompComponent,
     CpuTypeFormComponent,
-    PeriodInputsComponent
+    PeriodInputsComponent,
+    CompInputsComponent
   ],
   imports: [
     BrowserModule,

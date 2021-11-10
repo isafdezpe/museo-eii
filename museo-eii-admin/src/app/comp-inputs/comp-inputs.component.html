@@ -1,0 +1,54 @@
+<div class="row form-row">
+    <label class="col col-lg-2" for="cname">Nombre:</label>
+    <div class="col">
+        <input class="form-control" type="text" id="cname" name="name" placeholder="Nombre" required [(ngModel)]="model.name" name="name" #name="ngModel">
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+</div>        
+<div class="row form-row">
+    <label class="col col-lg-2" for="cdesc">Descripción:</label>
+    <div class="col">
+        <textarea class="form-control" type="text" id="cdesc" name="description" required [(ngModel)]="model.description" name="description" #description="ngModel" placeholder="Descripción"></textarea>
+        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+</div>
+<div class="row form-row">
+    <label class="col col-lg-2" for="cfamily">Familia:</label>
+    <div class="col">
+        <input class="form-control" type="text" id="cfamily" name="family" required [(ngModel)]="model.family" name="family" #family="ngModel" placeholder="Familia">
+        <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+</div>
+<div class="row form-row">
+    <label class="col col-lg-2" for="cinityear">Año de salida:</label>
+    <div class="col">
+        <input class="form-control" type="number" min="1970" id="cinityear" required [(ngModel)]="model.initYear" name="initYear" #initYear="ngModel" value="1990">
+        <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+    <label class="col col-lg-2" for="cendyear">Año de fin:</label>
+    <div class="col">
+        <input class="form-control" type="number" min="1970" id="cendyear" required [(ngModel)]="model.endYear" name="endYear" #endYear="ngModel" value="2000">
+        <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+</div>
+<div class="row form-row">
+    <label class="col col-lg-2" for="cprice">Precio:</label>
+    <div class="col">
+        <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.price" name="price" #price="ngModel" value="90.00">
+        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">Complete este campo</div>
+    </div>
+    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)">
+        <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>
+    </select>
+</div>
+<div class="row form-row">
+    <label class="col col-lg-4">Utilizado en dispositivos:</label>
+    <label class="col col-lg-2" for="checkDev1"><input type="checkbox" id="checkDev1"> Portátiles</label>
+    <label class="col col-lg-2" for="checkDev2"><input type="checkbox" id="checkDev2"> De escritorio</label>
+</div>
+<!--<input type="button" (click)="changeAddSys()" value="{{textAddFamousSys}}">-->
+<div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
+    <label class="col col-lg-4" for="csystem">Sistema famoso que lo utiliza:</label>
+    <input class="col form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famousSystem" name="famousSystem" #famousSystem="ngModel">
+    <input class="col" type="file" id="csystemimg">
+</div>
