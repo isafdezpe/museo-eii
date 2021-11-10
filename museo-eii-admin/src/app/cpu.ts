@@ -1,6 +1,6 @@
-import { Component } from "./comp";
+import { MyComponent } from "./comp";
 
-export class Cpu implements Component{
+export class Cpu implements MyComponent{
 
     id: number;
     name: string;
@@ -13,6 +13,8 @@ export class Cpu implements Component{
     priceUnits: string;
     devices: string[];
     imgNames: string[];
+    famousSystem: string;
+    famousSystemImgName: string;
 
     programMemory: number;
     programMemoryUnits: string;
@@ -41,6 +43,8 @@ export class Cpu implements Component{
         priceUnits: string,
         devices: string[],
         imgNames: string[],
+        famousSystem: string,
+        famousSystemImgName: string,
 
         programMemory: number,
         programMemoryUnits: string,
@@ -66,6 +70,8 @@ export class Cpu implements Component{
         this.periodId = periodId;
         this.devices = devices;
         this.imgNames = imgNames;
+        this.famousSystem = famousSystem;
+        this.famousSystemImgName = famousSystemImgName;
         this.price = price;
         this.priceUnits = priceUnits;
         this.programMemory = programMemory;

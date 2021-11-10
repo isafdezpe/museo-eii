@@ -12,6 +12,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FormAddCompComponent } from './form-add-comp/form-add-comp.component';
 import { FormEditPeriodComponent } from './form-edit-period/form-edit-period.component';
 import { FormEditCompComponent } from './form-edit-comp/form-edit-comp.component';
+import { CpuTypeFormComponent } from './cpu-type-form/cpu-type-form.component';
+import { PeriodInputsComponent } from './period-inputs/period-inputs.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FormEditCompComponent } from './form-edit-comp/form-edit-comp.component
     MenuComponent,
     FormAddCompComponent,
     FormEditPeriodComponent,
-    FormEditCompComponent
+    FormEditCompComponent,
+    CpuTypeFormComponent,
+    PeriodInputsComponent
   ],
   imports: [
     BrowserModule,

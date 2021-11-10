@@ -26,7 +26,9 @@ export const CPUS: Cpu[] = [
     price: 1800,
     priceUnits: '$',
     devices: [CpuDevices.desktop, CpuDevices.portable],
-    imgNames: ['4004-1.jpg', '4004-2.jpg', '4004-3.jpg']
+    imgNames: ['4004-1.jpg', '4004-2.jpg', '4004-3.jpg'],
+    famousSystem: "Busicom 141PF",
+    famousSystemImgName: "Busicom 141PF.jpg"
 },
  {
     id: 2,
@@ -53,7 +55,9 @@ export const CPUS: Cpu[] = [
     price: 120,
     priceUnits: '$',
     devices: [CpuDevices.desktop],
-    imgNames: ['8008-1.jpg', '8008-2.jpg', '8008-3.jpg']
+    imgNames: ['8008-1.jpg', '8008-2.jpg', '8008-3.jpg'],
+    famousSystem: "Busicom 141PF",
+    famousSystemImgName: "Busicom 141PF.jpg"
 },
  {
     id: 3,
@@ -80,7 +84,9 @@ export const CPUS: Cpu[] = [
     price: 200,
     priceUnits: '$',
     devices: [CpuDevices.desktop, CpuDevices.portable],
-    imgNames: ['4040-1.jpg', '4040-2.jpg', '4040-3.jpg']
+    imgNames: ['4040-1.jpg', '4040-2.jpg', '4040-3.jpg'],
+    famousSystem: "Gottlieb Flying Carpet",
+    famousSystemImgName: "Gottlieb Flying Carpet.jpg"
 },
 {
     id: 4,
@@ -107,7 +113,9 @@ export const CPUS: Cpu[] = [
     price: 86,
     priceUnits: '$',
     devices: [CpuDevices.desktop],
-    imgNames: ['8086-1.jpg', '8086-2.jpg', '8086-3.jpg']
+    imgNames: ['8086-1.jpg', '8086-2.jpg', '8086-3.jpg'],
+    famousSystem: "Datapoint 2200",
+    famousSystemImgName: "Datapoint 2200.jpg"
 },
 {
     id: 5,
@@ -134,6 +142,8 @@ export const CPUS: Cpu[] = [
     price: 124,
     priceUnits: '$',
     devices: [CpuDevices.desktop],
-    imgNames: ['8088-1.jpg', '8088-2.jpg', '8088-3.jpg']
+    imgNames: ['8088-1.jpg', '8088-2.jpg', '8088-3.jpg'],
+    famousSystem: "Datapoint 2200",
+    famousSystemImgName: "Datapoint 2200.jpg"
 }
 ];

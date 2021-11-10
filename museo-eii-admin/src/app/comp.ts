@@ -1,4 +1,4 @@
-export interface Component {
+export interface MyComponent {
     id: number,
     name: string,
     family: string,
@@ -9,5 +9,7 @@ export interface Component {
     price: number,
     priceUnits: string,
     devices: string[],
-    imgNames: string[]
+    imgNames: string[],
+    famousSystem: string,
+    famousSystemImgName: string
 }
