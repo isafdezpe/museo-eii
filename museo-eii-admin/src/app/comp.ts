@@ -13,3 +13,7 @@ export interface MyComponent {
     famousSystem: string,
     famousSystemImgName: string
 }
+
+export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}
+
+export enum CompTypes {cpu='CPU', gpu='GPUs'}

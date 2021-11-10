@@ -11,3 +11,5 @@ export interface Component {
     devices: string[],
     imgNames: string[]
 }
+
+export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}

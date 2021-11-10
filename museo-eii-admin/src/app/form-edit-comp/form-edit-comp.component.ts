@@ -3,7 +3,7 @@ import { Cpu } from '../cpu';
 import { CPUS } from '../mock-cpus';
 import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
-import { MyComponent } from '../comp';
+import { CompTypes, MyComponent } from '../comp';
 
 
 @Component({
@@ -23,6 +23,8 @@ export class FormEditCompComponent implements OnInit {
   c: MyComponent;
   model: MyComponent;
 
+  type: String;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -31,6 +33,7 @@ export class FormEditCompComponent implements OnInit {
     this.c = this.comps[0];
     this.priceUnit = this.c.priceUnits;
     this.model = this.cloneComp(this.c);
+    this.type = this.checkType();
   }
 
   changePeriod(p: string) {
@@ -58,6 +61,13 @@ export class FormEditCompComponent implements OnInit {
     if (c instanceof Cpu)
       return new Cpu(c.id, c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
       c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.transistorSizeUnits, c.passmark, c.transistors);
+  }
+
+  checkType(): String {
+    if (this.c instanceof Cpu)
+      return CompTypes.cpu;
+    else
+      return CompTypes.gpu;
   }
   
 }

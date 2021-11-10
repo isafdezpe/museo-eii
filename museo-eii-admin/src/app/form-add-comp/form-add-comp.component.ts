@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CompTypes } from '../comp';
 import { Cpu } from '../cpu';
 import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
@@ -14,7 +15,7 @@ export class FormAddCompComponent implements OnInit {
   periods: Period[] = PERIODS;
   p: Period;
 
-  types: String[] = ['CPU', 'GPU'];
+  types: String[] = Object.values(CompTypes);
   t: String;
 
   model: Cpu = new Cpu(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0);

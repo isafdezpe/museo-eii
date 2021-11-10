@@ -91,5 +91,3 @@ export class Cpu implements MyComponent{
     }
     
 }
-
-export enum CpuDevices {desktop='DESKTOP', portable='PORTABLE'}

@@ -31,5 +31,3 @@ export interface Cpu extends Component{
    
     
 }
-
-export enum CpuDevices {desktop='DESKTOP', portable='PORTABLE'}
