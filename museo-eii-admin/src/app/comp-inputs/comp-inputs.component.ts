@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MyComponent } from '../comp';
+import { CompDevices, MyComponent } from '../comp';
 
 @Component({
   selector: 'app-comp-inputs',
@@ -10,16 +10,23 @@ export class CompInputsComponent implements OnInit {
 
   @Input() model: MyComponent;
 
-  priceUnits: String[] = ['€', '$'];
-  priceUnit: String;
+  priceUnits: string[] = ['€', '$'];
 
   constructor() { }
 
   ngOnInit(): void {
-    this.priceUnit = this.priceUnits[0];
+    this.model.priceUnits = this.priceUnits[0];
+  }
+
+  isDesktop() {
+    return this.model.devices.includes(CompDevices.desktop);
+  }
+
+  isPortable() {
+    return this.model.devices.includes(CompDevices.portable);
   }
 
   changePriceUnits(u: string) {
-    this.priceUnit = this.priceUnits.filter((e) => e === u)[0];
+    this.model.priceUnits = this.priceUnits.filter((e) => e === u)[0];
   }
 }

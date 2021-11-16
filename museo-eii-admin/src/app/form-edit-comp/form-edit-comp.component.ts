@@ -57,10 +57,9 @@ export class FormEditCompComponent implements OnInit {
   }
 
   cloneComp(c: MyComponent): MyComponent{
-    console.log(typeof(c));
     if (c instanceof Cpu)
       return new Cpu(c.id, c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
-      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.transistorSizeUnits, c.passmark, c.transistors);
+      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors);
   }
 
   checkType(): String {

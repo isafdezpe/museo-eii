@@ -8,14 +8,14 @@
 <div class="row form-row">
     <label class="col col-lg-2" for="cdesc">Descripción:</label>
     <div class="col">
-        <textarea class="form-control" type="text" id="cdesc" name="description" required [(ngModel)]="model.description" name="description" #description="ngModel" placeholder="Descripción"></textarea>
+        <textarea class="form-control" type="text" id="cdesc" required [(ngModel)]="model.description" name="description" #description="ngModel" placeholder="Descripción"></textarea>
         <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
 <div class="row form-row">
     <label class="col col-lg-2" for="cfamily">Familia:</label>
     <div class="col">
-        <input class="form-control" type="text" id="cfamily" name="family" required [(ngModel)]="model.family" name="family" #family="ngModel" placeholder="Familia">
+        <input class="form-control" type="text" id="cfamily" required [(ngModel)]="model.family" name="family" #family="ngModel" placeholder="Familia">
         <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
@@ -43,8 +43,8 @@
 </div>
 <div class="row form-row">
     <label class="col col-lg-4">Utilizado en dispositivos:</label>
-    <label class="col col-lg-2" for="checkDev1"><input type="checkbox" id="checkDev1"> Portátiles</label>
-    <label class="col col-lg-2" for="checkDev2"><input type="checkbox" id="checkDev2"> De escritorio</label>
+    <label class="col col-lg-2" for="checkDev1"><input type="checkbox" id="checkDev1" [checked]="isPortable()"> Portátiles</label>
+    <label class="col col-lg-2" for="checkDev2"><input type="checkbox" id="checkDev2" [checked]="isDesktop()"> De escritorio</label>
 </div>
 <!--<input type="button" (click)="changeAddSys()" value="{{textAddFamousSys}}">-->
 <div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->

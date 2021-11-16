@@ -57,7 +57,6 @@ export class Cpu implements MyComponent{
         wordSize: number,
         wordSizeUnits: string,
         transistorSize: number,
-        transistorSizeUnits: string,
         passmark: number,
         transistors: number,
     ){
@@ -85,7 +84,7 @@ export class Cpu implements MyComponent{
         this.wordSize = wordSize;
         this.wordSizeUnits = wordSizeUnits;
         this.transistorSize = transistorSize;
-        this.transistorSizeUnits = transistorSizeUnits;
+        this.transistorSizeUnits = "nm";
         this.passmark = passmark;
         this.transistors = transistors;
     }
