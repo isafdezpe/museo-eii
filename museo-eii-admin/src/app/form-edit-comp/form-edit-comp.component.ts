@@ -4,6 +4,8 @@ import { CPUS } from '../mock-cpus';
 import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
 import { CompTypes, MyComponent } from '../comp';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ComponentService } from '../component.service';
 
 
 @Component({
@@ -25,7 +27,7 @@ export class FormEditCompComponent implements OnInit {
 
   type: String;
 
-  constructor() { }
+  constructor(private componentService: ComponentService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.p = this.periods[0];
@@ -50,7 +52,11 @@ export class FormEditCompComponent implements OnInit {
     this.model = this.cloneComp(this.c);
   }
 
-  submit() {}
+  submit() {
+    /*this.componentService.editComponent(this.model).subscribe(() => {
+      this.snackBar.open('Componente actualizado', undefined, {duration:1500})
+    });*/
+  }
 
   resetForm() {
     this.model = this.cloneComp(this.c);
@@ -58,8 +64,8 @@ export class FormEditCompComponent implements OnInit {
 
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
-      return new Cpu(c.id, c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
-      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors);
+      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
+      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.id);
   }
 
   checkType(): String {

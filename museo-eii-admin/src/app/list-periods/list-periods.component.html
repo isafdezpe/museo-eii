@@ -1,0 +1,23 @@
+<div class="row container">
+    <app-menu class="col col-lg-2 border-right"></app-menu>
+    <div class="col">
+        <h2>Listado de periodos</h2>
+        <table mat-table [dataSource]="periods" class="mat-elevation-z8">
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let period"><a [routerLink]="['/period', period.id]">{{period.name}}</a></td>
+            </ng-container>
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef>Editar</th>
+                <td mat-cell *matCellDef="let period"><a [routerLink]="['/editPeriod', period.id]"><ion-icon name="pencil"></ion-icon></a></td>
+            </ng-container>
+            <ng-container matColumnDef="eliminar">
+                <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+                <td mat-cell *matCellDef="let period"><button class="icon-btn" (click)="deletePeriod(period)"><ion-icon name="trash"></ion-icon></button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['nombre', 'editar', 'eliminar']"></tr>
+            <tr mat-row *matRowDef="let fila; columns: ['nombre', 'editar', 'eliminar'];"></tr>
+        </table>
+    </div>
+</div>

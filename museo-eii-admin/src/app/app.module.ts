@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatTableModule} from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,10 @@ import { FormEditCompComponent } from './form-edit-comp/form-edit-comp.component
 import { CpuTypeFormComponent } from './cpu-type-form/cpu-type-form.component';
 import { PeriodInputsComponent } from './period-inputs/period-inputs.component';
 import { CompInputsComponent } from './comp-inputs/comp-inputs.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListPeriodsComponent } from './list-periods/list-periods.component';
+import { PeriodComponent } from './period/period.component';
+import { MyComponentComponent } from './my-component/my-component.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +33,20 @@ import { CompInputsComponent } from './comp-inputs/comp-inputs.component';
     FormEditCompComponent,
     CpuTypeFormComponent,
     PeriodInputsComponent,
-    CompInputsComponent
+    CompInputsComponent,
+    ListPeriodsComponent,
+    PeriodComponent,
+    MyComponentComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
     FormsModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -32,7 +32,6 @@ export class Cpu implements MyComponent{
     transistors: number;
 
     constructor(
-        id: number,
         name: string,
         family: string,
         description: string,
@@ -59,6 +58,8 @@ export class Cpu implements MyComponent{
         transistorSize: number,
         passmark: number,
         transistors: number,
+        
+        id?: number,
     ){
         this.id = id;
         this.name = name;
@@ -87,6 +88,7 @@ export class Cpu implements MyComponent{
         this.transistorSizeUnits = "nm";
         this.passmark = passmark;
         this.transistors = transistors;
+        
     }
     
 }

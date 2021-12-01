@@ -41,7 +41,6 @@ export class GenericComp implements MyComponent {
     famousSystemImgName: string;
 
     constructor(
-        id: number,
         name: string,
         family: string,
         description: string,
@@ -53,7 +52,9 @@ export class GenericComp implements MyComponent {
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImgName: string
+        famousSystemImgName: string,
+
+        id?: number,
     ) {
         this.id = id;
         this.name = name;

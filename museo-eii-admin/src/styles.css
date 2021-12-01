@@ -53,6 +53,32 @@ label p {
   font-size: medium;
 }
 
+.mat-table {
+  width: 100%;
+  color: #555;
+  background-color: white;
+}
+
+.mat-column-nombre, .mat-column-editar, .mat-column-eliminar {
+  text-align: left;
+  color: #555;
+}
+
+.mat-header-cell, .mat-row .mat-cell {
+  color: #555;
+  cursor: pointer;
+}
+
+.icon-btn {
+  border: none;
+  background-color: transparent;
+}
+
+a:link, a:visited {
+  padding: 8px 0;
+  color: #39583d;
+}
+
 /*------FORMS---------*/
 
 .buttons-row input {
@@ -71,4 +97,14 @@ h2, h3 {
 
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+ion-icon {
+  pointer-events: none;
+  color: #555;
+  width: 1.5em;
+  font-size: x-large;
 }

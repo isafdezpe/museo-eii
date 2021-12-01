@@ -7,12 +7,3 @@ ul li {
 ul li::before {
   content: "\003e \00a0";
 }
-  
-a:link, a:visited {
-  padding: 8px 0;
-  color: #39583d;
-}
-
-a:active {
-  font-weight: bold;
-}

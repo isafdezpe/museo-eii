@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CompTypes, GenericComp, MyComponent } from '../comp';
+import { ComponentService } from '../component.service';
 import { Cpu } from '../cpu';
 import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
@@ -23,7 +25,7 @@ export class FormAddCompComponent implements OnInit {
   /*addFamousSys = false;
   textAddFamousSys = "Añadir sistema famoso que incluya este componente";*/
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private componentService: ComponentService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.p = this.periods[0];
@@ -38,12 +40,12 @@ export class FormAddCompComponent implements OnInit {
   createModel() {
     if (this.t == CompTypes.cpu)
       this.model = (this.model !== undefined) ? 
-      new Cpu(-1, this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
-      : new Cpu(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
+      new Cpu(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
+      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
     else 
       this.model = (this.model !== undefined) ?
-      new GenericComp(-1, this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName)
-      : new GenericComp(-1, '', '', '', 1970, 1990, 0, 100, '$', [], [], '', '');
+      new GenericComp(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName)
+      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '');
   }
 
   changePeriod(p: string) {
@@ -60,6 +62,10 @@ export class FormAddCompComponent implements OnInit {
     this.textAddFamousSys = (this.addFamousSys) ? "No añadir" : "Añadir sistema famoso que incluya este componente";
   }*/
 
-  submit() {}
+  submit() {
+    /*this.componentService.addComponent(this.model).subscribe(() => {
+      this.snackBar.open('Componente guardado', undefined, {duration:1500})
+    });*/
+  }
 
 }

@@ -8,12 +8,13 @@ export class Period {
     famousSystems: {name: string, img: string, sysName: string}[];
 
     constructor(
-        id: number,
         name: string,
         trivia: string[],
         details: string[],
         events: string[],
-        famousSystems: {name: string, img: string, sysName: string}[]
+        famousSystems: {name: string, img: string, sysName: string}[],
+        
+        id?: number,
     ){
         this.id = id;
         this.name = name;
