@@ -3,6 +3,7 @@ import { Period } from './period';
 import { PERIODS } from './mock-periods';
 import { MyComponent } from './comp';
 import { CPUS } from './mock-cpus';
+import { ComponentService } from './component.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { CPUS } from './mock-cpus';
 export class PeriodService {
 
 
-  constructor() { }
+  constructor(private componentService: ComponentService) { }
 
   addPeriod(p: Period) {
     
@@ -33,6 +34,6 @@ export class PeriodService {
   }
 
   getComponentsFromPeriod(p: Period): MyComponent[] {
-    return CPUS.filter((e) => e.periodId === p.id);
+    return this.componentService.getAll().filter((e) => e.periodId === p.id);
   }
 }

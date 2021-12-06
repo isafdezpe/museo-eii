@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MyComponent } from './comp';
+import { CPUS } from './mock-cpus';
 
 @Injectable({
   providedIn: 'root'
@@ -21,11 +22,11 @@ export class ComponentService {
 
   }
 
-  getComponent(c: MyComponent) {
-
+  getComponent(cId: number): MyComponent {
+    return CPUS.filter((e) => e.id === cId)[0];
   }
 
   getAll() {
-
+    return CPUS;
   }
 }

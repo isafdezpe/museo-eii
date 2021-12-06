@@ -1,1 +1,39 @@
-<p>period works!</p>
+<div class="row container">
+    <app-menu class="col col-lg-2 border-right"></app-menu>
+    <div class="col">
+        <div class="row">
+            <h2 class="col">{{ p.name }}</h2>
+            <a [routerLink]="['/editPeriod', p.id]">Editar</a>
+        </div>
+        <h4 class="row">Detalles</h4>
+        <li class="row">
+            <ul *ngFor="let d of p.details">{{d}}</ul>
+        </li>
+        <h4 class="row">Sabías qué...</h4>
+        <li class="row">
+            <ul *ngFor="let t of p.trivia">{{t}}</ul>
+        </li>
+        <h4 class="row">Sistemas famosos</h4>
+        <li class="row">
+            <ul *ngFor="let s of p.famousSystems">{{s.name}}: {{s.sysName}}</ul>
+        </li>
+        <h4 class="row">Componentes</h4>
+        <table mat-table [dataSource]="comps" class="mat-elevation-z8">
+            <ng-container matColumnDef="nombre">
+                <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/component', comp.id]">{{comp.name}}</a></td>
+            </ng-container>
+            <ng-container matColumnDef="editar">
+                <th mat-header-cell *matHeaderCellDef>Editar</th>
+                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/editComp', comp.id]"><ion-icon name="pencil"></ion-icon></a></td>
+            </ng-container>
+            <ng-container matColumnDef="eliminar">
+                <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+                <td mat-cell *matCellDef="let comp"><button class="icon-btn" (click)="deleteComponent(comp)"><ion-icon name="trash"></ion-icon></button></td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['nombre', 'editar', 'eliminar']"></tr>
+            <tr mat-row *matRowDef="let fila; columns: ['nombre', 'editar', 'eliminar'];"></tr>
+        </table>
+    </div>
+</div>
