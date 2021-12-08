@@ -1,3 +1,25 @@
 li {
     list-style: none;
 }
+
+.systems {
+    max-width: 800px;
+    position: relative;
+    display: flex;
+  }
+
+  .img-systems {
+    max-width: 130px;
+    position: relative;
+    min-height: 210px;
+  }
+
+  .name-link {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .systems img {
+    width: 120px;
+    height: auto;
+  }

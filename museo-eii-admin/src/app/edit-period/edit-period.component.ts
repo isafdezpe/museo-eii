@@ -6,9 +6,9 @@ import { Period } from '../period';
 import { PeriodService } from '../period.service';
 
 @Component({
-  selector: 'app-form-edit-period',
-  templateUrl: './form-edit-period.component.html',
-  styleUrls: ['./form-edit-period.component.css']
+  selector: 'app-edit-period',
+  templateUrl: './edit-period.component.html',
+  styleUrls: ['./edit-period.component.css']
 })
 export class FormEditPeriodComponent implements OnInit {
 

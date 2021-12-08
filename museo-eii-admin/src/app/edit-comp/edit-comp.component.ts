@@ -10,9 +10,9 @@ import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
-  selector: 'app-form-edit-comp',
-  templateUrl: './form-edit-comp.component.html',
-  styleUrls: ['./form-edit-comp.component.css']
+  selector: 'app-edit-comp',
+  templateUrl: './edit-comp.component.html',
+  styleUrls: ['./edit-comp.component.css']
 })
 export class FormEditCompComponent implements OnInit {
 

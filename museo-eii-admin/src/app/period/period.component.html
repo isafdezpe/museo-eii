@@ -14,9 +14,13 @@
             <ul *ngFor="let t of p.trivia">{{t}}</ul>
         </li>
         <h4 class="row">Sistemas famosos</h4>
-        <li class="row">
-            <ul *ngFor="let s of p.famousSystems">{{s.name}}: {{s.sysName}}</ul>
-        </li>
+        <div class="systems">
+            <div class="col img-systems" *ngFor="let s of p.famousSystems">
+              <h6 class="row">{{s.name}}</h6>
+              <img class="row" src="../../assets/img/{{s.img}}">
+              <p class="row name-link">{{s.sysName}}</p>
+            </div>
+        </div>
         <h4 class="row">Componentes</h4>
         <table mat-table [dataSource]="comps" class="mat-elevation-z8">
             <ng-container matColumnDef="nombre">

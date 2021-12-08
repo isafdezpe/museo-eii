@@ -1,1 +1,21 @@
-<p>my-component works!</p>
+<div class="row container">
+    <app-menu class="col col-lg-2 border-right"></app-menu>
+    <div class="col">
+        <div class="row">
+            <h2 class="col">{{ c.name }}</h2>
+            <a [routerLink]="['/editComp', c.id]">Editar</a>
+        </div>
+        <p class="row">Periodo: {{p.name}}</p>
+        <p class="row">Familia: {{c.family}}</p>
+        <p class="row">Descripción: {{c.description}}</p>
+        <p class="row">Años: {{c.initYear}} - {{c.endYear}}</p>
+        <p class="row">Precio: {{c.price}}{{c.priceUnits}}</p>
+        <div class="row"><p>Dispositivos:&nbsp;</p><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
+        <div class="gallery">
+            <div class="img-container" *ngFor="let i of c.imgNames">
+                <img src="../../assets/img/{{i}}" alt="{{c.name}}">
+            </div>
+        </div>
+        <app-cpu-type-details [hidden]="type!=='CPU'" [comp]="c"></app-cpu-type-details>
+    </div>
+</div>

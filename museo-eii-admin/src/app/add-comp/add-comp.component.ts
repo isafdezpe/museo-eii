@@ -8,11 +8,11 @@ import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
 
 @Component({
-  selector: 'app-form-add-comp',
-  templateUrl: './form-add-comp.component.html',
-  styleUrls: ['./form-add-comp.component.css']
+  selector: 'app-add-comp',
+  templateUrl: './add-comp.component.html',
+  styleUrls: ['./add-comp.component.css']
 })
-export class FormAddCompComponent implements OnInit {
+export class AddCompComponent implements OnInit {
 
   periods: Period[] = PERIODS;
   p: Period;

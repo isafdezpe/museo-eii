@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormAddCompComponent } from './form-add-comp.component';
+import { CpuTypeDetailsComponent } from './cpu-type-details.component';
 
-describe('FormAddCompComponent', () => {
-  let component: FormAddCompComponent;
-  let fixture: ComponentFixture<FormAddCompComponent>;
+describe('CpuTypeDetailsComponent', () => {
+  let component: CpuTypeDetailsComponent;
+  let fixture: ComponentFixture<CpuTypeDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormAddCompComponent ]
+      declarations: [ CpuTypeDetailsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormAddCompComponent);
+    fixture = TestBed.createComponent(CpuTypeDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

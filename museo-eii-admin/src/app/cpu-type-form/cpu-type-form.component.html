@@ -1,5 +1,5 @@
 <div class="row form-row">
-    <label class="col col-lg-2" for="cProgMem">Memoria ROM</label>
+    <label class="col col-lg-2" for="cProgMem">Memoria ROM:</label>
     <div class="col">
         <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.programMemory" name="programMemory" #programMemory="ngModel" step="1">
         <div [hidden]="programMemory.valid || programMemory.pristine" class="alert alert-danger">Complete este campo</div>

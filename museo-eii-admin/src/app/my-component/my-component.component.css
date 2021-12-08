@@ -1,0 +1,15 @@
+p {
+    text-align: justify;
+}
+
+.gallery {
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    float:none;
+  }
+  
+  .gallery img {
+    height: 4em;
+    width: auto;
+  }

@@ -5,11 +5,11 @@ import { Period } from '../period';
 import { PeriodService } from '../period.service';
 
 @Component({
-  selector: 'app-form-add',
-  templateUrl: './form-add.component.html',
-  styleUrls: ['./form-add.component.css']
+  selector: 'app-add-period',
+  templateUrl: './add-period.component.html',
+  styleUrls: ['./add-period.component.css']
 })
-export class FormAddComponent implements OnInit {
+export class AddPeriodComponent implements OnInit {
 
   model: Period = new Period("", [], [], [], []);
 

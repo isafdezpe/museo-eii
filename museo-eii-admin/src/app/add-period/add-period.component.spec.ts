@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormEditPeriodComponent } from './form-edit-period.component';
+import { AddPeriodComponent } from './add-period.component';
 
-describe('FormEditPeriodComponent', () => {
-  let component: FormEditPeriodComponent;
-  let fixture: ComponentFixture<FormEditPeriodComponent>;
+describe('FormAddComponent', () => {
+  let component: AddPeriodComponent;
+  let fixture: ComponentFixture<AddPeriodComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FormEditPeriodComponent ]
+      declarations: [ AddPeriodComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FormEditPeriodComponent);
+    fixture = TestBed.createComponent(AddPeriodComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
