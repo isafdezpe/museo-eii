@@ -3,13 +3,13 @@
     <div class="col">
         <h2>Editar componente</h2>
         <form (ngSubmit)="submit()" #editCompForm="ngForm" class="edit" id="editCForm">
-            <!-- <div class="row form-row">
+            <div class="row form-row">
                 <label class="col col-lg-5" for="pselect">Seleccione el periodo al que pertenece: </label>
                 <select class="col form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">
                     <option [value]="p.name" *ngFor="let p of periods">{{ p.name }}</option>
                 </select>
             </div>
-            <div class="row form-row">
+            <!-- <div class="row form-row">
                 <label class="col col-lg-5" for="cselect">Seleccione el componente que desea editar: </label>
                 <select class="col form-control" name="comp-select" id="cselect" #compSelect (change)="changeComp(compSelect.value)">
                     <option [value]="c.name" *ngFor="let c of comps">{{ c.name }}</option>

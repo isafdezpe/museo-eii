@@ -7,6 +7,7 @@ import { CompTypes, MyComponent } from '../comp';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ComponentService } from '../component.service';
 import { ActivatedRoute } from '@angular/router';
+import { PeriodService } from '../period.service';
 
 
 @Component({
@@ -16,8 +17,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FormEditCompComponent implements OnInit {
 
-  // periods: Period[] = PERIODS;
-  // p: Period;
+  periods: Period[];
+  p: Period;
 
   priceUnits: String[] = ['€', '$'];
   priceUnit: String;
@@ -28,13 +29,14 @@ export class FormEditCompComponent implements OnInit {
 
   type: String;
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private snackBar: MatSnackBar) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
     this.c = this.componentService.getComponent(idFromRoute);
-    // this.p = this.periods[0];
+    this.periods = this.periodService.getAll();
+    this.p = this.periodService.getPeriod(this.c.periodId);
     // this.comps = CPUS.filter((e) => e.periodId === this.p.id);
     // this.c = this.comps[0];
     this.priceUnit = this.c.priceUnits;
@@ -42,13 +44,14 @@ export class FormEditCompComponent implements OnInit {
     this.type = this.checkType();
   }
 
-  // changePeriod(p: string) {
-  //   this.p = this.periods.filter((e) => e.name === p)[0];
-  //   this.comps = CPUS.filter((e) => e.periodId === this.p.id);
-  //   this.c = this.comps[0];
-  //   this.priceUnit = this.c.priceUnits;
-  //   this.model = this.cloneComp(this.c);
-  // }
+  changePeriod(p: string) {
+     this.p = this.periodService.getPeriodByName(p);
+     this.c.periodId = this.p.id;
+    //  this.comps = CPUS.filter((e) => e.periodId === this.p.id);
+    //  this.c = this.comps[0];
+    //  this.priceUnit = this.c.priceUnits;
+    //  this.model = this.cloneComp(this.c);
+   }
 
   // changeComp(c: string) {
   //   this.c = this.comps.filter((e) => e.name === c)[0];

@@ -29,6 +29,10 @@ export class PeriodService {
     return PERIODS.filter((e) => e.id === pId)[0];
   }
 
+  getPeriodByName(pName: string): Period {
+    return PERIODS.filter((e) => e.name === pName)[0];
+  }
+
   getAll(): Period[] {
     return PERIODS;
   }
