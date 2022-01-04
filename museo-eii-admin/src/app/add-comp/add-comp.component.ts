@@ -20,6 +20,7 @@ export class AddCompComponent implements OnInit {
   types: String[] = Object.values(CompTypes);
   t: String;
 
+  c: MyComponent;
   model: MyComponent;
 
   /*addFamousSys = false;
@@ -31,6 +32,7 @@ export class AddCompComponent implements OnInit {
     this.p = this.periods[0];
     this.t = this.types[0];
     this.createModel();
+    this.c = this.cloneComp(this.model);
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
     if (id) 
@@ -57,6 +59,12 @@ export class AddCompComponent implements OnInit {
     this.createModel();
   }
 
+  cloneComp(c: MyComponent): MyComponent{
+    if (c instanceof Cpu)
+      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
+      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.id);
+  }
+
   /*changeAddSys() {
     this.addFamousSys = !this.addFamousSys;
     this.textAddFamousSys = (this.addFamousSys) ? "No añadir" : "Añadir sistema famoso que incluya este componente";
@@ -66,6 +74,10 @@ export class AddCompComponent implements OnInit {
     /*this.componentService.addComponent(this.model).subscribe(() => {
       this.snackBar.open('Componente guardado', undefined, {duration:1500})
     });*/
+  }
+
+  isEdited(): boolean {
+    return this.c.equals(this.model);
   }
 
 }

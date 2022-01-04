@@ -12,6 +12,8 @@ export interface MyComponent {
     imgNames: string[],
     famousSystem: string,
     famousSystemImgName: string
+
+    equals(c: MyComponent): boolean;
 }
 
 export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}
@@ -69,6 +71,14 @@ export class GenericComp implements MyComponent {
         this.imgNames = imgNames;
         this.famousSystem = famousSystem;
         this.famousSystemImgName = famousSystemImgName;
+    }
+
+    equals(c: MyComponent): boolean {
+        let devicesEq: boolean = this.devices.length === c.devices.length;
+        if (devicesEq) this.devices.forEach((e) => devicesEq = c.devices.includes(e));
+        else return false;
+        return this.name === c.name && this.family === c.family && this.description === c.description && this.initYear === c.initYear && this.endYear === c.endYear 
+            && this.periodId === c.periodId && this.price === c.price && this.priceUnits === c.priceUnits && devicesEq;
     }
 
 }

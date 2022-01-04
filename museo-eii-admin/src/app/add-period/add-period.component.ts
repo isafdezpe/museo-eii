@@ -11,7 +11,8 @@ import { PeriodService } from '../period.service';
 })
 export class AddPeriodComponent implements OnInit {
 
-  model: Period = new Period("", [], [], [], []);
+  p: Period = new Period("", "", "", "", []);
+  model: Period = new Period("", "", "", "", []);
 
   constructor(private periodService: PeriodService, private snackBar: MatSnackBar, public router: Router) { }
 
@@ -27,4 +28,7 @@ export class AddPeriodComponent implements OnInit {
     this.router.navigateByUrl('/addComp/' + periodId);
   }
 
+  isEdited(): boolean {
+    return this.p.equals(this.model);
+  }
 }

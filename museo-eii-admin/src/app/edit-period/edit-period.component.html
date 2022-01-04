@@ -1,7 +1,10 @@
 <div class="row container">
-    <app-menu class="col col-lg-2 border-right"></app-menu>
+    <app-menu class="col col-lg-2 border-right" [isEdited]="isEdited()"></app-menu>
     <div class="col">
-        <h2>Editar periodo</h2>
+        <div class="row">
+            <button class="button-link" (click)="goBack()">Volver</button>
+            <h2>Editar periodo</h2>
+        </div>
         <form (ngSubmit)="submit()" #editPeriodForm="ngForm" class="edit"id="editForm">
             <!-- <div class="row form-row">
                 <label class="col col-lg-5" for="pselect">Seleccione el periodo que desea editar: </label>

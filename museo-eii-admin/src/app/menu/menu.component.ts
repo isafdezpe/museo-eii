@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from "@angular/material/dialog";
+import { Router } from '@angular/router';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  @Input() isEdited: boolean;
+
+  constructor(public router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  navigate(route: string) {
+    let cont: boolean = true;
+    if (this.isEdited)
+      this.dialog
+      .open(ConfirmationDialogComponent)
+      .afterClosed()
+      .subscribe((confirmed: boolean) => {if (confirmed) this.router.navigateByUrl(route);});
+    else
+      this.router.navigateByUrl(route);
   }
 
 }

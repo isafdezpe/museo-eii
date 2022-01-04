@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Cpu } from '../cpu';
 import { CPUS } from '../mock-cpus';
 import { PERIODS } from '../mock-periods';
@@ -29,7 +30,7 @@ export class FormEditCompComponent implements OnInit {
 
   type: String;
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -80,6 +81,14 @@ export class FormEditCompComponent implements OnInit {
       return CompTypes.cpu;
     else
       return CompTypes.gpu;
+  }
+  
+  goBack() {
+    this._location.back();
+  }
+
+  isEdited(): boolean {
+    return this.c.equals(this.model);
   }
   
 }

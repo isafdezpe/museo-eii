@@ -1,6 +1,6 @@
-import { MyComponent } from "./comp";
+import { GenericComp, MyComponent } from "./comp";
 
-export class Cpu implements MyComponent{
+export class Cpu extends GenericComp{
 
     id: number;
     name: string;
@@ -61,19 +61,8 @@ export class Cpu implements MyComponent{
         
         id?: number,
     ){
-        this.id = id;
-        this.name = name;
-        this.family = family;
-        this.description = description;
-        this.initYear = initYear;
-        this.endYear = endYear;
-        this.periodId = periodId;
-        this.devices = devices;
-        this.imgNames = imgNames;
-        this.famousSystem = famousSystem;
-        this.famousSystemImgName = famousSystemImgName;
-        this.price = price;
-        this.priceUnits = priceUnits;
+        super(name, family, description, initYear, endYear, periodId, price, priceUnits, devices, imgNames, famousSystem, famousSystemImgName, id);
+        
         this.programMemory = programMemory;
         this.programMemoryUnits = programMemoryUnits;
         this.ramMemory = ramMemory;
@@ -89,6 +78,12 @@ export class Cpu implements MyComponent{
         this.passmark = passmark;
         this.transistors = transistors;
         
+    }
+
+    equals(c: Cpu): boolean {
+        return super.equals(c) && this.programMemory === c.programMemory && this.programMemoryUnits === c.programMemoryUnits && this.ramMemory === c.ramMemory && this.ramMemoryUnits === c.ramMemoryUnits
+            && this.clockSpeed === c.clockSpeed && this.clockSpeedUnits === c.clockSpeedUnits && this.power === c.power && this.powerUnits === c.powerUnits && this.wordSize === c.wordSize && this.wordSizeUnits === c.wordSizeUnits
+            && this.transistorSize === c.transistorSize && this.passmark === c.passmark && this.transistors === c.transistors;
     }
     
 }

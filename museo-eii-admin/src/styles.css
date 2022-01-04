@@ -60,6 +60,7 @@ label p {
 }
 
 .mat-column-nombre, .mat-column-editar, .mat-column-eliminar {
+  font-size: 1.1em;
   text-align: left;
   color: #555;
 }
@@ -77,6 +78,12 @@ label p {
 a:link, a:visited {
   padding: 8px 0;
   color: #39583d;
+}
+
+.button-link {
+  background: none;
+  border: none;
+  color: #555;
 }
 
 /*------FORMS---------*/

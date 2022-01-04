@@ -22,6 +22,8 @@ import { ListPeriodsComponent } from './list-periods/list-periods.component';
 import { PeriodComponent } from './period/period.component';
 import { MyComponentComponent } from './my-component/my-component.component';
 import { CpuTypeDetailsComponent } from './cpu-type-details/cpu-type-details.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { CpuTypeDetailsComponent } from './cpu-type-details/cpu-type-details.com
     ListPeriodsComponent,
     PeriodComponent,
     MyComponentComponent,
-    CpuTypeDetailsComponent
+    CpuTypeDetailsComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,7 @@ import { CpuTypeDetailsComponent } from './cpu-type-details/cpu-type-details.com
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatTableModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

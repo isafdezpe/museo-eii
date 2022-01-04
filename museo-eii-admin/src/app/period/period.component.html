@@ -7,11 +7,11 @@
         </div>
         <h4 class="row">Detalles</h4>
         <li class="row">
-            <ul *ngFor="let d of p.details">{{d}}</ul>
+            <ul *ngFor="let d of p.details.split('\n')">{{d}}</ul>
         </li>
         <h4 class="row">Sabías qué...</h4>
         <li class="row">
-            <ul *ngFor="let t of p.trivia">{{t}}</ul>
+            <ul *ngFor="let t of p.trivia.split('\n')">{{t}}</ul>
         </li>
         <h4 class="row">Sistemas famosos</h4>
         <div class="systems">

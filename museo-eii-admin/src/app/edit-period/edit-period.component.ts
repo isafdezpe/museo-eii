@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PERIODS } from '../mock-periods';
@@ -16,7 +17,7 @@ export class FormEditPeriodComponent implements OnInit {
   p: Period;
   model: Period;
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar) { }
+  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -42,6 +43,14 @@ export class FormEditPeriodComponent implements OnInit {
 
   clonePeriod(p: Period): Period {
     return new Period(p.name, p.trivia, p.details, p.events, p.famousSystems, p.id);
+  }
+
+  goBack() {
+    this._location.back();
+  }
+
+  isEdited(): boolean {
+    return this.p.equals(this.model);
   }
 
 }

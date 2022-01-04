@@ -28,4 +28,8 @@ export class ListPeriodsComponent implements OnInit {
     this.periodService.deletePeriod(p);
   }
 
+  isEdited() {
+    return false;
+  } 
+
 }
