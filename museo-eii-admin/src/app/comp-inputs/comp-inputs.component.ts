@@ -15,7 +15,6 @@ export class CompInputsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.model.priceUnits = this.priceUnits[0];
   }
 
   isDesktop() {

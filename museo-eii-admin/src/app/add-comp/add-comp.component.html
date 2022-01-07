@@ -1,5 +1,5 @@
 <div class="row container">
-    <app-menu class="col col-lg-2 border-right" [isEdited]="isEdited()"></app-menu>
+    <app-menu class="col col-lg-2 border-right" [initialObject]="c" [model]="model"></app-menu>
     <div class="col">
         <h2>Añadir componente</h2>
         <form (ngSubmit)="submit()" #addCompForm="ngForm" class="add" id="addCForm">

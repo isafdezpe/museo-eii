@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Cpu } from '../cpu';
-import { CPUS } from '../mock-cpus';
-import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
 import { CompTypes, MyComponent } from '../comp';
 import { MatSnackBar } from '@angular/material/snack-bar';

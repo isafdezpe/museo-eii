@@ -10,7 +10,8 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 })
 export class MenuComponent implements OnInit {
 
-  @Input() isEdited: boolean;
+  @Input() initialObject;
+  @Input() model;
 
   constructor(public router: Router, public dialog: MatDialog) { }
 
@@ -18,14 +19,21 @@ export class MenuComponent implements OnInit {
   }
 
   navigate(route: string) {
-    let cont: boolean = true;
-    if (this.isEdited)
+    if (this.isEdited())
       this.dialog
       .open(ConfirmationDialogComponent)
       .afterClosed()
       .subscribe((confirmed: boolean) => {if (confirmed) this.router.navigateByUrl(route);});
     else
       this.router.navigateByUrl(route);
+  }
+
+  isEdited() {
+    console.log(this.initialObject);
+    console.log(this.model);
+    if (this.initialObject === undefined && this.model === undefined)
+      return false;
+    return !this.initialObject.equals(this.model);
   }
 
 }
