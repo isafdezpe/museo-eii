@@ -1,8 +1,8 @@
 <div class="row container">
     <app-menu class="col col-lg-2 border-right" [initialObject]="p" [model]="model"></app-menu>
-    <div class="col">
+    <div class="col content-page">
         <div class="row">
-            <button class="button-link" (click)="goBack()">Volver</button>
+            <button class="button-link" (click)="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>
             <h2>Editar periodo</h2>
         </div>
         <form (ngSubmit)="submit()" #editPeriodForm="ngForm" class="edit"id="editForm">

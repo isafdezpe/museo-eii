@@ -3,6 +3,8 @@ li {
 }
 
 .systems {
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
     max-width: 800px;
     position: relative;
     display: flex;
@@ -22,4 +24,8 @@ li {
   .systems img {
     width: 120px;
     height: auto;
+  }
+
+  .mat-elevation-z8 {
+    margin-top: 1.5%;
   }

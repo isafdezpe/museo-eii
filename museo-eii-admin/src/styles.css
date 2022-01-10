@@ -39,11 +39,29 @@ body {
 .container {
   padding-top: 2%;
   padding-bottom: 10%;
-  margin: 3% auto;
+  margin: 1% auto 1% 0;
   align-content: center;
   text-align: center;
 }
-  
+
+.content-page {
+  text-align: left;
+}
+
+.content-page h2 {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+@media (min-width: 1800px) {
+.content-page {
+  margin-left: 15%;
+  margin-right: 5%;
+  -webkit-transform: translate(-10%, 0%);
+      -ms-transform: translate(-10%, 0%);
+          transform: translate(-10%, 0%);
+}}
+
 section { padding: 80px 0; }
   
 .box { padding: 1%; }
@@ -95,7 +113,11 @@ a:link, a:visited {
 }
 
 h2, h3 {
-  margin: 2% auto;
+  margin: 0% auto 2% auto;
+}
+
+select, input {
+  margin-right: 5%;
 }
 
 .ng-valid[required], .ng-valid.required  {

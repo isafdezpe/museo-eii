@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { CompDevices, CompTypes, MyComponent } from '../comp';
 import { ComponentService } from '../component.service';
 import { Cpu } from '../cpu';
@@ -17,7 +18,7 @@ export class MyComponentComponent implements OnInit {
 
   type: String;
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private _location: Location) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -44,6 +45,10 @@ export class MyComponentComponent implements OnInit {
 
   isDesktop() {
     return this.c.devices.includes(CompDevices.desktop);
+  }
+
+  goBack() {
+    this._location.back();
   }
 
 }

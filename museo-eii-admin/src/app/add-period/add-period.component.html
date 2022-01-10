@@ -1,6 +1,6 @@
 <div class="row container">
     <app-menu class="col col-lg-2 border-right"  [initialObject]="p" [model]="model"></app-menu>
-    <div class="col">
+    <div class="col content-page">
         <h2>Añadir periodo</h2>
         <form (ngSubmit)="submit()" #addPeriodForm="ngForm" class="add" id="addForm">
             <app-period-inputs [model]="model"></app-period-inputs>

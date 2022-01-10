@@ -13,3 +13,7 @@ p {
     height: 4em;
     width: auto;
   }
+
+  .row {
+    margin-left: 0;
+  }

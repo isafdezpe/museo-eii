@@ -1,21 +1,32 @@
 <div class="row container">
     <app-menu class="col col-lg-2 border-right"></app-menu>
-    <div class="col">
+    <div class="col content-page">
         <div class="row">
+            <button class="button-link" (click)="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>
             <h2 class="col">{{ c.name }}</h2>
             <a [routerLink]="['/editComp', c.id]">Editar</a>
         </div>
-        <p class="row">Periodo: {{p.name}}</p>
-        <p class="row">Familia: {{c.family}}</p>
-        <p class="row">Descripción: {{c.description}}</p>
-        <p class="row">Años: {{c.initYear}} - {{c.endYear}}</p>
-        <p class="row">Precio: {{c.price}}{{c.priceUnits}}</p>
-        <div class="row"><p>Dispositivos:&nbsp;</p><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
-        <div class="gallery">
-            <div class="img-container" *ngFor="let i of c.imgNames">
-                <img src="../../assets/img/{{i}}" alt="{{c.name}}">
+        <div class="row">
+            <div class="col">
+                <h5 class="row">Periodo</h5><p class="row">{{p.name}}</p>
+                <h5 class="row">Familia</h5><p class="row">{{c.family}}</p>
+                <h5 class="row">Años</h5><p class="row">{{c.initYear}} - {{c.endYear}}</p>
+            </div>
+            <div class="col">
+                <h5 class="row">Precio</h5><p class="row">{{c.price}}{{c.priceUnits}}</p>
+                <h5 class="row">Dispositivos</h5><div class="row"><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
+            </div>
+            <div class="col">
+                <div class="gallery">
+                    <div class="img-container" *ngFor="let i of c.imgNames">
+                        <img src="../../assets/img/{{i}}" alt="{{c.name}}">
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <h5 class="row col">Descripción</h5><p class="row col">{{c.description}}</p>
+        
         <app-cpu-type-details [hidden]="type!=='CPU'" [comp]="c"></app-cpu-type-details>
     </div>
 </div>
