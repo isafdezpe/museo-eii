@@ -79,13 +79,21 @@ label p {
 
 .mat-column-nombre, .mat-column-editar, .mat-column-eliminar {
   font-size: 1.1em;
-  text-align: left;
   color: #555;
+}
+
+.mat-column-editar, .mat-column-eliminar, .mat-header-row .mat-column-eliminar, .mat-header-row .mat-column-editar {
+  text-align: right;
+  justify-content: flex-end;
 }
 
 .mat-header-cell, .mat-row .mat-cell {
   color: #555;
   cursor: pointer;
+}
+
+th.mat-header-cell {
+  border-bottom: 1px solid rgb(194, 194, 194);
 }
 
 .icon-btn {
