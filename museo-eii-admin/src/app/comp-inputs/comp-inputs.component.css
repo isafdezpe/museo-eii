@@ -5,3 +5,15 @@ input, label {
 select {
     margin-right: 0px;
 }
+
+div.row3 label:not(:first-child) {
+    text-align: right;
+}
+
+input.file {
+    margin-right: 0%;
+}
+
+input[type=checkbox] {
+    align-content: left;
+}

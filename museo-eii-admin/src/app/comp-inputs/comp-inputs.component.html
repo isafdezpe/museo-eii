@@ -19,7 +19,7 @@
         <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
-<div class="row form-row">
+<div class="row form-row row3">
     <label class="col col-lg-2" for="cinityear">Año de salida:</label>
     <div class="col">
         <input class="form-control" type="number" min="1970" id="cinityear" required [(ngModel)]="model.initYear" name="initYear" #initYear="ngModel" value="1990">
@@ -30,8 +30,8 @@
         <input class="form-control" type="number" min="1970" id="cendyear" required [(ngModel)]="model.endYear" name="endYear" #endYear="ngModel" value="2000">
         <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
-</div>
-<div class="row form-row">
+<!-- </div>
+<div class="row form-row"> -->
     <label class="col col-lg-2" for="cprice">Precio:</label>
     <div class="col">
         <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.price" name="price" #price="ngModel" value="90.00">
@@ -42,13 +42,13 @@
     </select>
 </div>
 <div class="row form-row">
-    <label class="col col-lg-4">Utilizado en dispositivos:</label>
+    <label class="col col-lg-3">Utilizado en dispositivos:</label>
     <label class="col col-lg-2" for="checkDev1"><input type="checkbox" id="checkDev1" [checked]="isPortable()"> Portátiles</label>
     <label class="col col-lg-2" for="checkDev2"><input type="checkbox" id="checkDev2" [checked]="isDesktop()"> De escritorio</label>
 </div>
 <!--<input type="button" (click)="changeAddSys()" value="{{textAddFamousSys}}">-->
 <div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
-    <label class="col col-lg-4" for="csystem">Sistema famoso que lo utiliza:</label>
-    <input class="col form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famousSystem" name="famousSystem" #famousSystem="ngModel">
-    <input class="col" type="file" id="csystemimg">
+    <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>
+    <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famousSystem" name="famousSystem" #famousSystem="ngModel">
+    <input class="col file" type="file" id="csystemimg">
 </div>

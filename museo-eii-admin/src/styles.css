@@ -138,6 +138,10 @@ select, input {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+textarea.form-control {
+  min-height: 150px;
+}
+
 
 ion-icon {
   pointer-events: none;

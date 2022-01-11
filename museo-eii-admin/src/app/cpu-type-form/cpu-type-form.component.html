@@ -1,72 +1,79 @@
-<div class="row form-row">
-    <label class="col col-lg-2" for="cProgMem">Memoria ROM:</label>
+<div class="row">
     <div class="col">
-        <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.programMemory" name="programMemory" #programMemory="ngModel" step="1">
-        <div [hidden]="programMemory.valid || programMemory.pristine" class="alert alert-danger">Complete este campo</div>
+        <div class="row form-row">
+            <label class="col col-lg-4" for="cProgMem">Memoria ROM:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.programMemory" name="programMemory" #programMemory="ngModel" step="1">
+                <div [hidden]="programMemory.valid || programMemory.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <select class="col form-control" name="programMemoryUnits" #programMemoryUnits (change)="changeProgramMemoryUnits(programMemoryUnits.value)">
+                <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
+            </select>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-4" for="cClockSpeed">Frecuencia de reloj:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cClockSpeed" required [(ngModel)]="model.clockSpeed" name="clockSpeed" #clockSpeed="ngModel" step="1">
+                <div [hidden]="clockSpeed.valid || clockSpeed.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <select class="col form-control" name="clockSpeedUnits" #clockSpeedUnits (change)="changeClockSpeedUnits(clockSpeedUnits.value)">
+                <option [value]="u" *ngFor="let u of speedUnits">{{u}}</option>
+            </select>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-4" for="cWordSize">Tamaño de palabra:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cWordSize" required [(ngModel)]="model.wordSize" name="wordSize" #wordSize="ngModel" step="1">
+                <div [hidden]="wordSize.valid || wordSize.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <select class="col form-control" name="wordSizeUnits" #wordSizeUnits (change)="changeWordSizeUnits(wordSizeUnits.value)">
+                <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
+            </select>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-4" for="cPassmark">Passmark:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cPassmark" required [(ngModel)]="model.passmark" name="passmark" #passmark="ngModel" step="0.1">
+                <div [hidden]="passmark.valid || passmark.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+        </div>
     </div>
-    <select class="col form-control" name="programMemoryUnits" #programMemoryUnits (change)="changeProgramMemoryUnits(programMemoryUnits.value)">
-        <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
-    </select>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cRamMem">Memoria RAM:</label>
+
     <div class="col">
-        <input class="form-control" type="number" id="cRamMem" required [(ngModel)]="model.ramMemory" name="ramMemory" #ramMemory="ngModel" step="1">
-        <div [hidden]="ramMemory.valid || ramMemory.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-    <select class="col form-control" name="ramMemoryUnits" #ramMemoryUnits (change)="changeRamMemoryUnits(ramMemoryUnits.value)">
-        <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
-    </select>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cClockSpeed">Frecuencia de reloj:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cClockSpeed" required [(ngModel)]="model.clockSpeed" name="clockSpeed" #clockSpeed="ngModel" step="1">
-        <div [hidden]="clockSpeed.valid || clockSpeed.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-    <select class="col form-control" name="clockSpeedUnits" #clockSpeedUnits (change)="changeClockSpeedUnits(clockSpeedUnits.value)">
-        <option [value]="u" *ngFor="let u of speedUnits">{{u}}</option>
-    </select>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cPower">Consumo energético:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cPower" required [(ngModel)]="model.power" name="power" #power="ngModel" step="0.1">
-        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-    <select class="col form-control" name="powerUnits" #powerUnits (change)="changePowerUnits(powerUnits.value)">
-        <option [value]="u" *ngFor="let u of cPowerUnits">{{u}}</option>
-    </select>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cWordSize">Tamaño de palabra:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cWordSize" required [(ngModel)]="model.wordSize" name="wordSize" #wordSize="ngModel" step="1">
-        <div [hidden]="wordSize.valid || wordSize.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-    <select class="col form-control" name="wordSizeUnits" #wordSizeUnits (change)="changeWordSizeUnits(wordSizeUnits.value)">
-        <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
-    </select>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cTransistorSize">Nanómetros de los transistores:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cTransistorSize" required [(ngModel)]="model.transistorSize" name="transistorSize" #transistorSize="ngModel" step="10">
-        <div [hidden]="transistorSize.valid || transistorSize.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-    <p class="col">{{model.transistorSizeUnits}}</p>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cPassmark">Passmark:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cPassmark" required [(ngModel)]="model.passmark" name="passmark" #passmark="ngModel" step="0.1">
-        <div [hidden]="passmark.valid || passmark.pristine" class="alert alert-danger">Complete este campo</div>
-    </div>
-</div>
-<div class="row form-row">
-    <label class="col col-lg-2" for="cTransistors">Número de transistores:</label>
-    <div class="col">
-        <input class="form-control" type="number" id="cTransistors" required [(ngModel)]="model.transistors" name="transistors" #transistors="ngModel" step="10">
-        <div [hidden]="transistors.valid || transistors.pristine" class="alert alert-danger">Complete este campo</div>
+        <div class="row form-row">
+            <label class="col col-lg-5" for="cRamMem">Memoria RAM:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cRamMem" required [(ngModel)]="model.ramMemory" name="ramMemory" #ramMemory="ngModel" step="1">
+                <div [hidden]="ramMemory.valid || ramMemory.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <select class="col form-control" name="ramMemoryUnits" #ramMemoryUnits (change)="changeRamMemoryUnits(ramMemoryUnits.value)">
+                <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
+            </select>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-5" for="cPower">Consumo energético:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cPower" required [(ngModel)]="model.power" name="power" #power="ngModel" step="0.1">
+                <div [hidden]="power.valid || power.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <select class="col form-control" name="powerUnits" #powerUnits (change)="changePowerUnits(powerUnits.value)">
+                <option [value]="u" *ngFor="let u of cPowerUnits">{{u}}</option>
+            </select>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-7" for="cTransistorSize">Nanómetros de los transistores:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cTransistorSize" required [(ngModel)]="model.transistorSize" name="transistorSize" #transistorSize="ngModel" step="10">
+                <div [hidden]="transistorSize.valid || transistorSize.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+            <p class="col">{{model.transistorSizeUnits}}</p>
+        </div>
+        <div class="row form-row">
+            <label class="col col-lg-5" for="cTransistors">Número de transistores:</label>
+            <div class="col">
+                <input class="form-control" type="number" id="cTransistors" required [(ngModel)]="model.transistors" name="transistors" #transistors="ngModel" step="10">
+                <div [hidden]="transistors.valid || transistors.pristine" class="alert alert-danger">Complete este campo</div>
+            </div>
+        </div>
     </div>
 </div>
