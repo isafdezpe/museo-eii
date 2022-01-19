@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { CompTypes, GenericComp, MyComponent } from '../comp';
 import { ComponentService } from '../component.service';
 import { Cpu } from '../cpu';
-import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
+import { PeriodService } from '../period.service';
 
 @Component({
   selector: 'app-add-comp',
@@ -14,7 +14,7 @@ import { Period } from '../period';
 })
 export class AddCompComponent implements OnInit {
 
-  periods: Period[] = PERIODS;
+  periods: Period[];
   p: Period;
 
   types: String[] = Object.values(CompTypes);
@@ -26,17 +26,20 @@ export class AddCompComponent implements OnInit {
   /*addFamousSys = false;
   textAddFamousSys = "Añadir sistema famoso que incluya este componente";*/
 
-  constructor(private componentService: ComponentService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
+  constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.p = this.periods[0];
     this.t = this.types[0];
     this.createModel();
     this.c = this.cloneComp(this.model);
+    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
+    console.log(this.periods);
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
     if (id) 
       this.p = this.periods.filter((e) => e.id === id)[0];
+    else 
+      this.p = this.periods[0];
   }
 
   createModel() {
@@ -74,10 +77,6 @@ export class AddCompComponent implements OnInit {
     /*this.componentService.addComponent(this.model).subscribe(() => {
       this.snackBar.open('Componente guardado', undefined, {duration:1500})
     });*/
-  }
-
-  isEdited(): boolean {
-    return this.c.equals(this.model);
   }
 
 }

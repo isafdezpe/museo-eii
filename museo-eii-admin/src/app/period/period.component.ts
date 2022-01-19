@@ -19,8 +19,12 @@ export class PeriodComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('periodId'));
-    this.p = this.periodService.getPeriod(idFromRoute);
+    this.periodService.getPeriod(idFromRoute).subscribe((period: Period) => this.p = period);
+    
     this.getComponents();
+
+    //get famous systems del periodo
+    this.comps.forEach((c: MyComponent) => this.p.famousSystems.push({name: c.name, img: c.famousSystemImgName, sysName: c.famousSystem}));
   }
 
   getComponents() {

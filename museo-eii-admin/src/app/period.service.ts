@@ -1,43 +1,44 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Period } from './period';
-import { PERIODS } from './mock-periods';
-import { MyComponent } from './comp';
-import { CPUS } from './mock-cpus';
 import { ComponentService } from './component.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeriodService {
 
+  baseUrl = environment.baseUrl;
 
-  constructor(private componentService: ComponentService) { }
+
+  constructor(private componentService: ComponentService, private http: HttpClient) { }
 
   addPeriod(p: Period) {
-    
+    return this.http.post(`${this.baseUrl}/postPeriod.php`, p);
   }
 
   editPeriod(p: Period) {
-    
+    return this.http.put(`${this.baseUrl}/updatePeriod.php`, p);
   }
 
   deletePeriod(p: Period) {
-
+    return this.http.delete(`${this.baseUrl}/deletePeriod.php?idPeriod=${p.id}`);
   }
 
-  getPeriod(pId: number): Period {
-    return PERIODS.filter((e) => e.id === pId)[0];
+  getPeriod(pId: number) {
+    return this.http.get(`${this.baseUrl}/getPeriod.php?idPeriod=${pId}`);
   }
 
-  getPeriodByName(pName: string): Period {
-    return PERIODS.filter((e) => e.name === pName)[0];
+  getPeriodByName(pName: string) {
+    return this.http.get(`${this.baseUrl}/getPeriodName.php?namePeriod=${pName}`);
   }
 
-  getAll(): Period[] {
-    return PERIODS;
+  getAll() {
+    return this.http.get(`${this.baseUrl}/getAllPeriod.php`);
   }
 
-  getComponentsFromPeriod(p: Period): MyComponent[] {
+  getComponentsFromPeriod(p: Period) {
     return this.componentService.getAll().filter((e) => e.periodId === p.id);
   }
 }

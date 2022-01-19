@@ -34,8 +34,8 @@ export class FormEditCompComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
     this.c = this.componentService.getComponent(idFromRoute);
-    this.periods = this.periodService.getAll();
-    this.p = this.periodService.getPeriod(this.c.periodId);
+    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
+    this.periodService.getPeriod(this.c.periodId).subscribe((period: Period) => this.p = period);
     // this.comps = CPUS.filter((e) => e.periodId === this.p.id);
     // this.c = this.comps[0];
     this.priceUnit = this.c.priceUnits;
@@ -44,7 +44,7 @@ export class FormEditCompComponent implements OnInit {
   }
 
   changePeriod(p: string) {
-     this.p = this.periodService.getPeriodByName(p);
+    this.periodService.getPeriodByName(this.model.name).subscribe((p: Period) => this.p = p);
      this.c.periodId = this.p.id;
     //  this.comps = CPUS.filter((e) => e.periodId === this.p.id);
     //  this.c = this.comps[0];

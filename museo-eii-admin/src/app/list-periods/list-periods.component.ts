@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
 
@@ -11,21 +14,27 @@ export class ListPeriodsComponent implements OnInit {
 
   periods: Period[] = [];
 
-  constructor(private periodService: PeriodService) { }
+  constructor(private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getPeriods();
-    console.log(this.periods)
   }
 
   getPeriods() {
-    this.periodService.getAll().forEach(element => {
-      this.periods.push(element)
-    });
+    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
   }
 
   deletePeriod(p: Period) {
-    this.periodService.deletePeriod(p);
+    this.dialog
+      .open(ConfirmationDialogComponent, {data:`¿Desea eliminar el periodo ${p.name}?`})
+      .afterClosed()
+      .subscribe((confirmed: boolean) => {
+        if (confirmed)
+          this.periodService.deletePeriod(p).subscribe(() => {
+            this.getPeriods();
+            this.snackBar.open('Periodo eliminado', undefined, {duration: 1500});
+          });
+      });
   }
 
   isEdited() {

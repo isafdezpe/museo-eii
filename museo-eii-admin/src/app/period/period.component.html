@@ -13,6 +13,10 @@
         <li class="row">
             <ul *ngFor="let t of p.trivia.split('\n')">{{t}}</ul>
         </li>
+        <h4 class="row">Eventos</h4>
+        <li class="row">
+            <ul *ngFor="let e of p.events.split('\n')">{{e}}</ul>
+        </li>
         <h4 class="row">Sistemas famosos</h4>
         <div class="systems">
             <div class="col img-systems" *ngFor="let s of p.famousSystems">

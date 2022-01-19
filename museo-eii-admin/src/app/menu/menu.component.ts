@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
   navigate(route: string) {
     if (this.isEdited())
       this.dialog
-      .open(ConfirmationDialogComponent)
+      .open(ConfirmationDialogComponent, {data: "No se han guardado los cambios realizados en el formulario, ¿desea continuar?"})
       .afterClosed()
       .subscribe((confirmed: boolean) => {if (confirmed) this.router.navigateByUrl(route);});
     else
@@ -29,8 +29,6 @@ export class MenuComponent implements OnInit {
   }
 
   isEdited() {
-    console.log(this.initialObject);
-    console.log(this.model);
     if (this.initialObject === undefined && this.model === undefined)
       return false;
     return !this.initialObject.equals(this.model);

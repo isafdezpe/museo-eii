@@ -22,7 +22,7 @@ export class FormEditPeriodComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('periodId'));
-    this.p = this.periodService.getPeriod(idFromRoute);
+    this.periodService.getPeriod(idFromRoute).subscribe((period: Period) => this.p = period);
     this.model = this.clonePeriod(this.p);
   }
 

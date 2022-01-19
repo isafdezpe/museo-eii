@@ -20,15 +20,12 @@ export class AddPeriodComponent implements OnInit {
   }
 
   submit() {
-    /*this.periodService.addPeriod(this.model).subscribe(() => {
+    this.periodService.addPeriod(this.model).subscribe(() => {
       this.snackBar.open('Periodo guardado', undefined, {duration:1500})
-    });*/
-    // get period id
-    let periodId: number = 1;
+    });
+    let periodId: number;
+    this.periodService.getPeriodByName(this.model.name).subscribe((p: Period) => periodId = p.id);
     this.router.navigateByUrl('/addComp/' + periodId);
-  }
-
-  isEdited(): boolean {
-    return this.p.equals(this.model);
+    //this.router.navigate(['/addComp/' + periodId], ) //mirar para hacerlo usando el state
   }
 }
