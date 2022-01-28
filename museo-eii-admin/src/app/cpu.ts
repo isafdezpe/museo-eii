@@ -1,20 +1,6 @@
-import { GenericComp, MyComponent } from "./comp";
+import { CompTypes, GenericComp, MyComponent } from "./comp";
 
 export class Cpu extends GenericComp{
-
-    id: number;
-    name: string;
-    family: string;
-    description: string;
-    initYear: number;
-    endYear: number;
-    periodId: number;
-    price: number;
-    priceUnits: string;
-    devices: string[];
-    imgNames: string[];
-    famousSystem: string;
-    famousSystemImgName: string;
 
     programMemory: number;
     programMemoryUnits: string;
@@ -43,7 +29,7 @@ export class Cpu extends GenericComp{
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImgName: string,
+        famousSystemImg: Blob,
 
         programMemory: number,
         programMemoryUnits: string,
@@ -61,7 +47,7 @@ export class Cpu extends GenericComp{
         
         id?: number,
     ){
-        super(name, family, description, initYear, endYear, periodId, price, priceUnits, devices, imgNames, famousSystem, famousSystemImgName, id);
+        super(name, family, description, initYear, endYear, periodId, price, priceUnits, devices, imgNames, famousSystem, famousSystemImg, CompTypes.cpu, id);
         
         this.programMemory = programMemory;
         this.programMemoryUnits = programMemoryUnits;
@@ -77,7 +63,6 @@ export class Cpu extends GenericComp{
         this.transistorSizeUnits = "nm";
         this.passmark = passmark;
         this.transistors = transistors;
-        
     }
 
     equals(c: Cpu): boolean {

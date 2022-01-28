@@ -32,29 +32,36 @@ export class AddCompComponent implements OnInit {
     this.t = this.types[0];
     this.createModel();
     this.c = this.cloneComp(this.model);
-    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
-    console.log(this.periods);
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
-    if (id) 
-      this.p = this.periods.filter((e) => e.id === id)[0];
-    else 
-      this.p = this.periods[0];
+    console.log(id);
+    this.getPeriods(id);
   }
 
   createModel() {
     if (this.t == CompTypes.cpu)
       this.model = (this.model !== undefined) ? 
-      new Cpu(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
-      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
+      new Cpu(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices.split(','), this.model.imgNames, this.model.famousSystem, this.model.famousSystemImg, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
+      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', new Blob(), 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
     else 
       this.model = (this.model !== undefined) ?
-      new GenericComp(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices, this.model.imgNames, this.model.famousSystem, this.model.famousSystemImgName)
-      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '');
+      new GenericComp(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices.split(','), this.model.imgNames, this.model.famousSystem, this.model.famousSystemImg, CompTypes.generic)
+      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', new Blob(), CompTypes.generic);
+  }
+
+  getPeriods(id: Number) {
+    this.periodService.getAll().subscribe((periods: Period[]) => {
+      this.periods = periods;
+      if (id != 0) 
+        this.p = this.periods.filter((e) => e.period_id === id)[0];
+      else 
+        this.p = this.periods[0];
+      this.changePeriod(this.p.period_name);
+    });
   }
 
   changePeriod(p: string) {
-    this.p = this.periods.filter((e) => e.name === p)[0];
+    this.p = this.periods.filter((e) => e.period_name === p)[0];
   }
 
   changeType(t: string) {
@@ -64,7 +71,7 @@ export class AddCompComponent implements OnInit {
 
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
-      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
+      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices.split(','), c.imgNames, c.famousSystem, c.famousSystemImg, c.programMemory, c.programMemoryUnits, 
       c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.id);
   }
 
@@ -74,9 +81,9 @@ export class AddCompComponent implements OnInit {
   }*/
 
   submit() {
-    /*this.componentService.addComponent(this.model).subscribe(() => {
+    this.componentService.addComponent(this.model).subscribe(() => {
       this.snackBar.open('Componente guardado', undefined, {duration:1500})
-    });*/
+    });
   }
 
 }

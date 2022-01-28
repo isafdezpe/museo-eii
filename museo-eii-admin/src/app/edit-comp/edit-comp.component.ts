@@ -33,19 +33,28 @@ export class FormEditCompComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
-    this.c = this.componentService.getComponent(idFromRoute);
-    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
+    this.getComponent(idFromRoute);
+    this.getPeriods();
+  }
+
+  getComponent(id: number) {
+    this.c = this.componentService.getComponent(id);
     this.periodService.getPeriod(this.c.periodId).subscribe((period: Period) => this.p = period);
-    // this.comps = CPUS.filter((e) => e.periodId === this.p.id);
-    // this.c = this.comps[0];
     this.priceUnit = this.c.priceUnits;
     this.model = this.cloneComp(this.c);
     this.type = this.checkType();
   }
 
+  getPeriods() {
+    this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
+  }
+
   changePeriod(p: string) {
-    this.periodService.getPeriodByName(this.model.name).subscribe((p: Period) => this.p = p);
-     this.c.periodId = this.p.id;
+    this.periodService.getPeriodByName(this.model.name).subscribe((p: Period) => {
+      this.p = p;
+      this.c.periodId = this.p.period_id;
+    });
+     
     //  this.comps = CPUS.filter((e) => e.periodId === this.p.id);
     //  this.c = this.comps[0];
     //  this.priceUnit = this.c.priceUnits;
@@ -70,7 +79,7 @@ export class FormEditCompComponent implements OnInit {
 
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
-      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices, c.imgNames, c.famousSystem, c.famousSystemImgName, c.programMemory, c.programMemoryUnits, 
+      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices.split(','), c.imgNames, c.famousSystem, c.famousSystemImg, c.programMemory, c.programMemoryUnits, 
       c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.id);
   }
 

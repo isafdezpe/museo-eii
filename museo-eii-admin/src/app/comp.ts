@@ -8,17 +8,20 @@ export interface MyComponent {
     periodId: number,
     price: number,
     priceUnits: string,
-    devices: string[],
+    devices: string,
     imgNames: string[],
     famousSystem: string,
-    famousSystemImgName: string
+    famousSystemImg: Blob,
+    type: CompTypes
+
+    setDevices(devices: String[]);
 
     equals(c: MyComponent): boolean;
 }
 
 export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}
 
-export enum CompTypes {cpu='CPU', gpu='GPU'}
+export enum CompTypes {cpu='CPU', gpu='GPU', generic='COMPONENT'}
 
 export enum MemoryUnits { bit="b", byte="B"}
 
@@ -37,10 +40,11 @@ export class GenericComp implements MyComponent {
     periodId: number;
     price: number;
     priceUnits: string;
-    devices: string[];
+    devices: string;
     imgNames: string[];
     famousSystem: string;
-    famousSystemImgName: string;
+    famousSystemImg: Blob;
+    type: CompTypes;
 
     constructor(
         name: string,
@@ -54,7 +58,8 @@ export class GenericComp implements MyComponent {
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImgName: string,
+        famousSystemImg: Blob,
+        type: CompTypes,
 
         id?: number,
     ) {
@@ -67,15 +72,20 @@ export class GenericComp implements MyComponent {
         this.periodId = periodId;
         this.price = price;
         this.priceUnits = priceUnits;
-        this.devices = devices;
+        this.devices = devices[0] + ((devices.length == 2) ? ", " + devices[1] : "");
         this.imgNames = imgNames;
         this.famousSystem = famousSystem;
-        this.famousSystemImgName = famousSystemImgName;
+        this.famousSystemImg = famousSystemImg;
+        this.type = type;
+    }
+
+    setDevices(devices: String[]) {
+        this.devices = devices[0] + ((devices.length == 2) ? ", " + devices[1] : "");
     }
 
     equals(c: MyComponent): boolean {
-        let devicesEq: boolean = this.devices.length === c.devices.length;
-        if (devicesEq) this.devices.forEach((e) => devicesEq = c.devices.includes(e));
+        let devicesEq: boolean = this.devices.split[','].length === c.devices.split[','].length;
+        if (devicesEq) this.devices.split[','].forEach((e) => devicesEq = c.devices.split[','].includes(e));
         else return false;
         return this.name === c.name && this.family === c.family && this.description === c.description && this.initYear === c.initYear && this.endYear === c.endYear 
             && this.periodId === c.periodId && this.price === c.price && this.priceUnits === c.priceUnits && devicesEq;

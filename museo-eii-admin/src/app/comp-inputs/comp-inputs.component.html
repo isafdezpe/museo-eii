@@ -43,8 +43,8 @@
 </div>
 <div class="row form-row">
     <label class="col col-lg-3">Utilizado en dispositivos:</label>
-    <label class="col col-lg-2" for="checkDev1"><input type="checkbox" id="checkDev1" [checked]="isPortable()"> Portátiles</label>
-    <label class="col col-lg-2" for="checkDev2"><input type="checkbox" id="checkDev2" [checked]="isDesktop()"> De escritorio</label>
+    <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>
+    <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label>
 </div>
 <!--<input type="button" (click)="changeAddSys()" value="{{textAddFamousSys}}">-->
 <div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
