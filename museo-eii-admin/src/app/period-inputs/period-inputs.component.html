@@ -1,7 +1,7 @@
 <div class="row form-row">
     <label class="col col-lg-2" for="pname">Nombre:</label>
     <div class="col">
-        <input class="form-control" type="text" id="pname" required [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="Nombre">
+        <input class="form-control" type="text" id="pname" required [(ngModel)]="model.period_name" name="name" #name="ngModel" placeholder="Nombre">
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>        
@@ -9,21 +9,21 @@
 <div class="row form-row">
     <label class="col col-lg-2" for="pdesc">Detalles:</label>
     <div class="col">
-        <textarea class="form-control" type="text" id="pdesc" required [(ngModel)]="model.details" name="details" #details="ngModel"  placeholder="Detalles"></textarea>
+        <textarea class="form-control" type="text" id="pdesc" required [(ngModel)]="model.period_details" name="details" #details="ngModel"  placeholder="Detalles"></textarea>
         <div [hidden]="details.valid || details.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
 <div class="row form-row">
     <label class="col col-lg-2" for="ptrivia">Sabías que... <p>Introduzca cada característica en una línea</p></label>
     <div class="col">
-        <textarea class="form-control" type="text" id="ptrivia" required [(ngModel)]="model.trivia" name="trivia" #trivia="ngModel"  placeholder="Sabías que..."></textarea>
+        <textarea class="form-control" type="text" id="ptrivia" required [(ngModel)]="model.period_trivia" name="trivia" #trivia="ngModel"  placeholder="Sabías que..."></textarea>
         <div [hidden]="trivia.valid || trivia.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
 <div class="row form-row">
     <label class="col col-lg-2" for="pevents">Eventos: <p>Introduzca cada evento en una línea</p></label>
     <div class="col">
-        <textarea class="col form-control" type="text" id="pevents" required [(ngModel)]="model.events" name="events" #events="ngModel"  placeholder="Eventos"></textarea>
+        <textarea class="col form-control" type="text" id="pevents" required [(ngModel)]="model.period_events" name="events" #events="ngModel"  placeholder="Eventos"></textarea>
         <div [hidden]="events.valid || events.pristine" class="alert alert-danger">Complete este campo</div>
     </div>                
 </div>

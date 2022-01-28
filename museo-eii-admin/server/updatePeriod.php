@@ -11,5 +11,5 @@ if (!$jsonPeriod) {
 }
 $bd = include_once "bd.php";
 $sentence = $bd->prepare("UPDATE periods SET period_name = ?, period_details = ?, period_trivia = ?, period_events = ? WHERE period_id = ?");
-$res = $sentence->execute([$jsonPeriod->name, $jsonPeriod->details, $jsonPeriod->trivia, $jsonPeriod->events, $jsonPeriod->id]);
+$res = $sentence->execute([$jsonPeriod->period_name, $jsonPeriod->period_details, $jsonPeriod->period_trivia, $jsonPeriod->period_events, $jsonPeriod->period_id]);
 echo json_encode($res);

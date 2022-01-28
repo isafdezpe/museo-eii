@@ -2,26 +2,26 @@
     <app-menu class="col col-lg-2 border-right"></app-menu>
     <div class="col content-page">
         <div class="row">
-            <h2 class="col">{{ p.name }}</h2>
-            <a [routerLink]="['/editPeriod', p.id]">Editar</a>
+            <h2 class="col">{{ p.period_name }}</h2>
+            <a [routerLink]="['/editPeriod', p.period_id]">Editar</a>
         </div>
         <h4 class="row">Detalles</h4>
         <li class="row">
-            <ul *ngFor="let d of p.details.split('\n')">{{d}}</ul>
+            <ul *ngFor="let d of p.period_details.split('\n')">{{d}}</ul>
         </li>
         <h4 class="row">Sabías qué...</h4>
         <li class="row">
-            <ul *ngFor="let t of p.trivia.split('\n')">{{t}}</ul>
+            <ul *ngFor="let t of p.period_trivia.split('\n')">{{t}}</ul>
         </li>
         <h4 class="row">Eventos</h4>
         <li class="row">
-            <ul *ngFor="let e of p.events.split('\n')">{{e}}</ul>
+            <ul *ngFor="let e of p.period_events.split('\n')">{{e}}</ul>
         </li>
         <h4 class="row">Sistemas famosos</h4>
         <div class="systems">
             <div class="col img-systems" *ngFor="let s of p.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <img class="row" src="../../assets/img/{{s.img}}">
+              <img class="row" src="data:image/png;base64,{{s.img}}">
               <p class="row name-link">{{s.sysName}}</p>
             </div>
         </div>

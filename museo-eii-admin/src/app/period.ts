@@ -1,10 +1,10 @@
 export class Period {
 
-    id: number;
-    name: string;
-    trivia: string;
-    details: string;
-    events: string;
+    period_id: number;
+    period_name: string;
+    period_trivia: string;
+    period_details: string;
+    period_events: string;
     famousSystems: {name: string, img: string, sysName: string}[];
 
     constructor(
@@ -12,20 +12,19 @@ export class Period {
         trivia: string,
         details: string,
         events: string,
-        famousSystems: {name: string, img: string, sysName: string}[],
         
         id?: number,
     ){
-        this.id = id;
-        this.name = name;
-        this.trivia = trivia;
-        this.details = details;
-        this.events = events;
-        this.famousSystems = famousSystems;
+        this.period_id = id;
+        this.period_name = name;
+        this.period_trivia = trivia;
+        this.period_details = details;
+        this.period_events = events;
+        
     }
 
     equals(p: Period): boolean {
-        return this.name === p.name && this.trivia === p.trivia && this.details === p.details && this.events === p.events;
+        return this.period_name === p.period_name && this.period_trivia === p.period_trivia && this.period_details === p.period_details && this.period_events === p.period_events;
     }
 
 }

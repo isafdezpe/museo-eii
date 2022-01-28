@@ -6,7 +6,7 @@ if (!$jsonPeriod)
     exit("No hay datos");
 $bd = include_once "bd.php";
 $sentence = $bd->prepare("insert into periods(period_name, period_details, period_trivia, period_events) values (?,?,?,?)");
-$res = $sentence->execute([$jsonPeriod->name, $jsonPeriod->details, $jsonPeriod->trivia, $jsonPeriod->events]);
+$res = $sentence->execute([$jsonPeriod->period_name, $jsonPeriod->period_details, $jsonPeriod->period_trivia, $jsonPeriod->period_events]);
 echo json_encode([
     "res" => $res
 ]);

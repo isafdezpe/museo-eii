@@ -26,7 +26,7 @@ export class ListPeriodsComponent implements OnInit {
 
   deletePeriod(p: Period) {
     this.dialog
-      .open(ConfirmationDialogComponent, {data:`¿Desea eliminar el periodo ${p.name}?`})
+      .open(ConfirmationDialogComponent, {data:`¿Desea eliminar el periodo ${p.period_name}?`})
       .afterClosed()
       .subscribe((confirmed: boolean) => {
         if (confirmed)

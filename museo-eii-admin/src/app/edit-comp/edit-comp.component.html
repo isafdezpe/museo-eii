@@ -9,7 +9,7 @@
             <div class="row form-row">
                 <label class="col col-lg-4" for="pselect">Seleccione el periodo al que pertenece: </label>
                 <select class="col col-lg-4 form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">
-                    <option [value]="p.name" *ngFor="let p of periods">{{ p.name }}</option>
+                    <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
             </div>
             <!-- <div class="row form-row">

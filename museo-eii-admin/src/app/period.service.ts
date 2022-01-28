@@ -23,7 +23,7 @@ export class PeriodService {
   }
 
   deletePeriod(p: Period) {
-    return this.http.delete(`${this.baseUrl}/deletePeriod.php?idPeriod=${p.id}`);
+    return this.http.delete(`${this.baseUrl}/deletePeriod.php?idPeriod=${p.period_id}`);
   }
 
   getPeriod(pId: number) {
@@ -36,9 +36,5 @@ export class PeriodService {
 
   getAll() {
     return this.http.get(`${this.baseUrl}/getAllPeriod.php`);
-  }
-
-  getComponentsFromPeriod(p: Period) {
-    return this.componentService.getAll().filter((e) => e.periodId === p.id);
   }
 }

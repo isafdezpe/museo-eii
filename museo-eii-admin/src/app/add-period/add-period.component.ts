@@ -11,8 +11,8 @@ import { PeriodService } from '../period.service';
 })
 export class AddPeriodComponent implements OnInit {
 
-  p: Period = new Period("", "", "", "", []);
-  model: Period = new Period("", "", "", "", []);
+  p: Period = new Period("", "", "", "");
+  model: Period = new Period("", "", "", "");
 
   constructor(private periodService: PeriodService, private snackBar: MatSnackBar, public router: Router) { }
 
@@ -22,10 +22,11 @@ export class AddPeriodComponent implements OnInit {
   submit() {
     this.periodService.addPeriod(this.model).subscribe(() => {
       this.snackBar.open('Periodo guardado', undefined, {duration:1500})
+      let periodId: number;
+      this.periodService.getPeriodByName(this.model.period_name).subscribe((p: Period) => {
+        periodId = p.period_id;
+        this.router.navigateByUrl('/addComp/' + periodId);
+      });
     });
-    let periodId: number;
-    this.periodService.getPeriodByName(this.model.name).subscribe((p: Period) => periodId = p.id);
-    this.router.navigateByUrl('/addComp/' + periodId);
-    //this.router.navigate(['/addComp/' + periodId], ) //mirar para hacerlo usando el state
   }
 }

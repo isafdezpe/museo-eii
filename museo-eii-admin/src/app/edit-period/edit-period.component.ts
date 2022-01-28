@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PERIODS } from '../mock-periods';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
 
@@ -22,8 +21,14 @@ export class FormEditPeriodComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('periodId'));
-    this.periodService.getPeriod(idFromRoute).subscribe((period: Period) => this.p = period);
-    this.model = this.clonePeriod(this.p);
+    this.getPeriod(idFromRoute);
+  }
+
+  getPeriod(id: number) {
+    this.periodService.getPeriod(id).subscribe((period: Period) => {
+      this.p = period;
+      this.model = this.clonePeriod(this.p);
+    });
   }
 
   /*changePeriod(p: string) {
@@ -32,9 +37,10 @@ export class FormEditPeriodComponent implements OnInit {
   }*/
 
   submit() {
-    /*this.periodService.editPeriod(this.model).subscribe(() => {
-      this.snackBar.open('Periodo actualizado', undefined, {duration:1500})
-    });*/
+    this.periodService.editPeriod(this.model).subscribe(() => {
+      this.snackBar.open('Periodo actualizado', undefined, {duration:1500});
+      this.p = this.clonePeriod(this.model);
+    });
   }
 
   resetForm() {
@@ -42,7 +48,7 @@ export class FormEditPeriodComponent implements OnInit {
   }
 
   clonePeriod(p: Period): Period {
-    return new Period(p.name, p.trivia, p.details, p.events, p.famousSystems, p.id);
+    return new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id);
   }
 
   goBack() {

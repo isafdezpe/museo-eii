@@ -5,6 +5,7 @@ import { CompDevices, CompTypes, MyComponent } from '../comp';
 import { ComponentService } from '../component.service';
 import { Cpu } from '../cpu';
 import { Period } from '../period';
+import { PeriodService } from '../period.service';
 
 @Component({
   selector: 'app-my-component',
@@ -18,18 +19,14 @@ export class MyComponentComponent implements OnInit {
 
   type: String;
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private _location: Location) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
     this.c = this.componentService.getComponent(idFromRoute);
-    this.p = this.componentService.getPeriodForComponent(this.c);
+    this.periodService.getPeriod(this.c.periodId).subscribe((period: Period) => this.p = period);
     this.type = this.checkType();
-  }
-  
-  deleteComponent(c: MyComponent) {
-    
   }
   
   checkType(): String {
