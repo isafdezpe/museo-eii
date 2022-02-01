@@ -15,6 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { PeriodComponent } from './period/period.component';
 import { CompDetailsComponent } from './comp-details/comp-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CpuDetailsComponent } from './cpu-details/cpu-details.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -29,7 +30,8 @@ export function createTranslateLoader(http: HttpClient) {
     MuseumTimelineComponent,
     AboutComponent,
     PeriodComponent,
-    CompDetailsComponent
+    CompDetailsComponent,
+    CpuDetailsComponent
   ],
   imports: [
     BrowserModule,

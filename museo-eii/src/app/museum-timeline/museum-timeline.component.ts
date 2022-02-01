@@ -18,7 +18,7 @@ export class MuseumTimelineComponent implements OnInit {
   }
 
   getPeriods(): void {
-    this.periods = this.periodService.getPeriods();
+    this.periodService.getPeriods().subscribe((p: Period[]) => this.periods = p);
   }
 
 }

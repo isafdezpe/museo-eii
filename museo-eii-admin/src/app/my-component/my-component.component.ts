@@ -24,9 +24,13 @@ export class MyComponentComponent implements OnInit {
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
-    this.componentService.getComponent(idFromRoute).subscribe((c) => console.log(c));
+    this.getComponent(idFromRoute);
     this.periodService.getPeriod(this.c.periodId).subscribe((period: Period) => this.p = period);
     this.type = this.checkType();
+  }
+  
+  getComponent(id: number) {
+	  this.componentService.getComponent(idFromRoute).subscribe((c) => console.log(c)); //TYPE??????????????
   }
   
   checkType(): String {

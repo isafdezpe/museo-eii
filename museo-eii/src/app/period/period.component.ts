@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Cpu } from '../cpu';
+import { MyComponent } from '../comp';
 import { CpusService } from '../cpus.service';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
@@ -13,7 +13,7 @@ import { PeriodService } from '../period.service';
 export class PeriodComponent implements OnInit {
 
   period: Period | undefined;
-  cpus: Cpu[] = [];
+  comps: MyComponent[] = [];
   cpuImgs: object[] = [];
 
   constructor(private route: ActivatedRoute, private periodService: PeriodService, private cpuService: CpusService) { }
@@ -25,18 +25,21 @@ export class PeriodComponent implements OnInit {
     this.getPeriod(idFromRoute);
     this.getCpus(idFromRoute);
     this.getCpuImgs();
+    let famousSys = [];
+    this.comps.forEach((c: MyComponent) => famousSys.push({name: c.name, img: c.famousSystemImg, sysName: c.famousSystem}));
+    this.period.famousSystems = famousSys;
   }
 
   getPeriod(id: number): void {
-    this.period = this.periodService.getPeriod(id);
+    this.periodService.getPeriod(id).subscribe((p: Period) => this.period = p);
   }
 
   getCpus(periodId: number): void {
-    this.cpus = this.cpuService.getCpusFromPeriod(periodId);
+    this.comps = this.cpuService.getCpusFromPeriod(periodId);
   }
 
   getCpuImgs(): void {
-    this.cpus.forEach((c) => this.cpuImgs.push({
+    this.comps.forEach((c) => this.cpuImgs.push({
       image: '../../assets/img/'+c.imgNames[0],
       alt: c.name
     }))

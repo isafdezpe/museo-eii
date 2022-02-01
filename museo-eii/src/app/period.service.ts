@@ -1,21 +1,24 @@
 import { Injectable } from '@angular/core';
-import { PERIODS } from './mock-periods';
+import { HttpClient } from '@angular/common/http';
 import { Period } from './period';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PeriodService {
 
-  periods: Period[] = PERIODS; // mock
+  baseUrl = environment.baseUrl;
 
-  constructor() { }
+  periods: Period[]; 
 
-  getPeriods(): Period[] {
-    return this.periods;
+  constructor(private http: HttpClient) { }
+
+  getPeriods() {
+    return this.http.get(`${this.baseUrl}/getAllPeriod.php`);
   }
 
-  getPeriod(id: number): Period {
-    return this.periods.filter((p) => p.id === id)[0];
+  getPeriod(pId: number) {
+    return this.http.get(`${this.baseUrl}/getPeriod.php?idPeriod=${pId}`);
   }
 }

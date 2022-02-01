@@ -7,14 +7,14 @@
 
   <div class="col">
     <div class="row">
-      <h1>{{ period.name }}</h1>
+      <h1>{{ period.period_name }}</h1>
     </div>
     <div class="row">
       <div class="col first-col">
         <div class="row first-row">
 
           <div class="gallery">
-            <div class="col img-container" *ngFor="let c of cpus">
+            <div class="col img-container" *ngFor="let c of comps">
               <a class=" row img-link" [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}"
                   alt="{{c.name}}"></a>
               <a class="row name-link" [routerLink]="['/cpu', c.id]">{{c.name}}</a>
@@ -25,7 +25,7 @@
         <div class="row second-row details">
           <h3>{{ 'PERIOD.CHARACTERISTICS' | translate }}:</h3>
           <ul>
-            <li *ngFor="let d of period.details">{{d}}</li>
+            <li *ngFor="let d of period.period_details.split('\n')">{{d}}</li>
           </ul>
         </div>
       </div>
@@ -33,14 +33,14 @@
         <div class="row first-row trivia">
           <h3>{{ 'PERIOD.TRIVIA' | translate }}...</h3>
           <ul>
-            <li *ngFor="let t of period.trivia">{{t}}</li>
+            <li *ngFor="let t of period.period_trivia.split('\n')">{{t}}</li>
           </ul>
         </div>
         <div class="row second-row">
           <div class="systems">
             <div class="col img-container img-systems" *ngFor="let s of period.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <img class="row" src="../../assets/img/{{s.img}}">
+              <!-- <img class="row" src="../../assets/img/{{s.img}}"> -->
               <p class="row name-link">{{s.sysName}}</p>
             </div>
           </div>

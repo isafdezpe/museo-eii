@@ -13,7 +13,7 @@
     <div class="col">
         <ul>
             <li *ngFor="let p of periods">
-                <div><a [routerLink]="['/period', p.id]">{{ p.name }}</a></div>
+                <div><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></div>
             </li>
         </ul>
     </div>

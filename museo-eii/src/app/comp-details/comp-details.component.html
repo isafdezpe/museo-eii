@@ -27,22 +27,17 @@
       </div>
       <div class="col second-col">
         <div class="row first-row">
-          <h4>{{ comp.years }}</h4>
+          <h4>{{ comp.initYear }} - {{ comp.endYear }}</h4>
         </div>
         <div class="row second-row">
-          <ul>
-            <li><ion-icon name="hardware-chip-outline"></ion-icon> {{comp.ramMemory}}, {{comp.programMemory}}</li>
-            <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.clockSpeed}} (Frecuencia)</li>
-            <li><ion-icon name="hardware-chip"></ion-icon> {{comp.passmark}}</li>
-            <li><ion-icon name="flash-outline"></ion-icon> {{comp.power}}</li>
+          <ul [hidden]="type!=='CPU'">
             <li>
               <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
               <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
             </li>
-            <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.transistors}} (Transistores)</li>
-            <li><ion-icon name="cash-outline"></ion-icon> {{comp.price}}</li>
-            <li><ion-icon name="timer-outline"></ion-icon> {{comp.performance}}</li>
+            <li><ion-icon name="cash-outline"></ion-icon> {{comp.price}}{{comp.priceUnits}}</li>
           </ul>
+          <app-cpu-details [comp]="comp"></app-cpu-details>
         </div>
       </div>
     </div>
