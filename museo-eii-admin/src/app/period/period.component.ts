@@ -37,7 +37,7 @@ export class PeriodComponent implements OnInit {
   }
 
   getComponents() {
-    this.componentService.getComponentsFromPeriod(this.p.period_id).subscribe((comps: MyComponent[]) => this.comps = comps);
+    this.componentService.getComponentsFromPeriod(this.p.period_id).subscribe((comps) => console.log(comps));
   }
 
   deleteComponent(c: MyComponent) {

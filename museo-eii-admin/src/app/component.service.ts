@@ -34,16 +34,16 @@ export class ComponentService {
   }
 
   getComponent(cId: number) {
-    return CPUS.filter((e) => e.id === cId)[0];
-    //return this.http.get(`${this.baseUrl}/getComp.php?idComp=${c.id}`);
+    return this.http.get(`${this.baseUrl}/getComp.php?idComp=${cId}`);
   }
 
-  getAll() {
-    return CPUS;
-    //return this.http.get(`${this.baseUrl}/getAllComp.php`);
-  }
 
   getComponentsFromPeriod(pId: number) {
+    console.log(pId);
     return this.http.get(`${this.baseUrl}/getCompsPeriod.php?idPeriod=$${pId}`);
+  }
+
+  getComponentImgs(cId: number) {
+
   }
 }

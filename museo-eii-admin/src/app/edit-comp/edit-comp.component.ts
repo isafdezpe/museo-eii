@@ -38,7 +38,7 @@ export class FormEditCompComponent implements OnInit {
   }
 
   getComponent(id: number) {
-    this.c = this.componentService.getComponent(id);
+    this.componentService.getComponent(id).subscribe((c) => console.log(c));
     this.periodService.getPeriod(this.c.periodId).subscribe((period: Period) => this.p = period);
     this.priceUnit = this.c.priceUnits;
     this.model = this.cloneComp(this.c);
