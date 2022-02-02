@@ -12,4 +12,4 @@ Para ejecutar esta aplicación en localhost, es necesario instalar Angular sigui
 
 3. Ubicándonos en la carpeta contenedora del proyecto, ejecutamos `npm install` para instalar los paquetes de Node necesarios.
 
-Una vez realizado esto, podemos ejecutar la aplicación mediante el comando `ng serve -o` o `npm run ng serve -o`, lo que hará que esté disponible en [`http:\\localhost:4200`](`http:\\localhost:4200`).
+Una vez realizado esto, podemos ejecutar la aplicación mediante el comando `ng serve -o` o `npm run ng serve -o`, lo que hará que esté disponible en [`http:\\localhost:4200`](`http://localhost:4200`).
