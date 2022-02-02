@@ -72,7 +72,7 @@ export class GenericComp implements MyComponent {
         this.periodId = periodId;
         this.price = price;
         this.priceUnits = priceUnits;
-        this.devices = devices[0] + ((devices.length == 2) ? ", " + devices[1] : "");
+        this.devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? ", " + devices[1] : "")) : "");
         this.imgNames = imgNames;
         this.famousSystem = famousSystem;
         this.famousSystemImg = famousSystemImg;
@@ -80,13 +80,16 @@ export class GenericComp implements MyComponent {
     }
 
     setDevices(devices: String[]) {
-        this.devices = devices[0] + ((devices.length == 2) ? ", " + devices[1] : "");
+        this.devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? ", " + devices[1] : "")) : "");
     }
 
     equals(c: MyComponent): boolean {
-        let devicesEq: boolean = this.devices.split[','].length === c.devices.split[','].length;
-        if (devicesEq) this.devices.split[','].forEach((e) => devicesEq = c.devices.split[','].includes(e));
-        else return false;
+        let devicesEq: boolean;
+        if (!(this.devices) && !(c.devices)) devicesEq = true; 
+        else if (!(this.devices) || !(c.devices)) devicesEq = false; 
+        else devicesEq = this.devices.split[','].length === c.devices.split[','].length;
+        if (devicesEq && this.devices && c.devices) this.devices.split[','].forEach((e) => devicesEq = c.devices.split[','].includes(e));
+        else if (this.devices && c.devices) return false;
         return this.name === c.name && this.family === c.family && this.description === c.description && this.initYear === c.initYear && this.endYear === c.endYear 
             && this.periodId === c.periodId && this.price === c.price && this.priceUnits === c.priceUnits && devicesEq;
     }

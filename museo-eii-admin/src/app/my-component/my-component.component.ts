@@ -30,7 +30,7 @@ export class MyComponentComponent implements OnInit {
   }
   
   getComponent(id: number) {
-	  this.componentService.getComponent(idFromRoute).subscribe((c) => console.log(c)); //TYPE??????????????
+	  this.componentService.getComponent(id).subscribe((c) => console.log(c)); //TYPE??????????????
   }
   
   checkType(): String {
