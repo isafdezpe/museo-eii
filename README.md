@@ -1,39 +1,15 @@
 # MuseoEii
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
+Este proyecto ha sido generado con [Angular CLI](https://github.com/angular/angular-cli) version 10.2.0.
 
-## Instalation and running
+Para ejecutar esta aplicación en localhost, es necesario instalar Angular siguiendo estos pasos:
 
-To run this application in localhost, it is necessary to install Angular by following the next steps:
+1. Instalar la última versión de Node.js [aquí](https://nodejs.org/en/download/). Una vez instalado, hay que reiniciar el sistema, ya que se ha cambiado la configuración de variables del PATH.
 
-1. Install Node.js [here](https://nodejs.org/en/download/).
-
-2. Node.js includes the npm package manager, so now we have to install the Angular CLI. Open a terminal window and run the following command:
+2. Usando npm, el gestor de paquetes de Node.js, hay que instalar Angular CLI. Para ello ejecuta el siguiente comando en una terminal:
 
 `npm install -g @angular/cli`
 
-Once we have installed Node.js and Angular, we can run the application using the command `ng serve -o`. If the command ng is not recognised, we can add it to PATH or use `npm run ng serve -o`.
+3. Ubicándonos en la carpeta contenedora del proyecto, ejecutamos `npm install` para instalar los paquetes de Node necesarios.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Una vez realizado esto, podemos ejecutar la aplicación mediante el comando `ng serve -o` o `npm run ng serve -o`, lo que hará que esté disponible en [`http:\\localhost:4200`](`http:\\localhost:4200`).
