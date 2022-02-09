@@ -26,7 +26,7 @@ export class FormEditPeriodComponent implements OnInit {
 
   getPeriod(id: number) {
     this.periodService.getPeriod(id).subscribe((period: Period) => {
-      this.p = period;
+      this.p = new Period(period.period_name, period.period_trivia, period.period_details, period.period_events, id);
       this.model = this.clonePeriod(this.p);
     });
   }

@@ -9,7 +9,7 @@ if ($method != "DELETE" && $metodo != "OPTIONS") {
 if (empty($_GET["idComp"])) {
     exit("No hay id de componente para eliminar");
 }
-$idPeriod = $_GET["idComp"];
+$idComp = $_GET["idComp"];
 $bd = include_once "bd.php";
 $sentencia = $bd->prepare("DELETE FROM components WHERE component_id = ?");
 $resultado = $sentencia->execute([$idComp]);

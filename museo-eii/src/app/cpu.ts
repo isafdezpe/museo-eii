@@ -29,7 +29,7 @@ export class Cpu extends GenericComp{
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImg: Blob,
+        famousSystemImg: string,
 
         programMemory: number,
         programMemoryUnits: string,
@@ -63,12 +63,6 @@ export class Cpu extends GenericComp{
         this.transistorSizeUnits = "nm";
         this.passmark = passmark;
         this.transistors = transistors;
-    }
-
-    equals(c: Cpu): boolean {
-        return super.equals(c) && this.programMemory === c.programMemory && this.programMemoryUnits === c.programMemoryUnits && this.ramMemory === c.ramMemory && this.ramMemoryUnits === c.ramMemoryUnits
-            && this.clockSpeed === c.clockSpeed && this.clockSpeedUnits === c.clockSpeedUnits && this.power === c.power && this.powerUnits === c.powerUnits && this.wordSize === c.wordSize && this.wordSizeUnits === c.wordSizeUnits
-            && this.transistorSize === c.transistorSize && this.passmark === c.passmark && this.transistors === c.transistors;
     }
     
 }

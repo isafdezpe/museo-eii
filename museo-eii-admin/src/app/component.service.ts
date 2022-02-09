@@ -29,8 +29,8 @@ export class ComponentService {
     return this.http.put(`${this.baseUrl}/updateComp.php`, c);
   }
 
-  deleteComponent(c: MyComponent) {
-    return this.http.delete(`${this.baseUrl}/deleteComp.php?idComp=${c.id}`);
+  deleteComponent(cId: number) {
+    return this.http.delete(`${this.baseUrl}/deleteComp.php?idComp=${cId}`);
   }
 
   getComponent(cId: number) {
@@ -39,8 +39,7 @@ export class ComponentService {
 
 
   getComponentsFromPeriod(pId: number) {
-    console.log(pId);
-    return this.http.get(`${this.baseUrl}/getCompsPeriod.php?idPeriod=$${pId}`);
+    return this.http.get(`${this.baseUrl}/getCompsPeriod.php?idPeriod=${pId}`);
   }
 
   getComponentImgs(cId: number) {

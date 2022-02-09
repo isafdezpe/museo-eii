@@ -29,8 +29,10 @@ export class MenuComponent implements OnInit {
   }
 
   isEdited() {
+    console.log(this.initialObject)
     if (this.initialObject === undefined && this.model === undefined)
       return false;
+      
     return !this.initialObject.equals(this.model);
   }
 

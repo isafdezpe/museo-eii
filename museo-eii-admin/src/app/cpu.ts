@@ -1,6 +1,6 @@
 import { CompTypes, GenericComp, MyComponent } from "./comp";
 
-export class Cpu extends GenericComp{
+export class Cpu extends GenericComp implements MyComponent{
 
     programMemory: number;
     programMemoryUnits: string;
@@ -29,7 +29,7 @@ export class Cpu extends GenericComp{
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImg: Blob,
+        famousSystemImg: string,
 
         programMemory: number,
         programMemoryUnits: string,

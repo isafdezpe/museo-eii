@@ -18,15 +18,15 @@ export class CompInputsComponent implements OnInit {
   }
 
   isDesktop() {
-    return this.model.devices.split(',').includes(CompDevices.desktop);
+    return this.model.component_devices.split(',').includes(CompDevices.desktop);
   }
 
   isPortable() {
-    return this.model.devices.split(',').includes(CompDevices.portable);
+    return this.model.component_devices.split(',').includes(CompDevices.portable);
   }
 
   changePriceUnits(u: string) {
-    this.model.priceUnits = this.priceUnits.filter((e) => e === u)[0];
+    this.model.component_price_units = this.priceUnits.filter((e) => e === u)[0];
   }
 
   onChange(portable: boolean, desktop: boolean) {

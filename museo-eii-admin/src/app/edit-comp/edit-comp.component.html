@@ -12,12 +12,6 @@
                     <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
             </div>
-            <!-- <div class="row form-row">
-                <label class="col col-lg-5" for="cselect">Seleccione el componente que desea editar: </label>
-                <select class="col form-control" name="comp-select" id="cselect" #compSelect (change)="changeComp(compSelect.value)">
-                    <option [value]="c.name" *ngFor="let c of comps">{{ c.name }}</option>
-                </select>
-            </div> -->
             <app-comp-inputs [model]="model"></app-comp-inputs>
             <app-cpu-type-form [hidden]="type!=='CPU'" [model]="model"></app-cpu-type-form>
             <div class="row buttons-row">

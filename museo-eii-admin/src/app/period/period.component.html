@@ -21,7 +21,7 @@
         <div class="systems">
             <div class="col img-systems" *ngFor="let s of p.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <img class="row" src="data:image/png;base64,{{s.img}}">
+              <img class="row" src="../../assets/img/{{s.img}}">
               <p class="row name-link">{{s.sysName}}</p>
             </div>
         </div>
@@ -29,11 +29,11 @@
         <table mat-table [dataSource]="comps" class="mat-elevation-z8">
             <ng-container matColumnDef="nombre">
                 <th mat-header-cell *matHeaderCellDef>Nombre</th>
-                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/component', comp.id]">{{comp.name}}</a></td>
+                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/component', comp.component_id]">{{comp.component_name}}</a></td>
             </ng-container>
             <ng-container matColumnDef="editar">
                 <th mat-header-cell *matHeaderCellDef>Editar</th>
-                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/editComp', comp.id]"><ion-icon name="pencil"></ion-icon></a></td>
+                <td mat-cell *matCellDef="let comp"><a [routerLink]="['/editComp', comp.component_id]"><ion-icon name="pencil"></ion-icon></a></td>
             </ng-container>
             <ng-container matColumnDef="eliminar">
                 <th mat-header-cell *matHeaderCellDef>Eliminar</th>

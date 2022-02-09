@@ -41,12 +41,12 @@ export class AddCompComponent implements OnInit {
   createModel() {
     if (this.t == CompTypes.cpu)
       this.model = (this.model !== undefined) ? 
-      new Cpu(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices.split(','), this.model.imgNames, this.model.famousSystem, this.model.famousSystemImg, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
-      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', new Blob(), 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
+      new Cpu(this.model.component_name, this.model.component_family, this.model.component_description, this.model.component_year_init, this.model.component_year_end, this.model.component_period_id, this.model.component_price, this.model.component_price_units, this.model.component_devices.split(','), this.model.component_imgs, this.model.famous_system, this.model.famous_system_img, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
+      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
     else 
       this.model = (this.model !== undefined) ?
-      new GenericComp(this.model.name, this.model.family, this.model.description, this.model.initYear, this.model.endYear, this.model.periodId, this.model.price, this.model.priceUnits, this.model.devices.split(','), this.model.imgNames, this.model.famousSystem, this.model.famousSystemImg, CompTypes.generic)
-      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', new Blob(), CompTypes.generic);
+      new GenericComp(this.model.component_name, this.model.component_family, this.model.component_description, this.model.component_year_init, this.model.component_year_end, this.model.component_period_id, this.model.component_price, this.model.component_price_units, this.model.component_devices.split(','), this.model.component_imgs, this.model.famous_system, this.model.famous_system_img, CompTypes.generic)
+      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', CompTypes.generic);
   }
 
   getPeriods(id: Number) {
@@ -71,8 +71,8 @@ export class AddCompComponent implements OnInit {
 
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
-      return new Cpu(c.name, c.family, c.description, c.initYear, c.endYear, c.periodId, c.price, c.priceUnits, c.devices.split(','), c.imgNames, c.famousSystem, c.famousSystemImg, c.programMemory, c.programMemoryUnits, 
-      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.id);
+      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.programMemory, c.programMemoryUnits, 
+      c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.component_id);
   }
 
   /*changeAddSys() {

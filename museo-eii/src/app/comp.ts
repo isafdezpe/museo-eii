@@ -11,19 +11,16 @@ export interface MyComponent {
     devices: string,
     imgNames: string[],
     famousSystem: string,
-    famousSystemImg: Blob,
+    famousSystemImg: string,
     type: CompTypes
 
-    setDevices(devices: String[]);
-
-    equals(c: MyComponent): boolean;
 }
 
 export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}
 
 export enum CompTypes {cpu='CPU', gpu='GPU', generic='COMPONENT'}
 
-export enum MemoryUnits { bit="b", byte="B"}
+export enum MemoryUnits { bit="b", byte="B", kilobyte="KB"}
 
 export enum SpeedUnits {herz="Hz", kiloherz="KHz"}
 
@@ -43,7 +40,7 @@ export class GenericComp implements MyComponent {
     devices: string;
     imgNames: string[];
     famousSystem: string;
-    famousSystemImg: Blob;
+    famousSystemImg: string;
     type: CompTypes;
 
     constructor(
@@ -58,7 +55,7 @@ export class GenericComp implements MyComponent {
         devices: string[],
         imgNames: string[],
         famousSystem: string,
-        famousSystemImg: Blob,
+        famousSystemImg: string,
         type: CompTypes,
 
         id?: number,
@@ -77,18 +74,6 @@ export class GenericComp implements MyComponent {
         this.famousSystem = famousSystem;
         this.famousSystemImg = famousSystemImg;
         this.type = type;
-    }
-
-    setDevices(devices: String[]) {
-        this.devices = devices[0] + ((devices.length == 2) ? ", " + devices[1] : "");
-    }
-
-    equals(c: MyComponent): boolean {
-        let devicesEq: boolean = this.devices.split[','].length === c.devices.split[','].length;
-        if (devicesEq) this.devices.split[','].forEach((e) => devicesEq = c.devices.split[','].includes(e));
-        else return false;
-        return this.name === c.name && this.family === c.family && this.description === c.description && this.initYear === c.initYear && this.endYear === c.endYear 
-            && this.periodId === c.periodId && this.price === c.price && this.priceUnits === c.priceUnits && devicesEq;
     }
 
 }

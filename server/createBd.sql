@@ -20,7 +20,7 @@ create table components (
 	component_price_units varchar(10) default '$' not null,
 	component_devices text not null,
 	famous_system text not null,
-	famous_system_img longblob,
+	famous_system_img text not null,
 	component_period_id int not null,
 	primary key(component_id),
 	foreign key (component_period_id) references periods(period_id),
@@ -30,7 +30,7 @@ create table components (
 create table component_images (
 	image_id int not null auto_increment,
 	component_id int not null,
-	image longblob not null,
+	image text not null,
 	primary key (image_id, component_id),
 	foreign key (component_id) references components(component_id)
 );
