@@ -14,7 +14,7 @@ import { PeriodService } from '../period.service';
 })
 export class AddCompComponent implements OnInit {
 
-  periods: Period[];
+  periods: Period[] = [];
   p: Period;
 
   types: String[] = Object.values(CompTypes);
@@ -51,7 +51,7 @@ export class AddCompComponent implements OnInit {
 
   getPeriods(id: Number) {
     this.periodService.getAll().subscribe((periods: Period[]) => {
-      this.periods = periods;
+      periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
       if (id != 0) 
         this.p = this.periods.filter((e) => e.period_id === id)[0];
       else 
@@ -62,6 +62,7 @@ export class AddCompComponent implements OnInit {
 
   changePeriod(p: string) {
     this.p = this.periods.filter((e) => e.period_name === p)[0];
+    console.log(this.p)
   }
 
   changeType(t: string) {
@@ -81,8 +82,10 @@ export class AddCompComponent implements OnInit {
   }*/
 
   submit() {
+    this.model.component_period_id = this.p.period_id;
     this.componentService.addComponent(this.model).subscribe(() => {
-      this.snackBar.open('Componente guardado', undefined, {duration:1500})
+      this.snackBar.open('Componente guardado', undefined, {duration:1500});
+      //this.createModel();
     });
   }
 

@@ -149,3 +149,15 @@ ion-icon {
   width: 1.5em;
   font-size: x-large;
 }
+
+.upload {
+  font-weight: 400;
+  border: #000 1px solid;
+  border-radius: 5%;
+  padding: 0px 7px 0px;
+  background-color: #efefef;
+}
+
+.upload:hover {
+  cursor: pointer;
+}

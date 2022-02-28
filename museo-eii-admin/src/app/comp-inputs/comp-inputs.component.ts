@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { CompDevices, MyComponent } from '../comp';
 
 @Component({
@@ -7,6 +8,8 @@ import { CompDevices, MyComponent } from '../comp';
   styleUrls: ['./comp-inputs.component.css']
 })
 export class CompInputsComponent implements OnInit {
+
+  imgUrl = environment.baseImgUrl;
 
   @Input() model: MyComponent;
 
@@ -34,5 +37,12 @@ export class CompInputsComponent implements OnInit {
     else if (portable) this.model.setDevices([CompDevices.portable]);
     else if (desktop) this.model.setDevices([CompDevices.desktop]);
     else this.model.setDevices([]);
+  }
+
+  sysImgChange(e: Event) {
+    let element = e.target  as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList && fileList.length == 1)
+      this.model.famous_system_img = fileList[0].name;
   }
 }
