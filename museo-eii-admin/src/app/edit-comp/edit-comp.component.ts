@@ -7,6 +7,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { ComponentService } from '../component.service';
 import { ActivatedRoute } from '@angular/router';
 import { PeriodService } from '../period.service';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 @Component({
@@ -27,7 +29,7 @@ export class FormEditCompComponent implements OnInit {
 
   type: String;
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -39,7 +41,7 @@ export class FormEditCompComponent implements OnInit {
     this.componentService.getComponent(id).subscribe((c: Cpu) => {
       if (c.component_type == CompTypes.cpu) {
         this.c = new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img,
-        c.programMemory, c.programMemoryUnits, c.ramMemory, c.ramMemoryUnits,c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, id);
+        c.program_memory, c.program_memory_units, c.ram_memory, c.ram_memory_units,c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, id);
         this.type = CompTypes.cpu;
       } else {
         this.c = new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img, c.component_type, id);
@@ -77,18 +79,28 @@ export class FormEditCompComponent implements OnInit {
 
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
-      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.programMemory, c.programMemoryUnits, 
-    c.ramMemory, c.ramMemoryUnits, c.clockSpeed, c.clockSpeedUnits, c.power, c.powerUnits, c.wordSize, c.wordSizeUnits, c.transistorSize, c.passmark, c.transistors, c.component_id);
+      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
+    c.ram_memory, c.ram_memory_units, c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, c.component_id);
     else 
       return new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, CompTypes.generic, c.component_id);
   }
   
   goBack() {
+    if (this.isEdited())
+      this.dialog
+      .open(ConfirmationDialogComponent, {data: "No se han guardado los cambios realizados en el formulario, ¿desea continuar?"})
+      .afterClosed()
+      .subscribe((confirmed: boolean) => {if (confirmed) this._location.back();});
+    else
     this._location.back();
   }
 
-  isEdited(): boolean {
-    return this.c.equals(this.model);
+  isEdited() {
+    console.log(this.c)
+    if (this.c === undefined && this.model === undefined)
+      return false;
+      
+    return !this.c.equals(this.model);
   }
   
 }

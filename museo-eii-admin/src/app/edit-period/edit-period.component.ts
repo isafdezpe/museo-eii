@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-edit-period',
@@ -16,7 +18,7 @@ export class FormEditPeriodComponent implements OnInit {
   p: Period;
   model: Period;
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location) { }
+  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
@@ -52,11 +54,21 @@ export class FormEditPeriodComponent implements OnInit {
   }
 
   goBack() {
+    if (this.isEdited())
+      this.dialog
+      .open(ConfirmationDialogComponent, {data: "No se han guardado los cambios realizados en el formulario, ¿desea continuar?"})
+      .afterClosed()
+      .subscribe((confirmed: boolean) => {if (confirmed) this._location.back();});
+    else
     this._location.back();
   }
 
-  isEdited(): boolean {
-    return this.p.equals(this.model);
+  isEdited() {
+    console.log(this.p)
+    if (this.p === undefined && this.model === undefined)
+      return false;
+      
+    return !this.p.equals(this.model);
   }
 
 }

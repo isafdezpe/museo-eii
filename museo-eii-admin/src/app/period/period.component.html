@@ -21,7 +21,7 @@
         <div class="systems">
             <div class="col img-systems" *ngFor="let s of p.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <img class="row" src="../../assets/img/{{s.img}}">
+              <img class="row" src="{{imgUrl}}{{s.img}}">
               <p class="row name-link">{{s.sysName}}</p>
             </div>
         </div>

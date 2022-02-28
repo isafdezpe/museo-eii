@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { MyComponent } from '../comp';
 import { ComponentService } from '../component.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
@@ -14,6 +15,8 @@ import { PeriodService } from '../period.service';
   styleUrls: ['./period.component.css']
 })
 export class PeriodComponent implements OnInit {
+
+  imgUrl = environment.baseImgUrl;
 
   p: Period;
   comps: MyComponent[] = [];

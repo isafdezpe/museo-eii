@@ -3,7 +3,7 @@
         <div class="row form-row">
             <label class="col col-lg-4" for="cProgMem">Memoria ROM:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.programMemory" name="programMemory" #programMemory="ngModel" step="1">
+                <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.program_memory" name="programMemory" #programMemory="ngModel" step="1">
                 <div [hidden]="programMemory.valid || programMemory.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
             <select class="col form-control" name="programMemoryUnits" #programMemoryUnits (change)="changeProgramMemoryUnits(programMemoryUnits.value)">
@@ -13,7 +13,7 @@
         <div class="row form-row">
             <label class="col col-lg-4" for="cClockSpeed">Frecuencia de reloj:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cClockSpeed" required [(ngModel)]="model.clockSpeed" name="clockSpeed" #clockSpeed="ngModel" step="1">
+                <input class="form-control" type="number" id="cClockSpeed" required [(ngModel)]="model.clockspeed" name="clockSpeed" #clockSpeed="ngModel" step="1">
                 <div [hidden]="clockSpeed.valid || clockSpeed.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
             <select class="col form-control" name="clockSpeedUnits" #clockSpeedUnits (change)="changeClockSpeedUnits(clockSpeedUnits.value)">
@@ -23,7 +23,7 @@
         <div class="row form-row">
             <label class="col col-lg-4" for="cWordSize">Tamaño de palabra:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cWordSize" required [(ngModel)]="model.wordSize" name="wordSize" #wordSize="ngModel" step="1">
+                <input class="form-control" type="number" id="cWordSize" required [(ngModel)]="model.wordsize" name="wordSize" #wordSize="ngModel" step="1">
                 <div [hidden]="wordSize.valid || wordSize.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
             <select class="col form-control" name="wordSizeUnits" #wordSizeUnits (change)="changeWordSizeUnits(wordSizeUnits.value)">
@@ -43,7 +43,7 @@
         <div class="row form-row">
             <label class="col col-lg-5" for="cRamMem">Memoria RAM:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cRamMem" required [(ngModel)]="model.ramMemory" name="ramMemory" #ramMemory="ngModel" step="1">
+                <input class="form-control" type="number" id="cRamMem" required [(ngModel)]="model.ram_memory" name="ramMemory" #ramMemory="ngModel" step="1">
                 <div [hidden]="ramMemory.valid || ramMemory.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
             <select class="col form-control" name="ramMemoryUnits" #ramMemoryUnits (change)="changeRamMemoryUnits(ramMemoryUnits.value)">
@@ -53,7 +53,7 @@
         <div class="row form-row">
             <label class="col col-lg-5" for="cPower">Consumo energético:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cPower" required [(ngModel)]="model.power" name="power" #power="ngModel" step="0.1">
+                <input class="form-control" type="number" id="cPower" required [(ngModel)]="model.cpu_power" name="power" #power="ngModel" step="0.1">
                 <div [hidden]="power.valid || power.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
             <select class="col form-control" name="powerUnits" #powerUnits (change)="changePowerUnits(powerUnits.value)">
@@ -63,10 +63,10 @@
         <div class="row form-row">
             <label class="col col-lg-7" for="cTransistorSize">Nanómetros de los transistores:</label>
             <div class="col">
-                <input class="form-control" type="number" id="cTransistorSize" required [(ngModel)]="model.transistorSize" name="transistorSize" #transistorSize="ngModel" step="10">
+                <input class="form-control" type="number" id="cTransistorSize" required [(ngModel)]="model.transistor_size" name="transistorSize" #transistorSize="ngModel" step="10">
                 <div [hidden]="transistorSize.valid || transistorSize.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <p class="col">{{model.transistorSizeUnits}}</p>
+            <p class="col">{{model.transistor_size_units}}</p>
         </div>
         <div class="row form-row">
             <label class="col col-lg-5" for="cTransistors">Número de transistores:</label>

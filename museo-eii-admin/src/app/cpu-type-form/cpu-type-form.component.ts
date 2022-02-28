@@ -21,22 +21,22 @@ export class CpuTypeFormComponent implements OnInit {
   }
 
   changeProgramMemoryUnits(u: string) {
-    this.model.programMemoryUnits = this.memUnits.filter((e) => u === e)[0];
+    this.model.program_memory_units = this.memUnits.filter((e) => u === e)[0];
   }
 
   changeRamMemoryUnits(u: string) {
-    this.model.ramMemoryUnits = this.memUnits.filter((e) => u === e)[0];
+    this.model.ram_memory_units = this.memUnits.filter((e) => u === e)[0];
   }
 
   changeClockSpeedUnits(u: string) {
-    this.model.clockSpeedUnits = this.speedUnits.filter((e) => u === e)[0];
+    this.model.clockspeed_units = this.speedUnits.filter((e) => u === e)[0];
   }
 
   changePowerUnits(u: string) {
-    this.model.powerUnits = this.cPowerUnits.filter((e) => u === e)[0];
+    this.model.cpu_power_units = this.cPowerUnits.filter((e) => u === e)[0];
   }
 
   changeWordSizeUnits(u: string) {
-    this.model.wordSizeUnits = this.memUnits.filter((e) => u === e)[0];
+    this.model.wordsize_units = this.memUnits.filter((e) => u === e)[0];
   }
 }
