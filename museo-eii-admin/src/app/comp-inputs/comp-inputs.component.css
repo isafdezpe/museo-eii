@@ -17,3 +17,7 @@ input.file {
 input[type=checkbox] {
     align-content: left;
 }
+
+.img-list {
+    list-style: none;
+}

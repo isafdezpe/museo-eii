@@ -53,5 +53,16 @@
     <input class="col file" type="file" id="csystemimg" accept="image/*" (change)="sysImgChange($event)" style="display:none;">
     <label class="upload" for="csystemimg">Subir imagen</label>
     <p class = "col" [hidden]="model.famous_system_img == ''">{{model.famous_system_img}}</p>
-    
+</div>
+<div class="row form-row">
+    <div class="col col-lg-4">
+        <input class="col file" type="file" id="cimgs" accept="image/*" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>
+        <label class="upload" for="cimgs">Subir imágenes del componente</label>
+        
+    </div>
+    <div class="col">
+        <ul class="col img-list">
+            <li *ngFor="let i of model.component_imgs">{{i}}</li>
+        </ul>
+    </div>
 </div>

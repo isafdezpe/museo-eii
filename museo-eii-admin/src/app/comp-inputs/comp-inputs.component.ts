@@ -45,4 +45,15 @@ export class CompInputsComponent implements OnInit {
     if (fileList && fileList.length == 1)
       this.model.famous_system_img = fileList[0].name;
   }
+
+  compImgsChange(e: Event) {
+    let element = e.target  as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList && fileList.length > 0) {
+      for (let i = 0; i < fileList.length; i++){
+        if (!this.model.component_imgs.includes(fileList[i].name))
+          this.model.component_imgs.push(fileList[i].name);
+      }
+    }
+  }
 }
