@@ -19,9 +19,6 @@ export class ComponentService {
   }
 
   editComponent(c: MyComponent) {
-    if (c instanceof Cpu)
-      return this.http.put(`${this.baseUrl}/updateCpu.php`, c);
-
     return this.http.put(`${this.baseUrl}/updateComp.php`, c);
   }
 
