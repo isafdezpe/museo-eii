@@ -40,7 +40,10 @@ export class PeriodComponent implements OnInit {
     this.componentService.getComponentsFromPeriod(this.p.period_id).subscribe((comps: MyComponent[]) => {
       this.comps = comps;
       let famousSys = [];
-      this.comps.forEach((c: MyComponent) => famousSys.push({name: c.component_name, img: c.famous_system_img, sysName: c.famous_system}));
+      this.comps.forEach((c: MyComponent) => {
+        if (c.famous_system_img !== "" && c.famous_system !== "") 
+          famousSys.push({name: c.component_name, img: c.famous_system_img, sysName: c.famous_system})
+      });
       this.p.famousSystems = famousSys;
     });
   }

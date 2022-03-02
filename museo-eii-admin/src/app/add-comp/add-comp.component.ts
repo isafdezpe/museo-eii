@@ -85,7 +85,7 @@ export class AddCompComponent implements OnInit {
     this.model.component_period_id = this.p.period_id;
     this.componentService.addComponent(this.model).subscribe(() => {
       this.snackBar.open('Componente guardado', undefined, {duration:1500});
-      //this.createModel();
+      this.createModel();
     });
   }
 

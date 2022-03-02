@@ -15,10 +15,6 @@ export class ComponentService {
   constructor(private http: HttpClient) { }
 
   addComponent(c: MyComponent) {
-    if (c instanceof Cpu) {
-      let postComp = this.http.post(`${this.baseUrl}/postComp.php`, c);
-      return this.http.post(`${this.baseUrl}/postCpu.php`, c);
-    }
     return this.http.post(`${this.baseUrl}/postComp.php`, c);
   }
 
