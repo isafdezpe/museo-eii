@@ -47,11 +47,18 @@ export class FormEditCompComponent implements OnInit {
         this.c = new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img, c.component_type, id);
         this.type = CompTypes.generic;
       }
+      this.getImages(this.c.component_id);
       this.priceUnit = this.c.component_price_units;
-      this.model = this.cloneComp(this.c);
       this.getPeriods()
     } )
     
+  }
+
+  getImages(id: number) {
+    this.componentService.getComponentImgs(id).subscribe((imgs: string[]) => {
+        imgs.forEach((i) => this.c.component_imgs.push(i));
+        this.model = this.cloneComp(this.c);
+      });
   }
 
   getPeriods() {

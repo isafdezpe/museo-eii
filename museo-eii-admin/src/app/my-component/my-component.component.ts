@@ -32,7 +32,6 @@ export class MyComponentComponent implements OnInit {
   
   getComponent(id: number) {
 	  this.componentService.getComponent(id).subscribe((c: Cpu) => {
-      console.log(c);
       if (c.component_type == CompTypes.cpu) {
         this.c = new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img,
         c.program_memory, c.program_memory_units, c.ram_memory, c.ram_memory_units,c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, id);
@@ -41,16 +40,23 @@ export class MyComponentComponent implements OnInit {
         this.c = new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img, c.component_type, id);
         this.type = CompTypes.generic;
       }
-      console.log(this.c)
-      console.log(this.type)
-      this.getPeriod(this.c.component_period_id)
+      this.getImages(this.c.component_id);
+      this.getPeriod(this.c.component_period_id);
     }); 
+  }
+
+  getImages(id: number) {
+    this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
+      console.log(imgs);
+      imgs.forEach((i) => {
+        this.c.component_imgs.push(i.image)
+      })
+    });
   }
 
   getPeriod(id: number) {
     this.periodService.getPeriod(id).subscribe((period: Period) => this.p = period);
   }
-
 
   isPortable() {
     return this.c.component_devices.split(',').includes(CompDevices.portable);

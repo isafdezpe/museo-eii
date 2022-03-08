@@ -3,17 +3,19 @@ p {
 }
 
 .gallery {
-    max-width: 500px;
-    position: relative;
-    display: flex;
-    float:none;
-  }
-  
-  .gallery img {
-    height: 4em;
-    width: auto;
-  }
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20%;
+  margin-top: 10%;
+  display: flex;
+  float:left;
+}
 
+.gallery img {
+  height: 4em;
+  width: auto;
+}
   .row {
     margin-left: 0;
   }
