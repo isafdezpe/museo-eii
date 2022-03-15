@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:80',
-  baseImgUrl: '../../assets/img/'//'http://localhost:80/img',
+  baseImgUrl: 'http://localhost:80/upload/',
 };
 
 /*

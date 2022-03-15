@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { MyComponent } from './comp';
 import { Cpu } from './cpu';
@@ -38,7 +39,8 @@ export class ComponentService {
     return this.http.get(`${this.baseUrl}/getCompImgs.php?idComp=${cId}`);
   }
 
-  uploadComponentImgs() {
-    //TODO
+  uploadComponentImgs(form: FormGroup) {
+    console.log(form.value);
+    return this.http.post(`${this.baseUrl}/uploadCompImgs.php`, form.value);
   }
 }

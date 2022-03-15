@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
 import { Cpu } from '../cpu';
 import { Period } from '../period';
@@ -28,6 +29,14 @@ export class FormEditCompComponent implements OnInit {
   model: MyComponent;
 
   type: String;
+
+  images = [];
+  imagesNames = [];
+   myForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    file: new FormControl('', [Validators.required]),
+    fileSource: new FormControl('', [Validators.required])
+  });
 
   constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
 

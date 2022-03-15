@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { CompTypes, GenericComp, MyComponent } from '../comp';
@@ -22,6 +23,14 @@ export class AddCompComponent implements OnInit {
 
   c: MyComponent;
   model: MyComponent;
+
+  images = [];
+  imagesNames = [];
+   myForm = new FormGroup({
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    file: new FormControl('', [Validators.required]),
+    fileSource: new FormControl('', [Validators.required])
+  });
 
   /*addFamousSys = false;
   textAddFamousSys = "Añadir sistema famoso que incluya este componente";*/
@@ -81,9 +90,21 @@ export class AddCompComponent implements OnInit {
     this.textAddFamousSys = (this.addFamousSys) ? "No añadir" : "Añadir sistema famoso que incluya este componente";
   }*/
 
+  resetForm() {
+    this.images = [];
+    this.model = undefined;
+    this.createModel();
+  }
+ 
   submit() {
     this.model.component_period_id = this.p.period_id;
+    this.myForm.patchValue({
+      fileSource: this.images
+    });
     this.componentService.addComponent(this.model).subscribe(() => {
+      this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
+        this.snackBar.open('Imágenes guardadas', undefined, {duration:1500});
+      });
       this.snackBar.open('Componente guardado', undefined, {duration:1500});
       this.createModel();
     });
