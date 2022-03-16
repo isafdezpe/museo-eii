@@ -14,7 +14,7 @@ export class CompInputsComponent implements OnInit {
   @Input() model: MyComponent;
 
   @Input() images;
-  @Input() imagesNames;
+  @Input() imagesNames: string[];
 
   priceUnits: string[] = ['€', '$'];
 
@@ -48,16 +48,18 @@ export class CompInputsComponent implements OnInit {
     if (fileList && fileList.length == 1) {
       var reader = new FileReader();
       reader.onload = (event:any) => {
-        console.log(event.target.result);
-        this.images.push(event.target.result);
-        //this.model.famous_system_img = event.target.result.name;
+        let i = this.imagesNames.indexOf(this.model.famous_system_img.split('.')[0]);
+        if (i != -1) this.images[i] = event.target.result;
+        else this.images.push(event.target.result);
       }
       reader.readAsDataURL(fileList[0]);
-      this.model.famous_system_img = fileList[0].name;
+      let fileNameExt = fileList[0].name.split('.');
+      if (this.model.famous_system_img) {
+        let i = this.imagesNames.indexOf(this.model.famous_system_img.split('.')[0]);
+        this.imagesNames[i] = fileNameExt[0];
+      } else this.imagesNames.push(fileNameExt[0]);
+      this.model.famous_system_img = fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]);
     }
-      console.log('***********FAMOUS SYS IMGS:**************')
-      console.log(this.images);
-      console.log(this.model);
   }
 
   compImgsChange(e: Event) {
@@ -69,15 +71,13 @@ export class CompInputsComponent implements OnInit {
           var reader = new FileReader();
           reader.onload = (event:any) => {
             this.images.push(event.target.result);
-            this.model.component_imgs.push(event.target.result.name);
           }
           reader.readAsDataURL(fileList[i]);
-          this.model.component_imgs.push(fileList[i].name);
+          let fileNameExt = fileList[i].name.split('.');
+          this.imagesNames.push(fileNameExt[0]);
+          this.model.component_imgs.push(fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]));
         }
       }
     }
-    console.log('***********COMP IMGS:**************')
-      console.log(this.images);
-      console.log(this.model);
   }
 }

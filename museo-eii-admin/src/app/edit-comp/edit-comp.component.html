@@ -12,7 +12,7 @@
                     <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
             </div>
-            <app-comp-inputs [model]="model" [images]="images"></app-comp-inputs>
+            <app-comp-inputs [model]="model" [images]="images" [imagesNames]="imagesNames"></app-comp-inputs>
             <app-cpu-type-form [hidden]="type!=='CPU'" [model]="model"></app-cpu-type-form>
             <div class="row buttons-row">
                 <input class="col col-lg-2" type="button" value="Cancelar" (click)="resetForm()">

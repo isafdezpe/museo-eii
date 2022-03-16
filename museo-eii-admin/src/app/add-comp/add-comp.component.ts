@@ -99,7 +99,8 @@ export class AddCompComponent implements OnInit {
   submit() {
     this.model.component_period_id = this.p.period_id;
     this.myForm.patchValue({
-      fileSource: this.images
+      fileSource: this.images,
+      name: this.imagesNames
     });
     this.componentService.addComponent(this.model).subscribe(() => {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
