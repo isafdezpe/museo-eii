@@ -1,3 +1,5 @@
+import { cpuUsage } from "process";
+
 export interface MyComponent {
     component_id: number,
     component_name: string,
@@ -73,7 +75,8 @@ export class GenericComp implements MyComponent {
         this.component_price = price;
         this.component_price_units = priceUnits;
         this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? ", " + devices[1] : "")) : "");
-        this.component_imgs = imgNames;
+        this.component_imgs = [];
+        imgNames.forEach((i) => this.component_imgs.push(i));
         this.famous_system = famousSystem;
         this.famous_system_img = famousSystemImg;
         this.component_type = type;

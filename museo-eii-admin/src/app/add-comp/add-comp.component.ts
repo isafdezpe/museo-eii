@@ -92,6 +92,7 @@ export class AddCompComponent implements OnInit {
 
   resetForm() {
     this.images = [];
+    this.imagesNames = [];
     this.model = undefined;
     this.createModel();
   }
@@ -107,7 +108,7 @@ export class AddCompComponent implements OnInit {
         this.snackBar.open('Imágenes guardadas', undefined, {duration:1500});
       });
       this.snackBar.open('Componente guardado', undefined, {duration:1500});
-      this.createModel();
+      this.resetForm();
     });
   }
 

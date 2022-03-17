@@ -161,3 +161,37 @@ ion-icon {
 .upload:hover {
   cursor: pointer;
 }
+
+.rm-img-btn {
+  position: relative;
+}
+
+.rm-img-btn button {
+  border: none;
+  background: none;
+}
+
+.rm-img-btn div{
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  font-size: 3em;
+  background: rgb(0, 0, 0);
+  color: rgba(255, 255, 255, 0);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear; 
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.rm-img-btn:hover {
+  cursor: pointer;
+}
+
+.rm-img-btn:hover div{
+  visibility: visible;
+  opacity: 0.7; 
+}

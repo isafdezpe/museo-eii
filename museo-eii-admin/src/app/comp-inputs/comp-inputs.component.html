@@ -50,15 +50,18 @@
 <div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
     <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>
     <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">
-    <input class="col file" type="file" id="csystemimg" accept="image/*" (change)="sysImgChange($event)" style="display:none;">
+    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/*" (change)="sysImgChange($event)" style="display:none;">
     <label class="upload" for="csystemimg">Subir imagen</label>
 </div>
 <div class="row form-row">
     <div class="col col-lg-4">
-        <input class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>
+        <input #compImgInput class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>
         <label class="upload" for="cimgs">Subir imágenes del componente</label>
     </div>
 </div>
 <div class="row form-row">
-    <img *ngFor='let url of images'  [src]="url" height="100" style="margin: 3px;"> <br/>
+    <div  (click)="removeImage(url)" class="rm-img-btn" *ngFor='let url of images'>
+        <button ><img class="row" [src]="url" height="100" style="margin: 3px;"></button>
+        <div><ion-icon name="trash"></ion-icon></div>
+    </div><br/>
 </div>

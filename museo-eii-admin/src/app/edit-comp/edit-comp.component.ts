@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PeriodService } from '../period.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -19,6 +20,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class FormEditCompComponent implements OnInit {
 
+  imgUrl = environment.baseImgUrl;
+
   periods: Period[] = [];
   p: Period;
 
@@ -27,6 +30,7 @@ export class FormEditCompComponent implements OnInit {
 
   c: MyComponent;
   model: MyComponent;
+  compImgsInDB: string[] = [];
 
   type: String;
 
@@ -64,8 +68,11 @@ export class FormEditCompComponent implements OnInit {
   }
 
   getImages(id: number) {
-    this.componentService.getComponentImgs(id).subscribe((imgs: string[]) => {
-        imgs.forEach((i) => this.c.component_imgs.push(i));
+    this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
+        imgs.forEach((i) => {
+          this.c.component_imgs.push(i.image);
+          this.compImgsInDB.push(i.image);
+        });
         this.model = this.cloneComp(this.c);
       });
   }
@@ -84,16 +91,28 @@ export class FormEditCompComponent implements OnInit {
    }
 
   submit() {
+    this.myForm.patchValue({
+      fileSource: this.images,
+      name: this.imagesNames
+    });
     if (!this.model.famous_system_img)
       this.model.famous_system_img = this.c.famous_system_img;
     this.componentService.editComponent(this.model).subscribe(() => {
+      this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
+        this.snackBar.open('Imágenes guardadas', undefined, {duration:1500});
+      });
       this.snackBar.open('Componente actualizado', undefined, {duration:1500});
       this.c = this.cloneComp(this.model);
     });
   }
 
   resetForm() {
+    this.images = [];
+    this.imagesNames = [];
     this.model = this.cloneComp(this.c);
+    this.compImgsInDB  = [];
+    this.c.component_imgs.forEach((i) => this.compImgsInDB.push(i));
+    console.log(this.model)
   }
 
   cloneComp(c: MyComponent): MyComponent{
@@ -120,6 +139,19 @@ export class FormEditCompComponent implements OnInit {
       return false;
       
     return !this.c.equals(this.model);
+  }
+
+  removeImage(name: string) {
+    this.model.component_imgs.forEach((img, index) => {
+      if (img === name) {
+        this.model.component_imgs.splice(index,1);
+      }
+    });
+    this.compImgsInDB.forEach((img, index) => {
+      if (img === name) {
+        this.compImgsInDB.splice(index,1);
+      }
+    });
   }
   
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CompDevices, MyComponent } from '../comp';
 
@@ -15,6 +15,11 @@ export class CompInputsComponent implements OnInit {
 
   @Input() images;
   @Input() imagesNames: string[];
+
+  @ViewChild('sysImgInput')
+  sysImgInput!: ElementRef;
+  @ViewChild('compImgInput')
+  compImgInput!: ElementRef;
 
   priceUnits: string[] = ['€', '$'];
 
@@ -60,6 +65,7 @@ export class CompInputsComponent implements OnInit {
       } else this.imagesNames.push(fileNameExt[0]);
       this.model.famous_system_img = fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]);
     }
+    this.sysImgInput.nativeElement.value = '';
   }
 
   compImgsChange(e: Event) {
@@ -67,17 +73,32 @@ export class CompInputsComponent implements OnInit {
     let fileList: FileList | null = element.files;
     if (fileList && fileList.length > 0) {
       for (let i = 0; i < fileList.length; i++){
-        if (!this.model.component_imgs.includes(fileList[i].name)) {
+        let fileNameExt = fileList[i].name.split('.');
+        let saveName = fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]);
+        if (!this.model.component_imgs.includes(saveName)) {
           var reader = new FileReader();
           reader.onload = (event:any) => {
             this.images.push(event.target.result);
           }
           reader.readAsDataURL(fileList[i]);
-          let fileNameExt = fileList[i].name.split('.');
           this.imagesNames.push(fileNameExt[0]);
-          this.model.component_imgs.push(fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]));
+          this.model.component_imgs.push(saveName);
         }
       }
+    }
+    this.compImgInput.nativeElement.value = '';
+  }
+
+  removeImage(name: string) {
+    let index = this.images.indexOf(name);
+    if (index != -1) {
+      let imgName = this.imagesNames[index];
+      this.images.splice(index, 1);
+      this.imagesNames.splice(index, 1);
+      this.model.component_imgs.forEach((img, ind) => {
+        if (img.split('.')[0] === imgName)
+          this.model.component_imgs.splice(ind,1);
+      });
     }
   }
 }
