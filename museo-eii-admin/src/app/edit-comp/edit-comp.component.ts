@@ -60,6 +60,7 @@ export class FormEditCompComponent implements OnInit {
         this.c = new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img, c.component_type, id);
         this.type = CompTypes.generic;
       }
+      if (this.c.famous_system_img) this.compImgsInDB.push(this.c.famous_system_img);
       this.getImages(this.c.component_id);
       this.priceUnit = this.c.component_price_units;
       this.getPeriods()
@@ -95,13 +96,12 @@ export class FormEditCompComponent implements OnInit {
       fileSource: this.images,
       name: this.imagesNames
     });
-    if (!this.model.famous_system_img)
-      this.model.famous_system_img = this.c.famous_system_img;
+    //if (!this.model.famous_system_img)
+      //this.model.famous_system_img = this.c.famous_system_img;
     this.componentService.editComponent(this.model).subscribe(() => {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-        this.snackBar.open('Imágenes guardadas', undefined, {duration:1500});
+        this.snackBar.open('Componente actualizado', 'Cerrar');
       });
-      this.snackBar.open('Componente actualizado', undefined, {duration:1500});
       this.c = this.cloneComp(this.model);
     });
   }
@@ -142,6 +142,7 @@ export class FormEditCompComponent implements OnInit {
   }
 
   removeImage(name: string) {
+    if (this.model.famous_system_img === name) this.model.famous_system_img = "";
     this.model.component_imgs.forEach((img, index) => {
       if (img === name) {
         this.model.component_imgs.splice(index,1);

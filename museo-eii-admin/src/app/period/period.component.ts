@@ -57,7 +57,7 @@ export class PeriodComponent implements OnInit {
         if (confirmed)
           this.componentService.deleteComponent(c.component_id).subscribe(() => {
             this.getComponents();
-            this.snackBar.open('Componente eliminado', undefined, {duration: 1500});
+            this.snackBar.open('Componente eliminado', 'Cerrar');
           });
       });
   }

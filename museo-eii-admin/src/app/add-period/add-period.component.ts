@@ -21,7 +21,7 @@ export class AddPeriodComponent implements OnInit {
 
   submit() {
     this.periodService.addPeriod(this.model).subscribe(() => {
-      this.snackBar.open('Periodo guardado', undefined, {duration:1500})
+      this.snackBar.open('Periodo guardado', 'Cerrar')
       let periodId: number;
       this.periodService.getPeriodByName(this.model.period_name).subscribe((p: Period) => {
         periodId = p.period_id;
