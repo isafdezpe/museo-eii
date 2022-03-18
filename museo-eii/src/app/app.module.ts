@@ -2,8 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import 'hammerjs';
+import 'mousetrap';
+import {GalleryModule} from '@ks89/angular-modal-gallery';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +17,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { MuseumTimelineComponent } from './museum-timeline/museum-timeline.component';
 import { AboutComponent } from './about/about.component';
 import { PeriodComponent } from './period/period.component';
-import { CompDetailsComponent } from './comp-details/comp-details.component';
+import { CompDetailsComponent } from './comp-details/comp-details.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CpuDetailsComponent } from './cpu-details/cpu-details.component';
 
@@ -35,6 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -44,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    NgbModule
+    NgbModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent],

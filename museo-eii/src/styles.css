@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 /*-----------BASIC SETUP------------*/
 
@@ -184,7 +185,13 @@ input[type=submit]:active { background-color: #2e4731; }
   color: #fff;
 }
 
-
+.ks-modal-gallery-backdrop {
+  background: #000 !important;;
+  opacity: 0.85 !important;;
+}
+.ks-modal-gallery-panel {
+  z-index: 90000 !important;
+}
 
 
 ion-icon {

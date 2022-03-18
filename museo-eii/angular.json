@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": ["mousetrap", "hammerjs", "@ks89/angular-modal-gallery"],
             "outputPath": "dist/museo-eii",
             "index": "src/index.html",
             "main": "src/main.ts",

@@ -1,4 +1,5 @@
 @import '~normalize.css';
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 * {
     margin: 0;
@@ -110,6 +111,14 @@ a:link, a:visited {
   background: none;
   border: none;
   color: #555;
+}
+
+.ks-modal-gallery-backdrop {
+  background: #000 !important;;
+  opacity: 0.85 !important;;
+}
+.ks-modal-gallery-panel {
+  z-index: 90000 !important;
 }
 
 /*------FORMS---------*/
