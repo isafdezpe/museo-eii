@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Comprueba el usuario y la contraseña introducidos. Si es correcto navega a la lista de periodos.
+   */
   login() {
     this.router.navigateByUrl('/listPeriods');
   }

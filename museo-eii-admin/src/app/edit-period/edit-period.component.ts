@@ -14,18 +14,22 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 })
 export class FormEditPeriodComponent implements OnInit {
 
-  //periods: Period[] = PERIODS;
-  p: Period;
-  model: Period;
+  p: Period; // objeto con los valores sin editar
+  model: Period; // objeto asignado en el formulario sobre el que se realizan los cambios
 
   constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    // saca el id del periodo que se va a editar
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('periodId'));
     this.getPeriod(idFromRoute);
   }
 
+  /**
+   * Obtiene el periodo para editarlo
+   * @param id : id del periodo a editar
+   */
   getPeriod(id: number) {
     this.periodService.getPeriod(id).subscribe((period: Period) => {
       this.p = new Period(period.period_name, period.period_trivia, period.period_details, period.period_events, id);
@@ -33,11 +37,9 @@ export class FormEditPeriodComponent implements OnInit {
     });
   }
 
-  /*changePeriod(p: string) {
-    this.p = this.periods.filter((e) => e.name === p)[0];
-    this.model = this.clonePeriod(this.p);
-  }*/
-
+  /**
+   * Actualiza el periodo
+   */
   submit() {
     this.periodService.editPeriod(this.model).subscribe(() => {
       this.snackBar.open('Periodo actualizado', 'Cerrar');
@@ -45,14 +47,25 @@ export class FormEditPeriodComponent implements OnInit {
     });
   }
 
+  /**
+   * Cambia todos los campos del formulario a su valor inicial
+   */
   resetForm() {
     this.model = this.clonePeriod(this.p);
   }
 
+  /**
+   * 
+   * @param p : periodo que se quiere clonar
+   * @returns periodo clonado
+   */
   clonePeriod(p: Period): Period {
     return new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id);
   }
 
+  /**
+   * Vuelve a la página anterior. Si no se han guardado los cambios se muestra un diálogo para continuar o no
+   */
   goBack() {
     if (this.isEdited())
       this.dialog
@@ -63,6 +76,10 @@ export class FormEditPeriodComponent implements OnInit {
     this._location.back();
   }
 
+  /**
+   * 
+   * @returns si se ha editado el formulario
+   */
   isEdited() {
     console.log(this.p)
     if (this.p === undefined && this.model === undefined)

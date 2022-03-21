@@ -10,14 +10,18 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 })
 export class MenuComponent implements OnInit {
 
-  @Input() initialObject;
-  @Input() model;
+  @Input() initialObject; // objeto con los valores iniciales
+  @Input() model; // objeto sobre el que se realizan los cambios en el formulario
 
   constructor(public router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Navega a otra url de la aplicación. Si un formulario está editado muestra un diálogo para continuar o no
+   * @param route : url a la que se quiere navegar
+   */
   navigate(route: string) {
     if (this.isEdited())
       this.dialog
@@ -28,6 +32,10 @@ export class MenuComponent implements OnInit {
       this.router.navigateByUrl(route);
   }
 
+  /**
+   * 
+   * @returns si initialObject y model son iguales o model ha sido editado 
+   */
   isEdited() {
     console.log(this.initialObject)
     if (this.initialObject === undefined && this.model === undefined)

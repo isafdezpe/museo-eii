@@ -8,7 +8,7 @@ import { Period } from '../period';
 })
 export class PeriodInputsComponent implements OnInit {
 
-  @Input() model: Period;
+  @Input() model: Period; // objeto asignado al formulario sobre el que se realizan los cambios
 
   constructor() { }
 

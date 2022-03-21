@@ -14,26 +14,23 @@ import { PeriodService } from '../period.service';
   styleUrls: ['./add-comp.component.css']
 })
 export class AddCompComponent implements OnInit {
+ 
+  periods: Period[] = []; // lista de periodos existentes
+  p: Period; // periodo seleccionado
 
-  periods: Period[] = [];
-  p: Period;
+  types: String[] = Object.values(CompTypes); // tipos de componentes
+  t: String; // tipo de componente seleccionado
 
-  types: String[] = Object.values(CompTypes);
-  t: String;
+  c: MyComponent; // objeto con los valores iniciales 
+  model: MyComponent; // objeto asignado en el formulario sobre el que se realizan los cambios
 
-  c: MyComponent;
-  model: MyComponent;
-
-  images = [];
-  imagesNames = [];
-   myForm = new FormGroup({
+  images = []; // imágenes subidas a través de los inputs[file]
+  imagesNames = []; // nombres de las imágenes subidas
+  myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     file: new FormControl('', [Validators.required]),
     fileSource: new FormControl('', [Validators.required])
-  });
-
-  /*addFamousSys = false;
-  textAddFamousSys = "Añadir sistema famoso que incluya este componente";*/
+  }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
   constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
 
@@ -41,12 +38,15 @@ export class AddCompComponent implements OnInit {
     this.t = this.types[0];
     this.createModel();
     this.c = this.cloneComp(this.model);
+    // si hay un periodId en la ruta, se selecciona el periodo correspondiente en el combobox de periodos
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
-    console.log(id);
     this.getPeriods(id);
   }
 
+  /**
+   * Crea un objeto (Cpu o Genérico en función del tipo escogido) con las propiedades por defecto si model es undefined o con los valores existentes si model ya existía
+   */
   createModel() {
     if (this.t == CompTypes.cpu)
       this.model = (this.model !== undefined) ? 
@@ -58,6 +58,23 @@ export class AddCompComponent implements OnInit {
       : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', CompTypes.generic);
   }
 
+  /**
+   * 
+   * @param c : componente que se quiere clonar
+   * @returns componente clonado
+   */
+   cloneComp(c: MyComponent): MyComponent{
+    if (c instanceof Cpu)
+      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
+    c.ram_memory, c.ram_memory_units, c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, c.component_id);
+    else 
+      return new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, CompTypes.generic, c.component_id);
+  }
+
+  /**
+   * Obtiene una lista de todos los periodos existentes y, si se recibe un id en la url selecciona el correspondiente, si no, selecciona el primero de la lista
+   * @param id : id del periodo al que se quiere añadir el componente
+   */
   getPeriods(id: Number) {
     this.periodService.getAll().subscribe((periods: Period[]) => {
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
@@ -69,27 +86,26 @@ export class AddCompComponent implements OnInit {
     });
   }
 
+  /**
+   * Cambia el periodo seleccionado en el combobox
+   * @param p : nombre del nuevo periodo seleccionado
+   */
   changePeriod(p: string) {
     this.p = this.periods.filter((e) => e.period_name === p)[0];
-    console.log(this.p)
   }
 
+  /**
+   * Cambia el tipo de componente seleccionado en el combobox
+   * @param t : nuevo tipo seleccionado
+   */
   changeType(t: string) {
     this.t = this.types.filter((e) => e === t)[0];
-    this.createModel();
+    this.createModel(); // se crea de nuevo el objeto model para que sea del nuevo tipo seleccionado
   }
 
-  cloneComp(c: MyComponent): MyComponent{
-    if (c instanceof Cpu)
-      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
-      c.ram_memory, c.ram_memory_units, c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, c.component_id);
-  }
-
-  /*changeAddSys() {
-    this.addFamousSys = !this.addFamousSys;
-    this.textAddFamousSys = (this.addFamousSys) ? "No añadir" : "Añadir sistema famoso que incluya este componente";
-  }*/
-
+  /**
+   * Cambia todos los campos del formulario a su valor inicial
+   */
   resetForm() {
     this.images = [];
     this.imagesNames = [];
@@ -97,6 +113,10 @@ export class AddCompComponent implements OnInit {
     this.createModel();
   }
  
+  /**
+   * Asigna los valores necesarios para subir las imágenes a myForm: FormGroup
+   * Inserta el nuevo componente, sube las imágenes y resetea el formulario
+   */
   submit() {
     this.model.component_period_id = this.p.period_id;
     this.myForm.patchValue({

@@ -16,30 +16,35 @@ import { AdvancedLayout, Description, DescriptionStrategy, GridLayout, Image, Pl
 })
 export class MyComponentComponent implements OnInit {
 
-  imgUrl = environment.baseImgUrl;
+  imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
 
-  c: MyComponent;
-  p: Period;
+  c: MyComponent; // componente
+  p: Period; // periodo al que pertenece el componente
 
-  type: String;
+  type: String; // tipo del componente
 
-  images: Image[] = [];
+  images: Image[] = []; // imágenes a mostrar en la galería
   plainGalleryGrid: PlainGalleryConfig = {
     strategy: PlainGalleryStrategy.GRID,
     layout: new GridLayout({ width: 'auto', height: '80px' }, { length: 3, wrap: true })
-  };
+  }; // configuración del layout de la galería
   customDescription: Description = {
     strategy: DescriptionStrategy.ALWAYS_HIDDEN
-  };
+  }; // elimina la descripción que hay sobre la imagen al ampliarla
 
   constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location) { }
 
   ngOnInit(): void {
+    // saca el id del componente
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
     this.getComponent(idFromRoute);
   }
   
+  /**
+   * Obtiene el componente 
+   * @param id : id del componente 
+   */
   getComponent(id: number) {
 	  this.componentService.getComponent(id).subscribe((c: Cpu) => {
       if (c.component_type == CompTypes.cpu) {
@@ -55,6 +60,10 @@ export class MyComponentComponent implements OnInit {
     }); 
   }
 
+  /**
+   * Obtiene las imágenes del componente 
+   * @param id : id del componente del que se obtienen las imágenes
+   */
   getImages(id: number) {
     this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
       console.log(imgs);
@@ -67,18 +76,33 @@ export class MyComponentComponent implements OnInit {
     });
   }
 
+  /**
+   * Obtiene el periodo
+   * @param id : id del periodo al que pertenece el componente
+   */
   getPeriod(id: number) {
     this.periodService.getPeriod(id).subscribe((period: Period) => this.p = period);
   }
 
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos portátiles
+   */
   isPortable() {
     return this.c.component_devices.split(',').includes(CompDevices.portable);
   }
 
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos de escritorio
+   */
   isDesktop() {
     return this.c.component_devices.split(',').includes(CompDevices.desktop);
   }
 
+  /**
+   * Vuelve a la página anterior
+   */
   goBack() {
     this._location.back();
   }

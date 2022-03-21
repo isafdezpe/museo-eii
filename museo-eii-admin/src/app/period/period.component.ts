@@ -18,17 +18,22 @@ export class PeriodComponent implements OnInit {
 
   imgUrl = environment.baseImgUrl;
 
-  p: Period;
-  comps: MyComponent[] = [];
+  p: Period; // periodo
+  comps: MyComponent[] = []; // componentes pertenecientes al periodo
 
   constructor(private route: ActivatedRoute, private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar, private componentService: ComponentService) { }
 
   ngOnInit(): void {
+    // saca el id del periodo
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('periodId'));
     this.getPeriod(idFromRoute);
   }
 
+  /**
+   * Obtiene el periodo y sus componentes
+   * @param id : id del periodo 
+   */
   getPeriod(id: number) {
     this.periodService.getPeriod(id).subscribe((period: Period) => {
       this.p = new Period(period.period_name, period.period_trivia, period.period_details, period.period_events, id);
@@ -36,6 +41,9 @@ export class PeriodComponent implements OnInit {
     });
   }
 
+  /**
+   * Obtiene la lista de componentes pertenecientes al periodo y el sistema famoso correspondiente a cada uno
+   */
   getComponents() {
     this.componentService.getComponentsFromPeriod(this.p.period_id).subscribe((comps: MyComponent[]) => {
       this.comps = comps;
@@ -48,6 +56,10 @@ export class PeriodComponent implements OnInit {
     });
   }
 
+  /**
+   * Elimina un periodo de la lista
+   * @param c : componente que se va a eliminar
+   */
   deleteComponent(c: MyComponent) {
     console.log(c.component_id)
     this.dialog

@@ -8,7 +8,7 @@ import { Cpu } from '../cpu';
 })
 export class CpuTypeDetailsComponent implements OnInit {
 
-  @Input() comp: Cpu;
+  @Input() comp: Cpu; // objeto del que mostrar los detalles
 
   constructor() { }
 

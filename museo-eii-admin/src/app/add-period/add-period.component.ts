@@ -11,14 +11,17 @@ import { PeriodService } from '../period.service';
 })
 export class AddPeriodComponent implements OnInit {
 
-  p: Period = new Period("", "", "", "");
-  model: Period = new Period("", "", "", "");
+  p: Period = new Period("", "", "", ""); // objeto con los valores iniciales
+  model: Period = new Period("", "", "", ""); // objeto asignado en el formulario sobre el que se realizan los cambios
 
   constructor(private periodService: PeriodService, private snackBar: MatSnackBar, public router: Router) { }
 
   ngOnInit(): void {
   }
 
+  /**
+   * Inserta el periodo, obtiene el id con el que se ha insertado y navega a la página de añadir componente con este periodo seleccionado
+   */
   submit() {
     this.periodService.addPeriod(this.model).subscribe(() => {
       this.snackBar.open('Periodo guardado', 'Cerrar')

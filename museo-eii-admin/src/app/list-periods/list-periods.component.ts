@@ -20,10 +20,17 @@ export class ListPeriodsComponent implements OnInit {
     this.getPeriods();
   }
 
+  /**
+   * Obtiene la lista de periodos
+   */
   getPeriods() {
     this.periodService.getAll().subscribe((periods: Period[]) => this.periods = periods);
   }
 
+  /**
+   * Elimina un periodo de la lista
+   * @param p : periodo que se va a eliminar
+   */
   deletePeriod(p: Period) {
     this.dialog
       .open(ConfirmationDialogComponent, {data:`¿Desea eliminar el periodo ${p.period_name}?`})
@@ -36,9 +43,5 @@ export class ListPeriodsComponent implements OnInit {
           });
       });
   }
-
-  isEdited() {
-    return false;
-  } 
 
 }

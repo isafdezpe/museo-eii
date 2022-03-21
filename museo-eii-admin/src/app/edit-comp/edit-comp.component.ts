@@ -20,36 +20,38 @@ import { environment } from 'src/environments/environment';
 })
 export class FormEditCompComponent implements OnInit {
 
-  imgUrl = environment.baseImgUrl;
+  imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
 
-  periods: Period[] = [];
-  p: Period;
+  periods: Period[] = []; // lista de periodos existentes
+  p: Period; // periodo seleccionado
 
-  priceUnits: String[] = ['€', '$'];
-  priceUnit: String;
+  c: MyComponent; // objeto con los valores sin editar
+  model: MyComponent; // objeto asignado en el formulario sobre el que se realizan los cambios
+  compImgsInDB: string[] = []; // array para juntar las imágenes del componente 
 
-  c: MyComponent;
-  model: MyComponent;
-  compImgsInDB: string[] = [];
+  type: String; // tipo del componente (Cpu o genérico)
 
-  type: String;
-
-  images = [];
-  imagesNames = [];
-   myForm = new FormGroup({
+  images = []; // imágenes subidas a través de los inputs[file]
+  imagesNames = []; // nombres de las imágenes subidas
+  myForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
     file: new FormControl('', [Validators.required]),
     fileSource: new FormControl('', [Validators.required])
-  });
+  }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
   constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    // saca el id del componente que se va a editar
     const routeParams = this.route.snapshot.paramMap;
 	  const idFromRoute = Number(routeParams.get('compId'));
     this.getComponent(idFromRoute);
   }
 
+  /**
+   * Obtiene el componente para editarlo
+   * @param id : id del componente a editar
+   */
   getComponent(id: number) {
     this.componentService.getComponent(id).subscribe((c: Cpu) => {
       if (c.component_type == CompTypes.cpu) {
@@ -59,15 +61,18 @@ export class FormEditCompComponent implements OnInit {
       } else {
         this.c = new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img, c.component_type, id);
         this.type = CompTypes.generic;
-      }
+      } 
       if (this.c.famous_system_img) this.compImgsInDB.push(this.c.famous_system_img);
       this.getImages(this.c.component_id);
-      this.priceUnit = this.c.component_price_units;
       this.getPeriods()
     } )
     
   }
 
+  /**
+   * Obtiene las imágenes del componente 
+   * @param id : id del componente del que se obtienen las imágenes
+   */
   getImages(id: number) {
     this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
         imgs.forEach((i) => {
@@ -78,6 +83,9 @@ export class FormEditCompComponent implements OnInit {
       });
   }
 
+  /**
+   * Obtiene la lista de todos los periodos existentes y seleccioona el correspondiente al componente
+   */
   getPeriods() {
     this.periodService.getAll().subscribe((periods: Period[]) =>{
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
@@ -86,11 +94,19 @@ export class FormEditCompComponent implements OnInit {
     });
   }
 
+  /**
+   * Cambia el periodo seleccionado en el combobox
+   * @param p : nombre del nuevo periodo seleccionado
+   */
   changePeriod(p: string) {
     this.p = this.periods.filter((e) => e.period_name === p)[0];
     this.c.component_period_id = this.p.period_id;
-   }
+  }
 
+  /**
+   * Asigna los valores necesarios para subir las imágenes a myForm: FormGroup
+   * Actualiza el componente, sube las imágenes y resetea el formulario
+   */
   submit() {
     this.myForm.patchValue({
       fileSource: this.images,
@@ -106,6 +122,9 @@ export class FormEditCompComponent implements OnInit {
     });
   }
 
+  /**
+   * Cambia todos los campos del formulario a su valor inicial
+   */
   resetForm() {
     this.images = [];
     this.imagesNames = [];
@@ -115,6 +134,11 @@ export class FormEditCompComponent implements OnInit {
     console.log(this.model)
   }
 
+  /**
+   * 
+   * @param c : componente que se quiere clonar
+   * @returns componente clonado
+   */
   cloneComp(c: MyComponent): MyComponent{
     if (c instanceof Cpu)
       return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
@@ -123,6 +147,9 @@ export class FormEditCompComponent implements OnInit {
       return new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, CompTypes.generic, c.component_id);
   }
   
+  /**
+   * Vuelve a la página anterior. Si no se han guardado los cambios se muestra un diálogo para continuar o no
+   */
   goBack() {
     if (this.isEdited())
       this.dialog
@@ -133,6 +160,10 @@ export class FormEditCompComponent implements OnInit {
     this._location.back();
   }
 
+  /**
+   * 
+   * @returns si se ha editado el formulario
+   */
   isEdited() {
     console.log(this.c)
     if (this.c === undefined && this.model === undefined)
@@ -141,6 +172,10 @@ export class FormEditCompComponent implements OnInit {
     return !this.c.equals(this.model);
   }
 
+  /**
+   * Elimina una imagen de entre las existentes del componente o del sistema famoso
+   * @param name : nombre de la imagen que se va a eliminar
+   */
   removeImage(name: string) {
     if (this.model.famous_system_img === name) this.model.famous_system_img = "";
     this.model.component_imgs.forEach((img, index) => {
