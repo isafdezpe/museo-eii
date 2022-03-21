@@ -2,7 +2,7 @@ p {
     text-align: justify;
 }
 
-.gallery {
+/* .gallery {
   max-width: 500px;
   position: relative;
   margin: auto;
@@ -15,7 +15,8 @@ p {
 .gallery img {
   height: 4em;
   width: auto;
+} */
+
+.row {
+  margin-left: 0;
 }
-  .row {
-    margin-left: 0;
-  }

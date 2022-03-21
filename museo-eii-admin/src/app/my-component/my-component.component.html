@@ -16,16 +16,20 @@
                 <h5 class="row">Precio</h5><p class="row">{{c.component_price}}{{c.component_price_units}}</p>
                 <h5 class="row">Dispositivos</h5><div class="row"><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
             </div>
-            <div class="col">
-                <div class="gallery">
-                    <div class="img-container" *ngFor="let i of c.component_imgs">
-                        <img src="{{imgUrl}}{{i}}" alt="{{c.component_name}}">
-                    </div>
-                </div>
+            <div class="col-lg-6">
+                <ks-modal-gallery [id]="0" [modalImages]="images" [plainGalleryConfig]="plainGalleryGrid" 
+                [slideConfig]="{infinite: true, sidePreviews: {show: false}}"
+                [currentImageConfig]="{description: customDescription}"></ks-modal-gallery>
             </div>
         </div>
-        
         <h5 class="row col">Descripción</h5><p class="row col">{{c.component_description}}</p>
+        <!-- <div class="row col">
+            <div class="gallery">
+                <div class="img-container" *ngFor="let i of c.component_imgs">
+                    <img src="{{imgUrl}}{{i}}" alt="{{c.component_name}}">
+                </div>
+            </div>
+        </div> -->
         
         <app-cpu-type-details [hidden]="type!=='CPU'" [comp]="c"></app-cpu-type-details>
     </div>

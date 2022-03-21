@@ -7,6 +7,7 @@ import { Cpu } from '../cpu';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
 import { environment } from 'src/environments/environment';
+import { AdvancedLayout, Description, DescriptionStrategy, GridLayout, Image, PlainGalleryConfig, PlainGalleryStrategy } from '@ks89/angular-modal-gallery';
 
 @Component({
   selector: 'app-my-component',
@@ -21,6 +22,15 @@ export class MyComponentComponent implements OnInit {
   p: Period;
 
   type: String;
+
+  images: Image[] = [];
+  plainGalleryGrid: PlainGalleryConfig = {
+    strategy: PlainGalleryStrategy.GRID,
+    layout: new GridLayout({ width: 'auto', height: '80px' }, { length: 3, wrap: true })
+  };
+  customDescription: Description = {
+    strategy: DescriptionStrategy.ALWAYS_HIDDEN
+  };
 
   constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location) { }
 
@@ -48,8 +58,11 @@ export class MyComponentComponent implements OnInit {
   getImages(id: number) {
     this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
       console.log(imgs);
+      let index = 0;
       imgs.forEach((i) => {
-        this.c.component_imgs.push(i.image)
+        this.c.component_imgs.push(i.image);
+        this.images.push(new Image(index, {img: this.imgUrl + i.image}));
+        index++;
       })
     });
   }

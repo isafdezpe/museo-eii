@@ -58,7 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTableModule,
     MatDialogModule,
     HttpClientModule,
-    GalleryModule
+    GalleryModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
