@@ -10,7 +10,18 @@ if (empty($_GET["idPeriod"])) {
     exit("No hay id de periodo para eliminar");
 }
 $idPeriod = $_GET["idPeriod"];
-$bd = include_once "bd.php";
-$sentencia = $bd->prepare("DELETE FROM periods WHERE period_id = ?");
-$resultado = $sentencia->execute([$idPeriod]);
-echo json_encode($resultado);
+if (is_numeric($idPeriod)) {
+    try {
+        $bd = include_once "bd.php";
+        $sentencia = $bd->prepare("DELETE FROM periods WHERE period_id = ?");
+        $resultado = $sentencia->execute([$idPeriod]);
+        echo json_encode($resultado);
+    } catch (PDOException $e) {
+        error_log('PDOException - ' . $e->getMessage(), 0);
+        http_response_code(500);
+        exit("Error al conectar con la base de datos");
+    }
+} else {
+    http_response_code(400);
+    exit("Error al procesar la petición");
+}

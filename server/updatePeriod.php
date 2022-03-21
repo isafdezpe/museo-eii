@@ -9,7 +9,13 @@ $jsonPeriod = json_decode(file_get_contents("php://input"));
 if (!$jsonPeriod) {
     exit("No hay datos");
 }
-$bd = include_once "bd.php";
-$sentence = $bd->prepare("UPDATE periods SET period_name = ?, period_details = ?, period_trivia = ?, period_events = ? WHERE period_id = ?");
-$res = $sentence->execute([$jsonPeriod->period_name, $jsonPeriod->period_details, $jsonPeriod->period_trivia, $jsonPeriod->period_events, $jsonPeriod->period_id]);
-echo json_encode($res);
+try {
+    $bd = include_once "bd.php";
+    $sentence = $bd->prepare("UPDATE periods SET period_name = ?, period_details = ?, period_trivia = ?, period_events = ? WHERE period_id = ?");
+    $res = $sentence->execute([$jsonPeriod->period_name, $jsonPeriod->period_details, $jsonPeriod->period_trivia, $jsonPeriod->period_events, $jsonPeriod->period_id]);
+    echo json_encode($res);
+} catch (PDOException $e) {
+    error_log('PDOException - ' . $e->getMessage(), 0);
+    http_response_code(500);
+    exit("Error al conectar con la base de datos");
+}
