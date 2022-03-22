@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { MyComponent } from './comp';
-import { Cpu } from './cpu';
-import { CPUS } from './mock-cpus';
 
 @Injectable({
   providedIn: 'root'

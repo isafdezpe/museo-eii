@@ -1,5 +1,5 @@
-import { Cpu } from "./cpu";
-import { CompDevices } from "./comp";
+
+import { CompDevices, Cpu } from "./comp";
 
 export const CPUS: Cpu[] = [
  new Cpu('Intel 4004', 'Intel', 'Desarrollado para calculadoras de la marca Busicom, se instaló en máquinas de Pinball y fue candidato a instalarse en la nave espacial Pioneer 10. Existe una réplica funcional de 41x58cm en el Intel Museum de California.',

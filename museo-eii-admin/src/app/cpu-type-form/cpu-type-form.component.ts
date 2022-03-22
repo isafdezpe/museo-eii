@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MyComponent, MemoryUnits, SpeedUnits, PowerUnits } from '../comp';
-import { Cpu } from '../cpu';
+import { MyComponent, MemoryUnits, SpeedUnits, PowerUnits, Cpu } from '../comp';
 
 @Component({
   selector: 'app-cpu-type-form',

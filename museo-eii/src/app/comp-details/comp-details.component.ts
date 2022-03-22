@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CompDevices, CompTypes, MyComponent } from '../comp';
-import { Cpu } from '../cpu';
+import { environment } from '../../environments/environment';
+import { CompDevices, CompTypes, MyComponent, Cpu } from '../comp';
 import { CpusService } from '../cpus.service';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
@@ -12,6 +12,8 @@ import { PeriodService } from '../period.service';
   styleUrls: ['./comp-details.component.css']
 })
 export class CompDetailsComponent implements OnInit {
+
+  imgUrl = environment.baseImgUrl;
 
   comp: MyComponent;
   compsFromPeriod: MyComponent[] = [];
@@ -34,7 +36,7 @@ export class CompDetailsComponent implements OnInit {
     if (this.comp instanceof Cpu)
       return CompTypes.cpu;
     else
-      return CompTypes.gpu;
+      return CompTypes.generic;
   }
 
   getComp(id: number) {
@@ -42,19 +44,19 @@ export class CompDetailsComponent implements OnInit {
   }
 
   getCompsFromPeriod() {
-    this.compsFromPeriod = this.cpuService.getCpusFromPeriod(this.comp.periodId);
+    this.compsFromPeriod = this.cpuService.getCpusFromPeriod(this.comp.component_period_id);
   }
 
   getPeriodName() {
-    this.periodService.getPeriod(this.comp.periodId).subscribe((p: Period) => this.periodName = p.period_name);
+    this.periodService.getPeriod(this.comp.component_period_id).subscribe((p: Period) => this.periodName = p.period_name);
   }
 
   isPortable() {
-    return this.comp.devices.split[','].includes(CompDevices.portable);
+    return this.comp.component_devices.split[','].includes(CompDevices.portable);
   }
 
   isDesktop() {
-    return this.comp.devices.split[','].includes(CompDevices.desktop);
+    return this.comp.component_devices.split[','].includes(CompDevices.desktop);
   }
 
   refresh(): void {

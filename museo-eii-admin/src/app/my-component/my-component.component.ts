@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { CompDevices, CompTypes, GenericComp, MyComponent } from '../comp';
+import { CompDevices, CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
 import { ComponentService } from '../component.service';
-import { Cpu } from '../cpu';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
 import { environment } from 'src/environments/environment';

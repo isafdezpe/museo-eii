@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CompDevices } from '../comp';
-import { Cpu } from '../cpu';
+import { CompDevices, Cpu } from '../comp';
 
 @Component({
   selector: 'app-cpu-details',
@@ -17,11 +16,11 @@ export class CpuDetailsComponent implements OnInit {
   }
 
   isPortable() {
-    return this.comp.devices.split[','].includes(CompDevices.portable);
+    return this.comp.component_devices.split[','].includes(CompDevices.portable);
   }
 
   isDesktop() {
-    return this.comp.devices.split[','].includes(CompDevices.desktop);
+    return this.comp.component_devices.split[','].includes(CompDevices.desktop);
   }
 
 }

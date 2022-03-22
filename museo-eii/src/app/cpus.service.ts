@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cpu } from './cpu';
+import { Cpu } from './comp';
 import { CPUS } from './mock-cpus';
 
 @Injectable({
@@ -16,11 +16,11 @@ export class CpusService {
   }
 
   getCpusFromPeriod(periodId: number): Cpu[] {
-    return this.cpus.filter((c) => c.periodId === periodId);
+    return this.cpus.filter((c) => c.component_period_id === periodId);
   }
 
   getCpu(id: number): Cpu {
-    return this.cpus.filter((c) => c.id === id)[0];
+    return this.cpus.filter((c) => c.component_id === id)[0];
   }
 
 }

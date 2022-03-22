@@ -15,9 +15,9 @@
 
           <div class="gallery">
             <div class="col img-container" *ngFor="let c of comps">
-              <a class=" row img-link" [routerLink]="['/cpu', c.id]"><img src="../../assets/img/{{c.imgNames[0]}}"
-                  alt="{{c.name}}"></a>
-              <a class="row name-link" [routerLink]="['/cpu', c.id]">{{c.name}}</a>
+              <a class=" row img-link" [routerLink]="['/cpu', c.component_id]"><img src="{{imgUrl}}{{c.component_imgs[0]}}"
+                  alt="{{c.component_name}}"></a>
+              <a class="row name-link" [routerLink]="['/cpu', c.component_id]">{{c.component_name}}</a>
             </div>
           </div>
 

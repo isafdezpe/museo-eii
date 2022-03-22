@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { Cpu } from '../cpu';
 import { Period } from '../period';
-import { CompTypes, GenericComp, MyComponent } from '../comp';
+import { CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ComponentService } from '../component.service';
 import { ActivatedRoute } from '@angular/router';

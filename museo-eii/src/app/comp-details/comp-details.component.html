@@ -2,32 +2,32 @@
   <div class="col col-lg-2 border-right">
     <ul>
       <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li>
-      <li><a [routerLink]="['/period',comp.periodId]">{{ 'MENU.BACK' | translate }}{{ 'MENU.PERIOD' | translate}}: {{periodName}}</a></li>
+      <li><a [routerLink]="['/period',comp.component_period_id]">{{ 'MENU.BACK' | translate }}{{ 'MENU.PERIOD' | translate}}: {{periodName}}</a></li>
       <ul>
-        <li *ngFor="let c of compsFromPeriod" (click)="refresh()"><a [routerLink]="['/cpu', c.id]" >{{c.name}}</a></li>
+        <li *ngFor="let c of compsFromPeriod" (click)="refresh()"><a [routerLink]="['/cpu', c.id]" >{{c.component_name}}</a></li>
       </ul>
     </ul>
   </div>
   <div class="col">
     <div class="row">
-      <h2>{{comp.name}}</h2>
+      <h2>{{comp.component_name}}</h2>
     </div>
     <div class="row">
       <div class="col first-col">
         <div class="row first-row">
           <div class="gallery">
-            <div class="img-container" *ngFor="let i of comp.imgNames">
-              <img src="../../assets/img/{{i}}" alt="{{comp.name}}">
+            <div class="img-container" *ngFor="let i of comp.component_imgs">
+              <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}">
             </div>
           </div>
         </div>
         <div class="row second-row description">
-          <p>{{ comp.description }}</p>
+          <p>{{ comp.component_description }}</p>
         </div>
       </div>
       <div class="col second-col">
         <div class="row first-row">
-          <h4>{{ comp.initYear }} - {{ comp.endYear }}</h4>
+          <h4>{{ comp.component_year_init }} - {{ comp.component_year_end }}</h4>
         </div>
         <div class="row second-row">
           <ul [hidden]="type!=='CPU'">
@@ -35,7 +35,7 @@
               <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
               <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
             </li>
-            <li><ion-icon name="cash-outline"></ion-icon> {{comp.price}}{{comp.priceUnits}}</li>
+            <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
           </ul>
           <app-cpu-details [comp]="comp"></app-cpu-details>
         </div>
