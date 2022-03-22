@@ -20,3 +20,11 @@ p {
 .row {
   margin-left: 0;
 }
+
+.lightbox-div {
+  opacity: 0.3;
+}
+
+.lightbox-div img.show {
+  opacity: 1;
+}
