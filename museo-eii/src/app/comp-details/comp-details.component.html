@@ -16,9 +16,10 @@
       <div class="col first-col">
         <div class="row first-row">
           <div class="gallery">
-            <div class="img-container" *ngFor="let i of comp.component_imgs">
+            <ng-image-slider [images]="imageObject" #nav [imageSize]="{width: 'auto', height: 100}"></ng-image-slider>
+            <!-- <div class="img-container" *ngFor="let i of comp.component_imgs">
               <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}">
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="row second-row description">
@@ -30,14 +31,14 @@
           <h4>{{ comp.component_year_init }} - {{ comp.component_year_end }}</h4>
         </div>
         <div class="row second-row">
-          <ul [hidden]="type!=='CPU'">
+          <ul>
             <li>
               <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
               <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
             </li>
             <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
           </ul>
-          <app-cpu-details [comp]="comp"></app-cpu-details>
+          <app-cpu-details [hidden]="type!=='CPU'" [comp]="comp"></app-cpu-details>
         </div>
       </div>
     </div>

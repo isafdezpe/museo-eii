@@ -16,11 +16,11 @@ export class CpuDetailsComponent implements OnInit {
   }
 
   isPortable() {
-    return this.comp.component_devices.split[','].includes(CompDevices.portable);
+    return this.comp.component_devices.split(',').includes(CompDevices.portable);
   }
 
   isDesktop() {
-    return this.comp.component_devices.split[','].includes(CompDevices.desktop);
+    return this.comp.component_devices.split(',').includes(CompDevices.desktop);
   }
 
 }

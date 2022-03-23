@@ -1,11 +1,11 @@
 <div class="row container">
-  <div class="col col-lg-2 border-right">
-    <ul>
-      <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li>
+    <ul class="menu">
+      <li class="prev"><a *ngIf="previousPeriod" [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
+      <!-- <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li> -->
+      <li class="next" *ngIf="nextPeriod"><a [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="chevron-forward-outline"></ion-icon></a></li>
     </ul>
-  </div>
 
-  <div class="col">
+  <div class="row">
     <div class="row">
       <h1>{{ period.period_name }}</h1>
     </div>
@@ -40,7 +40,7 @@
           <div class="systems">
             <div class="col img-container img-systems" *ngFor="let s of period.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <!-- <img class="row" src="../../assets/img/{{s.img}}"> -->
+              <img class="row" src="{{imgUrl}}{{s.img}}">
               <p class="row name-link">{{s.sysName}}</p>
             </div>
           </div>

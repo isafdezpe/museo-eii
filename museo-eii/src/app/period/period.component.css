@@ -11,6 +11,17 @@ ul ul li::before {
   content: "\003e \00a0";
 }
 
+.menu li {
+  margin: 0 auto;
+  padding: 0;
+}
+.menu li a{
+  margin: 0 auto;
+  padding: 0;
+}.menu .next a {
+  margin-right: 40px;
+}
+
 a:link, a:visited {
     padding: 8px 0;
     color: #39583d;
@@ -31,7 +42,8 @@ a:link, a:visited {
 }
 
 .img-systems {
-  min-height: 210px;
+  height: 210px;
+  width: auto;
 }
 
 .name-link {

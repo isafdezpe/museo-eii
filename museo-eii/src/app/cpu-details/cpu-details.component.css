@@ -1,0 +1,12 @@
+ul li {
+    list-style: none;
+    padding: 2%;
+  }
+    
+  ul ul {
+    padding-left: 10%;
+  }
+  
+  ul ul li::before {
+    content: "\003e \00a0";
+  }

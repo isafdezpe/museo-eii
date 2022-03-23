@@ -15,7 +15,7 @@ export class PeriodService {
   constructor(private http: HttpClient) { }
 
   getPeriods() {
-    return this.http.get(`${this.baseUrl}/getAllPeriod.php`);
+    return this.http.get(`${this.baseUrl}/getPeriodsOrdered.php`);
   }
 
   getPeriod(pId: number) {

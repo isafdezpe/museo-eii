@@ -5,9 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import 'hammerjs';
-import 'mousetrap';
-import {GalleryModule} from '@ks89/angular-modal-gallery';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -50,7 +48,7 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     NgbModule,
-    GalleryModule
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

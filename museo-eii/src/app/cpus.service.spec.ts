@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CpusService } from './cpus.service';
+import { ComponentService } from './cpus.service';
 
 describe('CpusService', () => {
-  let service: CpusService;
+  let service: ComponentService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CpusService);
+    service = TestBed.inject(ComponentService);
   });
 
   it('should be created', () => {

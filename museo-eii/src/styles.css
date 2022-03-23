@@ -138,6 +138,29 @@ input[type=submit]:active { background-color: #2e4731; }
   margin-top: 55px;
 }
 
+.menu {
+  max-width: 2000px;
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  width: 49vw;
+}
+
+.menu .prev {
+  text-align: start;
+}
+
+.menu .next {
+  text-align: end;
+}
+
+
+
 .main-nav li {
   display: inline-block;
   margin-left: 40px;
@@ -185,15 +208,8 @@ input[type=submit]:active { background-color: #2e4731; }
   color: #fff;
 }
 
-.ks-modal-gallery-backdrop {
-  background: #000 !important;;
-  opacity: 0.85 !important;;
-}
-.ks-modal-gallery-panel {
-  z-index: 90000 !important;
-}
-
 
 ion-icon {
   pointer-events: none;
 }
+

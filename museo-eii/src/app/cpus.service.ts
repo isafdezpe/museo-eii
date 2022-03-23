@@ -1,26 +1,26 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cpu } from './comp';
-import { CPUS } from './mock-cpus';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CpusService {
+export class ComponentService {
 
-  cpus: Cpu[] = CPUS; // mock
+  baseUrl = environment.baseUrl;
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getCpus(): Cpu[] {
-    return this.cpus;
+  getComponent(cId: number) {
+    return this.http.get(`${this.baseUrl}/getComp.php?idComp=${cId}`);
   }
 
-  getCpusFromPeriod(periodId: number): Cpu[] {
-    return this.cpus.filter((c) => c.component_period_id === periodId);
+  getComponentsFromPeriod(pId: number) {
+    return this.http.get(`${this.baseUrl}/getCompsPeriod.php?idPeriod=${pId}`);
   }
 
-  getCpu(id: number): Cpu {
-    return this.cpus.filter((c) => c.component_id === id)[0];
+  getComponentImgs(cId: number) {
+    return this.http.get(`${this.baseUrl}/getCompImgs.php?idComp=${cId}`);
   }
 
 }
