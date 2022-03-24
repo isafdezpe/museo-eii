@@ -1,11 +1,13 @@
 <div class="row container">
   <div class="col col-lg-2 border-right">
     <ul>
-      <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li>
-      <li><a [routerLink]="['/period',comp.component_period_id]">{{ 'MENU.BACK' | translate }}{{ 'MENU.PERIOD' | translate}}: {{periodName}}</a></li>
+      <!-- <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li> -->
+      <li *ngIf="previousPeriod"><a [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
+      <li class="actual"><a [routerLink]="['/period', period.period_id]">{{period.period_name}}</a></li>
       <ul>
         <li *ngFor="let c of compsFromPeriod" (click)="refresh()"><a [routerLink]="['/cpu', c.id]" >{{c.component_name}}</a></li>
       </ul>
+      <li *ngIf="nextPeriod"><a [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="chevron-forward-outline"></ion-icon></a></li>
     </ul>
   </div>
   <div class="col">

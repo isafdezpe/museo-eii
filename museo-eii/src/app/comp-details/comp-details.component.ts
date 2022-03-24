@@ -17,22 +17,25 @@ export class CompDetailsComponent implements OnInit {
 
   comp: MyComponent;
   compsFromPeriod: MyComponent[] = [];
-  periodName: string = '';
   type: String;
+
+  previousPeriod: Period;
+  nextPeriod: Period;
+  period: Period | undefined;
+  periods: Period[] = [];
 
   imageObject: Array<object> = []; // imágenes a mostrar en la galería
 
-  constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService) { }
-
-  ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-	  const idFromRoute = Number(routeParams.get('id'));
-
-    this.getComp(idFromRoute);
-    this.getCompsFromPeriod();
-    this.getPeriodName();
-    this.type = this.checkType();
+  constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService) { 
+    route.params.subscribe(() => {
+      const routeParams = this.route.snapshot.paramMap;
+      const idFromRoute = Number(routeParams.get('id'));
+  
+      this.getComp(idFromRoute);
+    })
   }
+
+  ngOnInit(): void { }
 
   checkType(): String {
     if (this.comp instanceof Cpu)
@@ -52,8 +55,25 @@ export class CompDetailsComponent implements OnInit {
         this.type = CompTypes.generic;
       }
       this.getImages(this.comp.component_id);
-      this.getPeriodName();
+      this.getPeriod(this.comp.component_period_id);
+      this.getCompsFromPeriod();
+      this.checkType();
       console.log(this.comp)
+    });
+  }
+
+  getPeriod(id: number): void {
+    this.periodService.getPeriods().subscribe((p: Period[]) => { 
+      this.periods = p;
+      let index = 0;
+      this.periods.forEach((p: Period) => {
+        if (p.period_id === id) {
+          this.period = p;
+          this.previousPeriod = (index > 0) ? this.periods[index-1] : undefined;
+          this.nextPeriod = (index < this.periods.length) ? this.periods[index+1] : undefined;
+        }
+        index++;
+      });
     });
   }
 
@@ -73,10 +93,6 @@ export class CompDetailsComponent implements OnInit {
 
   getCompsFromPeriod() {
     this.compService.getComponentsFromPeriod(this.comp.component_period_id).subscribe((comps: MyComponent[]) => this.compsFromPeriod = comps);
-  }
-
-  getPeriodName() {
-    this.periodService.getPeriod(this.comp.component_period_id).subscribe((p: Period) => this.periodName = p.period_name);
   }
 
   isPortable() {

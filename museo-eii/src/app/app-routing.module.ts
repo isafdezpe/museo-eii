@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'museum', component: MuseumTimelineComponent},
   { path: 'about', component: AboutComponent},
   { path: 'period/:id', component: PeriodComponent},
-  { path: 'cpu/:id', component: CompDetailsComponent}
+  { path: 'component/:id', component: CompDetailsComponent}
 ];
 
 @NgModule({
