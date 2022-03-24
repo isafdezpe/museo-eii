@@ -25,9 +25,9 @@ export enum CompTypes {cpu='CPU', generic='COMPONENT'}
 
 export enum MemoryUnits { bit="b", byte="B", kilobyte="KB", megabyte="MB"}
 
-export enum SpeedUnits {herz="Hz", kiloherz="KHz"}
+export enum SpeedUnits {herz="Hz", kiloherz="KHz", megaherz="MHz"}
 
-export enum PowerUnits {watios="W", kilowatios="KW"}
+export enum PowerUnits {watios="W", kilowatios="KW", megawatios = "MW"}
 
 export enum PriceUnits {euro="€", dolar="$"}
 

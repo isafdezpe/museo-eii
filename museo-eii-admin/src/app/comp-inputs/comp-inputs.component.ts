@@ -26,6 +26,7 @@ export class CompInputsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.model)
   }
 
   /**

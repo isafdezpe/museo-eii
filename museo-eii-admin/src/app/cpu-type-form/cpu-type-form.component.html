@@ -6,7 +6,7 @@
                 <input class="form-control" type="number" id="cProgMem" required [(ngModel)]="model.program_memory" name="programMemory" #programMemory="ngModel" step="1">
                 <div [hidden]="programMemory.valid || programMemory.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <select class="col form-control" name="programMemoryUnits" #programMemoryUnits (change)="changeProgramMemoryUnits(programMemoryUnits.value)">
+            <select class="col form-control" name="programMemoryUnits" #programMemoryUnits (change)="changeProgramMemoryUnits(programMemoryUnits.value)" [(ngModel)]="model.program_memory_units">
                 <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
             </select>
         </div>
@@ -16,7 +16,7 @@
                 <input class="form-control" type="number" id="cClockSpeed" required [(ngModel)]="model.clockspeed" name="clockSpeed" #clockSpeed="ngModel" step="1">
                 <div [hidden]="clockSpeed.valid || clockSpeed.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <select class="col form-control" name="clockSpeedUnits" #clockSpeedUnits (change)="changeClockSpeedUnits(clockSpeedUnits.value)">
+            <select class="col form-control" name="clockSpeedUnits" #clockSpeedUnits (change)="changeClockSpeedUnits(clockSpeedUnits.value)" [(ngModel)]="model.clockspeed_units">
                 <option [value]="u" *ngFor="let u of speedUnits">{{u}}</option>
             </select>
         </div>
@@ -26,7 +26,7 @@
                 <input class="form-control" type="number" id="cWordSize" required [(ngModel)]="model.wordsize" name="wordSize" #wordSize="ngModel" step="1">
                 <div [hidden]="wordSize.valid || wordSize.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <select class="col form-control" name="wordSizeUnits" #wordSizeUnits (change)="changeWordSizeUnits(wordSizeUnits.value)">
+            <select class="col form-control" name="wordSizeUnits" #wordSizeUnits (change)="changeWordSizeUnits(wordSizeUnits.value)"  [(ngModel)]="model.wordsize_units">
                 <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
             </select>
         </div>
@@ -46,7 +46,7 @@
                 <input class="form-control" type="number" id="cRamMem" required [(ngModel)]="model.ram_memory" name="ramMemory" #ramMemory="ngModel" step="1">
                 <div [hidden]="ramMemory.valid || ramMemory.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <select class="col form-control" name="ramMemoryUnits" #ramMemoryUnits (change)="changeRamMemoryUnits(ramMemoryUnits.value)">
+            <select class="col form-control" name="ramMemoryUnits" #ramMemoryUnits (change)="changeRamMemoryUnits(ramMemoryUnits.value)"  [(ngModel)]="model.ram_memory_units">
                 <option [value]="u" *ngFor="let u of memUnits">{{u}}</option>
             </select>
         </div>
@@ -56,7 +56,7 @@
                 <input class="form-control" type="number" id="cPower" required [(ngModel)]="model.cpu_power" name="power" #power="ngModel" step="0.1">
                 <div [hidden]="power.valid || power.pristine" class="alert alert-danger">Complete este campo</div>
             </div>
-            <select class="col form-control" name="powerUnits" #powerUnits (change)="changePowerUnits(powerUnits.value)">
+            <select class="col form-control" name="powerUnits" #powerUnits (change)="changePowerUnits(powerUnits.value)"  [(ngModel)]="model.cpu_power_units">
                 <option [value]="u" *ngFor="let u of cPowerUnits">{{u}}</option>
             </select>
         </div>

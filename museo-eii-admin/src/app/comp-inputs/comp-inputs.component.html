@@ -37,7 +37,7 @@
         <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.component_price" name="price" #price="ngModel" value="90.00">
         <div [hidden]="price.valid || price.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
-    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)">
+    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)" [(ngModel)]="model.component_price_units">
         <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>
     </select>
 </div>
