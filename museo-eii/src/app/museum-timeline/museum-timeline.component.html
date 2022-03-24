@@ -1,9 +1,24 @@
 <div class="row container">
-    <div class="col">
+    <mzd-timeline [alternateSide]="true">
+        <mzd-timeline-content *ngFor="let p of periods">
+            
+            <div>
+                <div class="row">
+                    <h4 class="col-lg-10"><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></h4>
+                    <p class="col">{{p.year_init}} - {{p.year_end}}</p>
+                </div>
+                <ul>
+                    <li *ngFor="let c of comps.get(p.period_id)"><a [routerLink]="['/component', c.component_id]">{{c.component_name}}</a></li>
+                    <li>ex</li>
+                </ul>
+            </div>
+        </mzd-timeline-content>
+    </mzd-timeline>
+    <!-- <div class="col">
         <ul>
             <li *ngFor="let p of periods">
                 <div><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></div>
             </li>
         </ul>
-    </div>
+    </div> -->
 </div>

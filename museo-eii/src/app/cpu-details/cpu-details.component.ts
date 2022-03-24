@@ -8,17 +8,25 @@ import { CompDevices, Cpu } from '../comp';
 })
 export class CpuDetailsComponent implements OnInit {
 
-  @Input() comp: Cpu;
+  @Input() comp: Cpu; // componente
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  isPortable() {
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos portátiles
+   */
+   isPortable() {
     return this.comp.component_devices.split(',').includes(CompDevices.portable);
   }
 
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos de escritorio
+   */
   isDesktop() {
     return this.comp.component_devices.split(',').includes(CompDevices.desktop);
   }

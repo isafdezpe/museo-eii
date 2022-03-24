@@ -1,4 +1,9 @@
+ul {
+  display: flex;
+}
+
 ul li {
+  display: inline-block;
   list-style: none;
   padding: 2%;
 }

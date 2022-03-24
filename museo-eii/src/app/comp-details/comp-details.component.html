@@ -33,7 +33,7 @@
           <h4>{{ comp.component_year_init }} - {{ comp.component_year_end }}</h4>
         </div>
         <div class="row second-row">
-          <ul>
+          <ul [hidden]="type==='CPU'">
             <li>
               <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
               <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>

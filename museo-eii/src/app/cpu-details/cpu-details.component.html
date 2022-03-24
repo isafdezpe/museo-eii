@@ -3,9 +3,10 @@
     <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.clockspeed}} {{comp.clockspeed_units}} (Frecuencia)</li>
     <li><ion-icon name="flash-outline"></ion-icon> {{comp.cpu_power}} {{comp.cpu_power_units}}</li>
     <li>
-    <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
-    <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
+        <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
+        <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
     </li>
+    <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
     <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.transistors}} (Transistores)</li>
     <li><ion-icon name="timer-outline"></ion-icon> {{comp.passmark}}</li>
     <li>{{comp.wordsize}} {{comp.wordsize_units}}</li>

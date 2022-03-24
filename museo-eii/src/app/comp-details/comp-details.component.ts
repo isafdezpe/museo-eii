@@ -13,21 +13,22 @@ import { PeriodService } from '../period.service';
 })
 export class CompDetailsComponent implements OnInit {
 
-  imgUrl = environment.baseImgUrl;
+  imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
 
-  comp: MyComponent;
-  compsFromPeriod: MyComponent[] = [];
-  type: String;
+  comp: MyComponent; // componente
+  compsFromPeriod: MyComponent[] = []; // otros componentes del periodo
+  type: String; // tipo del componente
 
-  previousPeriod: Period;
-  nextPeriod: Period;
-  period: Period | undefined;
-  periods: Period[] = [];
+  previousPeriod: Period; // periodo anterior al del componente
+  nextPeriod: Period; // periodo siguiente al del componente
+  period: Period | undefined; // periodo al que pertenece el componente
 
   imageObject: Array<object> = []; // imágenes a mostrar en la galería
 
   constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService) { 
+    // recargar el componente cuando cambian los parámetros de la url
     route.params.subscribe(() => {
+      // saca el id del componente
       const routeParams = this.route.snapshot.paramMap;
       const idFromRoute = Number(routeParams.get('id'));
   
@@ -37,13 +38,10 @@ export class CompDetailsComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  checkType(): String {
-    if (this.comp instanceof Cpu)
-      return CompTypes.cpu;
-    else
-      return CompTypes.generic;
-  }
-
+  /**
+   * Obtiene el componente 
+   * @param id : id del componente 
+   */
   getComp(id: number) {
     this.compService.getComponent(id).subscribe((c: Cpu) => {
       if (c.component_type == CompTypes.cpu) {
@@ -57,20 +55,21 @@ export class CompDetailsComponent implements OnInit {
       this.getImages(this.comp.component_id);
       this.getPeriod(this.comp.component_period_id);
       this.getCompsFromPeriod();
-      this.checkType();
-      console.log(this.comp)
     });
   }
 
+  /**
+   * Obtiene el periodo del componente, el anterior y el siguiente
+   * @param id : id del periodo al que pertenece el componente
+   */
   getPeriod(id: number): void {
-    this.periodService.getPeriods().subscribe((p: Period[]) => { 
-      this.periods = p;
+    this.periodService.getPeriods().subscribe((periods: Period[]) => {
       let index = 0;
-      this.periods.forEach((p: Period) => {
+      periods.forEach((p: Period) => {
         if (p.period_id === id) {
           this.period = p;
-          this.previousPeriod = (index > 0) ? this.periods[index-1] : undefined;
-          this.nextPeriod = (index < this.periods.length) ? this.periods[index+1] : undefined;
+          this.previousPeriod = (index > 0) ? periods[index-1] : undefined;
+          this.nextPeriod = (index < periods.length) ? periods[index+1] : undefined;
         }
         index++;
       });
@@ -91,19 +90,26 @@ export class CompDetailsComponent implements OnInit {
     });
   }
 
+  /**
+   * Obtiene los otros componentes del periodo
+   */
   getCompsFromPeriod() {
     this.compService.getComponentsFromPeriod(this.comp.component_period_id).subscribe((comps: MyComponent[]) => this.compsFromPeriod = comps);
   }
 
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos portátiles
+   */
   isPortable() {
     return this.comp.component_devices.split(',').includes(CompDevices.portable);
   }
 
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos de escritorio
+   */
   isDesktop() {
     return this.comp.component_devices.split(',').includes(CompDevices.desktop);
-  }
-
-  refresh(): void {
-    window.location.reload();
   }
 }

@@ -21,4 +21,8 @@ export class PeriodService {
   getPeriod(pId: number) {
     return this.http.get(`${this.baseUrl}/getPeriod.php?idPeriod=${pId}`);
   }
+
+  getYearsPeriod(pId:number) {
+    return this.http.get(`${this.baseUrl}/getYearsPeriods.php?idPeriod=${pId}`);
+  }
 }

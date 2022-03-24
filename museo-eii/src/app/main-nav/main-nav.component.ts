@@ -8,8 +8,8 @@ import { AppComponent } from '../app.component';
 })
 export class MainNavComponent implements OnInit {
 
-  @Input() selectedLang: string;
-  @Input() langs: string[];
+  @Input() selectedLang: string; // idioma en el que se muestra la página
+  @Input() langs: string[]; // listado de idiomas disponibles 
 
   @Output() langEvent = new EventEmitter<string>();
 
@@ -18,6 +18,10 @@ export class MainNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Cambia el idioma de la página al seleccionado
+   * @param lang : nuevo idioma seleccionado
+   */
   changeLanguage(lang: string) {
     this.langEvent.emit(lang);
   }

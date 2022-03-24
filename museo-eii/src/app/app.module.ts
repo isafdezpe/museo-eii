@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { MzdTimelineModule } from 'ngx-mzd-timeline';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     NgbModule,
-    NgImageSliderModule
+    NgImageSliderModule,
+    MzdTimelineModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -27,6 +27,7 @@
     "bootstrap": "^4.5.0",
     "ionicons": "^5.5.3",
     "ng-image-slider": "^2.8.0",
+    "ngx-mzd-timeline": "^1.0.3",
     "normalize.css": "^8.0.1",
     "rxjs": "~6.6.0",
     "zone.js": "~0.10.2"

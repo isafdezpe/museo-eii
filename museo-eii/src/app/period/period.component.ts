@@ -12,17 +12,19 @@ import { PeriodService } from '../period.service';
   styleUrls: ['./period.component.css']
 })
 export class PeriodComponent implements OnInit {
-  imgUrl = environment.baseImgUrl;
 
-  previousPeriod: Period;
-  nextPeriod: Period;
-  period: Period | undefined;
-  periods: Period[] = [];
-  comps: MyComponent[] = [];
-  cpuImgs: object[] = [];
+  imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
+
+  previousPeriod: Period; // periodo anterior al mostrado
+  nextPeriod: Period; // periodo siguiente al mostrado
+  period: Period | undefined;  // periodo
+  
+  comps: MyComponent[] = []; // componentes del periodo
 
   constructor(private route: ActivatedRoute, private periodService: PeriodService, private compService: ComponentService, private router: Router) {
+    // recargar el componente cuando cambian los parámetros de la url
     route.params.subscribe(() => {
+      // saca el id del periodo
       const routeParams = this.route.snapshot.paramMap;
       const idFromRoute = Number(routeParams.get('id'));
   
@@ -32,23 +34,29 @@ export class PeriodComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Obtiene el periodo actual, el anterior y el siguiente
+   * @param id : id del periodo 
+   */
   getPeriod(id: number): void {
-    this.periodService.getPeriods().subscribe((p: Period[]) => { 
-      this.periods = p;
+    this.periodService.getPeriods().subscribe((periods: Period[]) => { 
       let index = 0;
-      this.periods.forEach((p: Period) => {
+      periods.forEach((p: Period) => {
         if (p.period_id === id) {
           this.period = p;
-          this.previousPeriod = (index > 0) ? this.periods[index-1] : undefined;
-          this.nextPeriod = (index < this.periods.length) ? this.periods[index+1] : undefined;
+          this.previousPeriod = (index > 0) ? periods[index-1] : undefined;
+          this.nextPeriod = (index < periods.length) ? periods[index+1] : undefined;
         }
         index++;
       });
       this.getCpus(id);
     });
-    //this.periodService.getPeriod(id).subscribe((p: Period) => this.period = p);
   }
 
+  /**
+   * Obtiene los componentes del periodo y el sistema famoso de cada componente
+   * @param periodId : periodo del que se obtienen los componentes
+   */
   getCpus(periodId: number): void {
     this.compService.getComponentsFromPeriod(periodId).subscribe((comps: MyComponent[]) => {
       this.comps = comps;
@@ -60,7 +68,6 @@ export class PeriodComponent implements OnInit {
         this.getImages(c.component_id);
       });
       this.period.famousSystems = famousSys;
-      console.log(this.comps)
     });
   }
 
@@ -75,10 +82,5 @@ export class PeriodComponent implements OnInit {
       })
     });
   }
-
- navigate(route) {
-   this.router.navigateByUrl(route);
-   window.location.reload();
- }
 
 }
