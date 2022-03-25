@@ -26,5 +26,8 @@
         "TIMELINE": "timeline",
         "PERIOD": "period",
         "FILTERS": "Filters"
+    },
+    "ABOUT": {
+        "TEXT": "This website has been developed as a Final Degree Project of Computer Software Engineering at the University of Oviedo, from the initiative of Professor José Manuel Redondo López to create a museum of CPUs."
     }
 }
