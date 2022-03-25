@@ -20,8 +20,8 @@
               <a class="row name-link" [routerLink]="['/component', c.component_id]">{{c.component_name}}</a>
             </div>
           </div>
-
         </div>
+        
         <div class="row second-row details">
           <h3>{{ 'PERIOD.CHARACTERISTICS' | translate }}:</h3>
           <ul>
@@ -46,6 +46,11 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="row">
+      <ul class="events">
+        <li *ngFor="let e of period.period_events.split('\n')">{{e}}</li>
+      </ul>
     </div>
   </div>
 </div>

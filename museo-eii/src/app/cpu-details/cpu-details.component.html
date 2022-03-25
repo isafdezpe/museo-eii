@@ -1,14 +1,18 @@
 <ul>
-    <li><ion-icon name="hardware-chip-outline"></ion-icon> {{comp.ram_memory}} {{comp.ram_memory_units}}, {{comp.program_memory}} {{comp.program_memory_units}}</li>
-    <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.clockspeed}} {{comp.clockspeed_units}} (Frecuencia)</li>
-    <li><ion-icon name="flash-outline"></ion-icon> {{comp.cpu_power}} {{comp.cpu_power_units}}</li>
     <li>
+        <ion-icon name="hardware-chip-outline"></ion-icon>
+        <span *ngIf="comp.ram_memory!==0">{{comp.ram_memory}} {{comp.ram_memory_units}}</span>
+        <span *ngIf="comp.ram_memory!==0 && comp.program_memory!==0">,&nbsp;</span>
+        <span *ngIf="comp.program_memory!==0">{{comp.program_memory}} {{comp.program_memory_units}} (ROM)</span>
+    </li>
+    <li class="frequency">{{comp.clockspeed}} {{comp.clockspeed_units}}</li>
+    <li><ion-icon name="flash-outline"></ion-icon> {{comp.cpu_power}} {{comp.cpu_power_units}}</li>
+    <li>Dispositivos:&nbsp;
         <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
         <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
     </li>
     <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
-    <li><ion-icon name="chevron-forward-circle"></ion-icon> {{comp.transistors}} (Transistores)</li>
+    <li class="transistor">{{comp.transistors}}</li>
     <li><ion-icon name="timer-outline"></ion-icon> {{comp.passmark}}</li>
-    <li>{{comp.wordsize}} {{comp.wordsize_units}}</li>
-    <li>{{comp.transistor_size}} {{comp.transistor_size_units}}</li>
+    <li>{{comp.wordsize}} {{comp.wordsize_units}}&nbsp;&nbsp;{{comp.transistor_size}} {{comp.transistor_size_units}}</li>
 </ul>

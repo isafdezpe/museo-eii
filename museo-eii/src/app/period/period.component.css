@@ -22,6 +22,20 @@ ul ul li::before {
   margin-right: 40px;
 }
 
+.events {
+  margin-top: 10%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.events li {
+  display: inline-block;
+  min-width: fit-content;
+  background-color: bisque;
+  margin-right: 10%;
+  border-left: rgb(141, 117, 89) solid 2px;
+}
+
 a:link, a:visited {
     padding: 8px 0;
     color: #39583d;
@@ -33,6 +47,10 @@ a:link, a:visited {
   margin: auto;
   display: flex;
   float:left;
+}
+
+.systems {
+  margin-top: -5%;
 }
 
 .img-container {
@@ -78,7 +96,7 @@ a:link, a:visited {
 }
 
 .first-row {
-  margin-bottom: 20%;
+  margin-bottom: 10%;
 }
 
 .first-col {

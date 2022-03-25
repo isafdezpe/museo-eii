@@ -1,6 +1,11 @@
+ul {
+  min-width: 400px;
+}
+
 ul li {
     list-style: none;
     padding: 2%;
+    min-width: fit-content;
   }
     
   ul ul {
@@ -9,4 +14,28 @@ ul li {
   
   ul ul li::before {
     content: "\003e \00a0";
+  }
+
+  .transistor::before, .frequency::before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    left: 0;
+  }
+
+  .transistor::before {
+    background-image: url("../../assets/img/transistor.png");
+    transform: translateX(16px);
+  }
+
+  .frequency::before {
+    background-image: url("../../assets/img/frequency.png");
+    transform: translateX(20px);
+  }
+
+  .transistor, .frequency {
+    margin-left: 23px;
   }

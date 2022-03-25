@@ -9,7 +9,7 @@ import { PeriodService } from '../period.service';
 @Component({
   selector: 'app-comp-details',
   templateUrl: './comp-details.component.html',
-  styleUrls: ['./comp-details.component.css']
+  styleUrls: ['./comp-details.component.css'],
 })
 export class CompDetailsComponent implements OnInit {
 
@@ -25,6 +25,7 @@ export class CompDetailsComponent implements OnInit {
 
   imageObject: Array<object> = []; // imágenes a mostrar en la galería
 
+
   constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService) { 
     // recargar el componente cuando cambian los parámetros de la url
     route.params.subscribe(() => {
@@ -33,6 +34,7 @@ export class CompDetailsComponent implements OnInit {
       const idFromRoute = Number(routeParams.get('id'));
   
       this.getComp(idFromRoute);
+      
     })
   }
 
@@ -44,6 +46,7 @@ export class CompDetailsComponent implements OnInit {
    */
   getComp(id: number) {
     this.compService.getComponent(id).subscribe((c: Cpu) => {
+      console.log(c)
       if (c.component_type == CompTypes.cpu) {
         this.comp = new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img,
         c.program_memory, c.program_memory_units, c.ram_memory, c.ram_memory_units,c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, id);
@@ -54,7 +57,8 @@ export class CompDetailsComponent implements OnInit {
       }
       this.getImages(this.comp.component_id);
       this.getPeriod(this.comp.component_period_id);
-      this.getCompsFromPeriod();
+      this.getCompsFromPeriod();        
+      console.log(this.comp)
     });
   }
 

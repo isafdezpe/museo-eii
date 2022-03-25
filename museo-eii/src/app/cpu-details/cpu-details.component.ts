@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CompDevices, Cpu } from '../comp';
 
 @Component({
@@ -6,11 +7,12 @@ import { CompDevices, Cpu } from '../comp';
   templateUrl: './cpu-details.component.html',
   styleUrls: ['./cpu-details.component.css']
 })
-export class CpuDetailsComponent implements OnInit {
+export class CpuDetailsComponent implements OnInit{
 
   @Input() comp: Cpu; // componente
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { 
+  }
 
   ngOnInit(): void {
   }

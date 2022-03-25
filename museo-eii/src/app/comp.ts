@@ -75,7 +75,7 @@ export class GenericComp implements MyComponent {
         this.component_period_id = periodId;
         this.component_price = price;
         this.component_price_units = priceUnits;
-        this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? ", " + devices[1] : "")) : "");
+        this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? "," + devices[1] : "")) : "");
         this.component_imgs = [];
         imgNames.forEach((i) => this.component_imgs.push(i));
         this.famous_system = famousSystem;
@@ -84,7 +84,7 @@ export class GenericComp implements MyComponent {
     }
 
     setDevices(devices: String[]) {
-        this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? ", " + devices[1] : "")) : "");
+        this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? "," + devices[1] : "")) : "");
     }
 
     equals(c: MyComponent): boolean {
