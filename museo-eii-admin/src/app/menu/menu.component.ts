@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
 import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-menu',
@@ -13,7 +14,7 @@ export class MenuComponent implements OnInit {
   @Input() initialObject; // objeto con los valores iniciales
   @Input() model; // objeto sobre el que se realizan los cambios en el formulario
 
-  constructor(public router: Router, public dialog: MatDialog) { }
+  constructor(public router: Router, public dialog: MatDialog, private userService: UserService) { }
 
   ngOnInit(): void {
   }
@@ -42,6 +43,11 @@ export class MenuComponent implements OnInit {
       return false;
       
     return !this.initialObject.equals(this.model);
+  }
+
+  exitSession() {
+    this.userService.deleteToken();
+    this.router.navigateByUrl("");
   }
 
 }

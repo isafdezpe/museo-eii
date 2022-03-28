@@ -115,7 +115,7 @@ export class FormEditCompComponent implements OnInit {
       //this.model.famous_system_img = this.c.famous_system_img;
     this.componentService.editComponent(this.model).subscribe(() => {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-        this.snackBar.open('Componente actualizado', 'Cerrar');
+        this.snackBar.open('Componente actualizado', 'Cerrar', { duration: 1500 });
       });
       this.c = this.cloneComp(this.model);
     });

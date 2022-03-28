@@ -26,6 +26,7 @@ import { CpuTypeDetailsComponent } from './cpu-type-details/cpu-type-details.com
 import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -58,8 +59,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NgImageSliderModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

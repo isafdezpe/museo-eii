@@ -27,7 +27,7 @@ h2, h3 {
   border: 1px solid black;
 }
 
-button {
+input[type=submit] {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 2%;

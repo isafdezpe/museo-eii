@@ -39,7 +39,7 @@ export class ListPeriodsComponent implements OnInit {
         if (confirmed)
           this.periodService.deletePeriod(p).subscribe(() => {
             this.getPeriods();
-            this.snackBar.open('Periodo eliminado', 'Cerrar');
+            this.snackBar.open('Periodo eliminado', 'Cerrar', { duration: 1500 });
           });
       });
   }

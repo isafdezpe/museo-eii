@@ -42,7 +42,7 @@ export class FormEditPeriodComponent implements OnInit {
    */
   submit() {
     this.periodService.editPeriod(this.model).subscribe(() => {
-      this.snackBar.open('Periodo actualizado', 'Cerrar');
+      this.snackBar.open('Periodo actualizado', 'Cerrar', { duration: 1500 });
       this.p = this.clonePeriod(this.model);
     });
   }

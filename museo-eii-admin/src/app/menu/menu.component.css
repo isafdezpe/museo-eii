@@ -8,6 +8,12 @@ ul li::before {
   content: "\003e \00a0";
 }
 
+.logout {
+  position:fixed;
+  top:20px;
+  right: 20px;
+}
+
 a:hover {
   cursor: pointer;
 }

@@ -1,9 +1,19 @@
 <div class="container">
     <h2>Museo de la Informática - Administrador</h2>
     <h3>Iniciar sesión</h3>
-    <form class="login">
-        <input type="text" name="user" placeholder="Usuario" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <button type="submit" (click)="login()">Iniciar sesión</button>
+    <form (ngSubmit)="login()" #loginForm="ngForm" class="login" id="loginForm">
+        <div>
+            <input class="form-control" type="email" id="uemail" required [(ngModel)]="model.email" name="email" #email="ngModel" placeholder="Email">
+            <div [hidden]="email.valid || email.pristine" class="alert alert-danger">Complete este campo</div>
+        </div>
+        <div>
+            <input class="form-control" type="password" id="upassword" required [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="Contraseña">
+            <div [hidden]="password.valid || password.pristine" class="alert alert-danger">Complete este campo</div>
+        </div>
+        <!-- <a (click)="resetPassword()">Cambiar contraseña</a> -->
+        <div>
+
+        </div>
+        <input type="submit" value="Iniciar sesión" [disabled]="!loginForm.valid">
     </form>
 </div>

@@ -50,7 +50,7 @@
 <div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
     <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>
     <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">
-    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/*" (change)="sysImgChange($event)" style="display:none;">
+    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">
     <label class="upload" for="csystemimg">Subir imagen</label>
 </div>
 <div class="row form-row">

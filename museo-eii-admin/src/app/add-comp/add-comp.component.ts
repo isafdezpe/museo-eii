@@ -124,7 +124,7 @@ export class AddCompComponent implements OnInit {
     });
     this.componentService.addComponent(this.model).subscribe(() => {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-        this.snackBar.open('Componente guardado', 'Cerrar');
+        this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
       });
       this.resetForm();
     });
