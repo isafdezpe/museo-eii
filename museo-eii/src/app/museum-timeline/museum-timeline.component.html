@@ -1,7 +1,7 @@
 <div class="row container">
+    <input class="search-bar" type="text" placeholder="{{ 'NAV.SEARCH' | translate}}">
     <mzd-timeline [alternateSide]="true">
         <mzd-timeline-content *ngFor="let p of periods">
-            
             <div>
                 <div class="row">
                     <h4 class="col-lg-10"><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></h4>

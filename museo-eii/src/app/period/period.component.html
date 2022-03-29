@@ -48,8 +48,8 @@
       </div>
     </div>
     <div class="row">
-      <ul class="events">
-        <li *ngFor="let e of period.period_events.split('\n')">{{e}}</li>
+      <ul class="events row">
+        <li class="col" *ngFor="let e of period.period_events.split('\n')">{{e}}</li>
       </ul>
     </div>
   </div>

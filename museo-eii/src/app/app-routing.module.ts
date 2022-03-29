@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'museum', component: MuseumTimelineComponent},
   { path: 'about', component: AboutComponent},
   { path: 'period/:id', component: PeriodComponent},
-  { path: 'component/:id', component: CompDetailsComponent}
+  { path: 'component/:id', component: CompDetailsComponent},
+  { path: '**', redirectTo: '/', pathMatch: 'full'}
 ];
 
 @NgModule({

@@ -24,3 +24,17 @@ a:link, a:visited {
 select {
   margin: 2%;
 }
+
+.search-bar {
+  background-color: rgba(204, 204, 204, 0.671);
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  height: 30px;
+  margin-top: 0px;
+}
+
+.search-bar:focus {
+  background-color: #fff;
+  border: 1px  #fff;
+}

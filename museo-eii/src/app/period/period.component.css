@@ -24,17 +24,16 @@ ul ul li::before {
 
 .events {
   margin-top: 10%;
-  display: flex;
-  justify-content: space-around;
 }
 
 .events li {
-  display: inline-block;
-  min-width: fit-content;
+  min-width: 150px;
   background-color: bisque;
-  margin-right: 10%;
+  margin-right: 5%;
+  margin-bottom: 2%;
   border-left: rgb(141, 117, 89) solid 2px;
 }
+
 
 a:link, a:visited {
     padding: 8px 0;
@@ -57,16 +56,24 @@ a:link, a:visited {
   max-width: 130px;
   position: relative;
   min-height: 120px;
+  margin-right: 20px;
 }
 
 .img-systems {
-  height: 210px;
+  height: 250px;
   width: auto;
+}
+
+.img-systems h6 {
+  width: 130px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .name-link {
   position: absolute;
   bottom: 0;
+  text-align: center;
 }
 
 .gallery {
@@ -80,15 +87,15 @@ a:link, a:visited {
 
 
 .trivia, .details {
-  background: linear-gradient(#121700, #414040);
+  background: linear-gradient(#505050, #949393);
   padding: 4%;
   padding-bottom: 1%;
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  color: #1FC91C;
+  color: #fff;
 }
 
 .trivia h3, .details h3 {
-  color: #fff;
+  color: rgb(0, 221, 18);
 }
 
 .trivia ul li::before {

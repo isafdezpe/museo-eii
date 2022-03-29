@@ -6,7 +6,7 @@ section {
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/cpu-3370852_1280.jpg); 
     background-size: cover; 
     background-position: center;
-    height: 65vh; 
+    height: 60vh; 
     background-attachment: fixed;
   }
   
@@ -24,5 +24,11 @@ section {
   .btn-museum {
     padding: 33px 60px;
     font-size: 1.2em;
-    margin: 80px 42% 80px 42%;
+    margin: auto;
+  }
+
+  .row {
+    height: 22vh;
+    display: flex;
+    align-items: center;
   }
