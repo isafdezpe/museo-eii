@@ -18,10 +18,9 @@
       <div class="col first-col">
         <div class="row first-row">
           <div class="gallery">
-            <ng-image-slider [images]="imageObject" #nav [imageSize]="{width: 'auto', height: 100}"></ng-image-slider>
-            <!-- <div class="img-container" *ngFor="let i of comp.component_imgs">
-              <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}">
-            </div> -->
+            <div class="img-container" *ngFor="let i of comp.component_imgs">
+              <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}" (click)="showGallery(index)">
+            </div>
           </div>
         </div>
         <div class="row second-row description">

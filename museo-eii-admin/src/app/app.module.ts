@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTableModule} from '@angular/material/table';
-import { NgImageSliderModule } from 'ng-image-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +26,7 @@ import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-
 import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
+import { IvyGalleryModule } from 'angular-gallery';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,7 @@ import { CookieService } from 'ngx-cookie-service';
     MatTableModule,
     MatDialogModule,
     HttpClientModule,
-    NgImageSliderModule
+    IvyGalleryModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],

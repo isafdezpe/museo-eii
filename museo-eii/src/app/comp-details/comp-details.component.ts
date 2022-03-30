@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Gallery } from 'angular-gallery';
 import { environment } from '../../environments/environment';
 import { CompDevices, CompTypes, MyComponent, Cpu, GenericComp } from '../comp';
 import { ComponentService } from '../cpus.service';
@@ -23,10 +24,7 @@ export class CompDetailsComponent implements OnInit {
   nextPeriod: Period; // periodo siguiente al del componente
   period: Period | undefined; // periodo al que pertenece el componente
 
-  imageObject: Array<object> = []; // imágenes a mostrar en la galería
-
-
-  constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService) { 
+  constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService, private gallery: Gallery) { 
     // recargar el componente cuando cambian los parámetros de la url
     route.params.subscribe(() => {
       // saca el id del componente
@@ -86,10 +84,8 @@ export class CompDetailsComponent implements OnInit {
    */
    getImages(id: number) {
     this.compService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
-      console.log(imgs);
       imgs.forEach((i) => {
         this.comp.component_imgs.push(i.image);
-        this.imageObject.push({image: this.imgUrl + i.image, thumbImage: this.imgUrl + i.image})
       })
     });
   }
@@ -116,4 +112,14 @@ export class CompDetailsComponent implements OnInit {
   isDesktop() {
     return this.comp.component_devices.split(',').includes(CompDevices.desktop);
   }
+
+  showGallery(index: number) {
+    let imgs = [];
+    this.comp.component_imgs.forEach((i) => {imgs.push({path: this.imgUrl + i});})
+    let prop = {
+        images: imgs,
+        index 
+    };
+    this.gallery.load(prop);
+}
 }

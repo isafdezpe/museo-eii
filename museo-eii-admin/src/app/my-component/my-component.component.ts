@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Gallery } from 'angular-gallery';
 import { Location } from '@angular/common';
 import { CompDevices, CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
 import { ComponentService } from '../component.service';
@@ -21,10 +22,7 @@ export class MyComponentComponent implements OnInit {
 
   type: String; // tipo del componente
 
-
-  imageObject: Array<object> = []; // imágenes a mostrar en la galería
-
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location, private gallery: Gallery) { }
 
   ngOnInit(): void {
     // saca el id del componente
@@ -61,7 +59,6 @@ export class MyComponentComponent implements OnInit {
       console.log(imgs);
       imgs.forEach((i) => {
         this.c.component_imgs.push(i.image);
-        this.imageObject.push({image: this.imgUrl + i.image, thumbImage: this.imgUrl + i.image})
       })
     });
   }
@@ -96,5 +93,15 @@ export class MyComponentComponent implements OnInit {
   goBack() {
     this._location.back();
   }
+
+  showGallery(index: number) {
+    let imgs = [];
+    this.c.component_imgs.forEach((i) => {imgs.push({path: this.imgUrl + i});})
+    let prop = {
+        images: imgs,
+        index 
+    };
+    this.gallery.load(prop);
+}
 
 }

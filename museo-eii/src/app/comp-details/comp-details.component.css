@@ -28,11 +28,14 @@ a:link, a:visited {
   margin-top: 10%;
   display: flex;
   float:left;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 
 .gallery img {
-  height: 4em;
+  height: 100px;
   width: auto;
+  margin-right: 5px;
 }
 
 h2 {

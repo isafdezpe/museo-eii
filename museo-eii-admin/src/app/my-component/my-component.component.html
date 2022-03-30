@@ -17,7 +17,9 @@
                 <h5 class="row">Dispositivos</h5><div class="row"><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
             </div>
             <div class="col-lg-6">
-                <ng-image-slider [images]="imageObject" #nav [imageSize]="{width: 'auto', height: 100}"></ng-image-slider>
+                <div class="img-container" *ngFor="let i of c.component_imgs">
+                    <img src="{{imgUrl}}{{i}}" alt="{{c.component_name}}" (click)="showGallery(index)">
+                  </div>
             </div>
         </div>
         <h5 class="row col">Descripción</h5><p class="row col">{{c.component_description}}</p>

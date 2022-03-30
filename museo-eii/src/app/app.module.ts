@@ -5,7 +5,6 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgImageSliderModule } from 'ng-image-slider';
 import { MzdTimelineModule } from 'ngx-mzd-timeline';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +18,7 @@ import { PeriodComponent } from './period/period.component';
 import { CompDetailsComponent } from './comp-details/comp-details.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CpuDetailsComponent } from './cpu-details/cpu-details.component';
+import { IvyGalleryModule } from 'angular-gallery';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -49,8 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
       }
     }),
     NgbModule,
-    NgImageSliderModule,
-    MzdTimelineModule
+    MzdTimelineModule,
+    IvyGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent],

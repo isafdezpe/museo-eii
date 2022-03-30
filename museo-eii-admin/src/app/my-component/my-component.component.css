@@ -2,20 +2,23 @@ p {
     text-align: justify;
 }
 
-/* .gallery {
-  max-width: 500px;
+.gallery {
+  max-width: 600px;
   position: relative;
   margin: auto;
   margin-bottom: 20%;
   margin-top: 10%;
   display: flex;
   float:left;
+  overflow-x: auto;
+  padding-bottom: 20px;
 }
 
 .gallery img {
-  height: 4em;
+  height: 100px;
   width: auto;
-} */
+  margin-right: 5px;
+}
 
 .row {
   margin-left: 0;
