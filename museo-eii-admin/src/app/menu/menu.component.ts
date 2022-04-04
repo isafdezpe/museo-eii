@@ -45,6 +45,9 @@ export class MenuComponent implements OnInit {
     return !this.initialObject.equals(this.model);
   }
 
+  /**
+   * Cierra la sesión del usuario logueado
+   */
   exitSession() {
     this.userService.deleteToken();
     this.router.navigateByUrl("");

@@ -16,7 +16,7 @@
                 <h5 class="row">Precio</h5><p class="row">{{c.component_price}}{{c.component_price_units}}</p>
                 <h5 class="row">Dispositivos</h5><div class="row"><p *ngIf="isPortable()">Portátiles.&nbsp;</p><p *ngIf="isDesktop()">De escritorio.&nbsp;</p></div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 gallery">
                 <div class="img-container" *ngFor="let i of c.component_imgs">
                     <img src="{{imgUrl}}{{i}}" alt="{{c.component_name}}" (click)="showGallery(index)">
                   </div>

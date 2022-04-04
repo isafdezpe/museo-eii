@@ -60,6 +60,12 @@ export class MuseumTimelineComponent implements OnInit {
     }))
   }
 
+  /**
+   * Devuelve la lista de periodos filtrada que cumple con los criterios de búsqueda seleccionados (pertenecen a un periodo de tiempo o el nombre del periodo o del componente contienen el texto buscado)
+   * @param initYear : año de inicio seleccionado
+   * @param endYear : año de fin seleccionado
+   * @param name : texto buscado
+   */
   search(initYear, endYear, name) {
     this.periodsFiltered = this.periods.filter((p) => {
       return p.year_end >= initYear 

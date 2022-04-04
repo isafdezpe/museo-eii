@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.model.email, this.model.password).subscribe((data: any) => {
       this.userService.setToken(data.email);
       this.router.navigateByUrl('/listPeriods');
-    }, error => {
+    }, () => {
       this.snackBar.open('Usuario o contraseña incorrectos', 'Cerrar', { duration: 1500 });
       this.model = {email: "", password: ""};
 

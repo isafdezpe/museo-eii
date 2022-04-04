@@ -94,6 +94,10 @@ export class MyComponentComponent implements OnInit {
     this._location.back();
   }
 
+  /**
+   * Abre una galería con las imágenes del componente
+   * @param index : índice de la imagen que se abre 
+   */
   showGallery(index: number) {
     let imgs = [];
     this.c.component_imgs.forEach((i) => {imgs.push({path: this.imgUrl + i});})

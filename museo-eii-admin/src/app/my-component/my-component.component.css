@@ -6,8 +6,6 @@ p {
   max-width: 600px;
   position: relative;
   margin: auto;
-  margin-bottom: 20%;
-  margin-top: 10%;
   display: flex;
   float:left;
   overflow-x: auto;

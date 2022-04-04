@@ -113,6 +113,10 @@ export class CompDetailsComponent implements OnInit {
     return this.comp.component_devices.split(',').includes(CompDevices.desktop);
   }
 
+  /**
+   * Abre una galería con las imágenes del componente
+   * @param index : índice de la imagen que se abre 
+   */
   showGallery(index: number) {
     let imgs = [];
     this.comp.component_imgs.forEach((i) => {imgs.push({path: this.imgUrl + i});})
