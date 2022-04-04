@@ -12,6 +12,7 @@ export class CompInputsComponent implements OnInit {
   imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
 
   @Input() model: MyComponent; // objeto asignado en el formulario sobre el que se realizan los cambios
+  @Input() compImgsInDB: string[];
 
   @Input() images; // imágenes subidas a través de los inputs[file]
   @Input() imagesNames: string[]; // nombres de las imágenes subidas
@@ -26,7 +27,6 @@ export class CompInputsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.model)
   }
 
   /**
@@ -86,14 +86,21 @@ export class CompInputsComponent implements OnInit {
       reader.readAsDataURL(fileList[0]);
       // se divide el nombre para obtener el nombre con el que se va a guardar y la extensión
       let fileNameExt = fileList[0].name.split('.');
+      let saveName = fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]);
       // si existía previamente otra imagen reemplazamos el nombre en el array
       if (this.model.famous_system_img) {
-        let i = this.imagesNames.indexOf(this.model.famous_system_img.split('.')[0]);
-        this.imagesNames[i] = fileNameExt[0];
+        this.compImgsInDB.forEach((img, index) => { // si existía en la base de datos
+          if (img === this.model.famous_system_img) {
+            this.compImgsInDB.splice(index,1);
+          }
+        });
+        let i = this.imagesNames.indexOf(this.model.famous_system_img.split('.')[0]); // si había sido subida
+        if (i != -1) this.imagesNames[i] = fileNameExt[0];
+        else this.imagesNames.push(fileNameExt[0]);
       } // si no existe se añade 
       else this.imagesNames.push(fileNameExt[0]);
       // se asigna el nombre y la extensión del archivo que se va a subir
-      this.model.famous_system_img = fileNameExt[0] + '.' + ((fileNameExt[fileNameExt.length - 1] == 'jpg') ? 'jpeg' : fileNameExt[fileNameExt.length - 1]);
+      this.model.famous_system_img = saveName;
     }
     // resetea el valor del input
     this.sysImgInput.nativeElement.value = '';

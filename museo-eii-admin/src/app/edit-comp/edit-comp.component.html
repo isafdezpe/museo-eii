@@ -12,7 +12,7 @@
                     <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
             </div>
-            <app-comp-inputs [model]="model" [images]="images" [imagesNames]="imagesNames"></app-comp-inputs>
+            <app-comp-inputs [model]="model" [images]="images" [imagesNames]="imagesNames" [compImgsInDB]="compImgsInDB"></app-comp-inputs>
             <div class="row form-row">
                 <div (click)="removeImage(url)" class="rm-img-btn" *ngFor='let url of compImgsInDB'>
                     <button  ><img class="row" src="{{imgUrl}}{{url}}" height="100" style="margin: 3px;"></button>

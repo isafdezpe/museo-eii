@@ -129,6 +129,7 @@ export class FormEditCompComponent implements OnInit {
     this.imagesNames = [];
     this.model = this.cloneComp(this.c);
     this.compImgsInDB  = [];
+    this.compImgsInDB.push(this.c.famous_system_img);
     this.c.component_imgs.forEach((i) => this.compImgsInDB.push(i));
     console.log(this.model)
   }
