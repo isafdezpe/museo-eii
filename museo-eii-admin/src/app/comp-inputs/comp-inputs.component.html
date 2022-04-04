@@ -46,8 +46,7 @@
     <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>
     <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label>
 </div>
-<!--<input type="button" (click)="changeAddSys()" value="{{textAddFamousSys}}">-->
-<div class="row form-row"><!--<div class="row form-row" [hidden]="!addFamousSys">-->
+<div class="row form-row">
     <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>
     <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">
     <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">

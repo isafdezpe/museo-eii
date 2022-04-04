@@ -1,7 +1,10 @@
 <div class="row container">
-    <input class="search-bar" type="text" placeholder="{{ 'NAV.SEARCH' | translate}}">
+    <div class="row filters">
+        <ngx-slider class="col-5 custom-slider" [(value)]="initYear" [(highValue)]="endYear" [options]="options" (valueChange)="search(initYear, endYear, nameSearch.value)" (highValueChange)="search(initYear, endYear, nameSearch.value)"></ngx-slider>
+        <input class="col-5 search-bar" #nameSearch type="search" placeholder="{{ 'NAV.SEARCH' | translate}}" (change)="search(initYear, endYear, nameSearch.value)">
+    </div>
     <mzd-timeline [alternateSide]="true">
-        <mzd-timeline-content *ngFor="let p of periods">
+        <mzd-timeline-content *ngFor="let p of periodsFiltered">
             <div>
                 <div class="row">
                     <h4 class="col-lg-10"><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></h4>
@@ -13,11 +16,5 @@
             </div>
         </mzd-timeline-content>
     </mzd-timeline>
-    <!-- <div class="col">
-        <ul>
-            <li *ngFor="let p of periods">
-                <div><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></div>
-            </li>
-        </ul>
-    </div> -->
+    
 </div>

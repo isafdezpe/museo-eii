@@ -21,9 +21,13 @@ a:link, a:visited {
   color: #39583d;
 }
 
-select {
-  margin: 2%;
+.filters {
+  align-items: flex-end;
+  margin-right: 0px;
+  min-width: 45%;
 }
+
+
 
 .search-bar {
   background-color: rgba(204, 204, 204, 0.671);
@@ -32,6 +36,8 @@ select {
   color: #000;
   height: 30px;
   margin-top: 0px;
+  margin-left: 15px;
+  padding: 20px;
 }
 
 .search-bar:focus {

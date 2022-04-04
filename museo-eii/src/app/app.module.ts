@@ -19,6 +19,7 @@ import { CompDetailsComponent } from './comp-details/comp-details.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CpuDetailsComponent } from './cpu-details/cpu-details.component';
 import { IvyGalleryModule } from 'angular-gallery';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -50,7 +51,8 @@ export function createTranslateLoader(http: HttpClient) {
     }),
     NgbModule,
     MzdTimelineModule,
-    IvyGalleryModule
+    IvyGalleryModule,
+    NgxSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
