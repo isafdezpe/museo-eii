@@ -97,7 +97,7 @@ insert into cpus(cpu_id, program_memory, program_memory_units, ram_memory, ram_m
 
 insert into components(component_name, component_description, component_family, component_type, component_year_init, component_year_end, component_price, component_price_units, component_devices, famous_system, famous_system_img, component_period_id) values (
 "Intel 4040", "Uno de los dos sucesores del 4004 junto con el 8008, igualmente de 4 bits, pero que incorporaba nuevas instrucciones, registros y soporte para interrupciones hardware.",
-"Intel", "CPU", 1974, 1981, 200, '$', "DESKTOP,PORTABLE", "Gottlieb Flying Carpet", "Gottlieb Flying Carpet", 1);
+"Intel", "CPU", 1974, 1981, 200, '$', "DESKTOP,PORTABLE", "Gottlieb Flying Carpet", "Gottlieb Flying Carpet.jpeg", 1);
 
 insert into component_images(component_id, image) values (3, "4040-1.jpeg");
 insert into component_images(component_id, image) values (3, "4040-2.jpeg");
