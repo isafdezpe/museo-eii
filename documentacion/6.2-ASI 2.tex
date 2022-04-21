@@ -266,27 +266,199 @@
 
 
 \subsection{Identificación de Actores del Sistema} 
-\subsubsection{Usuario administrador}
-Actor que interactúa con el sistema. Es responsable de gestionar el sistema y su mantenimiento. Es el único actor con acceso a la administración del sistema, capaz de modificar la base de datos. Debe tener amplios conocimientos sobre el sistema.
 \subsubsection{Usuario estándar}
 Actor que interactúa con el sistema. Tiene acceso de lectura a la página web del museo. Solo debe tener un conocimiento básico para navegar por internet.
+\subsubsection{Usuario administrador}
+Actor que interactúa con el sistema. Debe iniciar sesión en la parte de administración del sistema, es el único actor con acceso a esta. Es responsable de gestionar el sistema y su mantenimiento. Debe tener amplios conocimientos sobre el sistema.
 
 \subsection{Especificación de Casos de Uso}
 
-\textcolor[rgb]{0.65,0.16,0}{Ejemplo de tabla para especificación de casos de uso}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.7]{casos-uso-museo}
+\caption{Diagrama de casos de uso del museo}
+\end{figure}
 
 \begin{table}[htbp]
   \centering
   \caption{Especificación Caso de Uso 1}
     \begin{tabular}{p{20.855em}r}
 \cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
-\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Registro} & \multicolumn{1}{r}{} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Consultar periodos} & \multicolumn{1}{r}{} \\
     \midrule
     \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
     \midrule
-    \multicolumn{2}{p{31.64em}}{Un usuario no registrado debe poder registrarse en el sistema mediante su cuenta de Google, lo que hará que automáticamente se inicie sesión en la aplicación.} \\
+    \multicolumn{2}{p{31.64em}}{Un usuario estándar puede visualizar los periodos existentes en el museo.} \\
     \bottomrule
     \end{tabular}%
   \label{espec_caso_uso_1}%
   \vspace{-4mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 2}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Consultar componentes} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{Un usuario estándar puede visualizar los componentes pertenecientes a cada periodo del museo.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_2}%
+  \vspace{-4mm}
+\end{table}%
+
+
+\begin{figure}[H]
+\centering
+\vspace{15mm}
+\includegraphics[scale=0.7]{casos-uso-admin}
+\caption{Diagrama de casos de uso de la administración del museo}
+\end{figure}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 3}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Iniciar sesión} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{Un usuario puede iniciar sesión en la aplicación para acceder a esta como administrador.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_3}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 4}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Consultar periodos} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede consultar los periodos existentes en el sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_4}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 5}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Añadir periodo} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede añadir periodos a la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_5}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 6}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Modificar periodo} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede modificar los periodos existentes en la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_6}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 7}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Eliminar periodo} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede eliminar los periodos existentes en la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_7}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 8}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Consultar componentes} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede consultar los componentes existentes en el sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_8}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 9}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Añadir componente} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede añadir componentes a los periodos existentes en la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_9}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 10}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Modificar componente} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede modificar los componentes existentes en la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_10}%
+  \vspace{-2mm}
+\end{table}%
+
+\begin{table}[htbp]
+  \centering
+  \caption{Especificación Caso de Uso 11}
+    \begin{tabular}{p{20.855em}r}
+\cmidrule{1-1}    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{1}{p{20.855em}}{\textbf{Nombre del caso de uso}} & \multicolumn{1}{r}{\cellcolor[rgb]{ 1,  1,  1}} \\
+\cmidrule{1-1}    \multicolumn{1}{p{20.855em}}{Eliminar componente} & \multicolumn{1}{r}{} \\
+    \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{2}{p{31.64em}}{\textbf{Descripción}} \\
+    \midrule
+    \multicolumn{2}{p{31.64em}}{El administrador puede eliminar los componentes existentes en la base de datos del sistema.} \\
+    \bottomrule
+    \end{tabular}%
+  \label{espec_caso_uso_11}%
+  \vspace{-2mm}
 \end{table}%
