@@ -6,6 +6,7 @@ import { Period } from '../period';
 import { PeriodService } from '../period.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-period',
@@ -17,7 +18,7 @@ export class FormEditPeriodComponent implements OnInit {
   p: Period; // objeto con los valores sin editar
   model: Period; // objeto asignado en el formulario sobre el que se realizan los cambios
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
 
   ngOnInit(): void {
     // saca el id del periodo que se va a editar
@@ -41,10 +42,13 @@ export class FormEditPeriodComponent implements OnInit {
    * Actualiza el periodo
    */
   submit() {
-    this.periodService.editPeriod(this.model).subscribe(() => {
-      this.snackBar.open('Periodo actualizado', 'Cerrar', { duration: 1500 });
-      this.p = this.clonePeriod(this.model);
-    });
+    if (!this.isValid(this.model))
+      this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
+    else 
+      this.periodService.editPeriod(this.model).subscribe(() => {
+        this.snackBar.open('Periodo actualizado', 'Cerrar', { duration: 1500 });
+        this.p = this.clonePeriod(this.model);
+      }, () => {this.toastService.error("No se ha podido editar el periodo", "Error", {positionClass: "toast-bottom-full-width"} )});
   }
 
   /**
@@ -86,6 +90,10 @@ export class FormEditPeriodComponent implements OnInit {
       return false;
       
     return !this.p.equals(this.model);
+  }
+
+  isValid(period: Period): boolean {
+    return period.period_name != "" && period.period_details != "" && period.period_trivia != "" && period.period_events != "";
   }
 
 }

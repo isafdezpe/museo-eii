@@ -10,6 +10,7 @@ import { PeriodService } from '../period.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class FormEditCompComponent implements OnInit {
     fileSource: new FormControl('', [Validators.required])
   }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
 
   ngOnInit(): void {
     // saca el id del componente que se va a editar
@@ -113,12 +114,25 @@ export class FormEditCompComponent implements OnInit {
     });
     //if (!this.model.famous_system_img)
       //this.model.famous_system_img = this.c.famous_system_img;
+    if (!this.isValid(this.model))
+      this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
+    else 
     this.componentService.editComponent(this.model).subscribe(() => {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
         this.snackBar.open('Componente actualizado', 'Cerrar', { duration: 1500 });
       });
       this.c = this.cloneComp(this.model);
-    });
+    }, () => {this.toastService.error("No se ha podido editar el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
+  }
+
+  isValid(comp: MyComponent): boolean {
+    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" && comp.component_year_init && comp.component_year_end
+    && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
+    
+    if (comp instanceof Cpu) 
+      return valid && comp.program_memory && comp.program_memory >= 0 && comp.ram_memory && comp.ram_memory >= 0 && comp.clockspeed && comp.clockspeed >= 0 && comp.cpu_power && comp.cpu_power >= 0 
+      && comp.wordsize && comp.wordsize >= 0 && comp.transistor_size && comp.transistor_size >= 0 && comp.passmark && comp.passmark >= 0 && comp.transistors && comp.transistors >= 0;
+    return valid;
   }
 
   /**

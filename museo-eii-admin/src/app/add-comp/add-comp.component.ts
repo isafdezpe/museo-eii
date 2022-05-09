@@ -1,7 +1,9 @@
+import { validateHorizontalPosition } from '@angular/cdk/overlay';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
 import { ComponentService } from '../component.service';
 import { Period } from '../period';
@@ -31,7 +33,7 @@ export class AddCompComponent implements OnInit {
     fileSource: new FormControl('', [Validators.required])
   }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
-  constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute) { }
+  constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute, private toastService: ToastrService) { }
 
   ngOnInit(): void {
     this.t = this.types[0];
@@ -118,16 +120,36 @@ export class AddCompComponent implements OnInit {
    */
   submit() {
     this.model.component_period_id = this.p.period_id;
-    this.myForm.patchValue({
-      fileSource: this.images,
-      name: this.imagesNames
-    });
-    this.componentService.addComponent(this.model).subscribe(() => {
-      this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-        this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
+      this.myForm.patchValue({
+        fileSource: this.images,
+        name: this.imagesNames
       });
-      this.resetForm();
-    });
+    if (!this.isValid(this.model))
+      this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
+    else 
+      this.componentService.addComponent(this.model).subscribe(() => {
+        this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
+          this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
+        });
+        this.resetForm();
+      }, () => {this.toastService.error("No se ha podido añadir el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
   }
+
+  isValid(comp: MyComponent): boolean {
+    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" && comp.component_year_init && comp.component_year_end
+    && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
+    
+    if (comp instanceof Cpu) 
+      return valid && comp.program_memory && comp.program_memory >= 0 && comp.ram_memory && comp.ram_memory >= 0 && comp.clockspeed && comp.clockspeed >= 0 && comp.cpu_power && comp.cpu_power >= 0 
+      && comp.wordsize && comp.wordsize >= 0 && comp.transistor_size && comp.transistor_size >= 0 && comp.passmark && comp.passmark >= 0 && comp.transistors && comp.transistors >= 0;
+    return valid;
+  }
+
+  /**
+   * 
+   * comp.program_memory && comp.program_memory_units && comp.ram_memory && comp.ram_memory_units 
+        && comp.clockspeed && comp.clockspeed_units && comp.cpu_power && comp.cpu_power_units  && comp.wordsize && comp.wordsize_units
+        && comp.transistor_size && comp.passmark && comp.transistors
+   */
 
 }

@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { IvyGalleryModule } from 'angular-gallery';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { IvyGalleryModule } from 'angular-gallery';
     MatTableModule,
     MatDialogModule,
     HttpClientModule,
-    IvyGalleryModule
+    IvyGalleryModule,
+    ToastrModule.forRoot()
   ],
   providers: [CookieService],
   bootstrap: [AppComponent],
