@@ -7,14 +7,14 @@ export interface MyComponent {
     component_year_end: number,
     component_period_id: number,
     component_price: number,
-    component_price_units: string,
+    component_price_units: PriceUnits,
     component_devices: string,
     component_imgs: string[],
     famous_system: string,
     famous_system_img: string,
     component_type: CompTypes
 
-    setDevices(devices: String[]): void;
+    setDevices(devices: CompDevices[]): void;
 
     equals(c: MyComponent): boolean;
 }
@@ -31,7 +31,6 @@ export enum PowerUnits {watios="W", kilowatios="KW", megawatios = "MW"}
 
 export enum PriceUnits {euro="€", dolar="$"}
 
-
 export class GenericComp implements MyComponent {
 
     component_id: number | undefined;
@@ -42,7 +41,7 @@ export class GenericComp implements MyComponent {
     component_year_end: number;
     component_period_id: number;
     component_price: number;
-    component_price_units: string;
+    component_price_units: PriceUnits;
     component_devices: string;
     component_imgs: string[];
     famous_system: string;
@@ -57,7 +56,7 @@ export class GenericComp implements MyComponent {
         endYear: number,
         periodId: number,
         price: number,
-        priceUnits: string,
+        priceUnits: PriceUnits,
         devices: string[],
         imgNames: string[],
         famousSystem: string,
@@ -83,7 +82,7 @@ export class GenericComp implements MyComponent {
         this.component_type = type;
     }
 
-    setDevices(devices: String[]) {
+    setDevices(devices: CompDevices[]) {
         this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? "," + devices[1] : "")) : "");
     }
 
@@ -103,15 +102,15 @@ export class GenericComp implements MyComponent {
 export class Cpu extends GenericComp implements MyComponent{
 
     program_memory: number;
-    program_memory_units: string;
+    program_memory_units: MemoryUnits;
     ram_memory: number;
-    ram_memory_units: string;
+    ram_memory_units: MemoryUnits;
     clockspeed: number;
-    clockspeed_units: string;
+    clockspeed_units: SpeedUnits;
     cpu_power: number;
-    cpu_power_units: string;
+    cpu_power_units: PowerUnits;
     wordsize: number;
-    wordsize_units: string;
+    wordsize_units: MemoryUnits;
     transistor_size: number;
     transistor_size_units: string;
     passmark: number;
@@ -125,22 +124,22 @@ export class Cpu extends GenericComp implements MyComponent{
         endYear: number,
         periodId: number,
         price: number,
-        priceUnits: string,
+        priceUnits: PriceUnits,
         devices: string[],
         imgNames: string[],
         famousSystem: string,
         famousSystemImg: string,
 
         programMemory: number,
-        programMemoryUnits: string,
+        programMemoryUnits: MemoryUnits,
         ramMemory: number,
-        ramMemoryUnits: string,
+        ramMemoryUnits: MemoryUnits,
         clockSpeed: number,
-        clockSpeedUnits: string,
+        clockSpeedUnits: SpeedUnits,
         power: number,
-        powerUnits: string,
+        powerUnits: PowerUnits,
         wordSize: number,
-        wordSizeUnits: string,
+        wordSizeUnits: MemoryUnits,
         transistorSize: number,
         passmark: number,
         transistors: number,

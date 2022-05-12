@@ -18,7 +18,7 @@ export class CompDetailsComponent implements OnInit {
 
   comp: MyComponent; // componente
   compsFromPeriod: MyComponent[] = []; // otros componentes del periodo
-  type: String; // tipo del componente
+  type: CompTypes; // tipo del componente
 
   previousPeriod: Period; // periodo anterior al del componente
   nextPeriod: Period; // periodo siguiente al del componente

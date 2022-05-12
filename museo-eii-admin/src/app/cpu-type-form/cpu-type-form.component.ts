@@ -25,6 +25,7 @@ export class CpuTypeFormComponent implements OnInit {
    */
   changeProgramMemoryUnits(u: string) {
     this.model.program_memory_units = this.memUnits.filter((e) => u === e)[0];
+    
   }
 
   /**

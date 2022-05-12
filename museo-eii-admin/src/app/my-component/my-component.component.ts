@@ -20,7 +20,7 @@ export class MyComponentComponent implements OnInit {
   c: MyComponent; // componente
   p: Period; // periodo al que pertenece el componente
 
-  type: String; // tipo del componente
+  type: CompTypes; // tipo del componente
 
   constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private _location: Location, private gallery: Gallery) { }
 

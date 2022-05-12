@@ -8,7 +8,7 @@
         <form (ngSubmit)="submit()" #editCompForm="ngForm" class="edit" id="editCForm">
             <div class="row form-row">
                 <label class="col col-lg-4" for="pselect">Seleccione el periodo al que pertenece: </label>
-                <select class="col col-lg-4 form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">
+                <select class="col col-lg-4 form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)" [(ngModel)]="p.period_name">
                     <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
             </div>

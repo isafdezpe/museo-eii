@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { CompDevices, MyComponent } from '../comp';
+import { CompDevices, MyComponent, PriceUnits } from '../comp';
 
 @Component({
   selector: 'app-comp-inputs',
@@ -22,7 +22,7 @@ export class CompInputsComponent implements OnInit {
   @ViewChild('compImgInput')
   compImgInput!: ElementRef; // input[file] de las imágenes del componente
 
-  priceUnits: string[] = ['€', '$']; // unidades de moneda
+  priceUnits: string[] = Object.values(PriceUnits); // unidades de moneda
 
   constructor() { }
 

@@ -79,7 +79,7 @@ export class FormEditCompComponent implements OnInit {
           this.c.component_imgs.push(i.image);
           this.compImgsInDB.push(i.image);
         });
-        this.model = this.cloneComp(this.c);
+        this.model = this.c.cloneComp();
       });
   }
 
@@ -108,6 +108,7 @@ export class FormEditCompComponent implements OnInit {
    * Actualiza el componente, sube las imágenes y resetea el formulario
    */
   submit() {
+    console.log(this.model)
     this.myForm.patchValue({
       fileSource: this.images,
       name: this.imagesNames
@@ -121,7 +122,7 @@ export class FormEditCompComponent implements OnInit {
       this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
         this.snackBar.open('Componente actualizado', 'Cerrar', { duration: 1500 });
       });
-      this.c = this.cloneComp(this.model);
+      this.c = this.model.cloneComp();
     }, () => {this.toastService.error("No se ha podido editar el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
   }
 
@@ -130,8 +131,8 @@ export class FormEditCompComponent implements OnInit {
     && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
     
     if (comp instanceof Cpu) 
-      return valid && comp.program_memory && comp.program_memory >= 0 && comp.ram_memory && comp.ram_memory >= 0 && comp.clockspeed && comp.clockspeed >= 0 && comp.cpu_power && comp.cpu_power >= 0 
-      && comp.wordsize && comp.wordsize >= 0 && comp.transistor_size && comp.transistor_size >= 0 && comp.passmark && comp.passmark >= 0 && comp.transistors && comp.transistors >= 0;
+      valid = valid && comp.program_memory != null && comp.program_memory >= 0 && comp.ram_memory != null && comp.ram_memory >= 0 && comp.clockspeed != null && comp.clockspeed >= 0 && comp.cpu_power != null && comp.cpu_power >= 0 
+      && comp.wordsize != null && comp.wordsize >= 0 && comp.transistor_size != null && comp.transistor_size >= 0 && comp.passmark != null && comp.passmark >= 0 && comp.transistors != null && comp.transistors >= 0;
     return valid;
   }
 
@@ -141,26 +142,13 @@ export class FormEditCompComponent implements OnInit {
   resetForm() {
     this.images = [];
     this.imagesNames = [];
-    this.model = this.cloneComp(this.c);
+    this.model = this.c.cloneComp();
     this.compImgsInDB  = [];
     this.compImgsInDB.push(this.c.famous_system_img);
     this.c.component_imgs.forEach((i) => this.compImgsInDB.push(i));
     console.log(this.model)
   }
 
-  /**
-   * 
-   * @param c : componente que se quiere clonar
-   * @returns componente clonado
-   */
-  cloneComp(c: MyComponent): MyComponent{
-    if (c instanceof Cpu)
-      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
-    c.ram_memory, c.ram_memory_units, c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, c.component_id);
-    else 
-      return new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, CompTypes.generic, c.component_id);
-  }
-  
   /**
    * Vuelve a la página anterior. Si no se han guardado los cambios se muestra un diálogo para continuar o no
    */

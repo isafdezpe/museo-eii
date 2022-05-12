@@ -49,7 +49,7 @@ export class PeriodComponent implements OnInit {
         }
         index++;
       });
-      this.getCpus(id);
+      this.getComps(id);
     });
   }
 
@@ -57,7 +57,7 @@ export class PeriodComponent implements OnInit {
    * Obtiene los componentes del periodo y el sistema famoso de cada componente
    * @param periodId : periodo del que se obtienen los componentes
    */
-  getCpus(periodId: number): void {
+  getComps(periodId: number): void {
     this.compService.getComponentsFromPeriod(periodId).subscribe((comps: MyComponent[]) => {
       this.comps = comps;
       let famousSys = [];

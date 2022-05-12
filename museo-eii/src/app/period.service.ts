@@ -10,8 +10,6 @@ export class PeriodService {
 
   baseUrl = environment.baseUrl;
 
-  periods: Period[]; 
-
   constructor(private http: HttpClient) { }
 
   getPeriods() {

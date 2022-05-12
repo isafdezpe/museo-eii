@@ -4,7 +4,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
+import { CompTypes, GenericComp, MyComponent, Cpu, MemoryUnits, SpeedUnits, PowerUnits, PriceUnits } from '../comp';
 import { ComponentService } from '../component.service';
 import { Period } from '../period';
 import { PeriodService } from '../period.service';
@@ -38,7 +38,7 @@ export class AddCompComponent implements OnInit {
   ngOnInit(): void {
     this.t = this.types[0];
     this.createModel();
-    this.c = this.cloneComp(this.model);
+    this.c = this.model.cloneComp();
     // si hay un periodId en la ruta, se selecciona el periodo correspondiente en el combobox de periodos
     const routeParams = this.route.snapshot.paramMap;
     var id = Number(routeParams.get('periodId'));
@@ -51,25 +51,12 @@ export class AddCompComponent implements OnInit {
   createModel() {
     if (this.t == CompTypes.cpu)
       this.model = (this.model !== undefined) ? 
-      new Cpu(this.model.component_name, this.model.component_family, this.model.component_description, this.model.component_year_init, this.model.component_year_end, this.model.component_period_id, this.model.component_price, this.model.component_price_units, this.model.component_devices.split(','), this.model.component_imgs, this.model.famous_system, this.model.famous_system_img, 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0) 
-      : new Cpu('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', 0, '', 0, '', 0, '', 0, '', 0, '', 0, 0, 0); 
+      new Cpu(this.model.component_name, this.model.component_family, this.model.component_description, this.model.component_year_init, this.model.component_year_end, this.model.component_period_id, this.model.component_price, this.model.component_price_units, this.model.component_devices.split(','), this.model.component_imgs, this.model.famous_system, this.model.famous_system_img, 0, MemoryUnits.bit, 0, MemoryUnits.bit, 0, SpeedUnits.herz, 0, PowerUnits.watios, 0, MemoryUnits.bit, 0, 0, 0) 
+      : new Cpu('', '', '', 1970, 1990, 0, 100, PriceUnits.dolar, [], [], '', '', 0, MemoryUnits.bit, 0, MemoryUnits.bit, 0, SpeedUnits.herz, 0, PowerUnits.watios, 0, MemoryUnits.bit, 0, 0, 0); 
     else 
       this.model = (this.model !== undefined) ?
       new GenericComp(this.model.component_name, this.model.component_family, this.model.component_description, this.model.component_year_init, this.model.component_year_end, this.model.component_period_id, this.model.component_price, this.model.component_price_units, this.model.component_devices.split(','), this.model.component_imgs, this.model.famous_system, this.model.famous_system_img, CompTypes.generic)
-      : new GenericComp('', '', '', 1970, 1990, 0, 100, '$', [], [], '', '', CompTypes.generic);
-  }
-
-  /**
-   * 
-   * @param c : componente que se quiere clonar
-   * @returns componente clonado
-   */
-   cloneComp(c: MyComponent): MyComponent{
-    if (c instanceof Cpu)
-      return new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, c.program_memory, c.program_memory_units, 
-    c.ram_memory, c.ram_memory_units, c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, c.component_id);
-    else 
-      return new GenericComp(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), c.component_imgs, c.famous_system, c.famous_system_img, CompTypes.generic, c.component_id);
+      : new GenericComp('', '', '', 1970, 1990, 0, 100, PriceUnits.dolar, [], [], '', '', CompTypes.generic);
   }
 
   /**
@@ -119,6 +106,7 @@ export class AddCompComponent implements OnInit {
    * Inserta el nuevo componente, sube las imágenes y resetea el formulario
    */
   submit() {
+    console.log(this.model)
     this.model.component_period_id = this.p.period_id;
       this.myForm.patchValue({
         fileSource: this.images,
@@ -140,8 +128,8 @@ export class AddCompComponent implements OnInit {
     && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
     
     if (comp instanceof Cpu) 
-      return valid && comp.program_memory && comp.program_memory >= 0 && comp.ram_memory && comp.ram_memory >= 0 && comp.clockspeed && comp.clockspeed >= 0 && comp.cpu_power && comp.cpu_power >= 0 
-      && comp.wordsize && comp.wordsize >= 0 && comp.transistor_size && comp.transistor_size >= 0 && comp.passmark && comp.passmark >= 0 && comp.transistors && comp.transistors >= 0;
+      valid = valid && comp.program_memory != null && comp.program_memory >= 0 && comp.ram_memory != null && comp.ram_memory >= 0 && comp.clockspeed != null && comp.clockspeed >= 0 && comp.cpu_power != null && comp.cpu_power >= 0 
+      && comp.wordsize != null && comp.wordsize >= 0 && comp.transistor_size != null && comp.transistor_size >= 0 && comp.passmark != null && comp.passmark >= 0 && comp.transistors != null && comp.transistors >= 0;
     return valid;
   }
 

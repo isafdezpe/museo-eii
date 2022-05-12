@@ -14,9 +14,11 @@ export interface MyComponent {
     famous_system_img: string,
     component_type: CompTypes
 
-    setDevices(devices: String[]): void;
+    setDevices(devices: CompDevices[]): void;
 
     equals(c: MyComponent): boolean;
+
+    cloneComp(): MyComponent;
 }
 
 export enum CompDevices {desktop='DESKTOP', portable='PORTABLE'}
@@ -82,7 +84,7 @@ export class GenericComp implements MyComponent {
         this.component_type = type;
     }
 
-    setDevices(devices: String[]) {
+    setDevices(devices: CompDevices[]) {
         this.component_devices = "" + ((devices && devices.length > 0) ? (devices[0] + ((devices.length == 2) ? "," + devices[1] : "")) : "");
     }
 
@@ -95,6 +97,11 @@ export class GenericComp implements MyComponent {
         else if (this.component_devices && c.component_devices) return false;
         return this.component_name === c.component_name && this.component_family === c.component_family && this.component_description === c.component_description && this.component_year_init === c.component_year_init && this.component_year_end === c.component_year_end 
             && this.component_period_id === c.component_period_id && this.component_price === c.component_price && this.component_price_units === c.component_price_units && devicesEq;
+    }
+
+    cloneComp(): MyComponent {
+        return new GenericComp(this.component_name, this.component_family, this.component_description, this.component_year_init, this.component_year_end, this.component_period_id, this.component_price, this.component_price_units, 
+            this.component_devices.split(','), this.component_imgs, this.famous_system, this.famous_system_img, CompTypes.generic, this.component_id);
     }
 
 }
@@ -168,6 +175,11 @@ export class Cpu extends GenericComp implements MyComponent{
         return super.equals(c) && this.program_memory === c.program_memory && this.program_memory_units === c.program_memory_units && this.ram_memory === c.ram_memory && this.ram_memory_units === c.ram_memory_units
             && this.clockspeed === c.clockspeed && this.clockspeed_units === c.clockspeed_units && this.cpu_power === c.cpu_power && this.cpu_power_units === c.cpu_power_units && this.wordsize === c.wordsize && this.wordsize_units === c.wordsize_units
             && this.transistor_size === c.transistor_size && this.passmark === c.passmark && this.transistors === c.transistors;
+    }
+
+    cloneComp(): Cpu {
+        return new Cpu(this.component_name, this.component_family, this.component_description, this.component_year_init, this.component_year_end, this.component_period_id, this.component_price, this.component_price_units, this.component_devices.split(','), this.component_imgs, this.famous_system, this.famous_system_img, this.program_memory, this.program_memory_units, 
+        this.ram_memory, this.ram_memory_units, this.clockspeed, this.clockspeed_units, this.cpu_power, this.cpu_power_units, this.wordsize, this.wordsize_units, this.transistor_size, this.passmark, this.transistors, this.component_id);
     }
     
 }
