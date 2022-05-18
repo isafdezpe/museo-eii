@@ -1,0 +1,360 @@
+\textit{Period}, \textit{MyComponent} y \textit{Cpu} son iguales en el proyecto del museo y en el de la administración, por lo tanto se describen una única vez a continuación:
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase Period}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{Periodo}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase que modela un periodo.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{id} & number & Identificador del periodo\\
+    \textbf{name} & string & Nombre del periodo \\ 
+    \textbf{trivia} & string[] & Curiosidades del periodo \\
+    \textbf{details} & string[] & Detalles del periodo \\
+    \textbf{events} & string[] & Eventos ocurridos durante este periodo \\
+    \textbf{famous\_systems} & string[] & Sistemas famosos que llevaban componentes pertenecientes al periodo \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la interfaz MyComponent }
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{MyComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Interfaz que modela los atributos genéricos de un componente.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{id} & number & Identificador del componente\\
+    \textbf{name} & string & Nombre del componente \\ 
+    \textbf{description} & string & Descripción del componente \\
+    \textbf{family} & string & Familia a la que pertenece \\
+    \textbf{type} & string & Tipo de componente (CPU, genérico...) \\
+    \textbf{years} & string & Rango de años en los que se utilizó \\
+    \textbf{price} & string & Precio de venta del componente \\
+    \textbf{devices} & string[] & Tipo de dispositivos en los que se usaba el componente (portátiles o de escritorio) \\
+    \textbf{imgs} & string[] & Nombres de las imágenes del componente \\
+    \textbf{period\_id} & number & Identificador del periodo al que pertenece el componente \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase Cpu}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{Cpu}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase que implementa la interfaz MyComponent. Modela una CPU, con sus atributos específicos correspondientes. } \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{program\_memory} & string & Memoria ROM de la CPU\\
+    \textbf{ram\_memory} & string & Memoria RAM de la CPU\\
+    \textbf{clockspeed} & string & Velocidad de reloj de la CPU\\ 
+    \textbf{power} & string & Potencia de la CPU\\
+    \textbf{wordsize} & string & Tamaño de palabra de la CPU\\
+    \textbf{passmark} & number & Passmark de la CPU\\
+    \textbf{transistors} & number & Número de transistores de la CPU\\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\subsubsection{Museo}
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase PeriodService (museo)}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{PeriodService}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Servicio que conecta con el back-end de la aplicación para realizar las operaciones relacionadas con los periodos.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Devuelve todos los periodos existentes.} \\ 
+    \textbf{getPeriodName} & \multicolumn{2}{p{22.64em}}{Devuelve el nombre del periodo correspondiente al identificador pasado por parámetro.} \\ 
+    \textbf{getPeriod} & \multicolumn{2}{p{22.64em}}{Devuelve el periodo cuyo identificador se pasa como parámetro.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase CompService (museo)}
+    \begin{tabular}{p{10em}p{5em}p{14.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{CompService}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Servicio que conecta con el back-end de la aplicación para realizar las operaciones relacionadas con los componentes.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getCompsFromPeriod} & \multicolumn{2}{p{19.64em}}{Devuelve los componentes pertenecientes al periodo cuyo identificador se pasa como parámetro.} \\ 
+    \textbf{getComponent} & \multicolumn{2}{p{19.64em}}{Devuelve el componente cuyo identificador se pasa como parámetro.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase TimelineComponent}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{TimelineComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:timeline}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{periods} & Period[] & Listado de todos los periodos existentes. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Obtiene los periodos y los asigna a \textit{periods}.} \\ 
+    \textbf{search} & \multicolumn{2}{p{22.64em}}{Filtra los periodos según el texto introducido en la búsqueda.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase PeriodDetailsComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{PeriodDetailsComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:period-details}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{period} & Period & Periodo del que se muestran los detalles. \\ 
+    \textbf{components} & MyComponent[] & Componentes pertenecientes al periodo. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriod} & \multicolumn{2}{p{22.64em}}{Obtiene el periodo y lo asigna a \textit{period}.} \\ 
+    \textbf{getComponents} & \multicolumn{2}{p{22.64em}}{Obtiene los componentes del periodo y los asigna a \textit{components}.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase CompDetailsComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{CompDetailsComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:comp-details}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{component} & MyComponent & Componente del que se muestran los detalles. \\ 
+    \textbf{periodName} & string & Nombre del periodo al que pertenece el componente. \\ 
+    \textbf{components} & MyComponent[] & Otros componentes pertenecientes al periodo. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \multicolumn{1}{p{10.2em}}{\textbf{getComponent}} & \multicolumn{2}{p{19.64em}}{Obtiene el componente y lo asigna a \textit{component}.} \\ 
+    \multicolumn{1}{p{10.2em}}{\textbf{getPeriodName}} & \multicolumn{2}{p{19.64em}}{Obtiene el nombre del periodo y lo asigna a \textit{periodName}.} \\ 
+    \multicolumn{1}{p{10.2em}}{\textbf{getPeriodComponents}} & \multicolumn{2}{p{19.64em}}{Obtiene los componentes del periodo y los asigna a \textit{components}.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+
+\subsubsection{Administración del museo}
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase UserService }
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{UserService}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Servicio que conecta con el back-end de la aplicación para realizar las operaciones relacionadas con el usuario administrador.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{login} & \multicolumn{2}{p{22.64em}}{Comprueba si el usuario y la contraseña introducidos se corresponden con los existentes en la base de datos.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase PeriodService (administración)}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{PeriodService}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Servicio que conecta con el back-end de la aplicación para realizar las operaciones relacionadas con los periodos.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Devuelve todos los periodos existentes.} \\ 
+    \textbf{getPeriod} & \multicolumn{2}{p{22.64em}}{Devuelve el periodo cuyo identificador se pasa como parámetro.} \\ 
+    \textbf{addPeriod} & \multicolumn{2}{p{22.64em}}{Añade el periodo pasado como parámetro a la base de datos.} \\ 
+    \textbf{updatePeriod} & \multicolumn{2}{p{22.64em}}{Actualiza el periodo pasado como parámetro en la base de datos.} \\ 
+    \textbf{getPeriod} & \multicolumn{2}{p{22.64em}}{Elimina de la base de datos el periodo cuyo identificador se pasa como parámetro.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase CompService (administración)}
+    \begin{tabular}{p{10em}p{5em}p{14.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{CompService}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Servicio que conecta con el back-end de la aplicación para realizar las operaciones relacionadas con los componentes.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getCompsFromPeriod} & \multicolumn{2}{p{19.64em}}{Devuelve los componentes pertenecientes al periodo cuyo identificador se pasa como parámetro.} \\ 
+    \textbf{getComponent} & \multicolumn{2}{p{19.64em}}{Devuelve el componente cuyo identificador se pasa como parámetro.} \\ 
+    \textbf{addComponent} & \multicolumn{2}{p{19.64em}}{Añade el componente pasado como parámetro a la base de datos.} \\ 
+    \textbf{updateComponent} & \multicolumn{2}{p{19.64em}}{Actualiza el componente pasado como parámetro en la base de datos.} \\ 
+    \textbf{getComponent} & \multicolumn{2}{p{19.64em}}{Elimina de la base de datos el componente cuyo identificador se pasa como parámetro.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase LoginComponent}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{LoginComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:login}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{-} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{login} & \multicolumn{2}{p{22.64em}}{Comprueba los datos introducidos para iniciar sesión.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase ListPeriodsComponent}
+    \begin{tabular}{p{8.645em}p{5em}p{15.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{ListPeriodsComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:list-periods}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{periods} & Period[] & Listado de todos los periodos existentes. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Obtiene los periodos y los asigna a \textit{periods}.} \\ 
+    \textbf{deletePeriod} & \multicolumn{2}{p{22.64em}}{Elimina el periodo seleccionado.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase PeriodComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{PeriodComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:period}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \multicolumn{1}{p{8.645em}}{\textbf{period}} & Period & Periodo del que se muestran los detalles. \\ 
+    \multicolumn{1}{p{8.645em}}{\textbf{components}} & MyComponent[] & Componentes pertenecientes al periodo. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \multicolumn{1}{p{13.2em}}{\textbf{getPeriod}} & \multicolumn{2}{p{16.64em}}{Obtiene el periodo y lo asigna a \textit{period}.} \\ 
+    \multicolumn{1}{p{13.2em}}{\textbf{getComponentsFromPeriod}} & \multicolumn{2}{p{16.64em}}{Obtiene los componentes del periodo y los asigna a \textit{components}.} \\ 
+    \multicolumn{1}{p{13.2em}}{\textbf{deleteComponent}} & \multicolumn{2}{p{16.64em}}{Elimina el componente seleccionado.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase AddPeriodComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{AddPeriodComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:add-period}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{model} & Period & Periodo asociado al formulario en el que se introducen los datos. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{submit} & \multicolumn{2}{p{22.64em}}{Añade el periodo con los datos introducidos en el formulario.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase EditPeriodComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{EditPeriodComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:add-period}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{period} & Period & Periodo que se va a editar, con los datos iniciales. \\ 
+    \textbf{model} & Period & Periodo asociado al formulario en el que se editan los datos. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriod} & \multicolumn{2}{p{22.64em}}{Obtiene el periodo y lo asigna a \textit{period}.} \\ 
+    \textbf{submit} & \multicolumn{2}{p{22.64em}}{Actualiza el periodo con los datos introducidos en el formulario.} \\  \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase MyCompComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{MyCompComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:my-comp}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{component} & MyComponent & Componente del que se muestran los detalles. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getComponent} & \multicolumn{2}{p{19.64em}}{Obtiene el componente y lo asigna a \textit{component}.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase AddCompComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{AddCompComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:add-comp}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{model} & MyComponent & Componente asociado al formulario en el que se introducen los datos. \\ 
+    \textbf{periods} & Period[] & Listado de periodos existentes. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Obtiene los periodos y los asigna a \textit{periods}.} \\ 
+    \textbf{submit} & \multicolumn{2}{p{22.64em}}{Añade el componente con los datos introducidos en el formulario.} \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Descripción de la clase EditCompComponent}
+    \begin{tabular}{p{8.645em}p{7em}p{13.5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{EditCompComponent}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\ \midrule
+    \multicolumn{3}{p{31.285em}}{Clase asociada a la vista \ref{iu:add-comp}.} \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\ \midrule
+    \textbf{comp} & MyComponent & Componente que se va a editar, con los datos iniciales. \\ 
+    \textbf{model} & MyComponent & Componente asociado al formulario en el que se editan los datos. \\ 
+    \textbf{periods} & Period[] & Listado de periodos existentes. \\ \midrule
+    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\ \midrule
+    \textbf{getComponent} & \multicolumn{2}{p{22.64em}}{Obtiene el componente y lo asigna a \textit{comp}.} \\ 
+    \textbf{getPeriods} & \multicolumn{2}{p{22.64em}}{Obtiene los periodos y los asigna a \textit{periods}.} \\ 
+    \textbf{submit} & \multicolumn{2}{p{22.64em}}{Actualiza el componente con los datos introducidos en el formulario.} \\  \bottomrule
+    \end{tabular}%
+\end{table}%

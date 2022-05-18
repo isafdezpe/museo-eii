@@ -50,8 +50,22 @@
 \section{ASI 5: ANÁLISIS DE CLASES}
 
 \subsection{Diagrama de Clases} 
+\subsubsection{Museo}
+\begin{figure}[H]
+\centering
+\centerline{\includegraphics[scale=0.5]{asi-clases-museo}}
+\caption{Análisis de clases: diagrama de clases del museo}
+\end{figure}
+\subsubsection{Administración del museo}
+\begin{figure}[H]
+\centering
+\centerline{\includegraphics[scale=0.5]{asi-clases-admin}}
+\caption{Análisis de clases: diagrama de clases de la administración}
+\end{figure}
 
 \subsection{Descripción de las Clases}
+\input{6.5-ASI 5.2}
+
 
 
 \newpage
@@ -70,21 +84,21 @@ En la página de inicio del museo se muestra un mensaje de bienvenida y un botó
 \includegraphics[scale=0.45]{homeIU}
 \caption{Prototipo: Página de inicio}
 \end{figure}
-\paragraph*{Vista general del museo}
+\paragraph*{Vista general del museo}\label{iu:timeline}
 En la vista general del museo encontramos un menú lateral con filtros de búsqueda, y una sección principal que contiene una línea temporal con los periodos en los que se divide la historia de las CPUs.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{museoIU}
 \caption{Prototipo: Página de la vista general del museo}
 \end{figure}
-\paragraph*{Detalles del periodo}
+\paragraph*{Detalles del periodo}\label{iu:period-details}
 En esta página hay un menú para volver a la vista general, y se muestran todos los detalles de un periodo (nombre, características, sistemas famosos de dicho periodo, etc.) y los componentes que pertenecen al mismo. 
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{periodoIU}
 \caption{Prototipo: Página de detalles del periodo (museo)}
 \end{figure}
-\paragraph*{Detalles del componente}
+\paragraph*{Detalles del componente}\label{iu:comp-details}
 En esta página se muestra una galería de fotos del componente, la descripción del mismo, y un listado de características. En el menú de esta página hay un listado de componentes pertenecientes al mismo periodo.
 \begin{figure}[H]
 \centering
@@ -94,42 +108,42 @@ En esta página se muestra una galería de fotos del componente, la descripción
 
 \subsubsection{Administración del museo}
 A continuación, se muestran los prototipos inciales para la aplicación de administración del museo. En todas ellas, salvo en la de inicio de sesión, hay un menú lateral de navegación. 
-\paragraph*{Iniciar sesión}
+\paragraph*{Iniciar sesión}\label{iu:login}
 En esta página el administrador del sistema deberá introducir su usuario y contraseña para acceder al mismo.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.55]{loginIU}
 \caption{Prototipo: Página de inicio de sesión}
 \end{figure}
-\paragraph*{Listado de periodos}
+\paragraph*{Listado de periodos}\label{iu:list-periods}
 En esta página se muestra un listado de los periodos existentes, con las opciones de acceder a cada uno, editarlo o eliminarlo.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{listadoPeriodosIU}
 \caption{Prototipo: Página de listado de periodos}
 \end{figure}
-\paragraph*{Periodo}
+\paragraph*{Periodo}\label{iu:period}
 Esta página contiene los detalles de un periodo así como un listado de los componentes pertenecientes al mismo, ofreciendo la opción de acceder a ellos, editarlos o eliminarlos.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{periodoIU2}
 \caption{Prototipo: Página de detalles de un periodo (admimnistración)}
 \end{figure}
-\paragraph*{Componente}
+\paragraph*{Componente}\label{iu:my-comp}
 En esta página se muestran los detalles correspondientes al componente.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{compIU}
 \caption{Prototipo: Página de detalles de un componente (admimnistración)}
 \end{figure}
-\paragraph*{Añadir/editar periodo}
+\paragraph*{Añadir/editar periodo}\label{iu:add-period}
 Los formularios para añadir o editar un periodo son idénticos, con la única diferencia de que el formulario para editar ya tiene los campos completados con los valores existentes del periodo, por tanto solo se muestra una captura representando ambos.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{añadirPeriodoIU}
 \caption{Prototipo: Formulario para añadir o editar un periodo}
 \end{figure}
-\paragraph*{Añadir/editar componente}
+\paragraph*{Añadir/editar componente}\label{iu:add-comp}
 Con los formularios para añadir o editar un componente ocurre igual que con los del periodo ya mencionados.
 \begin{figure}[H]
 \centering
@@ -153,7 +167,7 @@ A continuación se presentan dos diagramas de navegabilidad, correspondientes a 
 \subsubsection{Administración del museo}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.7]{nav-admin}
+\centerline{\includegraphics[scale=0.7]{nav-admin}}
 \caption{Diagrama de navegabilidad de la administración del museo}
 \end{figure}
 
