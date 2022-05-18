@@ -39,10 +39,7 @@ export class AddCompComponent implements OnInit {
     this.t = this.types[0];
     this.createModel();
     this.c = this.model.cloneComp();
-    // si hay un periodId en la ruta, se selecciona el periodo correspondiente en el combobox de periodos
-    const routeParams = this.route.snapshot.paramMap;
-    var id = Number(routeParams.get('periodId'));
-    this.getPeriods(id);
+    this.getPeriods();
   }
 
   /**
@@ -63,12 +60,9 @@ export class AddCompComponent implements OnInit {
    * Obtiene una lista de todos los periodos existentes y, si se recibe un id en la url selecciona el correspondiente, si no, selecciona el primero de la lista
    * @param id : id del periodo al que se quiere añadir el componente
    */
-  getPeriods(id: Number) {
+  getPeriods() {
     this.periodService.getAll().subscribe((periods: Period[]) => {
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
-      if (id != 0) 
-        this.p = this.periods.filter((e) => e.period_id === id)[0];
-      else 
         this.p = this.periods[0];
       this.changePeriod(this.p.period_name);
     });

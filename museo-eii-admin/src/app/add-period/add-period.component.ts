@@ -29,11 +29,7 @@ export class AddPeriodComponent implements OnInit {
     else 
       this.periodService.addPeriod(this.model).subscribe(() => {
         this.snackBar.open('Periodo guardado', 'Cerrar', { duration: 1500 })
-        let periodId: number;
-        this.periodService.getPeriodByName(this.model.period_name).subscribe((p: Period) => {
-          periodId = p.period_id;
-          this.router.navigateByUrl('/addComp/' + periodId);
-        });
+        this.router.navigateByUrl('/addComp');
       }, () => {this.toastService.error("No se ha podido añadir el periodo", "Error", {positionClass: "toast-bottom-full-width"} )});
   }
 

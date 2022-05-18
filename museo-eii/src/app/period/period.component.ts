@@ -42,13 +42,16 @@ export class PeriodComponent implements OnInit {
     this.periodService.getPeriods().subscribe((periods: Period[]) => { 
       let index = 0;
       periods.forEach((p: Period) => {
-        if (p.period_id === id) {
+        if (p.period_id == id) {
           this.period = p;
           this.previousPeriod = (index > 0) ? periods[index-1] : undefined;
           this.nextPeriod = (index < periods.length) ? periods[index+1] : undefined;
         }
         index++;
       });
+      console.log(this.period);
+      console.log(this.previousPeriod);
+      console.log(this.nextPeriod);
       this.getComps(id);
     });
   }

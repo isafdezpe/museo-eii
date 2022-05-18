@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'component/:compId', component: MyComponentComponent, canActivate: [AuthGuard] },
   { path: 'addPeriod', component: AddPeriodComponent, canActivate: [AuthGuard] },
   { path: 'addComp', component: AddCompComponent, canActivate: [AuthGuard] },
-  { path: 'addComp/:periodId', component: AddCompComponent, canActivate: [AuthGuard] },
   { path: 'editPeriod/:periodId', component: FormEditPeriodComponent, canActivate: [AuthGuard] }, 
   { path: 'editComp/:compId', component: FormEditCompComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/listPeriods', pathMatch: 'full', canActivate: [AuthGuard]}
