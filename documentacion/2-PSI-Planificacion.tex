@@ -66,3 +66,12 @@ En definitiva, estos objetivos se pueden resumir en:
 
 
 \subsection{PSI 7.2: Selección de la Arquitectura Tecnológica} 
+Al tratarse de una aplicación Angular, seguirá el patrón Modelo Vista Vista-Modelo (MVVM), una variación del Modelo Vista Controlador, patrón arquitectónico que separa los datos y la lógica de una aplicación de su representación. En la variación MVVM, la vista y el modelo son muy dependientes entre sí. \par 
+En este caso la vista estará compuesta por las \textit{templates} de Angular, que son componentes HTML.\par
+El modelo se corresponde con la base de datos MySQL y a la que se accede desde un servidor Apache que aloja los archivos PHP necesarios.\par
+Por último, la vista-modelo es la propia aplicación de Angular.
+\begin{figure}[H]
+\centering
+\centerline{\includegraphics[scale=0.6]{arq-tec}}
+\caption{Diagrama de la arquitectura tecnológica}
+\end{figure}
