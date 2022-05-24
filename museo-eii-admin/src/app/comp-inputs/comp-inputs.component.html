@@ -22,12 +22,12 @@
 <div class="row form-row row3">
     <label class="col col-lg-2" for="cinityear">Año de salida:</label>
     <div class="col">
-        <input class="form-control" type="number" min="1970" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">
+        <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">
         <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
     <label class="col col-lg-2" for="cendyear">Año de fin:</label>
     <div class="col">
-        <input class="form-control" type="number" min="1970" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">
+        <input class="form-control" type="number" min="1900" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">
         <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 <!-- </div>
