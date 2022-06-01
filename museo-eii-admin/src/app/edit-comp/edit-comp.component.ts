@@ -127,7 +127,9 @@ export class FormEditCompComponent implements OnInit {
   }
 
   isValid(comp: MyComponent): boolean {
-    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" && comp.component_year_init && comp.component_year_end
+    const year = new Date().getFullYear();
+    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" 
+    && comp.component_year_init != null && comp.component_year_init > 1900 && comp.component_year_init <= year && comp.component_year_end != null && comp.component_year_end >= comp.component_year_init && comp.component_year_end <= year
     && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
     
     if (comp instanceof Cpu) 
