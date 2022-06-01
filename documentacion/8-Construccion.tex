@@ -13,7 +13,7 @@
 \newpage
 
 
-\section{CSI 1: PREPARACIÓN DEL ENTORNO DE GENERACIÓN Y CONSTRUCCIÓN}
+\section[CSI 1: PREPARACIÓN DEL ENTORNO DE GENERACIÓN Y \\ CONSTRUCCIÓN]{CSI 1: PREPARACIÓN DEL ENTORNO DE GENERACIÓN Y CONSTRUCCIÓN}
 
 \subsection{Estándares y normas seguidos}
 \subsubsection{Angular Style Guide}
@@ -68,7 +68,7 @@ Git es un software de control de versiones gratuito y de código abierto, diseñ
 \end{figure}
 
 \newpage
-\section{CSI 2: GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y PROCEDIMIENTOS}
+\section[CSI 2: GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y \\ PROCEDIMIENTOS]{CSI 2: GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y PROCEDIMIENTOS}
 
 \textcolor[rgb]{0.65,0.16,0}{Ejemplos de tablas descripción de clases}
 
@@ -233,6 +233,12 @@ Al entrar a la web de administración del museo nos encontramos con el inicio de
 \centering
 \includegraphics[scale=0.45]{loginIUDef}
 \caption{Manual de usuario: Inicio de sesión}
+\end{figure}
+Si el administrador necesita cambiar la contraseña, podrá hacerlo accediendo a la máquina Ubuntu 20.04 donde se encuentra alojado el servidor Apache que contiene los archivos PHP y la base de datos del sistema, ya que habrá un fichero ejecutable que solicitará la nueva contraseña y realizará el cambio. Este fichero solo estará disponible en esta máquina ya que, al haber un solo usuario administrador, es más sencillo hacer el cambio de contraseña de esta forma en lugar de enviar un correo con un enlace temporal para realizarlo, y es seguro ya que el administrador es el único usuario con acceso a la máquina.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{changepassphp}
+\caption{Manual de usuario: Cambio de contraseña}
 \end{figure}
 Lo primero que se muestra una vez iniciada la sesión es un listado de los periodos existentes, mostrando sus nombres con un enlace a cada uno de ellos, y permitiendo editar y eliminar cada periodo. Eliminar un periodo borrará también los componentes asociados al mismo, para ello se mostrará un aviso y se pedirá confirmación. En el lateral izquierdo hay un menú que se incluye en todas las páginas de la aplicación, desde el que se puede acceder a este listado de periodos, y a los formularios para añadir periodos y componentes.
 \begin{figure}[H]
