@@ -1,0 +1,1359 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>museo-eii-admin documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">museo-eii-admin documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li
+  >
+  CompInputsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>src/app/comp-inputs/comp-inputs.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-comp-inputs</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./comp-inputs.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./comp-inputs.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#compImgInput" >compImgInput</a>
+                            </li>
+                            <li>
+                                <a href="#imgUrl" >imgUrl</a>
+                            </li>
+                            <li>
+                                <a href="#priceUnits" >priceUnits</a>
+                            </li>
+                            <li>
+                                <a href="#sysImgInput" >sysImgInput</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#changePriceUnits" >changePriceUnits</a>
+                            </li>
+                            <li>
+                                <a href="#compImgsChange" >compImgsChange</a>
+                            </li>
+                            <li>
+                                <a href="#isDesktop" >isDesktop</a>
+                            </li>
+                            <li>
+                                <a href="#isPortable" >isPortable</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onChange" >onChange</a>
+                            </li>
+                            <li>
+                                <a href="#removeImage" >removeImage</a>
+                            </li>
+                            <li>
+                                <a href="#sysImgChange" >sysImgChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Entradas</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#compImgsInDB" >compImgsInDB</a>
+                            </li>
+                            <li>
+                                <a href="#images" >images</a>
+                            </li>
+                            <li>
+                                <a href="#imagesNames" >imagesNames</a>
+                            </li>
+                            <li>
+                                <a href="#model" >model</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Entradas</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="compImgsInDB"></a>
+                        <b>compImgsInDB</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:15</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="images"></a>
+                        <b>images</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:17</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imagesNames"></a>
+                        <b>imagesNames</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="18" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:18</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="model"></a>
+                        <b>model</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/MyComponent.html" target="_self" >MyComponent</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Definido en <a href="" data-line="14" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:14</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="changePriceUnits"></a>
+                    <span class="name">
+                        <span ><b>changePriceUnits</b></span>
+                        <a href="#changePriceUnits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>changePriceUnits(u: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="52"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cambia la unidad de moneda seleccionada en el combobox</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>u</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: nueva unidad de moneda seleccionada</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compImgsChange"></a>
+                    <span class="name">
+                        <span ><b>compImgsChange</b></span>
+                        <a href="#compImgsChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>compImgsChange(e: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="113"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:113</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Añade las imágenes seleccionadas para el componente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: subida de archivos en el input[file]</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isDesktop"></a>
+                    <span class="name">
+                        <span ><b>isDesktop</b></span>
+                        <a href="#isDesktop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isDesktop()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="36"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>si el componente es usado en dispositivos de escritorio</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isPortable"></a>
+                    <span class="name">
+                        <span ><b>isPortable</b></span>
+                        <a href="#isPortable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isPortable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="44"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:44</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>si el componente es usado en dispositivos portátiles</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="29"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onChange"></a>
+                    <span class="name">
+                        <span ><b>onChange</b></span>
+                        <a href="#onChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onChange(portable: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>, desktop: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="61"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Cambia la selección realizada en el tipo de dispositivos</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>portable</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: valor de selección del checkbox correspondiente a dispositivos portátiles</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>desktop</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: valor de selección del checkbox correspondiente a dispositivos móviles</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="removeImage"></a>
+                    <span class="name">
+                        <span ><b>removeImage</b></span>
+                        <a href="#removeImage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>removeImage(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="145"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:145</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Elimina una imagen de entre las recién añadidas al componente</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: imagen que se va a eliminar</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sysImgChange"></a>
+                    <span class="name">
+                        <span ><b>sysImgChange</b></span>
+                        <a href="#sysImgChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sysImgChange(e: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="72"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:72</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Añade (o reemplaza si ya existe) la imagen seleccionada correspondiente al sistema famoso</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>e</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: subida de archivos en el input[file]</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compImgInput"></a>
+                    <span class="name">
+                        <span ><b>compImgInput</b></span>
+                        <a href="#compImgInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decoradores : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;compImgInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="23" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="imgUrl"></a>
+                    <span class="name">
+                        <span ><b>imgUrl</b></span>
+                        <a href="#imgUrl"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>environment.baseImgUrl</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="priceUnits"></a>
+                    <span class="name">
+                        <span ><b>priceUnits</b></span>
+                        <a href="#priceUnits"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>Object.values(PriceUnits)</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sysImgInput"></a>
+                    <span class="name">
+                        <span ><b>sysImgInput</b></span>
+                        <a href="#sysImgInput"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decoradores : </b>
+                        <br />
+                        <code>
+                            @ViewChild(&#x27;sysImgInput&#x27;)<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, Input, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
+import { environment } from &#x27;src/environments/environment&#x27;;
+import { CompDevices, MyComponent, PriceUnits } from &#x27;../comp&#x27;;
+
+@Component({
+  selector: &#x27;app-comp-inputs&#x27;,
+  templateUrl: &#x27;./comp-inputs.component.html&#x27;,
+  styleUrls: [&#x27;./comp-inputs.component.css&#x27;]
+})
+export class CompInputsComponent implements OnInit {
+
+  imgUrl &#x3D; environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
+
+  @Input() model: MyComponent; // objeto asignado en el formulario sobre el que se realizan los cambios
+  @Input() compImgsInDB: string[];
+
+  @Input() images; // imágenes subidas a través de los inputs[file]
+  @Input() imagesNames: string[]; // nombres de las imágenes subidas
+
+  @ViewChild(&#x27;sysImgInput&#x27;)
+  sysImgInput!: ElementRef; // input[file] del sistema famoso
+  @ViewChild(&#x27;compImgInput&#x27;)
+  compImgInput!: ElementRef; // input[file] de las imágenes del componente
+
+  priceUnits: string[] &#x3D; Object.values(PriceUnits); // unidades de moneda
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos de escritorio
+   */
+  isDesktop() {
+    return this.model.component_devices.split(&#x27;,&#x27;).includes(CompDevices.desktop);
+  }
+
+  /**
+   * 
+   * @returns si el componente es usado en dispositivos portátiles
+   */
+  isPortable() {
+    return this.model.component_devices.split(&#x27;,&#x27;).includes(CompDevices.portable);
+  }
+
+  /**
+   * Cambia la unidad de moneda seleccionada en el combobox
+   * @param u : nueva unidad de moneda seleccionada
+   */
+  changePriceUnits(u: string) {
+    this.model.component_price_units &#x3D; this.priceUnits.filter((e) &#x3D;&gt; e &#x3D;&#x3D;&#x3D; u)[0];
+  }
+
+  /**
+   * Cambia la selección realizada en el tipo de dispositivos
+   * @param portable : valor de selección del checkbox correspondiente a dispositivos portátiles
+   * @param desktop : valor de selección del checkbox correspondiente a dispositivos móviles
+   */
+  onChange(portable: boolean, desktop: boolean) {
+    if (portable &amp;&amp; desktop) this.model.setDevices([CompDevices.portable, CompDevices.desktop]);
+    else if (portable) this.model.setDevices([CompDevices.portable]);
+    else if (desktop) this.model.setDevices([CompDevices.desktop]);
+    else this.model.setDevices([]);
+  }
+
+  /**
+   * Añade (o reemplaza si ya existe) la imagen seleccionada correspondiente al sistema famoso
+   * @param e : subida de archivos en el input[file]
+   */
+  sysImgChange(e: Event) {
+    // obtiene el archivo subido
+    let element &#x3D; e.target  as HTMLInputElement;
+    let fileList: FileList | null &#x3D; element.files;
+    if (fileList &amp;&amp; fileList.length &#x3D;&#x3D; 1) {
+      var reader &#x3D; new FileReader();
+      reader.onload &#x3D; (event:any) &#x3D;&gt; {
+        // saca el índice correspondiente a la imagen y su nombre en los respectivos arrays
+        let i &#x3D; this.imagesNames.indexOf(this.model.famous_system_img.split(&#x27;.&#x27;)[0]);
+        // si ya existe en el array se reemplaza la imagen
+        if (i !&#x3D; -1) this.images[i] &#x3D; event.target.result;
+        // si no existe se añade
+        else this.images.push(event.target.result);
+      }
+      reader.readAsDataURL(fileList[0]);
+      // se divide el nombre para obtener el nombre con el que se va a guardar y la extensión
+      let fileNameExt &#x3D; fileList[0].name.split(&#x27;.&#x27;);
+      let saveName &#x3D; fileNameExt[0] + &#x27;.&#x27; + ((fileNameExt[fileNameExt.length - 1] &#x3D;&#x3D; &#x27;jpg&#x27;) ? &#x27;jpeg&#x27; : fileNameExt[fileNameExt.length - 1]);
+      // si existía previamente otra imagen reemplazamos el nombre en el array
+      if (this.model.famous_system_img) {
+        this.compImgsInDB.forEach((img, index) &#x3D;&gt; { // si existía en la base de datos
+          if (img &#x3D;&#x3D;&#x3D; this.model.famous_system_img) {
+            this.compImgsInDB.splice(index,1);
+          }
+        });
+        let i &#x3D; this.imagesNames.indexOf(this.model.famous_system_img.split(&#x27;.&#x27;)[0]); // si había sido subida
+        if (i !&#x3D; -1) this.imagesNames[i] &#x3D; fileNameExt[0];
+        else this.imagesNames.push(fileNameExt[0]);
+      } // si no existe se añade 
+      else this.imagesNames.push(fileNameExt[0]);
+      // se asigna el nombre y la extensión del archivo que se va a subir
+      this.model.famous_system_img &#x3D; saveName;
+    }
+    // resetea el valor del input
+    this.sysImgInput.nativeElement.value &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Añade las imágenes seleccionadas para el componente
+   * @param e : subida de archivos en el input[file]
+   */
+  compImgsChange(e: Event) {
+    // obtiene los archivos subidos
+    let element &#x3D; e.target  as HTMLInputElement;
+    let fileList: FileList | null &#x3D; element.files;
+    if (fileList &amp;&amp; fileList.length &gt; 0) {
+      for (let i &#x3D; 0; i &lt; fileList.length; i++){
+        // se divide el nombre para obtener el nombre con el que se va a guardar y la extensión
+        let fileNameExt &#x3D; fileList[i].name.split(&#x27;.&#x27;);
+        // nombre y extensión del archivo que se va a subir
+        let saveName &#x3D; fileNameExt[0] + &#x27;.&#x27; + ((fileNameExt[fileNameExt.length - 1] &#x3D;&#x3D; &#x27;jpg&#x27;) ? &#x27;jpeg&#x27; : fileNameExt[fileNameExt.length - 1]);
+        // si la imagen ya existe entre las imágenes del componente no se hace nada, si no existe se añade
+        if (!this.model.component_imgs.includes(saveName)) {
+          var reader &#x3D; new FileReader();
+          reader.onload &#x3D; (event:any) &#x3D;&gt; {
+            this.images.push(event.target.result);
+          }
+          reader.readAsDataURL(fileList[i]);
+          // se añade el nombre de la imagen
+          this.imagesNames.push(fileNameExt[0]);
+          // asigna el nombre 
+          this.model.component_imgs.push(saveName);
+        }
+      }
+    }
+    // resetea el valor del input
+    this.compImgInput.nativeElement.value &#x3D; &#x27;&#x27;;
+  }
+
+  /**
+   * Elimina una imagen de entre las recién añadidas al componente
+   * @param name : imagen que se va a eliminar
+   */
+  removeImage(name: string) {
+    // obtiene el índice de la imagen en los arrays correspondientes
+    let index &#x3D; this.images.indexOf(name);
+    if (index !&#x3D; -1) {
+      // obtiene el nombre con el que se guarda dicha imagen
+      let imgName &#x3D; this.imagesNames[index];
+      // elimina la imagen de ambos arrays
+      this.images.splice(index, 1);
+      this.imagesNames.splice(index, 1);
+      // elimina la imagen del componente
+      this.model.component_imgs.forEach((img, ind) &#x3D;&gt; {
+        if (img.split(&#x27;.&#x27;)[0] &#x3D;&#x3D;&#x3D; imgName)
+          this.model.component_imgs.splice(ind,1);
+      });
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cname&quot;&gt;Nombre:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cname&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Nombre&quot; required [(ngModel)]&#x3D;&quot;model.component_name&quot; name&#x3D;&quot;name&quot; #name&#x3D;&quot;ngModel&quot; maxlength&#x3D;&quot;50&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;name.valid || name.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;        
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cdesc&quot;&gt;Descripción:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;textarea class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cdesc&quot; required [(ngModel)]&#x3D;&quot;model.component_description&quot; name&#x3D;&quot;description&quot; #description&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Descripción&quot;&gt;&lt;/textarea&gt;
+        &lt;div [hidden]&#x3D;&quot;description.valid || description.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cfamily&quot;&gt;Familia:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cfamily&quot; required [(ngModel)]&#x3D;&quot;model.component_family&quot; name&#x3D;&quot;family&quot; #family&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Familia&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;family.valid || family.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row row3&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cinityear&quot;&gt;Año de salida:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1900&quot; id&#x3D;&quot;cinityear&quot; required [(ngModel)]&#x3D;&quot;model.component_year_init&quot; name&#x3D;&quot;initYear&quot; #initYear&#x3D;&quot;ngModel&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;initYear.valid || initYear.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cendyear&quot;&gt;Año de fin:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1900&quot; id&#x3D;&quot;cendyear&quot; required [(ngModel)]&#x3D;&quot;model.component_year_end&quot; name&#x3D;&quot;endYear&quot; #endYear&#x3D;&quot;ngModel&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;endYear.valid || endYear.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+&lt;!-- &lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt; --&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cprice&quot;&gt;Precio:&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+        &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; step&#x3D;&quot;1.00&quot; id&#x3D;&quot;cprice&quot; required [(ngModel)]&#x3D;&quot;model.component_price&quot; name&#x3D;&quot;price&quot; #price&#x3D;&quot;ngModel&quot; value&#x3D;&quot;90.00&quot;&gt;
+        &lt;div [hidden]&#x3D;&quot;price.valid || price.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;select class&#x3D;&quot;col form-control&quot; name&#x3D;&quot;price-select&quot; #priceSelect (change)&#x3D;&quot;changePriceUnits(priceSelect.value)&quot; [(ngModel)]&#x3D;&quot;model.component_price_units&quot;&gt;
+        &lt;option [value]&#x3D;&quot;u&quot; *ngFor&#x3D;&quot;let u of priceUnits&quot;&gt;{{u}}&lt;/option&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-3&quot;&gt;Utilizado en dispositivos:&lt;/label&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;checkDev1&quot;&gt;&lt;input #checkPort type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;checkDev1&quot; [checked]&#x3D;&quot;isPortable()&quot; (change)&#x3D;&quot;onChange(checkPort.checked,checkDesk.checked)&quot;&gt; Portátiles&lt;/label&gt;
+    &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;checkDev2&quot;&gt;&lt;input #checkDesk type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;checkDev2&quot; [checked]&#x3D;&quot;isDesktop()&quot; (change)&#x3D;&quot;onChange(checkPort.checked,checkDesk.checked)&quot;&gt; De escritorio&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-3&quot; for&#x3D;&quot;csystem&quot;&gt;Sistema famoso que lo utiliza:&lt;/label&gt;
+    &lt;input class&#x3D;&quot;col col-lg-3 form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;csystem&quot; placeholder&#x3D;&quot;Nombre del sistema&quot; [(ngModel)]&#x3D;&quot;model.famous_system&quot; name&#x3D;&quot;famousSystem&quot; #famousSystem&#x3D;&quot;ngModel&quot;&gt;
+    &lt;input #sysImgInput class&#x3D;&quot;col file&quot; type&#x3D;&quot;file&quot; id&#x3D;&quot;csystemimg&quot; accept&#x3D;&quot;image/png, image/jpeg&quot; (change)&#x3D;&quot;sysImgChange($event)&quot; style&#x3D;&quot;display:none;&quot;&gt;
+    &lt;label class&#x3D;&quot;upload&quot; for&#x3D;&quot;csystemimg&quot;&gt;Subir imagen&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;div class&#x3D;&quot;col col-lg-4&quot;&gt;
+        &lt;input #compImgInput class&#x3D;&quot;col file&quot; type&#x3D;&quot;file&quot; id&#x3D;&quot;cimgs&quot; accept&#x3D;&quot;image/png, image/jpeg&quot; (change)&#x3D;&quot;compImgsChange($event)&quot; style&#x3D;&quot;display:none;&quot; name&#x3D;&quot;files[]&quot; multiple&gt;
+        &lt;label class&#x3D;&quot;upload&quot; for&#x3D;&quot;cimgs&quot;&gt;Subir imágenes del componente&lt;/label&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+    &lt;div  (click)&#x3D;&quot;removeImage(url)&quot; class&#x3D;&quot;rm-img-btn&quot; *ngFor&#x3D;&#x27;let url of images&#x27;&gt;
+        &lt;button &gt;&lt;img class&#x3D;&quot;row&quot; [src]&#x3D;&quot;url&quot; height&#x3D;&quot;100&quot; style&#x3D;&quot;margin: 3px;&quot;&gt;&lt;/button&gt;
+        &lt;div&gt;&lt;ion-icon name&#x3D;&quot;trash&quot;&gt;&lt;/ion-icon&gt;&lt;/div&gt;
+    &lt;/div&gt;&lt;br/&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./comp-inputs.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">input, label {
+    margin-left: 0px;
+}
+
+select {
+    margin-right: 0px;
+}
+
+div.row3 label:not(:first-child) {
+    text-align: right;
+}
+
+input.file {
+    margin-right: 0%;
+}
+
+input[type&#x3D;checkbox] {
+    align-content: left;
+}
+
+.img-list {
+    list-style: none;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row form-row">    <label class="col col-lg-2" for="cname">Nombre:</label>    <div class="col">        <input class="form-control" type="text" id="cname" name="name" placeholder="Nombre" required [(ngModel)]="model.component_name" name="name" #name="ngModel" maxlength="50">        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>    </div></div>        <div class="row form-row">    <label class="col col-lg-2" for="cdesc">Descripción:</label>    <div class="col">        <textarea class="form-control" type="text" id="cdesc" required [(ngModel)]="model.component_description" name="description" #description="ngModel" placeholder="Descripción"></textarea>        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row">    <label class="col col-lg-2" for="cfamily">Familia:</label>    <div class="col">        <input class="form-control" type="text" id="cfamily" required [(ngModel)]="model.component_family" name="family" #family="ngModel" placeholder="Familia">        <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row row3">    <label class="col col-lg-2" for="cinityear">Año de salida:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">        <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <label class="col col-lg-2" for="cendyear">Año de fin:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">        <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>    </div><!-- </div><div class="row form-row"> -->    <label class="col col-lg-2" for="cprice">Precio:</label>    <div class="col">        <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.component_price" name="price" #price="ngModel" value="90.00">        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)" [(ngModel)]="model.component_price_units">        <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>    </select></div><div class="row form-row">    <label class="col col-lg-3">Utilizado en dispositivos:</label>    <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>    <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label></div><div class="row form-row">    <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>    <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">    <label class="upload" for="csystemimg">Subir imagen</label></div><div class="row form-row">    <div class="col col-lg-4">        <input #compImgInput class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>        <label class="upload" for="cimgs">Subir imágenes del componente</label>    </div></div><div class="row form-row">    <div  (click)="removeImage(url)" class="rm-img-btn" *ngFor=\'let url of images\'>        <button ><img class="row" [src]="url" height="100" style="margin: 3px;"></button>        <div><ion-icon name="trash"></ion-icon></div>    </div><br/></div></div>'
+    var COMPONENTS = [{'name': 'AddCompComponent', 'selector': 'app-add-comp'},{'name': 'AddPeriodComponent', 'selector': 'app-add-period'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompInputsComponent', 'selector': 'app-comp-inputs'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CpuTypeDetailsComponent', 'selector': 'app-cpu-type-details'},{'name': 'CpuTypeFormComponent', 'selector': 'app-cpu-type-form'},{'name': 'FormEditCompComponent', 'selector': 'app-edit-comp'},{'name': 'FormEditPeriodComponent', 'selector': 'app-edit-period'},{'name': 'ListPeriodsComponent', 'selector': 'app-list-periods'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MyComponentComponent', 'selector': 'app-my-component'},{'name': 'PeriodComponent', 'selector': 'app-period'},{'name': 'PeriodInputsComponent', 'selector': 'app-period-inputs'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CompInputsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> comparación de resultados "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CompInputsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
