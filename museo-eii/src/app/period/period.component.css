@@ -95,7 +95,7 @@ a:link, a:visited {
 }
 
 .trivia h3, .details h3 {
-  color: rgb(0, 221, 18);
+  color: #00ff15;
 }
 
 .trivia ul li::before {
