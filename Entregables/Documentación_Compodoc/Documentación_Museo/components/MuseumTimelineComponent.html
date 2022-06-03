@@ -1,0 +1,980 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>museo-eii documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">museo-eii documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Escribe para buscar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li
+  >
+  MuseumTimelineComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Fichero</h3>
+</p>
+<p class="comment">
+    <code>src/app/museum-timeline/museum-timeline.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implementa</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Meta datos</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-museum-timeline</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./museum-timeline.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./museum-timeline.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Índice</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propiedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#comps" >comps</a>
+                            </li>
+                            <li>
+                                <a href="#endYear" >endYear</a>
+                            </li>
+                            <li>
+                                <a href="#initYear" >initYear</a>
+                            </li>
+                            <li>
+                                <a href="#options" >options</a>
+                            </li>
+                            <li>
+                                <a href="#periods" >periods</a>
+                            </li>
+                            <li>
+                                <a href="#periodsFiltered" >periodsFiltered</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getCompsFromPeriods" >getCompsFromPeriods</a>
+                            </li>
+                            <li>
+                                <a href="#getPeriods" >getPeriods</a>
+                            </li>
+                            <li>
+                                <a href="#getYears" >getYears</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#search" >search</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(periodService: <a href="../injectables/PeriodService.html" target="_self">PeriodService</a>, compService: <a href="../injectables/ComponentService.html" target="_self">ComponentService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="25" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parámetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nombre</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>periodService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/PeriodService.html" target="_self" >PeriodService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>compService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ComponentService.html" target="_self" >ComponentService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCompsFromPeriods"></a>
+                    <span class="name">
+                        <span ><b>getCompsFromPeriods</b></span>
+                        <a href="#getCompsFromPeriods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCompsFromPeriods()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:49</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene los componentes de cada periodo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPeriods"></a>
+                    <span class="name">
+                        <span ><b>getPeriods</b></span>
+                        <a href="#getPeriods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPeriods()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="36"
+                            class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:36</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene todos los periodos que tengan asociado al menos un componente, ordenados por antigüedad</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getYears"></a>
+                    <span class="name">
+                        <span ><b>getYears</b></span>
+                        <a href="#getYears"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getYears()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:56</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Obtiene los años que comprende cada periodo</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="29"
+                            class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:29</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="search"></a>
+                    <span class="name">
+                        <span ><b>search</b></span>
+                        <a href="#search"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>search(initYear, endYear, name)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="69"
+                            class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:69</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Devuelve la lista de periodos filtrada que cumple con los criterios de búsqueda seleccionados (pertenecen a un periodo de tiempo o el nombre del periodo o del componente contienen el texto buscado)</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parámetros :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nombre</td>
+                                    <td>Opcional</td>
+                                    <td>Descripción</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>initYear</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: año de inicio seleccionado</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>endYear</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: año de fin seleccionado</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>name</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>: texto buscado</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comps"></a>
+                    <span class="name">
+                        <span ><b>comps</b></span>
+                        <a href="#comps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../interfaces/MyComponent.html" target="_self" >Map&lt;number | MyComponent[]&gt;</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>new Map&lt;number, MyComponent[]&gt;()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="endYear"></a>
+                    <span class="name">
+                        <span ><b>endYear</b></span>
+                        <a href="#endYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>2000</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="20" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initYear"></a>
+                    <span class="name">
+                        <span ><b>initYear</b></span>
+                        <a href="#initYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>1970</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="19" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="options"></a>
+                    <span class="name">
+                        <span ><b>options</b></span>
+                        <a href="#options"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>Options</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>{
+    floor: 1970,
+    ceil: 2000,
+    step: 1
+  }</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="21" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="periods"></a>
+                    <span class="name">
+                        <span ><b>periods</b></span>
+                        <a href="#periods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../classes/Period.html" target="_self" >Period[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="15" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="periodsFiltered"></a>
+                    <span class="name">
+                        <span ><b>periodsFiltered</b></span>
+                        <a href="#periodsFiltered"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>        <code><a href="../classes/Period.html" target="_self" >Period[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="16" class="link-to-prism">src/app/museum-timeline/museum-timeline.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { MyComponent } from &#x27;../comp&#x27;;
+import { ComponentService } from &#x27;../cpus.service&#x27;;
+import { Period } from &#x27;../period&#x27;;
+import { PeriodService } from &#x27;../period.service&#x27;;
+import { Options } from &#x27;@angular-slider/ngx-slider&#x27;;
+
+@Component({
+  selector: &#x27;app-museum-timeline&#x27;,
+  templateUrl: &#x27;./museum-timeline.component.html&#x27;,
+  styleUrls: [&#x27;./museum-timeline.component.css&#x27;]
+})
+export class MuseumTimelineComponent implements OnInit {
+
+  periods: Period[] &#x3D; []; // listado ordenado de periodos
+  periodsFiltered: Period[] &#x3D; [];
+  comps: Map&lt;number, MyComponent[]&gt; &#x3D; new Map&lt;number, MyComponent[]&gt;(); // componentes de cada periodo
+
+  initYear: number &#x3D; 1970;
+  endYear: number &#x3D; 2000;
+  options: Options &#x3D; {
+    floor: 1970,
+    ceil: 2000,
+    step: 1
+  };
+
+  constructor(private periodService: PeriodService, private compService: ComponentService) { }
+
+  ngOnInit(): void {
+    this.getPeriods();
+  }
+
+  /**
+   * Obtiene todos los periodos que tengan asociado al menos un componente, ordenados por antigüedad
+   */
+  getPeriods(): void {
+    this.periodService.getPeriods().subscribe((p: Period[]) &#x3D;&gt; {
+      this.periods &#x3D; p;
+      this.periodsFiltered &#x3D; p;
+      this.getCompsFromPeriods();
+      this.getYears();
+      
+    });
+  }
+
+  /**
+   * Obtiene los componentes de cada periodo
+   */
+  getCompsFromPeriods() {
+    this.periods.forEach((p: Period) &#x3D;&gt; this.compService.getComponentsFromPeriod(p.period_id).subscribe((comps: MyComponent[]) &#x3D;&gt; this.comps.set(p.period_id, comps)));
+  }
+
+  /**
+   * Obtiene los años que comprende cada periodo
+   */
+  getYears() {
+    this.periods.forEach((p: Period) &#x3D;&gt; this.periodService.getYearsPeriod(p.period_id).subscribe((years: {year_init, year_end}) &#x3D;&gt; {
+      p.year_end &#x3D; years.year_end;
+      p.year_init &#x3D; years.year_init;
+    }))
+  }
+
+  /**
+   * Devuelve la lista de periodos filtrada que cumple con los criterios de búsqueda seleccionados (pertenecen a un periodo de tiempo o el nombre del periodo o del componente contienen el texto buscado)
+   * @param initYear : año de inicio seleccionado
+   * @param endYear : año de fin seleccionado
+   * @param name : texto buscado
+   */
+  search(initYear, endYear, name) {
+    this.periodsFiltered &#x3D; this.periods.filter((p) &#x3D;&gt; {
+      return p.year_end &gt;&#x3D; initYear 
+        &amp;&amp; p.year_init &lt;&#x3D; endYear 
+        &amp;&amp; (name &#x3D;&#x3D; &quot;&quot; || p.period_name.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+          this.comps.get(p.period_id).filter((c) &#x3D;&gt; c.component_name.toLocaleLowerCase().includes(name.toLocaleLowerCase())).length &gt; 0);
+    })
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot;&gt;
+    &lt;div class&#x3D;&quot;row filters&quot;&gt;
+        &lt;ngx-slider class&#x3D;&quot;col-5 custom-slider&quot; [(value)]&#x3D;&quot;initYear&quot; [(highValue)]&#x3D;&quot;endYear&quot; [options]&#x3D;&quot;options&quot; (valueChange)&#x3D;&quot;search(initYear, endYear, nameSearch.value)&quot; (highValueChange)&#x3D;&quot;search(initYear, endYear, nameSearch.value)&quot;&gt;&lt;/ngx-slider&gt;
+        &lt;input class&#x3D;&quot;col-5 search-bar&quot; #nameSearch type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;{{ &#x27;NAV.SEARCH&#x27; | translate}}&quot; (change)&#x3D;&quot;search(initYear, endYear, nameSearch.value)&quot;&gt;
+    &lt;/div&gt;
+    &lt;mzd-timeline [alternateSide]&#x3D;&quot;true&quot;&gt;
+        &lt;mzd-timeline-content *ngFor&#x3D;&quot;let p of periodsFiltered&quot;&gt;
+            &lt;div&gt;
+                &lt;div class&#x3D;&quot;row&quot;&gt;
+                    &lt;h4 class&#x3D;&quot;col-lg-10&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, p.period_id]&quot;&gt;{{ p.period_name }}&lt;/a&gt;&lt;/h4&gt;
+                    &lt;p class&#x3D;&quot;col&quot;&gt;{{p.year_init}} - {{p.year_end}}&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;ul&gt;
+                    &lt;li *ngFor&#x3D;&quot;let c of comps.get(p.period_id)&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/component&#x27;, c.component_id]&quot;&gt;{{c.component_name}}&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/mzd-timeline-content&gt;
+    &lt;/mzd-timeline&gt;
+    
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./museum-timeline.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">ul {
+  display: flex;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+  padding: 2%;
+}
+  
+ul ul {
+  padding-left: 10%;
+}
+
+ul ul li::before {
+  content: &quot;\003e \00a0&quot;;
+}
+
+a:link, a:visited {
+  padding: 8px 0;
+  color: #39583d;
+}
+
+.filters {
+  align-items: flex-end;
+  margin-right: 0px;
+  min-width: 45%;
+}
+
+
+
+.search-bar {
+  background-color: rgba(204, 204, 204, 0.671);
+  border: none;
+  border-radius: 10px;
+  color: #000;
+  height: 30px;
+  margin-top: 0px;
+  margin-left: 15px;
+  padding: 20px;
+}
+
+.search-bar:focus {
+  background-color: #fff;
+  border: 1px  #fff;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Leyenda</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento Html</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento Html con directiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="row container">    <div class="row filters">        <ngx-slider class="col-5 custom-slider" [(value)]="initYear" [(highValue)]="endYear" [options]="options" (valueChange)="search(initYear, endYear, nameSearch.value)" (highValueChange)="search(initYear, endYear, nameSearch.value)"></ngx-slider>        <input class="col-5 search-bar" #nameSearch type="search" placeholder="{{ \'NAV.SEARCH\' | translate}}" (change)="search(initYear, endYear, nameSearch.value)">    </div>    <mzd-timeline [alternateSide]="true">        <mzd-timeline-content *ngFor="let p of periodsFiltered">            <div>                <div class="row">                    <h4 class="col-lg-10"><a [routerLink]="[\'/period\', p.period_id]">{{ p.period_name }}</a></h4>                    <p class="col">{{p.year_init}} - {{p.year_end}}</p>                </div>                <ul>                    <li *ngFor="let c of comps.get(p.period_id)"><a [routerLink]="[\'/component\', c.component_id]">{{c.component_name}}</a></li>                </ul>            </div>        </mzd-timeline-content>    </mzd-timeline>    </div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompDetailsComponent', 'selector': 'app-comp-details'},{'name': 'CpuDetailsComponent', 'selector': 'app-cpu-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MainNavComponent', 'selector': 'app-main-nav'},{'name': 'MuseumTimelineComponent', 'selector': 'app-museum-timeline'},{'name': 'PeriodComponent', 'selector': 'app-period'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'MuseumTimelineComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> comparación de resultados "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No hay resultados que coincidan "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'MuseumTimelineComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
