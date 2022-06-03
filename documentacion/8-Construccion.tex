@@ -69,62 +69,8 @@ Git es un software de control de versiones gratuito y de código abierto, diseñ
 
 \newpage
 \section[CSI 2: GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y \\ PROCEDIMIENTOS]{CSI 2: GENERACIÓN DEL CÓDIGO DE LOS COMPONENTES Y PROCEDIMIENTOS}
+Una vez desarrolladas las aplicaciones del museo y la administración, se han documentado las clases de ambos proyectos. Esta documentación se ha generado utilizando \textit{Compodoc}, una herramienta similar a la conocida JavaDoc para Angular. Debido a la extensión de la documentación los dos proyectos, se adjunta como archivos externos, como se indica más adelante en el Contenido entregado en los anexos (sección \ref{sec:contenido_anexos}).
 
-\textcolor[rgb]{0.65,0.16,0}{Ejemplos de tablas descripción de clases}
-
-\begin{table}[H]
-\vspace{-4mm}
-  \centering
-  \caption{Descripción de diseño de LoginScreen}
-    \begin{tabular}{p{8.645em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{LoginScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de inicio de sesión.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{signInWithGoogle} & \multicolumn{2}{p{22.64em}}{Hace una llamada al objeto Fire para el inicio de sesión con Firebase authentication mediante una cuenta de Google.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
-
-
-\begin{table}[htbp]
-  \centering
-  \caption{Descripción de diseño de HomeScreen}
-    \begin{tabular}{p{10em}rr}
-    \toprule
-    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{31.285em}}{\textbf{HomeScreen}} \\
-    \midrule
-    \rowcolor[rgb]{ .949,  .949,  .949} \multicolumn{3}{p{31.285em}}{\textbf{Descripción}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{Es la encargada de las acciones y la renderización de la pantalla de emergencia.} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Atributos propuestos}} \\
-    \midrule
-    \multicolumn{3}{p{31.285em}}{-} \\
-    \midrule
-    \rowcolor[rgb]{ .906,  .902,  .902} \multicolumn{3}{p{31.285em}}{\textbf{Métodos propuestos}} \\
-    \midrule
-    \textbf{componentWillMount} & \multicolumn{2}{r}{} \\
-    \midrule
-    \textbf{emergencyCalling} & \multicolumn{2}{p{21.285em}}{Es el método encargado de redirigir la aplicación hacia el marcador con el 112 marcado.} \\
-    \midrule
-    \textbf{warnProtectors} & \multicolumn{2}{p{21.285em}}{[Falta implementar] Es el encargado de generar un mensaje de aviso a los protectores creando notificaciones push.} \\
-    \midrule
-    \textbf{render} & \multicolumn{2}{r}{} \\
-    \bottomrule
-    \end{tabular}%
-\end{table}%
 
 \newpage
 \section{CSI 3: EJECUCIÓN DE LAS PRUEBAS UNITARIAS}
@@ -132,22 +78,156 @@ Git es un software de control de versiones gratuito y de código abierto, diseñ
 
 \newpage
 \section{CSI 4: EJECUCIÓN DE LAS PRUEBAS DE INTEGRACIÓN}
-
+\begin{table}[H]
+%\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Consultar periodos (museo)}
+    \begin{tabular}{p{9em}p{22em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Consultar periodos (museo)}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Obtener periodos existentes} & El sistema devolverá una lista de todos los periodos existentes. & Sí \\ \midrule
+    \textbf{Obtener periodo por nombre} & El sistema devolverá una lista de los periodos cuyo nombre contenga el texto introducido. & Sí \\ \midrule
+    \textbf{Obtener periodo por años} & El sistema devolverá una lista de los periodos cuyos años coincidan con los introducidos. & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Consultar componentes (museo)}
+    \begin{tabular}{p{11em}p{20em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Consultar componentes (museo)}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Obtener componentes de un periodo} & El sistema devolverá una lista de todos los componentes pertenecientes al periodo. & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Iniciar sesión}
+    \begin{tabular}{p{9em}p{22em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Iniciar sesión}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Iniciar sesión con datos válidos } & El sistema permitirá el acceso a la página de administración.  & Sí \\ \midrule
+    \textbf{Iniciar sesión con datos incorrectos} & El sistema no permitirá el acceso y se mostrará un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Consultar periodos (administración)}
+    \begin{tabular}{p{9em}p{22em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Consultar periodos (administración)}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Obtener periodos existentes} & El sistema devolverá una lista de todos los periodos existentes.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Añadir periodo}
+    \begin{tabular}{p{8em}p{23em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Añadir periodo}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Añadir nuevo periodo (periodo 2)} & El sistema tendrá un periodo más.  & Sí \\ \midrule
+    \textbf{Añadir periodo que ya existe (periodo 1)} & El sistema no añadirá el periodo y responderá con un error.  & Sí  \\ \midrule
+    \textbf{Añadir periodo con campos vacíos} & El sistema no añadirá el periodo y responderá con un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Modificar periodo}
+    \begin{tabular}{p{10em}p{21em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Modificar periodo}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Modificar periodo existente (periodo 1)} & El sistema actualizará los datos del periodo. & Sí  \\ \midrule
+    \textbf{Modificar un periodo que no existe (periodo 25)} & El sistemá responderá con un error.  & Sí \\ \midrule
+    \textbf{Modificar periodo dejando campos vacíos} & El sistema no actualizará el periodo y responderá con un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Eliminar periodo}
+    \begin{tabular}{p{11em}p{20em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Eliminar periodo}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Eliminar un periodo existente (periodo 1)} & El sistema tendrá un periodo menos.  & Sí \\ \midrule
+    \textbf{Eliminar un periodo que no existe (periodo 25)} & El sistema responderá con un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Consultar componentes (administración)}
+    \begin{tabular}{p{11em}p{20em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Consultar componentes (administración)}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Obtener componentes de un periodo} & El sistema devolverá una lista de todos los componentes pertenecientes al periodo.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Añadir componente}
+    \begin{tabular}{p{13em}p{18em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Añadir componente}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Añadir nuevo componente (CPU 2)} & El sistema tendrá un componente más.  & Sí  \\ \midrule
+    \textbf{Añadir componente que ya existe (CPU 1)} & El sistema no añadirá el componente y responderá con un error.  & Sí  \\ \midrule
+    \textbf{Añadir componente a un periodo que no existe (CPU 3, periodo 25)} & El sistema no añadirá el componente y responderá con un error.  & Sí  \\ \midrule
+    \textbf{Añadir componente con campos obligatorios vacíos} & El sistema no añadirá el componente y responderá con un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Modificar componente}
+    \begin{tabular}{p{13em}p{18em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Modificar componente}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Modificar componente existente (CPU 1)} & El sistema actualizará los datos del componente.  & Sí \\ \midrule
+    \textbf{Modificar un componente que no existe (CPU 30)} & El sistemá responderá con un error.  & Sí \\ \midrule
+    \textbf{Modificar componente dejando campos obligatorios vacíos} &  El sistema no actualizará el componente y responderá con un error.  & Sí \\ \bottomrule
+    \end{tabular}%
+\end{table}%
+\begin{table}[H]
+\vspace{-4mm}
+  \centering
+  \caption{Ejecución de pruebas: Eliminar componente}
+    \begin{tabular}{p{13em}p{18em}p{5em}}
+    \toprule
+    \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Eliminar componente}} \\ \midrule
+    \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
+    \textbf{Eliminar un componente existente (CPU 1)} & El sistema tendrá un componente menos.  & Sí  \\ \midrule
+    \textbf{Eliminar un componente que no existe (CPU 30)} &  El sistema responderá con un error.  & Sí  \\ \bottomrule
+    \end{tabular}%
+\end{table}%
 
 \newpage
 \section{CSI 5: EJECUCIÓN DE LAS PRUEBAS DEL SISTEMA}
+\input{8.5-CSI 5}
 
-\subsection{Prueba de Usabilidad}
-
-\subsection{Pruebas de Accesibilidad} 
- 
-\subsubsection{Revisión Preliminar} 
-
-\subsubsection{Evaluación de Conformidad} 
-
-\subsubsection{Checklist del WCAG 2.1} 
-
-\subsubsection{Accesibilidad con Dispositivos Móviles} 
+%
+%\subsection{Pruebas de Accesibilidad} 
+% 
+%\subsubsection{Revisión Preliminar} 
+%
+%\subsubsection{Evaluación de Conformidad} 
+%
+%\subsubsection{Checklist del WCAG 2.1} 
+%
+%\subsubsection{Accesibilidad con Dispositivos Móviles} 
 
 
 \newpage
