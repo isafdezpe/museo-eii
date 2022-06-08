@@ -15,6 +15,8 @@ import { PeriodService } from '../period.service';
   styleUrls: ['./add-comp.component.css']
 })
 export class AddCompComponent implements OnInit {
+
+  loaded = false;
  
   periods: Period[] = []; // lista de periodos existentes
   p: Period; // periodo seleccionado
@@ -64,6 +66,7 @@ export class AddCompComponent implements OnInit {
     this.periodService.getAll().subscribe((periods: Period[]) => {
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
         this.p = this.periods[0];
+      this.loaded = true;
       this.changePeriod(this.p.period_name);
     });
   }

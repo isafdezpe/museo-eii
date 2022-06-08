@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { CpuTypeFormComponent } from './cpu-type-form.component';
 
@@ -8,6 +9,9 @@ describe('CpuTypeFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        FormsModule
+      ],
       declarations: [ CpuTypeFormComponent ]
     })
     .compileComponents();

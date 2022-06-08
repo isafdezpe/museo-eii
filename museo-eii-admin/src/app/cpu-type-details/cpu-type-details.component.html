@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="comp">
     <div class="col">
         <h5 class="row">Memoria ROM</h5><p class="row">{{comp.program_memory}} {{comp.program_memory_units}}</p>
         <h5 class="row">Memoria RAM</h5><p class="row">{{comp.ram_memory}} {{comp.ram_memory_units}}</p>

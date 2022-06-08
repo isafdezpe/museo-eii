@@ -1,4 +1,4 @@
-<div class="row container">
+<div class="row container" *ngIf="period">
     <ul class="menu">
       <li class="prev"><a *ngIf="previousPeriod" [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
       <!-- <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li> -->

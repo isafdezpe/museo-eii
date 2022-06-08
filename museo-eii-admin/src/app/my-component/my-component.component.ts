@@ -15,6 +15,8 @@ import { environment } from 'src/environments/environment';
 })
 export class MyComponentComponent implements OnInit {
 
+  loaded = false;
+
   imgUrl = environment.baseImgUrl; // url de la carpeta en la que se guardan las imágenes
 
   c: MyComponent; // componente
@@ -60,6 +62,7 @@ export class MyComponentComponent implements OnInit {
       imgs.forEach((i) => {
         this.c.component_imgs.push(i.image);
       })
+      this.loaded = true;
     });
   }
 

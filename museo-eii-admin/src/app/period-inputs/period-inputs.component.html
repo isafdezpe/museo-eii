@@ -1,4 +1,4 @@
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="pname">Nombre:</label>
     <div class="col">
         <input class="form-control" type="text" id="pname" required [(ngModel)]="model.period_name" name="name" #name="ngModel" placeholder="Nombre" minlength="2" maxlength="50">
@@ -6,21 +6,21 @@
     </div>
 </div>        
 
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="pdesc">Detalles:</label>
     <div class="col">
         <textarea class="form-control" type="text" id="pdesc" required [(ngModel)]="model.period_details" name="details" #details="ngModel"  placeholder="Detalles" minlength="2"></textarea>
         <div [hidden]="details.valid || details.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="ptrivia">Sabías que... <p>Introduzca cada característica en una línea</p></label>
     <div class="col">
         <textarea class="form-control" type="text" id="ptrivia" required [(ngModel)]="model.period_trivia" name="trivia" #trivia="ngModel"  placeholder="Sabías que..." minlength="2"></textarea>
         <div [hidden]="trivia.valid || trivia.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="pevents">Eventos: <p>Introduzca cada evento en una línea</p></label>
     <div class="col">
         <textarea class="col form-control" type="text" id="pevents" required [(ngModel)]="model.period_events" name="events" #events="ngModel"  placeholder="Eventos" minlength="2"></textarea>

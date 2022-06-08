@@ -1,4 +1,4 @@
-<ul>
+<ul *ngIf="comp">
     <li>
         <ion-icon name="hardware-chip-outline"></ion-icon>
         <span *ngIf="comp.ram_memory!==0">{{comp.ram_memory}} {{comp.ram_memory_units}}</span>

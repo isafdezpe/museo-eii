@@ -1,25 +1,25 @@
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="cname">Nombre:</label>
     <div class="col">
         <input class="form-control" type="text" id="cname" name="name" placeholder="Nombre" required [(ngModel)]="model.component_name" name="name" #name="ngModel" maxlength="50">
         <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>        
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="cdesc">Descripción:</label>
     <div class="col">
         <textarea class="form-control" type="text" id="cdesc" required [(ngModel)]="model.component_description" name="description" #description="ngModel" placeholder="Descripción"></textarea>
         <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-2" for="cfamily">Familia:</label>
     <div class="col">
         <input class="form-control" type="text" id="cfamily" required [(ngModel)]="model.component_family" name="family" #family="ngModel" placeholder="Familia">
         <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 </div>
-<div class="row form-row row3">
+<div class="row form-row row3" *ngIf="model">
     <label class="col col-lg-2" for="cinityear">Año de salida:</label>
     <div class="col">
         <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">
@@ -41,12 +41,12 @@
         <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>
     </select>
 </div>
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-3">Utilizado en dispositivos:</label>
     <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>
     <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label>
 </div>
-<div class="row form-row">
+<div class="row form-row" *ngIf="model">
     <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>
     <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">
     <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { CompInputsComponent } from './comp-inputs.component';
 
@@ -8,6 +9,9 @@ describe('CompInputsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports:[
+        FormsModule
+      ],
       declarations: [ CompInputsComponent ]
     })
     .compileComponents();
