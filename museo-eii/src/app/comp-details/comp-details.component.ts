@@ -22,7 +22,7 @@ export class CompDetailsComponent implements OnInit {
 
   previousPeriod: Period; // periodo anterior al del componente
   nextPeriod: Period; // periodo siguiente al del componente
-  period: Period | undefined; // periodo al que pertenece el componente
+  period: Period; // periodo al que pertenece el componente
 
   constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService, private gallery: Gallery) { 
     // recargar el componente cuando cambian los parámetros de la url

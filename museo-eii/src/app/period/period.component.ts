@@ -17,7 +17,7 @@ export class PeriodComponent implements OnInit {
 
   previousPeriod: Period; // periodo anterior al mostrado
   nextPeriod: Period; // periodo siguiente al mostrado
-  period: Period | undefined;  // periodo
+  period: Period;  // periodo
   
   comps: MyComponent[] = []; // componentes del periodo
 
@@ -49,9 +49,6 @@ export class PeriodComponent implements OnInit {
         }
         index++;
       });
-      console.log(this.period);
-      console.log(this.previousPeriod);
-      console.log(this.nextPeriod);
       this.getComps(id);
     });
   }

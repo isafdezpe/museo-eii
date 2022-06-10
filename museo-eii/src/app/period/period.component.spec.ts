@@ -3,6 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
+import { ComponentService } from '../cpus.service';
+import { ComponentMock } from '../mock-cpus';
+import { PeriodMock } from '../mock-periods';
+import { PeriodService } from '../period.service';
 
 import { PeriodComponent } from './period.component';
 
@@ -23,6 +27,7 @@ describe('PeriodComponent', () => {
           }
         }),
       ],
+      providers: [{provide: ComponentService, useClass: ComponentMock}, {provide: PeriodService, useClass: PeriodMock}],
       declarations: [ PeriodComponent ]
     })
     .compileComponents();
@@ -37,4 +42,14 @@ describe('PeriodComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  // it('should get the actual period', () => {
+  //   let actual = component.period;
+  //   expect(actual.period_name).toEqual('CPUs pre-x86');
+  // });
+
+  // it('should get next and previous period', () => {
+  //   expect(component.previousPeriod).toBeUndefined();
+  //   expect(component.nextPeriod.period_name).toEqual('8086 y 8088');
+  // });
 });
