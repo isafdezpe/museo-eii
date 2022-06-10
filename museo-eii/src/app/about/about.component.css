@@ -1,5 +1,20 @@
 p {
-    margin: 15% auto;
+    margin: 10% auto;
     max-width: 500px;
     text-align: center;
 }
+
+.social-networks {
+    list-style: none;
+    align-content: center;
+    max-width: 730px;
+  }
+  
+  .social-networks li {
+    display: inline-block;
+    margin-right: 30px;
+  }
+  
+  a {
+    color: #39583d;
+  }

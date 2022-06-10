@@ -7,7 +7,7 @@ export class Period {
     period_events: string;
     year_init: number;
     year_end: number;
-    famousSystems: {name: string, img: Blob, sysName: string}[];
+    famousSystems: {name: string, img: string, sysName: string}[];
 
     constructor(
         name: string,

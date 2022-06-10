@@ -1,17 +1,17 @@
 <div class="row container">
     <div class="row filters">
         <ngx-slider class="col-5 custom-slider" [(value)]="initYear" [(highValue)]="endYear" [options]="options" (valueChange)="search(initYear, endYear, nameSearch.value)" (highValueChange)="search(initYear, endYear, nameSearch.value)"></ngx-slider>
-        <input class="col-5 search-bar" #nameSearch type="search" placeholder="{{ 'NAV.SEARCH' | translate}}" (change)="search(initYear, endYear, nameSearch.value)">
+        <input class="col-5 search-bar" #nameSearch type="search" placeholder="{{ 'NAV.SEARCH' | translate}}" (input)="search(initYear, endYear, nameSearch.value)">
     </div>
     <mzd-timeline [alternateSide]="true">
-        <mzd-timeline-content *ngFor="let p of periodsFiltered">
-            <div>
+        <mzd-timeline-content *ngFor="let p of periodsFiltered" [border]="true" >
+            <div class="box-timeline">
                 <div class="row">
-                    <h4 class="col-lg-10"><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></h4>
-                    <p class="col">{{p.year_init}} - {{p.year_end}}</p>
+                    <h4 class="col-lg-9"><a [routerLink]="['/period', p.period_id]">{{ p.period_name }}</a></h4>
+                    <p class="col-lg-3">{{p.year_init}} - {{p.year_end}}</p>
                 </div>
                 <ul>
-                    <li *ngFor="let c of comps.get(p.period_id)"><a [routerLink]="['/component', c.component_id]">{{c.component_name}}</a></li>
+                    <li *ngFor="let c of comps.get(p.period_id)"><h6><a [routerLink]="['/component', c.component_id]">{{c.component_name}}</a></h6></li>
                 </ul>
             </div>
         </mzd-timeline-content>

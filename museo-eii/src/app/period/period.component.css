@@ -70,9 +70,22 @@ a:link, a:visited {
   margin-bottom: 10px;
 }
 
+.img-link {
+  height: 90px;
+  width: 120px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 0px 0px rgba(146, 146, 146, 0.137);
+}
+
+.sys-img {
+  height: 100px;
+  width: 120px;
+}
+
 .name-link {
+  padding-top: 20px;
   position: absolute;
-  bottom: 0;
+  bottom: -10;
   text-align: center;
 }
 
@@ -81,7 +94,7 @@ a:link, a:visited {
 }
 
 .gallery img, .systems img {
-  width: 120px;
+  max-width: 120px;
   height: auto;
 }
 

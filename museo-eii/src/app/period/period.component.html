@@ -1,8 +1,8 @@
 <div class="row container" *ngIf="period">
     <ul class="menu">
-      <li class="prev"><a *ngIf="previousPeriod" [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
+      <li class="prev"><a *ngIf="previousPeriod" [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="arrow-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
       <!-- <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li> -->
-      <li class="next"><a *ngIf="nextPeriod" [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="chevron-forward-outline"></ion-icon></a></li>
+      <li class="next"><a *ngIf="nextPeriod" [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="arrow-forward-outline"></ion-icon></a></li>
     </ul>
 
   <div class="row">
@@ -12,11 +12,11 @@
     <div class="row">
       <div class="col first-col">
         <div class="row first-row">
-
           <div class="gallery">
             <div class="col img-container" *ngFor="let c of comps">
-              <a class=" row img-link" [routerLink]="['/component', c.component_id]"><img src="{{imgUrl}}{{c.component_imgs[0]}}"
-                  alt="{{c.component_name}}"></a>
+              <div class="row img-link"><a [routerLink]="['/component', c.component_id]"><img src="{{imgUrl}}{{c.component_imgs[0]}}"
+                  alt="{{c.component_name}}" title="{{c.component_name}}"></a>
+                </div>
               <a class="row name-link" [routerLink]="['/component', c.component_id]">{{c.component_name}}</a>
             </div>
           </div>
@@ -40,7 +40,7 @@
           <div class="systems">
             <div class="col img-container img-systems" *ngFor="let s of period.famousSystems">
               <h6 class="row">{{s.name}}</h6>
-              <img class="row" src="{{imgUrl}}{{s.img}}">
+              <div class="sys-img"><img class="row" src="{{imgUrl}}{{s.img}}" alt="{{s.sysName}}"></div>
               <p class="row name-link">{{s.sysName}}</p>
             </div>
           </div>

@@ -2,12 +2,12 @@
   <div class="col col-lg-2 border-right">
     <ul>
       <!-- <li><a routerLink="/museum">{{ 'MENU.BACK' | translate }}{{ 'MENU.TIMELINE' | translate}}</a></li> -->
-      <li *ngIf="previousPeriod"><a [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
+      <li *ngIf="previousPeriod"><a [routerLink]="['/period', previousPeriod.period_id]"><ion-icon name="arrow-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>
       <li class="actual"><a [routerLink]="['/period', period.period_id]">{{period.period_name}}</a></li>
       <ul>
-        <li *ngFor="let c of compsFromPeriod"><a [routerLink]="['/component', c.component_id]" >{{c.component_name}}</a></li>
+        <li *ngFor="let c of compsFromPeriod"><a [routerLink]="['/component', c.component_id]" [ngClass]="{'actual': c.component_name == comp.component_name}">{{c.component_name}}</a></li>
       </ul>
-      <li *ngIf="nextPeriod"><a [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="chevron-forward-outline"></ion-icon></a></li>
+      <li *ngIf="nextPeriod"><a [routerLink]="['/period', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="arrow-forward-outline"></ion-icon></a></li>
     </ul>
   </div>
   <div class="col">

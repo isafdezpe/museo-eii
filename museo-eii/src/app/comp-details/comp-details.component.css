@@ -7,7 +7,7 @@ ul ul {
   padding-left: 10%;
 }
 
-ul ul li::before, .actual::before {
+/* ul ul li::before,  */.actual::before {
   content: "\003e \00a0";
 }
 
@@ -36,6 +36,11 @@ a:link, a:visited {
   height: 100px;
   width: auto;
   margin-right: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 0px 0px rgba(146, 146, 146, 0.137);
+}
+.gallery img:hover {
+  cursor: pointer;
 }
 
 h2 {
