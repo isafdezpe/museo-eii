@@ -108,6 +108,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="classes/AppPage.html" data-type="entity-link" >AppPage</a>
                             </li>
                             <li class="link">
+                                <a href="classes/ComponentMock.html" data-type="entity-link" >ComponentMock</a>
+                            </li>
+                            <li class="link">
                                 <a href="classes/Cpu.html" data-type="entity-link" >Cpu</a>
                             </li>
                             <li class="link">
@@ -115,6 +118,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                             </li>
                             <li class="link">
                                 <a href="classes/Period.html" data-type="entity-link" >Period</a>
+                            </li>
+                            <li class="link">
+                                <a href="classes/PeriodMock.html" data-type="entity-link" >PeriodMock</a>
                             </li>
                         </ul>
                     </li>

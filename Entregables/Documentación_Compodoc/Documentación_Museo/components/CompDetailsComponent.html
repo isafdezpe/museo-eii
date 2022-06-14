@@ -889,7 +889,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Tipo : </i>        <code><a href="../classes/Period.html" target="_self" >Period | undefined</a></code>
+                        <i>Tipo : </i>        <code><a href="../classes/Period.html" target="_self" >Period</a></code>
 
                     </td>
                 </tr>
@@ -984,7 +984,7 @@ export class CompDetailsComponent implements OnInit {
 
   previousPeriod: Period; // periodo anterior al del componente
   nextPeriod: Period; // periodo siguiente al del componente
-  period: Period | undefined; // periodo al que pertenece el componente
+  period: Period; // periodo al que pertenece el componente
 
   constructor(private route: ActivatedRoute,private compService: ComponentService, private periodService: PeriodService, private gallery: Gallery) { 
     // recargar el componente cuando cambian los parámetros de la url
@@ -1093,16 +1093,16 @@ export class CompDetailsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot; *ngIf&#x3D;&quot;period&quot;&gt;
   &lt;div class&#x3D;&quot;col col-lg-2 border-right&quot;&gt;
     &lt;ul&gt;
       &lt;!-- &lt;li&gt;&lt;a routerLink&#x3D;&quot;/museum&quot;&gt;{{ &#x27;MENU.BACK&#x27; | translate }}{{ &#x27;MENU.TIMELINE&#x27; | translate}}&lt;/a&gt;&lt;/li&gt; --&gt;
-      &lt;li *ngIf&#x3D;&quot;previousPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, previousPeriod.period_id]&quot;&gt;&lt;ion-icon name&#x3D;&quot;chevron-back-outline&quot;&gt;&lt;/ion-icon&gt;{{previousPeriod.period_name}}&lt;/a&gt;&lt;/li&gt;
+      &lt;li *ngIf&#x3D;&quot;previousPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, previousPeriod.period_id]&quot;&gt;&lt;ion-icon name&#x3D;&quot;arrow-back-outline&quot;&gt;&lt;/ion-icon&gt;{{previousPeriod.period_name}}&lt;/a&gt;&lt;/li&gt;
       &lt;li class&#x3D;&quot;actual&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, period.period_id]&quot;&gt;{{period.period_name}}&lt;/a&gt;&lt;/li&gt;
       &lt;ul&gt;
-        &lt;li *ngFor&#x3D;&quot;let c of compsFromPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/component&#x27;, c.component_id]&quot; &gt;{{c.component_name}}&lt;/a&gt;&lt;/li&gt;
+        &lt;li *ngFor&#x3D;&quot;let c of compsFromPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/component&#x27;, c.component_id]&quot; [ngClass]&#x3D;&quot;{&#x27;actual&#x27;: c.component_name &#x3D;&#x3D; comp.component_name}&quot;&gt;{{c.component_name}}&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
-      &lt;li *ngIf&#x3D;&quot;nextPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, nextPeriod.period_id]&quot;&gt;{{nextPeriod.period_name}}&lt;ion-icon name&#x3D;&quot;chevron-forward-outline&quot;&gt;&lt;/ion-icon&gt;&lt;/a&gt;&lt;/li&gt;
+      &lt;li *ngIf&#x3D;&quot;nextPeriod&quot;&gt;&lt;a [routerLink]&#x3D;&quot;[&#x27;/period&#x27;, nextPeriod.period_id]&quot;&gt;{{nextPeriod.period_name}}&lt;ion-icon name&#x3D;&quot;arrow-forward-outline&quot;&gt;&lt;/ion-icon&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
   &lt;div class&#x3D;&quot;col&quot;&gt;
@@ -1155,7 +1155,7 @@ ul ul {
   padding-left: 10%;
 }
 
-ul ul li::before, .actual::before {
+/* ul ul li::before,  */.actual::before {
   content: &quot;\003e \00a0&quot;;
 }
 
@@ -1184,6 +1184,11 @@ a:link, a:visited {
   height: 100px;
   width: auto;
   margin-right: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 3px 0px 0px rgba(146, 146, 146, 0.137);
+}
+.gallery img:hover {
+  cursor: pointer;
 }
 
 h2 {
@@ -1236,7 +1241,7 @@ h2 {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row container">  <div class="col col-lg-2 border-right">    <ul>      <!-- <li><a routerLink="/museum">{{ \'MENU.BACK\' | translate }}{{ \'MENU.TIMELINE\' | translate}}</a></li> -->      <li *ngIf="previousPeriod"><a [routerLink]="[\'/period\', previousPeriod.period_id]"><ion-icon name="chevron-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>      <li class="actual"><a [routerLink]="[\'/period\', period.period_id]">{{period.period_name}}</a></li>      <ul>        <li *ngFor="let c of compsFromPeriod"><a [routerLink]="[\'/component\', c.component_id]" >{{c.component_name}}</a></li>      </ul>      <li *ngIf="nextPeriod"><a [routerLink]="[\'/period\', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="chevron-forward-outline"></ion-icon></a></li>    </ul>  </div>  <div class="col">    <div class="row">      <h2>{{comp.component_name}}</h2>    </div>    <div class="row">      <div class="col first-col">        <div class="row first-row">          <div class="gallery">            <div class="img-container" *ngFor="let i of comp.component_imgs">              <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}" (click)="showGallery(index)">            </div>          </div>        </div>        <div class="row second-row description">          <p>{{ comp.component_description }}</p>        </div>      </div>      <div class="col second-col">        <div class="row first-row">          <h4>{{ comp.component_year_init }} - {{ comp.component_year_end }}</h4>        </div>        <div class="row second-row">          <ul [hidden]="type===\'CPU\'">            <li>              <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>              <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>            </li>            <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>          </ul>          <app-cpu-details [hidden]="type!==\'CPU\'" [comp]="comp"></app-cpu-details>        </div>      </div>    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row container" *ngIf="period">  <div class="col col-lg-2 border-right">    <ul>      <!-- <li><a routerLink="/museum">{{ \'MENU.BACK\' | translate }}{{ \'MENU.TIMELINE\' | translate}}</a></li> -->      <li *ngIf="previousPeriod"><a [routerLink]="[\'/period\', previousPeriod.period_id]"><ion-icon name="arrow-back-outline"></ion-icon>{{previousPeriod.period_name}}</a></li>      <li class="actual"><a [routerLink]="[\'/period\', period.period_id]">{{period.period_name}}</a></li>      <ul>        <li *ngFor="let c of compsFromPeriod"><a [routerLink]="[\'/component\', c.component_id]" [ngClass]="{\'actual\': c.component_name == comp.component_name}">{{c.component_name}}</a></li>      </ul>      <li *ngIf="nextPeriod"><a [routerLink]="[\'/period\', nextPeriod.period_id]">{{nextPeriod.period_name}}<ion-icon name="arrow-forward-outline"></ion-icon></a></li>    </ul>  </div>  <div class="col">    <div class="row">      <h2>{{comp.component_name}}</h2>    </div>    <div class="row">      <div class="col first-col">        <div class="row first-row">          <div class="gallery">            <div class="img-container" *ngFor="let i of comp.component_imgs">              <img src="{{imgUrl}}{{i}}" alt="{{comp.component_name}}" (click)="showGallery(index)">            </div>          </div>        </div>        <div class="row second-row description">          <p>{{ comp.component_description }}</p>        </div>      </div>      <div class="col second-col">        <div class="row first-row">          <h4>{{ comp.component_year_init }} - {{ comp.component_year_end }}</h4>        </div>        <div class="row second-row">          <ul [hidden]="type===\'CPU\'">            <li>              <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>              <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>            </li>            <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>          </ul>          <app-cpu-details [hidden]="type!==\'CPU\'" [comp]="comp"></app-cpu-details>        </div>      </div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompDetailsComponent', 'selector': 'app-comp-details'},{'name': 'CpuDetailsComponent', 'selector': 'app-cpu-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MainNavComponent', 'selector': 'app-main-nav'},{'name': 'MuseumTimelineComponent', 'selector': 'app-museum-timeline'},{'name': 'PeriodComponent', 'selector': 'app-period'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CompDetailsComponent'};

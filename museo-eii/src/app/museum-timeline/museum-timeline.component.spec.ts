@@ -55,11 +55,17 @@ describe('MuseumTimelineComponent', () => {
     let comps1 = comps.get(1);
     expect(comps1.length).toEqual(3);
     expect(comps1[0].component_name).toEqual('Intel 4004');
-  })
+  });
 
-  it('should search by years and name', () => {
+  it('should search by name', () => {
     expect(component.periodsFiltered.length).toEqual(2);
-    component.search(1973, 1980, 'pre-x86');
+    component.search(1960, 2000, 'pre-x86');
+    expect(component.periodsFiltered.length).toEqual(1);
+  });
+
+  it('should search by years', () => {
+    expect(component.periodsFiltered.length).toEqual(2);
+    component.search(1985, 2005, '');
     expect(component.periodsFiltered.length).toEqual(1);
   });
 });

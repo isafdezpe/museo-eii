@@ -56,4 +56,11 @@ describe('PeriodComponent', () => {
     expect(component.previousPeriod).toBeUndefined();
     expect(component.nextPeriod.period_name).toEqual('8086 y 8088');
   });
+
+  it('should get components from period', () => {
+    component.getPeriod(1);
+    let comps = component.comps;
+    expect(comps.length).toEqual(3);
+    expect(comps[0].component_name).toEqual('Intel 4004');
+  });
 });
