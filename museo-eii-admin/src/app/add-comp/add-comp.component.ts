@@ -4,10 +4,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CompTypes, GenericComp, MyComponent, Cpu, MemoryUnits, SpeedUnits, PowerUnits, PriceUnits } from '../comp';
-import { ComponentService } from '../component.service';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { CompTypes, GenericComp, MyComponent, Cpu, MemoryUnits, SpeedUnits, PowerUnits, PriceUnits } from './../classes/comp';
+import { ComponentService } from '../services/component.service';
+import { Period } from './../classes/period';
+import { PeriodService } from '../services/period.service';
 
 @Component({
   selector: 'app-add-comp',

@@ -82,10 +82,38 @@ A continuación se muestran los listados de las pruebas unitarias realizadas con
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.8]{coverage-museo}
+\centerline{\includegraphics[scale=0.8]{coverage-museo}}
 \caption{Cobertura de código de las pruebas unitarias del museo}
 \end{figure}
-
+En las pruebas unitarias de la administración hubo algunos fallos, como se puede ver a continuación.\par
+Aquí se puede observar que al probar a eliminar un periodo existente, este no se borraba. Tras revisar el código, caí en la cuenta de que solo había hecho mocks de los servicios HTTP que usa la aplicación, y debía hacerlo también para el diálogo de confirmación ya que si no, el método de eliminar no se terminaría de ejecutar. Una vez añadido este mock la prueba pasó sin fallos.
+\begin{figure}[H]
+\centering
+\centerline{\includegraphics[scale=0.7]{error-test-admin}}
+\caption{Error en la prueba de eliminar un periodo existente}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=1]{error-test-admin-fix}
+\caption{Eliminar un periodo existente tras la corrección de la prueba}
+\end{figure}
+\begin{figure}[H]
+\hspace{-10mm}
+\begin{subfigure}[b]{0.6\textwidth}
+\centering
+\includegraphics[scale=0.8]{unit-tests-admin}
+\end{subfigure}
+\begin{subfigure}[b]{0.4\textwidth}
+\centering
+\includegraphics[scale=0.8]{unit-tests-admin-2}
+\end{subfigure}
+\caption{Ejecución de las pruebas unitarias de la administración}
+\end{figure}
+\begin{figure}[H]
+\centering
+\centerline{\includegraphics[scale=0.8]{coverage-admin}}
+\caption{Cobertura de código de las pruebas unitarias de la administración}
+\end{figure}
 
 \newpage
 \section{CSI 4: EJECUCIÓN DE LAS PRUEBAS DE INTEGRACIÓN}

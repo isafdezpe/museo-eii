@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { CompDevices, MyComponent, PriceUnits } from '../comp';
+import { CompDevices, MyComponent, PriceUnits } from './../classes/comp';
 
 @Component({
   selector: 'app-comp-inputs',

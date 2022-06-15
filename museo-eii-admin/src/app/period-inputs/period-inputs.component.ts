@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Period } from '../period';
+import { Period } from './../classes/period';
 
 @Component({
   selector: 'app-period-inputs',

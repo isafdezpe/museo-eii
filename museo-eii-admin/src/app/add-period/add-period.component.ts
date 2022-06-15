@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { Period } from './../classes/period';
+import { PeriodService } from '../services/period.service';
 
 @Component({
   selector: 'app-add-period',

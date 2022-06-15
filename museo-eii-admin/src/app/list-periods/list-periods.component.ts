@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { Period } from './../classes/period';
+import { PeriodService } from '../services/period.service';
 
 @Component({
   selector: 'app-list-periods',
@@ -14,7 +14,7 @@ export class ListPeriodsComponent implements OnInit {
 
   periods: Period[] = [];
 
-  constructor(private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
+  constructor(private periodService: PeriodService, public dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getPeriods();

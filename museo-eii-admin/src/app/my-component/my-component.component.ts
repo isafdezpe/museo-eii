@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Gallery } from 'angular-gallery';
 import { Location } from '@angular/common';
-import { CompDevices, CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
-import { ComponentService } from '../component.service';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { CompDevices, CompTypes, GenericComp, MyComponent, Cpu } from './../classes/comp';
+import { ComponentService } from '../services/component.service';
+import { Period } from './../classes/period';
+import { PeriodService } from '../services/period.service';
 import { environment } from 'src/environments/environment';
 
 @Component({

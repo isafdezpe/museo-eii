@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Location } from '@angular/common';
-import { Period } from '../period';
-import { CompTypes, GenericComp, MyComponent, Cpu } from '../comp';
+import { Period } from './../classes/period';
+import { CompTypes, GenericComp, MyComponent, Cpu } from './../classes/comp';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ComponentService } from '../component.service';
+import { ComponentService } from '../services/component.service';
 import { ActivatedRoute } from '@angular/router';
-import { PeriodService } from '../period.service';
+import { PeriodService } from '../services/period.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { environment } from 'src/environments/environment';

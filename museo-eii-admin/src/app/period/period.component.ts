@@ -3,11 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { MyComponent } from '../comp';
-import { ComponentService } from '../component.service';
+import { MyComponent } from './../classes/comp';
+import { ComponentService } from '../services/component.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { Period } from './../classes/period';
+import { PeriodService } from '../services/period.service';
 
 @Component({
   selector: 'app-period',
@@ -21,7 +21,7 @@ export class PeriodComponent implements OnInit {
   p: Period; // periodo
   comps: MyComponent[] = []; // componentes pertenecientes al periodo
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar, private componentService: ComponentService) { }
+  constructor(private route: ActivatedRoute, private periodService: PeriodService, public dialog: MatDialog, private snackBar: MatSnackBar, private componentService: ComponentService) { }
 
   ngOnInit(): void {
     // saca el id del periodo

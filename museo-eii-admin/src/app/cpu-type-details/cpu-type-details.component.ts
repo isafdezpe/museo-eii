@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Cpu } from '../comp';
+import { Cpu } from './../classes/comp';
 
 @Component({
   selector: 'app-cpu-type-details',
