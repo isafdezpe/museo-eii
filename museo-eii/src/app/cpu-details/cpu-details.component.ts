@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CompDevices, Cpu } from '../comp';
+import { CompDevices, Cpu } from '../classes/comp';
 
 @Component({
   selector: 'app-cpu-details',

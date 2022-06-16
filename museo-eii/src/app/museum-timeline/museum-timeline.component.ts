@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MyComponent } from '../comp';
-import { ComponentService } from '../cpus.service';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { MyComponent } from '../classes/comp';
+import { ComponentService } from '../services/cpus.service';
+import { Period } from '../classes/period';
+import { PeriodService } from '../services/period.service';
 import { Options } from '@angular-slider/ngx-slider';
 
 @Component({

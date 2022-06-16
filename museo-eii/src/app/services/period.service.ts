@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Period } from './period';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

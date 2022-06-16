@@ -1,5 +1,5 @@
 import { of } from "rxjs";
-import { Period } from "./period";
+import { Period } from "../../classes/period";
 
 export class PeriodMock {
 

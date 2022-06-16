@@ -1,5 +1,5 @@
-import { Observable, of } from "rxjs";
-import { CompDevices, Cpu, MemoryUnits, MyComponent, PowerUnits, PriceUnits, SpeedUnits } from "./comp";
+import { of } from "rxjs";
+import { CompDevices, Cpu, MemoryUnits, MyComponent, PowerUnits, PriceUnits, SpeedUnits } from "../../classes/comp";
 
 export class ComponentMock {
 

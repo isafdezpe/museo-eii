@@ -3,10 +3,10 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
-import { ComponentService } from '../cpus.service';
-import { ComponentMock } from '../mock-cpus';
-import { PeriodMock } from '../mock-periods';
-import { PeriodService } from '../period.service';
+import { ComponentService } from '../services/cpus.service';
+import { ComponentMock } from '../services/testing/mock-cpus';
+import { PeriodMock } from '../services/testing/mock-periods';
+import { PeriodService } from '../services/period.service';
 
 import { MuseumTimelineComponent } from './museum-timeline.component';
 

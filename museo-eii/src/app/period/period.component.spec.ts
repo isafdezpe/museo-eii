@@ -1,14 +1,12 @@
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { Observable, of } from 'rxjs';
 import { createTranslateLoader } from '../app.module';
-import { ComponentService } from '../cpus.service';
-import { ComponentMock } from '../mock-cpus';
-import { PeriodMock } from '../mock-periods';
-import { PeriodService } from '../period.service';
+import { ComponentService } from '../services/cpus.service';
+import { ComponentMock } from '../services/testing/mock-cpus';
+import { PeriodMock } from '../services/testing/mock-periods';
+import { PeriodService } from '../services/period.service';
 
 import { PeriodComponent } from './period.component';
 

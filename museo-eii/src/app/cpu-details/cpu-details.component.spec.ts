@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from '../app.module';
-import { Cpu, PriceUnits, CompDevices, MemoryUnits, SpeedUnits, PowerUnits } from '../comp';
+import { Cpu, PriceUnits, CompDevices, MemoryUnits, SpeedUnits, PowerUnits } from '../classes/comp';
 
 import { CpuDetailsComponent } from './cpu-details.component';
 

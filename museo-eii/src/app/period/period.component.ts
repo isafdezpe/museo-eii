@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { MyComponent } from '../comp';
-import { ComponentService } from '../cpus.service';
-import { Period } from '../period';
-import { PeriodService } from '../period.service';
+import { MyComponent } from '../classes/comp';
+import { ComponentService } from '../services/cpus.service';
+import { Period } from '../classes/period';
+import { PeriodService } from '../services/period.service';
 
 @Component({
   selector: 'app-period',
