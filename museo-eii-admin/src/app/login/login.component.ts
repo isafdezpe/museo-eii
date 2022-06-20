@@ -34,8 +34,4 @@ export class LoginComponent implements OnInit {
     
   }
 
-  // resetPassword() {
-  //   this.userService.passwordReset(this.email);
-  // }
-
 }

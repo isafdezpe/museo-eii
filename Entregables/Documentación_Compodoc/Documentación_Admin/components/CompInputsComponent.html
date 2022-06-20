@@ -164,6 +164,9 @@
                                 <a href="#compImgsChange" >compImgsChange</a>
                             </li>
                             <li>
+                                <a href="#getActualYear" >getActualYear</a>
+                            </li>
+                            <li>
                                 <a href="#isDesktop" >isDesktop</a>
                             </li>
                             <li>
@@ -350,8 +353,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="52"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:52</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:56</a></div>
                 </td>
             </tr>
 
@@ -426,8 +429,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="113"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:113</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="117"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:117</a></div>
                 </td>
             </tr>
 
@@ -486,6 +489,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getActualYear"></a>
+                    <span class="name">
+                        <span ><b>getActualYear</b></span>
+                        <a href="#getActualYear"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getActualYear()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="32"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="isDesktop"></a>
                     <span class="name">
                         <span ><b>isDesktop</b></span>
@@ -502,8 +542,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:36</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="40"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:40</a></div>
                 </td>
             </tr>
 
@@ -545,8 +585,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="44"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:44</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="48"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:48</a></div>
                 </td>
             </tr>
 
@@ -625,8 +665,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="61"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:61</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="65"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -717,8 +757,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="145"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:145</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="149"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:149</a></div>
                 </td>
             </tr>
 
@@ -793,8 +833,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="72"
-                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:72</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="76"
+                            class="link-to-prism">src/app/comp-inputs/comp-inputs.component.ts:76</a></div>
                 </td>
             </tr>
 
@@ -989,7 +1029,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, Input, OnInit, ViewChild } from &#x27;@angular/core&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-import { CompDevices, MyComponent, PriceUnits } from &#x27;../comp&#x27;;
+import { CompDevices, MyComponent, PriceUnits } from &#x27;./../classes/comp&#x27;;
 
 @Component({
   selector: &#x27;app-comp-inputs&#x27;,
@@ -1016,6 +1056,10 @@ export class CompInputsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getActualYear() {
+    return new Date().getFullYear();
   }
 
   /**
@@ -1152,36 +1196,38 @@ export class CompInputsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cname&quot;&gt;Nombre:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cname&quot; name&#x3D;&quot;name&quot; placeholder&#x3D;&quot;Nombre&quot; required [(ngModel)]&#x3D;&quot;model.component_name&quot; name&#x3D;&quot;name&quot; #name&#x3D;&quot;ngModel&quot; maxlength&#x3D;&quot;50&quot;&gt;
         &lt;div [hidden]&#x3D;&quot;name.valid || name.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;        
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cdesc&quot;&gt;Descripción:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;textarea class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cdesc&quot; required [(ngModel)]&#x3D;&quot;model.component_description&quot; name&#x3D;&quot;description&quot; #description&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Descripción&quot;&gt;&lt;/textarea&gt;
         &lt;div [hidden]&#x3D;&quot;description.valid || description.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cfamily&quot;&gt;Familia:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;cfamily&quot; required [(ngModel)]&#x3D;&quot;model.component_family&quot; name&#x3D;&quot;family&quot; #family&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Familia&quot;&gt;
         &lt;div [hidden]&#x3D;&quot;family.valid || family.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row row3&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row row3&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cinityear&quot;&gt;Año de salida:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1900&quot; id&#x3D;&quot;cinityear&quot; required [(ngModel)]&#x3D;&quot;model.component_year_init&quot; name&#x3D;&quot;initYear&quot; #initYear&#x3D;&quot;ngModel&quot;&gt;
+        &lt;p class&#x3D;&quot;info&quot;&gt;Min: 1900, max: {{getActualYear()}}&lt;/p&gt;
         &lt;div [hidden]&#x3D;&quot;initYear.valid || initYear.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;cendyear&quot;&gt;Año de fin:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;number&quot; min&#x3D;&quot;1900&quot; id&#x3D;&quot;cendyear&quot; required [(ngModel)]&#x3D;&quot;model.component_year_end&quot; name&#x3D;&quot;endYear&quot; #endYear&#x3D;&quot;ngModel&quot;&gt;
+        &lt;p class&#x3D;&quot;info&quot;&gt;Min: 1900, max: {{getActualYear()}}&lt;/p&gt;
         &lt;div [hidden]&#x3D;&quot;endYear.valid || endYear.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;!-- &lt;/div&gt;
@@ -1195,21 +1241,22 @@ export class CompInputsComponent implements OnInit {
         &lt;option [value]&#x3D;&quot;u&quot; *ngFor&#x3D;&quot;let u of priceUnits&quot;&gt;{{u}}&lt;/option&gt;
     &lt;/select&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-3&quot;&gt;Utilizado en dispositivos:&lt;/label&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;checkDev1&quot;&gt;&lt;input #checkPort type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;checkDev1&quot; [checked]&#x3D;&quot;isPortable()&quot; (change)&#x3D;&quot;onChange(checkPort.checked,checkDesk.checked)&quot;&gt; Portátiles&lt;/label&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;checkDev2&quot;&gt;&lt;input #checkDesk type&#x3D;&quot;checkbox&quot; id&#x3D;&quot;checkDev2&quot; [checked]&#x3D;&quot;isDesktop()&quot; (change)&#x3D;&quot;onChange(checkPort.checked,checkDesk.checked)&quot;&gt; De escritorio&lt;/label&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-3&quot; for&#x3D;&quot;csystem&quot;&gt;Sistema famoso que lo utiliza:&lt;/label&gt;
     &lt;input class&#x3D;&quot;col col-lg-3 form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;csystem&quot; placeholder&#x3D;&quot;Nombre del sistema&quot; [(ngModel)]&#x3D;&quot;model.famous_system&quot; name&#x3D;&quot;famousSystem&quot; #famousSystem&#x3D;&quot;ngModel&quot;&gt;
     &lt;input #sysImgInput class&#x3D;&quot;col file&quot; type&#x3D;&quot;file&quot; id&#x3D;&quot;csystemimg&quot; accept&#x3D;&quot;image/png, image/jpeg&quot; (change)&#x3D;&quot;sysImgChange($event)&quot; style&#x3D;&quot;display:none;&quot;&gt;
     &lt;label class&#x3D;&quot;upload&quot; for&#x3D;&quot;csystemimg&quot;&gt;Subir imagen&lt;/label&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;row form-row&quot;&gt;
-    &lt;div class&#x3D;&quot;col col-lg-4&quot;&gt;
+    &lt;label class&#x3D;&quot;col col-lg-3&quot; for&#x3D;&quot;cimgs&quot;&gt;Imágenes del componente&lt;/label&gt;
+    &lt;div class&#x3D;&quot;col col-lg-3&quot;&gt;
         &lt;input #compImgInput class&#x3D;&quot;col file&quot; type&#x3D;&quot;file&quot; id&#x3D;&quot;cimgs&quot; accept&#x3D;&quot;image/png, image/jpeg&quot; (change)&#x3D;&quot;compImgsChange($event)&quot; style&#x3D;&quot;display:none;&quot; name&#x3D;&quot;files[]&quot; multiple&gt;
-        &lt;label class&#x3D;&quot;upload&quot; for&#x3D;&quot;cimgs&quot;&gt;Subir imágenes del componente&lt;/label&gt;
+        &lt;label class&#x3D;&quot;upload&quot; for&#x3D;&quot;cimgs&quot;&gt;Subir imágenes&lt;/label&gt;
     &lt;/div&gt;
 &lt;/div&gt;
 &lt;div class&#x3D;&quot;row form-row&quot;&gt;
@@ -1247,6 +1294,10 @@ input[type&#x3D;checkbox] {
 
 .img-list {
     list-style: none;
+}
+
+.info {
+    font-size: small;
 }</code></pre>
     </div>
 
@@ -1275,7 +1326,7 @@ input[type&#x3D;checkbox] {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row form-row">    <label class="col col-lg-2" for="cname">Nombre:</label>    <div class="col">        <input class="form-control" type="text" id="cname" name="name" placeholder="Nombre" required [(ngModel)]="model.component_name" name="name" #name="ngModel" maxlength="50">        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>    </div></div>        <div class="row form-row">    <label class="col col-lg-2" for="cdesc">Descripción:</label>    <div class="col">        <textarea class="form-control" type="text" id="cdesc" required [(ngModel)]="model.component_description" name="description" #description="ngModel" placeholder="Descripción"></textarea>        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row">    <label class="col col-lg-2" for="cfamily">Familia:</label>    <div class="col">        <input class="form-control" type="text" id="cfamily" required [(ngModel)]="model.component_family" name="family" #family="ngModel" placeholder="Familia">        <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row row3">    <label class="col col-lg-2" for="cinityear">Año de salida:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">        <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <label class="col col-lg-2" for="cendyear">Año de fin:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">        <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>    </div><!-- </div><div class="row form-row"> -->    <label class="col col-lg-2" for="cprice">Precio:</label>    <div class="col">        <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.component_price" name="price" #price="ngModel" value="90.00">        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)" [(ngModel)]="model.component_price_units">        <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>    </select></div><div class="row form-row">    <label class="col col-lg-3">Utilizado en dispositivos:</label>    <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>    <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label></div><div class="row form-row">    <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>    <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">    <label class="upload" for="csystemimg">Subir imagen</label></div><div class="row form-row">    <div class="col col-lg-4">        <input #compImgInput class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>        <label class="upload" for="cimgs">Subir imágenes del componente</label>    </div></div><div class="row form-row">    <div  (click)="removeImage(url)" class="rm-img-btn" *ngFor=\'let url of images\'>        <button ><img class="row" [src]="url" height="100" style="margin: 3px;"></button>        <div><ion-icon name="trash"></ion-icon></div>    </div><br/></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="cname">Nombre:</label>    <div class="col">        <input class="form-control" type="text" id="cname" name="name" placeholder="Nombre" required [(ngModel)]="model.component_name" name="name" #name="ngModel" maxlength="50">        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>    </div></div>        <div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="cdesc">Descripción:</label>    <div class="col">        <textarea class="form-control" type="text" id="cdesc" required [(ngModel)]="model.component_description" name="description" #description="ngModel" placeholder="Descripción"></textarea>        <div [hidden]="description.valid || description.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="cfamily">Familia:</label>    <div class="col">        <input class="form-control" type="text" id="cfamily" required [(ngModel)]="model.component_family" name="family" #family="ngModel" placeholder="Familia">        <div [hidden]="family.valid || family.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row row3" *ngIf="model">    <label class="col col-lg-2" for="cinityear">Año de salida:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">        <p class="info">Min: 1900, max: {{getActualYear()}}</p>        <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <label class="col col-lg-2" for="cendyear">Año de fin:</label>    <div class="col">        <input class="form-control" type="number" min="1900" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">        <p class="info">Min: 1900, max: {{getActualYear()}}</p>        <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>    </div><!-- </div><div class="row form-row"> -->    <label class="col col-lg-2" for="cprice">Precio:</label>    <div class="col">        <input class="form-control" type="number" step="1.00" id="cprice" required [(ngModel)]="model.component_price" name="price" #price="ngModel" value="90.00">        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">Complete este campo</div>    </div>    <select class="col form-control" name="price-select" #priceSelect (change)="changePriceUnits(priceSelect.value)" [(ngModel)]="model.component_price_units">        <option [value]="u" *ngFor="let u of priceUnits">{{u}}</option>    </select></div><div class="row form-row" *ngIf="model">    <label class="col col-lg-3">Utilizado en dispositivos:</label>    <label class="col col-lg-2" for="checkDev1"><input #checkPort type="checkbox" id="checkDev1" [checked]="isPortable()" (change)="onChange(checkPort.checked,checkDesk.checked)"> Portátiles</label>    <label class="col col-lg-2" for="checkDev2"><input #checkDesk type="checkbox" id="checkDev2" [checked]="isDesktop()" (change)="onChange(checkPort.checked,checkDesk.checked)"> De escritorio</label></div><div class="row form-row" *ngIf="model">    <label class="col col-lg-3" for="csystem">Sistema famoso que lo utiliza:</label>    <input class="col col-lg-3 form-control" type="text" id="csystem" placeholder="Nombre del sistema" [(ngModel)]="model.famous_system" name="famousSystem" #famousSystem="ngModel">    <input #sysImgInput class="col file" type="file" id="csystemimg" accept="image/png, image/jpeg" (change)="sysImgChange($event)" style="display:none;">    <label class="upload" for="csystemimg">Subir imagen</label></div><div class="row form-row">    <label class="col col-lg-3" for="cimgs">Imágenes del componente</label>    <div class="col col-lg-3">        <input #compImgInput class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>        <label class="upload" for="cimgs">Subir imágenes</label>    </div></div><div class="row form-row">    <div  (click)="removeImage(url)" class="rm-img-btn" *ngFor=\'let url of images\'>        <button ><img class="row" [src]="url" height="100" style="margin: 3px;"></button>        <div><ion-icon name="trash"></ion-icon></div>    </div><br/></div></div>'
     var COMPONENTS = [{'name': 'AddCompComponent', 'selector': 'app-add-comp'},{'name': 'AddPeriodComponent', 'selector': 'app-add-period'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompInputsComponent', 'selector': 'app-comp-inputs'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CpuTypeDetailsComponent', 'selector': 'app-cpu-type-details'},{'name': 'CpuTypeFormComponent', 'selector': 'app-cpu-type-form'},{'name': 'FormEditCompComponent', 'selector': 'app-edit-comp'},{'name': 'FormEditPeriodComponent', 'selector': 'app-edit-period'},{'name': 'ListPeriodsComponent', 'selector': 'app-list-periods'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MyComponentComponent', 'selector': 'app-my-component'},{'name': 'PeriodComponent', 'selector': 'app-period'},{'name': 'PeriodInputsComponent', 'selector': 'app-period-inputs'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CompInputsComponent'};

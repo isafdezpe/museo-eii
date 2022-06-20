@@ -134,6 +134,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
                                 <a href="#periods" >periods</a>
                             </li>
                         </ul>
@@ -413,6 +417,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="17" class="link-to-prism">src/app/list-periods/list-periods.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="periods"></a>
                     <span class="name">
                         <span ><b>periods</b></span>
@@ -450,8 +481,8 @@
 import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 import { ConfirmationDialogComponent } from &#x27;../confirmation-dialog/confirmation-dialog.component&#x27;;
-import { Period } from &#x27;../period&#x27;;
-import { PeriodService } from &#x27;../period.service&#x27;;
+import { Period } from &#x27;./../classes/period&#x27;;
+import { PeriodService } from &#x27;../services/period.service&#x27;;
 
 @Component({
   selector: &#x27;app-list-periods&#x27;,
@@ -462,7 +493,7 @@ export class ListPeriodsComponent implements OnInit {
 
   periods: Period[] &#x3D; [];
 
-  constructor(private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar) { }
+  constructor(private periodService: PeriodService, public dialog: MatDialog, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.getPeriods();

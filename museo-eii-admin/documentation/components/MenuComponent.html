@@ -340,8 +340,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="51"
-                            class="link-to-prism">src/app/menu/menu.component.ts:51</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="50"
+                            class="link-to-prism">src/app/menu/menu.component.ts:50</a></div>
                 </td>
             </tr>
 
@@ -585,7 +585,7 @@
 import { MatDialog } from &quot;@angular/material/dialog&quot;;
 import { Router } from &#x27;@angular/router&#x27;;
 import { ConfirmationDialogComponent } from &#x27;../confirmation-dialog/confirmation-dialog.component&#x27;;
-import { UserService } from &#x27;../user.service&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
 
 @Component({
   selector: &#x27;app-menu&#x27;,
@@ -621,7 +621,6 @@ export class MenuComponent implements OnInit {
    * @returns si initialObject y model son iguales o model ha sido editado 
    */
   isEdited() {
-    console.log(this.initialObject)
     if (this.initialObject &#x3D;&#x3D;&#x3D; undefined &amp;&amp; this.model &#x3D;&#x3D;&#x3D; undefined)
       return false;
       

@@ -38,7 +38,6 @@ export class MenuComponent implements OnInit {
    * @returns si initialObject y model son iguales o model ha sido editado 
    */
   isEdited() {
-    console.log(this.initialObject)
     if (this.initialObject === undefined && this.model === undefined)
       return false;
       

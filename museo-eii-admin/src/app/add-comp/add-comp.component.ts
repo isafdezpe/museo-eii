@@ -66,9 +66,6 @@ export class AddCompComponent implements OnInit {
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
         this.p = this.periods[0];
       this.loaded = true;
-      //this.changePeriod(this.p.period_name);
-      console.log(this.p)
-      console.log(this.periods)
     });
   }
 
@@ -104,7 +101,6 @@ export class AddCompComponent implements OnInit {
    * Inserta el nuevo componente, sube las imágenes y resetea el formulario
    */
   submit() {
-    console.log(this.model)
     this.model.component_period_id = this.p.period_id;
       this.myForm.patchValue({
         fileSource: this.images,
@@ -122,10 +118,8 @@ export class AddCompComponent implements OnInit {
         break;
       case 1:
         this.componentService.addComponent(this.model).subscribe((id: {res}) => {
-          console.log(id)
           this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
             this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
-            //this.router.navigate(['/addComp']).then(() => window.location.reload());
             this.router.navigate(['/component', id.res]);
           });
         }, () => {this.toastService.error("No se ha podido añadir el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
@@ -152,12 +146,5 @@ export class AddCompComponent implements OnInit {
       
     return 1;
   }
-
-  /**
-   * 
-   * comp.program_memory && comp.program_memory_units && comp.ram_memory && comp.ram_memory_units 
-        && comp.clockspeed && comp.clockspeed_units && comp.cpu_power && comp.cpu_power_units  && comp.wordsize && comp.wordsize_units
-        && comp.transistor_size && comp.passmark && comp.transistors
-   */
 
 }

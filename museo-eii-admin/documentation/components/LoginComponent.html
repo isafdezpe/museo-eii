@@ -401,7 +401,7 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
-import { UserService } from &#x27;../user.service&#x27;;
+import { UserService } from &#x27;../services/user.service&#x27;;
 
 @Component({
   selector: &#x27;app-login&#x27;,
@@ -433,10 +433,6 @@ export class LoginComponent implements OnInit {
     );
     
   }
-
-  // resetPassword() {
-  //   this.userService.passwordReset(this.email);
-  // }
 
 }
 </code></pre>

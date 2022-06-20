@@ -44,7 +44,6 @@ export class CompDetailsComponent implements OnInit {
    */
   getComp(id: number) {
     this.compService.getComponent(id).subscribe((c: Cpu) => {
-      console.log(c)
       if (c.component_type == CompTypes.cpu) {
         this.comp = new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(','), [], c.famous_system, c.famous_system_img,
         c.program_memory, c.program_memory_units, c.ram_memory, c.ram_memory_units,c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, id);
@@ -55,8 +54,7 @@ export class CompDetailsComponent implements OnInit {
       }
       this.getImages(this.comp.component_id);
       this.getPeriod(this.comp.component_period_id);
-      this.getCompsFromPeriod();        
-      console.log(this.comp)
+      this.getCompsFromPeriod();
     });
   }
 

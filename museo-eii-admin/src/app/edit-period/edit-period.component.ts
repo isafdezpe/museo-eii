@@ -86,7 +86,6 @@ export class FormEditPeriodComponent implements OnInit {
    * @returns si se ha editado el formulario
    */
   isEdited() {
-    console.log(this.p)
     if (this.p === undefined && this.model === undefined)
       return false;
       

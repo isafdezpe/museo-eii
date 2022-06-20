@@ -74,7 +74,6 @@ export class ComponentMock {
 
 
     uploadComponentImgs(form: FormGroup) {
-        console.log(form.value);
         return of({next: "guardado"});
     }
 

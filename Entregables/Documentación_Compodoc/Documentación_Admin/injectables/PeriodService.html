@@ -58,7 +58,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/period.service.ts</code>
+            <code>src/app/services/period.service.ts</code>
         </p>
 
 
@@ -128,12 +128,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(componentService: <a href="../injectables/ComponentService.html" target="_self">ComponentService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/period.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/period.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -150,18 +150,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                        <td>componentService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/ComponentService.html" target="_self" >ComponentService</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
                                                 <tr>
                                                         <td>http</td>
                                                   
@@ -208,8 +196,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="17"
-                            class="link-to-prism">src/app/period.service.ts:17</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="16"
+                            class="link-to-prism">src/app/services/period.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -277,8 +265,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="25"
-                            class="link-to-prism">src/app/period.service.ts:25</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="24"
+                            class="link-to-prism">src/app/services/period.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -346,8 +334,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="21"
-                            class="link-to-prism">src/app/period.service.ts:21</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/period.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -415,8 +403,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="37"
-                            class="link-to-prism">src/app/period.service.ts:37</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="36"
+                            class="link-to-prism">src/app/services/period.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -452,8 +440,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="29"
-                            class="link-to-prism">src/app/period.service.ts:29</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="28"
+                            class="link-to-prism">src/app/services/period.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -521,8 +509,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="33"
-                            class="link-to-prism">src/app/period.service.ts:33</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/period.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -594,7 +582,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/period.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/period.service.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -609,8 +597,7 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Period } from &#x27;./period&#x27;;
-import { ComponentService } from &#x27;./component.service&#x27;;
+import { Period } from &#x27;../classes/period&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 
 @Injectable({
@@ -621,7 +608,7 @@ export class PeriodService {
   baseUrl &#x3D; environment.baseUrl;
 
 
-  constructor(private componentService: ComponentService, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   addPeriod(p: Period) {
     return this.http.post(&#x60;${this.baseUrl}/postPeriod.php&#x60;, p);

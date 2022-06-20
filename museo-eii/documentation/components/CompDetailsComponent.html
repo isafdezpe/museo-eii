@@ -392,8 +392,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="96"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:96</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="94"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:94</a></div>
                 </td>
             </tr>
 
@@ -431,8 +431,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="85"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:85</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="83"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:83</a></div>
                 </td>
             </tr>
 
@@ -507,8 +507,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="67"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:67</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="65"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:65</a></div>
                 </td>
             </tr>
 
@@ -583,8 +583,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="112"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:112</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="110"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:110</a></div>
                 </td>
             </tr>
 
@@ -626,8 +626,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="104"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:104</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="102"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:102</a></div>
                 </td>
             </tr>
 
@@ -706,8 +706,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="120"
-                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:120</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="118"
+                            class="link-to-prism">src/app/comp-details/comp-details.component.ts:118</a></div>
                 </td>
             </tr>
 
@@ -964,10 +964,10 @@
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { Gallery } from &#x27;angular-gallery&#x27;;
 import { environment } from &#x27;../../environments/environment&#x27;;
-import { CompDevices, CompTypes, MyComponent, Cpu, GenericComp } from &#x27;../comp&#x27;;
-import { ComponentService } from &#x27;../cpus.service&#x27;;
-import { Period } from &#x27;../period&#x27;;
-import { PeriodService } from &#x27;../period.service&#x27;;
+import { CompDevices, CompTypes, MyComponent, Cpu, GenericComp } from &#x27;../classes/comp&#x27;;
+import { ComponentService } from &#x27;../services/cpus.service&#x27;;
+import { Period } from &#x27;../classes/period&#x27;;
+import { PeriodService } from &#x27;../services/period.service&#x27;;
 
 @Component({
   selector: &#x27;app-comp-details&#x27;,
@@ -1006,7 +1006,6 @@ export class CompDetailsComponent implements OnInit {
    */
   getComp(id: number) {
     this.compService.getComponent(id).subscribe((c: Cpu) &#x3D;&gt; {
-      console.log(c)
       if (c.component_type &#x3D;&#x3D; CompTypes.cpu) {
         this.comp &#x3D; new Cpu(c.component_name, c.component_family, c.component_description, c.component_year_init, c.component_year_end, c.component_period_id, c.component_price, c.component_price_units, c.component_devices.split(&#x27;,&#x27;), [], c.famous_system, c.famous_system_img,
         c.program_memory, c.program_memory_units, c.ram_memory, c.ram_memory_units,c.clockspeed, c.clockspeed_units, c.cpu_power, c.cpu_power_units, c.wordsize, c.wordsize_units, c.transistor_size, c.passmark, c.transistors, id);
@@ -1017,8 +1016,7 @@ export class CompDetailsComponent implements OnInit {
       }
       this.getImages(this.comp.component_id);
       this.getPeriod(this.comp.component_period_id);
-      this.getCompsFromPeriod();        
-      console.log(this.comp)
+      this.getCompsFromPeriod();
     });
   }
 

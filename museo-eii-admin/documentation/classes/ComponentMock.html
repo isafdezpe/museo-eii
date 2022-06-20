@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -38,9 +38,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li>Inyectables</li>
-  <li >ComponentService</li>
+  <li>Clases</li>
+  <li >ComponentMock</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,8 +62,9 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/component.service.ts</code>
+            <code>src/app/services/testing/mock-cpus.ts</code>
         </p>
+
 
 
 
@@ -78,7 +83,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#baseUrl" >baseUrl</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#comps" >comps</a>
                             </li>
                         </ul>
                     </td>
@@ -111,6 +117,14 @@
                                 <a href="#getComponentsFromPeriod" >getComponentsFromPeriod</a>
                             </li>
                             <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getComps" >getComps</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#resetComps" >resetComps</a>
+                            </li>
+                            <li>
                                 <a href="#uploadComponentImgs" >uploadComponentImgs</a>
                             </li>
                         </ul>
@@ -125,53 +139,65 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/component.service.ts:12</a></div>
-                            </td>
-                        </tr>
 
+            <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="comps"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>comps</b></span>
+                        <a href="#comps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                            <div>
-                                    <b>Parámetros :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                    <td>Tipo</td>
-                                                <td>Opcional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
+                        <i>Tipo : </i>        <code><a href="../interfaces/MyComponent.html" target="_self" >MyComponent[]</a></code>
+
                     </td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[
+        new Cpu(&#x27;Intel 4004&#x27;, &#x27;Intel&#x27;, &#x27;Desarrollado para calculadoras de la marca Busicom, se instaló en máquinas de Pinball y fue candidato a instalarse en la nave espacial Pioneer 10. Existe una réplica funcional de 41x58cm en el Intel Museum de California.&#x27;,
+            1971, 1981, 1, 1800, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4004-1.jpeg&#x27;, &#x27;4004-2.jpeg&#x27;, &#x27;4004-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+            4, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz, 0.45, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 2300, 1
+        ),
+        new Cpu(&#x27;Intel 8008&#x27;, &#x27;Intel&#x27;, &#x27;Sucesor de 8 bits del 4004. Creado para el ordenador DataPoint 2200, pero no usado por su bajo rendimiento. Usado en terminales, embotelladoras, robots y computadoras simples. Tenía un juego de instrucciones propio.&#x27;,
+            1972, 1983, 1, 120, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8008-1.jpeg&#x27;, &#x27;8008-2.jpeg&#x27;, &#x27;8008-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+            16, MemoryUnits.kilobyte, 0, null, 200, SpeedUnits.kiloherz, 1, PowerUnits.watios, 8, MemoryUnits.bit, 10000, 0.016, 3500, 2
+        ),
+        new Cpu(&#x27;Intel 4040&#x27;, &#x27;Intel&#x27;, &#x27;Uno de los dos sucesores del 4004 junto con el 8008, igualmente de 4 bits, pero que incorporaba nuevas instrucciones, registros y soporte para interrupciones hardware.&#x27;,
+            1974, 1981, 1, 200, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4040-1.jpeg&#x27;, &#x27;4040-2.jpeg&#x27;, &#x27;4040-3.jpeg&#x27;], &quot;Gottlieb Flying Carpet&quot;, &quot;Gottlieb Flying Carpet.jpeg&quot;,
+            8, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz,  0.6, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 3000, 3
+        ),
+        new Cpu(&#x27;Intel 8086&#x27;, &#x27;Intel&#x27;, &#x27;Era de gran complejidad para su época, motivo por el cual tardó 2 años en producirse.&#x27;,
+            1978, 1999, 2, 86, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8086-1.jpeg&#x27;, &#x27;8086-2.jpeg&#x27;, &#x27;8086-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+            0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.7, PowerUnits.watios, 36, MemoryUnits.bit, 3000, 0.21, 29000, 4
+        ),
+        new Cpu(&#x27;Intel 8088&#x27;, &#x27;Intel&#x27;, &#x27;CPU del IBM PC XT original de 1983.&#x27;,
+            1979, 1998, 2, 124, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8088-1.jpeg&#x27;, &#x27;8088-2.jpeg&#x27;, &#x27;8088-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+            0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.87, PowerUnits.watios, 8, MemoryUnits.bit, 3000, 0.12, 29000, 5
+        )
+    ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="7" class="link-to-prism">src/app/services/testing/mock-cpus.ts:7</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -199,8 +225,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="16"
-                            class="link-to-prism">src/app/services/component.service.ts:16</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="42"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:42</a></div>
                 </td>
             </tr>
 
@@ -268,8 +294,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/component.service.ts:24</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="62"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:62</a></div>
                 </td>
             </tr>
 
@@ -337,8 +363,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/component.service.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="49"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:49</a></div>
                 </td>
             </tr>
 
@@ -399,15 +425,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getComponent(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getComponent(id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/component.service.ts:28</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="30"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:30</a></div>
                 </td>
             </tr>
 
@@ -422,16 +448,12 @@
                             <thead>
                                 <tr>
                                     <td>Nombre</td>
-                                    <td>Tipo</td>
                                     <td>Opcional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>cId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
+                                    <td>id</td>
 
                                     <td>
                                         No
@@ -468,15 +490,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getComponentImgs(cId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getComponentImgs(id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">src/app/services/component.service.ts:36</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="34"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:34</a></div>
                 </td>
             </tr>
 
@@ -491,16 +513,12 @@
                             <thead>
                                 <tr>
                                     <td>Nombre</td>
-                                    <td>Tipo</td>
                                     <td>Opcional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>cId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
+                                    <td>id</td>
 
                                     <td>
                                         No
@@ -537,15 +555,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getComponentsFromPeriod(pId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getComponentsFromPeriod(id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="32"
-                            class="link-to-prism">src/app/services/component.service.ts:32</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="38"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:38</a></div>
                 </td>
             </tr>
 
@@ -560,16 +578,12 @@
                             <thead>
                                 <tr>
                                     <td>Nombre</td>
-                                    <td>Tipo</td>
                                     <td>Opcional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>pId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
+                                    <td>id</td>
 
                                     <td>
                                         No
@@ -597,6 +611,84 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="getComps"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>getComps</b></span>
+                        <a href="#getComps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getComps()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="80"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:80</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetComps"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>resetComps</b></span>
+                        <a href="#resetComps"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetComps()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="84"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:84</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="uploadComponentImgs"></a>
                     <span class="name">
                         <span ><b>uploadComponentImgs</b></span>
@@ -613,8 +705,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="40"
-                            class="link-to-prism">src/app/services/component.service.ts:40</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="76"
+                            class="link-to-prism">src/app/services/testing/mock-cpus.ts:76</a></div>
                 </td>
             </tr>
 
@@ -663,93 +755,126 @@
         </tbody>
     </table>
 </section>
-            <section>
-    
-    <h3 id="inputs">
-        Propiedades
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="baseUrl"></a>
-                    <span class="name">
-                        <span ><b>baseUrl</b></span>
-                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Valor por defecto : </i><code>environment.baseUrl</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/component.service.ts:12</a></div>
-                        </td>
-                    </tr>
 
 
-        </tbody>
-    </table>
-</section>
+
+
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { FormGroup } from &#x27;@angular/forms&#x27;;
-import { environment } from &#x27;src/environments/environment&#x27;;
-import { MyComponent } from &#x27;../classes/comp&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { FormGroup } from &quot;@angular/forms&quot;;
+import { of } from &quot;rxjs&quot;;
+import { CompDevices, Cpu, MemoryUnits, MyComponent, PowerUnits, PriceUnits, SpeedUnits } from &quot;../../classes/comp&quot;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class ComponentService {
+export class ComponentMock {
 
-  baseUrl &#x3D; environment.baseUrl;
-  
-  constructor(private http: HttpClient) { }
+    public static comps: MyComponent[] &#x3D; [
+        new Cpu(&#x27;Intel 4004&#x27;, &#x27;Intel&#x27;, &#x27;Desarrollado para calculadoras de la marca Busicom, se instaló en máquinas de Pinball y fue candidato a instalarse en la nave espacial Pioneer 10. Existe una réplica funcional de 41x58cm en el Intel Museum de California.&#x27;,
+            1971, 1981, 1, 1800, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4004-1.jpeg&#x27;, &#x27;4004-2.jpeg&#x27;, &#x27;4004-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+            4, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz, 0.45, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 2300, 1
+        ),
+        new Cpu(&#x27;Intel 8008&#x27;, &#x27;Intel&#x27;, &#x27;Sucesor de 8 bits del 4004. Creado para el ordenador DataPoint 2200, pero no usado por su bajo rendimiento. Usado en terminales, embotelladoras, robots y computadoras simples. Tenía un juego de instrucciones propio.&#x27;,
+            1972, 1983, 1, 120, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8008-1.jpeg&#x27;, &#x27;8008-2.jpeg&#x27;, &#x27;8008-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+            16, MemoryUnits.kilobyte, 0, null, 200, SpeedUnits.kiloherz, 1, PowerUnits.watios, 8, MemoryUnits.bit, 10000, 0.016, 3500, 2
+        ),
+        new Cpu(&#x27;Intel 4040&#x27;, &#x27;Intel&#x27;, &#x27;Uno de los dos sucesores del 4004 junto con el 8008, igualmente de 4 bits, pero que incorporaba nuevas instrucciones, registros y soporte para interrupciones hardware.&#x27;,
+            1974, 1981, 1, 200, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4040-1.jpeg&#x27;, &#x27;4040-2.jpeg&#x27;, &#x27;4040-3.jpeg&#x27;], &quot;Gottlieb Flying Carpet&quot;, &quot;Gottlieb Flying Carpet.jpeg&quot;,
+            8, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz,  0.6, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 3000, 3
+        ),
+        new Cpu(&#x27;Intel 8086&#x27;, &#x27;Intel&#x27;, &#x27;Era de gran complejidad para su época, motivo por el cual tardó 2 años en producirse.&#x27;,
+            1978, 1999, 2, 86, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8086-1.jpeg&#x27;, &#x27;8086-2.jpeg&#x27;, &#x27;8086-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+            0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.7, PowerUnits.watios, 36, MemoryUnits.bit, 3000, 0.21, 29000, 4
+        ),
+        new Cpu(&#x27;Intel 8088&#x27;, &#x27;Intel&#x27;, &#x27;CPU del IBM PC XT original de 1983.&#x27;,
+            1979, 1998, 2, 124, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8088-1.jpeg&#x27;, &#x27;8088-2.jpeg&#x27;, &#x27;8088-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+            0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.87, PowerUnits.watios, 8, MemoryUnits.bit, 3000, 0.12, 29000, 5
+        )
+    ];
 
-  addComponent(c: MyComponent) {
-    return this.http.post(&#x60;${this.baseUrl}/postComp.php&#x60;, c);
-  }
+    getComponent(id) {
+        return of(ComponentMock.comps[0]);
+    }
 
-  editComponent(c: MyComponent) {
-    return this.http.put(&#x60;${this.baseUrl}/updateComp.php&#x60;, c);
-  }
+    getComponentImgs(id) {
+        return of([{image: &quot;imagen1.jpeg&quot;}, {image: &quot;imagen2.jpeg&quot;}]);
+    }
 
-  deleteComponent(cId: number) {
-    return this.http.delete(&#x60;${this.baseUrl}/deleteComp.php?idComp&#x3D;${cId}&#x60;);
-  }
+    getComponentsFromPeriod(id) {
+        return of(ComponentMock.comps.filter((e) &#x3D;&gt; e.component_period_id &#x3D;&#x3D; 1));
+    }
 
-  getComponent(cId: number) {
-    return this.http.get(&#x60;${this.baseUrl}/getComp.php?idComp&#x3D;${cId}&#x60;);
-  }
+    addComponent(c: MyComponent) {
+        if (ComponentMock.comps.filter((e) &#x3D;&gt; e.component_name &#x3D;&#x3D; c.component_name).length &gt; 0)
+            return of({error: &quot;error&quot;});
+        ComponentMock.comps.push(c);
+        return of({next: &quot;guardado&quot;});
+    }
 
-  getComponentsFromPeriod(pId: number) {
-    return this.http.get(&#x60;${this.baseUrl}/getCompsPeriod.php?idPeriod&#x3D;${pId}&#x60;);
-  }
+    editComponent(c: MyComponent) {
+        let editado &#x3D; false;
+        ComponentMock.comps.forEach((comp, index) &#x3D;&gt; {
+            if (comp.component_id &#x3D;&#x3D; c.component_id) {
+                ComponentMock.comps.splice(index, 1, c);
+                editado &#x3D; true;
+            }
+        });
+        if (editado)
+            return of({next: &quot;guardado&quot;});
+        return of({error: &quot;Error&quot;});
+    }
 
-  getComponentImgs(cId: number) {
-    return this.http.get(&#x60;${this.baseUrl}/getCompImgs.php?idComp&#x3D;${cId}&#x60;);
-  }
+    deleteComponent(cId: number) {
+        let borrado &#x3D; false;
+        ComponentMock.comps.forEach((comp, index) &#x3D;&gt; {
+            if (comp.component_id &#x3D;&#x3D; cId) {
+                ComponentMock.comps.splice(index, 1);
+                borrado &#x3D; true;
+            }
+        });
+        if (borrado)
+            return of({next: &quot;borrado&quot;});
+        return of({error: &quot;Error&quot;});
+    }
 
-  uploadComponentImgs(form: FormGroup) {
-    return this.http.post(&#x60;${this.baseUrl}/uploadCompImgs.php&#x60;, form.value);
-  }
+
+    uploadComponentImgs(form: FormGroup) {
+        return of({next: &quot;guardado&quot;});
+    }
+
+    static getComps() {
+        return this.comps;
+    }
+
+    static resetComps() {
+        this.comps &#x3D; [
+            new Cpu(&#x27;Intel 4004&#x27;, &#x27;Intel&#x27;, &#x27;Desarrollado para calculadoras de la marca Busicom, se instaló en máquinas de Pinball y fue candidato a instalarse en la nave espacial Pioneer 10. Existe una réplica funcional de 41x58cm en el Intel Museum de California.&#x27;,
+                1971, 1981, 1, 1800, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4004-1.jpeg&#x27;, &#x27;4004-2.jpeg&#x27;, &#x27;4004-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+                4, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz, 0.45, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 2300, 1
+            ),
+            new Cpu(&#x27;Intel 8008&#x27;, &#x27;Intel&#x27;, &#x27;Sucesor de 8 bits del 4004. Creado para el ordenador DataPoint 2200, pero no usado por su bajo rendimiento. Usado en terminales, embotelladoras, robots y computadoras simples. Tenía un juego de instrucciones propio.&#x27;,
+                1972, 1983, 1, 120, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8008-1.jpeg&#x27;, &#x27;8008-2.jpeg&#x27;, &#x27;8008-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+                16, MemoryUnits.kilobyte, 0, null, 200, SpeedUnits.kiloherz, 1, PowerUnits.watios, 8, MemoryUnits.bit, 10000, 0.016, 3500, 2
+            ),
+            new Cpu(&#x27;Intel 4040&#x27;, &#x27;Intel&#x27;, &#x27;Uno de los dos sucesores del 4004 junto con el 8008, igualmente de 4 bits, pero que incorporaba nuevas instrucciones, registros y soporte para interrupciones hardware.&#x27;,
+                1974, 1981, 1, 200, PriceUnits.dolar, [CompDevices.desktop, CompDevices.portable], [&#x27;4040-1.jpeg&#x27;, &#x27;4040-2.jpeg&#x27;, &#x27;4040-3.jpeg&#x27;], &quot;Gottlieb Flying Carpet&quot;, &quot;Gottlieb Flying Carpet.jpeg&quot;,
+                8, MemoryUnits.kilobyte, 640, MemoryUnits.byte, 740, SpeedUnits.kiloherz,  0.6, PowerUnits.watios, 4, MemoryUnits.bit, 10000, 0.03, 3000, 3
+            ),
+            new Cpu(&#x27;Intel 8086&#x27;, &#x27;Intel&#x27;, &#x27;Era de gran complejidad para su época, motivo por el cual tardó 2 años en producirse.&#x27;,
+                1978, 1999, 2, 86, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8086-1.jpeg&#x27;, &#x27;8086-2.jpeg&#x27;, &#x27;8086-3.jpeg&#x27;], &quot;Busicom 141PF&quot;, &quot;Busicom 141PF.jpeg&quot;, 
+                0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.7, PowerUnits.watios, 36, MemoryUnits.bit, 3000, 0.21, 29000, 4
+            ),
+            new Cpu(&#x27;Intel 8088&#x27;, &#x27;Intel&#x27;, &#x27;CPU del IBM PC XT original de 1983.&#x27;,
+                1979, 1998, 2, 124, PriceUnits.dolar, [CompDevices.desktop], [&#x27;8088-1.jpeg&#x27;, &#x27;8088-2.jpeg&#x27;, &#x27;8088-3.jpeg&#x27;], &quot;Datapoint 2200&quot;, &quot;Datapoint 2200.jpeg&quot;,
+                0, null, 1, MemoryUnits.megabyte, 10, SpeedUnits.megaherz, 1.87, PowerUnits.watios, 8, MemoryUnits.bit, 3000, 0.12, 29000, 5
+            )
+        ];
+    }
 }
 </code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -784,8 +909,8 @@ export class ComponentService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'ComponentService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ComponentMock.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

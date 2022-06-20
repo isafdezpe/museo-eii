@@ -258,7 +258,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input, OnInit } from &#x27;@angular/core&#x27;;
-import { Period } from &#x27;../period&#x27;;
+import { Period } from &#x27;./../classes/period&#x27;;
 
 @Component({
   selector: &#x27;app-period-inputs&#x27;,
@@ -279,7 +279,7 @@ export class PeriodInputsComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;pname&quot;&gt;Nombre:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;input class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;pname&quot; required [(ngModel)]&#x3D;&quot;model.period_name&quot; name&#x3D;&quot;name&quot; #name&#x3D;&quot;ngModel&quot; placeholder&#x3D;&quot;Nombre&quot; minlength&#x3D;&quot;2&quot; maxlength&#x3D;&quot;50&quot;&gt;
@@ -287,21 +287,21 @@ export class PeriodInputsComponent implements OnInit {
     &lt;/div&gt;
 &lt;/div&gt;        
 
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;pdesc&quot;&gt;Detalles:&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;textarea class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;pdesc&quot; required [(ngModel)]&#x3D;&quot;model.period_details&quot; name&#x3D;&quot;details&quot; #details&#x3D;&quot;ngModel&quot;  placeholder&#x3D;&quot;Detalles&quot; minlength&#x3D;&quot;2&quot;&gt;&lt;/textarea&gt;
         &lt;div [hidden]&#x3D;&quot;details.valid || details.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;ptrivia&quot;&gt;Sabías que... &lt;p&gt;Introduzca cada característica en una línea&lt;/p&gt;&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;textarea class&#x3D;&quot;form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;ptrivia&quot; required [(ngModel)]&#x3D;&quot;model.period_trivia&quot; name&#x3D;&quot;trivia&quot; #trivia&#x3D;&quot;ngModel&quot;  placeholder&#x3D;&quot;Sabías que...&quot; minlength&#x3D;&quot;2&quot;&gt;&lt;/textarea&gt;
         &lt;div [hidden]&#x3D;&quot;trivia.valid || trivia.pristine&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;Complete este campo&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class&#x3D;&quot;row form-row&quot;&gt;
+&lt;div class&#x3D;&quot;row form-row&quot; *ngIf&#x3D;&quot;model&quot;&gt;
     &lt;label class&#x3D;&quot;col col-lg-2&quot; for&#x3D;&quot;pevents&quot;&gt;Eventos: &lt;p&gt;Introduzca cada evento en una línea&lt;/p&gt;&lt;/label&gt;
     &lt;div class&#x3D;&quot;col&quot;&gt;
         &lt;textarea class&#x3D;&quot;col form-control&quot; type&#x3D;&quot;text&quot; id&#x3D;&quot;pevents&quot; required [(ngModel)]&#x3D;&quot;model.period_events&quot; name&#x3D;&quot;events&quot; #events&#x3D;&quot;ngModel&quot;  placeholder&#x3D;&quot;Eventos&quot; minlength&#x3D;&quot;2&quot;&gt;&lt;/textarea&gt;
@@ -342,7 +342,7 @@ export class PeriodInputsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row form-row">    <label class="col col-lg-2" for="pname">Nombre:</label>    <div class="col">        <input class="form-control" type="text" id="pname" required [(ngModel)]="model.period_name" name="name" #name="ngModel" placeholder="Nombre" minlength="2" maxlength="50">        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>    </div></div>        <div class="row form-row">    <label class="col col-lg-2" for="pdesc">Detalles:</label>    <div class="col">        <textarea class="form-control" type="text" id="pdesc" required [(ngModel)]="model.period_details" name="details" #details="ngModel"  placeholder="Detalles" minlength="2"></textarea>        <div [hidden]="details.valid || details.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row">    <label class="col col-lg-2" for="ptrivia">Sabías que... <p>Introduzca cada característica en una línea</p></label>    <div class="col">        <textarea class="form-control" type="text" id="ptrivia" required [(ngModel)]="model.period_trivia" name="trivia" #trivia="ngModel"  placeholder="Sabías que..." minlength="2"></textarea>        <div [hidden]="trivia.valid || trivia.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row">    <label class="col col-lg-2" for="pevents">Eventos: <p>Introduzca cada evento en una línea</p></label>    <div class="col">        <textarea class="col form-control" type="text" id="pevents" required [(ngModel)]="model.period_events" name="events" #events="ngModel"  placeholder="Eventos" minlength="2"></textarea>        <div [hidden]="events.valid || events.pristine" class="alert alert-danger">Complete este campo</div>    </div>                </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="pname">Nombre:</label>    <div class="col">        <input class="form-control" type="text" id="pname" required [(ngModel)]="model.period_name" name="name" #name="ngModel" placeholder="Nombre" minlength="2" maxlength="50">        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">Complete este campo</div>    </div></div>        <div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="pdesc">Detalles:</label>    <div class="col">        <textarea class="form-control" type="text" id="pdesc" required [(ngModel)]="model.period_details" name="details" #details="ngModel"  placeholder="Detalles" minlength="2"></textarea>        <div [hidden]="details.valid || details.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="ptrivia">Sabías que... <p>Introduzca cada característica en una línea</p></label>    <div class="col">        <textarea class="form-control" type="text" id="ptrivia" required [(ngModel)]="model.period_trivia" name="trivia" #trivia="ngModel"  placeholder="Sabías que..." minlength="2"></textarea>        <div [hidden]="trivia.valid || trivia.pristine" class="alert alert-danger">Complete este campo</div>    </div></div><div class="row form-row" *ngIf="model">    <label class="col col-lg-2" for="pevents">Eventos: <p>Introduzca cada evento en una línea</p></label>    <div class="col">        <textarea class="col form-control" type="text" id="pevents" required [(ngModel)]="model.period_events" name="events" #events="ngModel"  placeholder="Eventos" minlength="2"></textarea>        <div [hidden]="events.valid || events.pristine" class="alert alert-danger">Complete este campo</div>    </div>                </div></div>'
     var COMPONENTS = [{'name': 'AddCompComponent', 'selector': 'app-add-comp'},{'name': 'AddPeriodComponent', 'selector': 'app-add-period'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompInputsComponent', 'selector': 'app-comp-inputs'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CpuTypeDetailsComponent', 'selector': 'app-cpu-type-details'},{'name': 'CpuTypeFormComponent', 'selector': 'app-cpu-type-form'},{'name': 'FormEditCompComponent', 'selector': 'app-edit-comp'},{'name': 'FormEditPeriodComponent', 'selector': 'app-edit-period'},{'name': 'ListPeriodsComponent', 'selector': 'app-list-periods'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MyComponentComponent', 'selector': 'app-my-component'},{'name': 'PeriodComponent', 'selector': 'app-period'},{'name': 'PeriodInputsComponent', 'selector': 'app-period-inputs'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PeriodInputsComponent'};

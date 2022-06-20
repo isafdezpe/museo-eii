@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Period } from '../classes/period';
-import { ComponentService } from './component.service';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,7 +11,7 @@ export class PeriodService {
   baseUrl = environment.baseUrl;
 
 
-  constructor(private componentService: ComponentService, private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   addPeriod(p: Period) {
     return this.http.post(`${this.baseUrl}/postPeriod.php`, p);

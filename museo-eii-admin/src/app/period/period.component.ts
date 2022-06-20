@@ -61,7 +61,6 @@ export class PeriodComponent implements OnInit {
    * @param c : componente que se va a eliminar
    */
   deleteComponent(c: MyComponent) {
-    console.log(c.component_id)
     this.dialog
       .open(ConfirmationDialogComponent, {data:`¿Desea eliminar el componente ${c.component_name}?`})
       .afterClosed()

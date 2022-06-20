@@ -58,7 +58,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/component.service.ts</code>
+            <code>src/app/services/component.service.ts</code>
         </p>
 
 
@@ -136,7 +136,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/component.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/component.service.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -200,7 +200,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="16"
-                            class="link-to-prism">src/app/component.service.ts:16</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:16</a></div>
                 </td>
             </tr>
 
@@ -269,7 +269,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="24"
-                            class="link-to-prism">src/app/component.service.ts:24</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -338,7 +338,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">src/app/component.service.ts:20</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:20</a></div>
                 </td>
             </tr>
 
@@ -407,7 +407,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="28"
-                            class="link-to-prism">src/app/component.service.ts:28</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -476,7 +476,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">src/app/component.service.ts:36</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:36</a></div>
                 </td>
             </tr>
 
@@ -545,7 +545,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="32"
-                            class="link-to-prism">src/app/component.service.ts:32</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:32</a></div>
                 </td>
             </tr>
 
@@ -614,7 +614,7 @@
             <tr>
                 <td class="col-md-4">
                     <div class="io-line">Definido en <a href="" data-line="40"
-                            class="link-to-prism">src/app/component.service.ts:40</a></div>
+                            class="link-to-prism">src/app/services/component.service.ts:40</a></div>
                 </td>
             </tr>
 
@@ -686,7 +686,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/component.service.ts:12</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="12" class="link-to-prism">src/app/services/component.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -703,7 +703,7 @@
 import { Injectable } from &#x27;@angular/core&#x27;;
 import { FormGroup } from &#x27;@angular/forms&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-import { MyComponent } from &#x27;./comp&#x27;;
+import { MyComponent } from &#x27;../classes/comp&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -739,7 +739,6 @@ export class ComponentService {
   }
 
   uploadComponentImgs(form: FormGroup) {
-    console.log(form.value);
     return this.http.post(&#x60;${this.baseUrl}/uploadCompImgs.php&#x60;, form.value);
   }
 }

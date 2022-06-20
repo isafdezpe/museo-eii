@@ -108,13 +108,10 @@ export class FormEditCompComponent implements OnInit {
    * Actualiza el componente, sube las imágenes y resetea el formulario
    */
   submit() {
-    console.log(this.model)
     this.myForm.patchValue({
       fileSource: this.images,
       name: this.imagesNames
     });
-    //if (!this.model.famous_system_img)
-      //this.model.famous_system_img = this.c.famous_system_img;
     switch(this.isValid(this.model)) {
       case -1: 
         this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
@@ -166,7 +163,6 @@ export class FormEditCompComponent implements OnInit {
     this.compImgsInDB  = [];
     this.compImgsInDB.push(this.c.famous_system_img);
     this.c.component_imgs.forEach((i) => this.compImgsInDB.push(i));
-    console.log(this.model)
   }
 
   /**
@@ -187,7 +183,6 @@ export class FormEditCompComponent implements OnInit {
    * @returns si se ha editado el formulario
    */
   isEdited() {
-    console.log(this.c)
     if (this.c === undefined && this.model === undefined)
       return false;
       

@@ -58,7 +58,6 @@ export class MyComponentComponent implements OnInit {
    */
   getImages(id: number) {
     this.componentService.getComponentImgs(id).subscribe((imgs: {image}[]) => {
-      console.log(imgs);
       imgs.forEach((i) => {
         this.c.component_imgs.push(i.image);
       })

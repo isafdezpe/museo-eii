@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterTestingModule } from '@angular/router/testing';
-import { ToastrModule, ToastrService, TOAST_CONFIG } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ComponentService } from '../services/component.service';
 import { ComponentMock } from '../services/testing/mock-cpus';
 import { PeriodMock } from '../services/testing/mock-periods';
@@ -81,7 +81,7 @@ describe('FormEditCompComponent', () => {
     let comp = component.c;
     expect(comp.equals(component.model)).toBeTruthy();
     component.model.component_description = "";
-    expect(component.isValid(component.model)).toBeFalsy();
+    expect(component.isValid(component.model)).toEqual(-1);
     component.submit();
     expect(component.c.component_description).toEqual('Desarrollado para calculadoras de la marca Busicom, se instaló en máquinas de Pinball y fue candidato a instalarse en la nave espacial Pioneer 10. Existe una réplica funcional de 41x58cm en el Intel Museum de California.');
   });

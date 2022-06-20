@@ -38,7 +38,6 @@ export class ComponentService {
   }
 
   uploadComponentImgs(form: FormGroup) {
-    console.log(form.value);
     return this.http.post(`${this.baseUrl}/uploadCompImgs.php`, form.value);
   }
 }

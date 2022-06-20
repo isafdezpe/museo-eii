@@ -137,6 +137,10 @@
                                 <a href="#comps" >comps</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#dialog" >dialog</a>
+                            </li>
+                            <li>
                                 <a href="#imgUrl" >imgUrl</a>
                             </li>
                             <li>
@@ -553,6 +557,33 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="dialog"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>dialog</b></span>
+                        <a href="#dialog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Tipo : </i>    <code>MatDialog</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="24" class="link-to-prism">src/app/period/period.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="imgUrl"></a>
                     <span class="name">
                         <span ><b>imgUrl</b></span>
@@ -611,11 +642,11 @@ import { MatDialog } from &#x27;@angular/material/dialog&#x27;;
 import { MatSnackBar } from &#x27;@angular/material/snack-bar&#x27;;
 import { ActivatedRoute } from &#x27;@angular/router&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
-import { MyComponent } from &#x27;../comp&#x27;;
-import { ComponentService } from &#x27;../component.service&#x27;;
+import { MyComponent } from &#x27;./../classes/comp&#x27;;
+import { ComponentService } from &#x27;../services/component.service&#x27;;
 import { ConfirmationDialogComponent } from &#x27;../confirmation-dialog/confirmation-dialog.component&#x27;;
-import { Period } from &#x27;../period&#x27;;
-import { PeriodService } from &#x27;../period.service&#x27;;
+import { Period } from &#x27;./../classes/period&#x27;;
+import { PeriodService } from &#x27;../services/period.service&#x27;;
 
 @Component({
   selector: &#x27;app-period&#x27;,
@@ -629,7 +660,7 @@ export class PeriodComponent implements OnInit {
   p: Period; // periodo
   comps: MyComponent[] &#x3D; []; // componentes pertenecientes al periodo
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private dialog: MatDialog, private snackBar: MatSnackBar, private componentService: ComponentService) { }
+  constructor(private route: ActivatedRoute, private periodService: PeriodService, public dialog: MatDialog, private snackBar: MatSnackBar, private componentService: ComponentService) { }
 
   ngOnInit(): void {
     // saca el id del periodo
@@ -669,7 +700,6 @@ export class PeriodComponent implements OnInit {
    * @param c : componente que se va a eliminar
    */
   deleteComponent(c: MyComponent) {
-    console.log(c.component_id)
     this.dialog
       .open(ConfirmationDialogComponent, {data:&#x60;¿Desea eliminar el componente ${c.component_name}?&#x60;})
       .afterClosed()
@@ -687,7 +717,7 @@ export class PeriodComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;row container&quot; *ngIf&#x3D;&quot;p&quot;&gt;
     &lt;app-menu class&#x3D;&quot;col col-lg-2 border-right&quot;&gt;&lt;/app-menu&gt;
     &lt;div class&#x3D;&quot;col content-page&quot;&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt;
@@ -798,7 +828,7 @@ export class PeriodComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row container">    <app-menu class="col col-lg-2 border-right"></app-menu>    <div class="col content-page">        <div class="row">            <h2 class="col">{{ p.period_name }}</h2>            <a [routerLink]="[\'/editPeriod\', p.period_id]">Editar</a>        </div>        <h4 class="row">Detalles</h4>        <li class="row">            <ul *ngFor="let d of p.period_details.split(\'\n\')">{{d}}</ul>        </li>        <h4 class="row">Sabías qué...</h4>        <li class="row">            <ul *ngFor="let t of p.period_trivia.split(\'\n\')">{{t}}</ul>        </li>        <h4 class="row">Eventos</h4>        <li class="row">            <ul *ngFor="let e of p.period_events.split(\'\n\')">{{e}}</ul>        </li>        <h4 class="row">Sistemas famosos</h4>        <div class="systems">            <div class="col img-systems" *ngFor="let s of p.famousSystems">              <h6 class="row">{{s.name}}</h6>              <img class="row" src="{{imgUrl}}{{s.img}}">              <p class="row name-link">{{s.sysName}}</p>            </div>        </div>        <h4 class="row">Componentes</h4>        <table mat-table [dataSource]="comps" class="mat-elevation-z8">            <ng-container matColumnDef="nombre">                <th mat-header-cell *matHeaderCellDef>Nombre</th>                <td mat-cell *matCellDef="let comp"><a [routerLink]="[\'/component\', comp.component_id]">{{comp.component_name}}</a></td>            </ng-container>            <ng-container matColumnDef="editar">                <th mat-header-cell *matHeaderCellDef>Editar</th>                <td mat-cell *matCellDef="let comp"><a [routerLink]="[\'/editComp\', comp.component_id]"><ion-icon name="pencil"></ion-icon></a></td>            </ng-container>            <ng-container matColumnDef="eliminar">                <th mat-header-cell *matHeaderCellDef>Eliminar</th>                <td mat-cell *matCellDef="let comp"><button class="icon-btn" (click)="deleteComponent(comp)"><ion-icon name="trash"></ion-icon></button></td>            </ng-container>            <tr mat-header-row *matHeaderRowDef="[\'nombre\', \'editar\', \'eliminar\']"></tr>            <tr mat-row *matRowDef="let fila; columns: [\'nombre\', \'editar\', \'eliminar\'];"></tr>        </table>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row container" *ngIf="p">    <app-menu class="col col-lg-2 border-right"></app-menu>    <div class="col content-page">        <div class="row">            <h2 class="col">{{ p.period_name }}</h2>            <a [routerLink]="[\'/editPeriod\', p.period_id]">Editar</a>        </div>        <h4 class="row">Detalles</h4>        <li class="row">            <ul *ngFor="let d of p.period_details.split(\'\n\')">{{d}}</ul>        </li>        <h4 class="row">Sabías qué...</h4>        <li class="row">            <ul *ngFor="let t of p.period_trivia.split(\'\n\')">{{t}}</ul>        </li>        <h4 class="row">Eventos</h4>        <li class="row">            <ul *ngFor="let e of p.period_events.split(\'\n\')">{{e}}</ul>        </li>        <h4 class="row">Sistemas famosos</h4>        <div class="systems">            <div class="col img-systems" *ngFor="let s of p.famousSystems">              <h6 class="row">{{s.name}}</h6>              <img class="row" src="{{imgUrl}}{{s.img}}">              <p class="row name-link">{{s.sysName}}</p>            </div>        </div>        <h4 class="row">Componentes</h4>        <table mat-table [dataSource]="comps" class="mat-elevation-z8">            <ng-container matColumnDef="nombre">                <th mat-header-cell *matHeaderCellDef>Nombre</th>                <td mat-cell *matCellDef="let comp"><a [routerLink]="[\'/component\', comp.component_id]">{{comp.component_name}}</a></td>            </ng-container>            <ng-container matColumnDef="editar">                <th mat-header-cell *matHeaderCellDef>Editar</th>                <td mat-cell *matCellDef="let comp"><a [routerLink]="[\'/editComp\', comp.component_id]"><ion-icon name="pencil"></ion-icon></a></td>            </ng-container>            <ng-container matColumnDef="eliminar">                <th mat-header-cell *matHeaderCellDef>Eliminar</th>                <td mat-cell *matCellDef="let comp"><button class="icon-btn" (click)="deleteComponent(comp)"><ion-icon name="trash"></ion-icon></button></td>            </ng-container>            <tr mat-header-row *matHeaderRowDef="[\'nombre\', \'editar\', \'eliminar\']"></tr>            <tr mat-row *matRowDef="let fila; columns: [\'nombre\', \'editar\', \'eliminar\'];"></tr>        </table>    </div></div></div>'
     var COMPONENTS = [{'name': 'AddCompComponent', 'selector': 'app-add-comp'},{'name': 'AddPeriodComponent', 'selector': 'app-add-period'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompInputsComponent', 'selector': 'app-comp-inputs'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CpuTypeDetailsComponent', 'selector': 'app-cpu-type-details'},{'name': 'CpuTypeFormComponent', 'selector': 'app-cpu-type-form'},{'name': 'FormEditCompComponent', 'selector': 'app-edit-comp'},{'name': 'FormEditPeriodComponent', 'selector': 'app-edit-period'},{'name': 'ListPeriodsComponent', 'selector': 'app-list-periods'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MyComponentComponent', 'selector': 'app-my-component'},{'name': 'PeriodComponent', 'selector': 'app-period'},{'name': 'PeriodInputsComponent', 'selector': 'app-period-inputs'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PeriodComponent'};

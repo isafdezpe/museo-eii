@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -38,9 +38,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li>Inyectables</li>
-  <li >UserService</li>
+  <li>Clases</li>
+  <li >UserMock</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,8 +62,9 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/user.service.ts</code>
+            <code>src/app/services/testing/mock-user.ts</code>
         </p>
+
 
 
 
@@ -78,7 +83,12 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#baseUrl" >baseUrl</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#token" >token</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#userLogged" >userLogged</a>
                             </li>
                         </ul>
                     </td>
@@ -96,6 +106,7 @@
                                 <a href="#deleteToken" >deleteToken</a>
                             </li>
                             <li>
+                                    <span class="modifier">Static</span>
                                 <a href="#getToken" >getToken</a>
                             </li>
                             <li>
@@ -103,6 +114,10 @@
                             </li>
                             <li>
                                 <a href="#login" >login</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#resetUser" >resetUser</a>
                             </li>
                             <li>
                                 <a href="#setToken" >setToken</a>
@@ -119,65 +134,70 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>, cookies: CookieService)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/user.service.ts:11</a></div>
-                            </td>
-                        </tr>
 
+            <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="token"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>token</b></span>
+                        <a href="#token"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                            <div>
-                                    <b>Parámetros :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                    <td>Tipo</td>
-                                                <td>Opcional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>cookies</td>
-                                                  
-                                                        <td>
-                                                                    <code>CookieService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
+                        <i>Tipo : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
                     </td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>&quot;&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="6" class="link-to-prism">src/app/services/testing/mock-user.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userLogged"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>userLogged</b></span>
+                        <a href="#userLogged"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="5" class="link-to-prism">src/app/services/testing/mock-user.ts:5</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -205,8 +225,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/user.service.ts:28</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:23</a></div>
                 </td>
             </tr>
 
@@ -228,6 +248,7 @@
                 <td class="col-md-4">
                     <a name="getToken"></a>
                     <span class="name">
+                        <span class="modifier">Static</span>
                         <span ><b>getToken</b></span>
                         <a href="#getToken"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -235,15 +256,16 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getToken()</code>
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getToken()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/user.service.ts:24</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:19</a></div>
                 </td>
             </tr>
 
@@ -252,7 +274,7 @@
                 <td class="col-md-4">
 
                     <div class="io-description">
-                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <b>Devuelve : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
 
                     </div>
                 </td>
@@ -279,8 +301,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="33"
-                            class="link-to-prism">src/app/services/user.service.ts:33</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="28"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:28</a></div>
                 </td>
             </tr>
 
@@ -316,8 +338,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="15"
-                            class="link-to-prism">src/app/services/user.service.ts:15</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="8"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:8</a></div>
                 </td>
             </tr>
 
@@ -381,6 +403,45 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="resetUser"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>resetUser</b></span>
+                        <a href="#resetUser"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetUser()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="32"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:32</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="setToken"></a>
                     <span class="name">
                         <span ><b>setToken</b></span>
@@ -397,8 +458,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="19"
-                            class="link-to-prism">src/app/services/user.service.ts:19</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="14"
+                            class="link-to-prism">src/app/services/testing/mock-user.ts:14</a></div>
                 </td>
             </tr>
 
@@ -447,86 +508,54 @@
         </tbody>
     </table>
 </section>
-            <section>
-    
-    <h3 id="inputs">
-        Propiedades
-    </h3>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="baseUrl"></a>
-                    <span class="name">
-                        <span ><b>baseUrl</b></span>
-                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Valor por defecto : </i><code>environment.baseUrl</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/user.service.ts:11</a></div>
-                        </td>
-                    </tr>
 
 
-        </tbody>
-    </table>
-</section>
+
+
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Injectable } from &#x27;@angular/core&#x27;;
-import { CookieService } from &#x27;ngx-cookie-service&#x27;;
-import { environment } from &#x27;src/environments/environment&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { of } from &quot;rxjs&quot;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class UserService {
+export class UserMock {
 
-  baseUrl &#x3D; environment.baseUrl;
+    static userLogged &#x3D; false;
+    static token: String &#x3D; &quot;&quot;;
+    
+    login(user: string, password: string) {
+        if (user &#x3D;&#x3D; &quot;uo257829@uniovi.es&quot; &amp;&amp; password &#x3D;&#x3D; &quot;museoinfo2022&quot;)
+            return of({email: user});
+        return of ({error: &quot;Error&quot;});
+    }
 
-  constructor(private http: HttpClient, private cookies: CookieService) { }
+    setToken(token: string) {
+        UserMock.token &#x3D; token;
+        UserMock.userLogged &#x3D; true;
+    }
 
-  login(user: string, password: string) {
-    return this.http.post(&#x60;${this.baseUrl}/login.php&#x60;, {user, password});
-  }
+    public static getToken() {
+        return UserMock.token;
+    }
 
-  setToken(token: string) {
-    this.cookies.set(&quot;token&quot;, token);
-    localStorage.setItem(&quot;session&quot;, JSON.stringify(token));
-  }
+    deleteToken() {
+        UserMock.token &#x3D; &quot;&quot;;
+        UserMock.userLogged &#x3D; false;
+    }
 
-  getToken() {
-    return this.cookies.get(&quot;token&quot;);
-  }
+    isLogged(): boolean {
+        return UserMock.userLogged;
+    }
 
-  deleteToken() {
-    this.cookies.delete(&quot;token&quot;);
-    localStorage.removeItem(&quot;session&quot;);
-  }
+    public static resetUser() {
+        UserMock.token &#x3D; &quot;&quot;;
+        UserMock.userLogged &#x3D; false;
+    }
 
-  isLogged(): boolean {
-    return localStorage.getItem(&quot;session&quot;) ? true : false;
-  }
-}
-</code></pre>
+}</code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -561,8 +590,8 @@ export class UserService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'UserService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'UserMock.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

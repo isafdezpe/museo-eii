@@ -28,7 +28,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content injectable">
+               <div class="content class">
                    <div class="content-data">
 
 
@@ -38,9 +38,13 @@
 
 
 
+
+
+
+
 <ol class="breadcrumb">
-  <li>Inyectables</li>
-  <li >PeriodService</li>
+  <li>Clases</li>
+  <li >PeriodMock</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,8 +62,9 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/period.service.ts</code>
+            <code>src/app/services/testing/mock-periods.ts</code>
         </p>
+
 
 
 
@@ -78,7 +83,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#baseUrl" >baseUrl</a>
+                                    <span class="modifier">Static</span>
+                                <a href="#periods" >periods</a>
                             </li>
                         </ul>
                     </td>
@@ -110,6 +116,14 @@
                             <li>
                                 <a href="#getPeriodByName" >getPeriodByName</a>
                             </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#getPeriods" >getPeriods</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Static</span>
+                                <a href="#resetPeriods" >resetPeriods</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -122,53 +136,51 @@
     </table>
 </section>
 
-            <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/period.service.ts:11</a></div>
-                            </td>
-                        </tr>
 
+            <section>
+    
+    <h3 id="inputs">
+        Propiedades
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="periods"></a>
+                    <span class="name">
+                            <span class="modifier">Static</span>
+                        <span ><b>periods</b></span>
+                        <a href="#periods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
                 <tr>
                     <td class="col-md-4">
-                            <div>
-                                    <b>Parámetros :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Nombre</td>
-                                                    <td>Tipo</td>
-                                                <td>Opcional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>http</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
+                        <i>Tipo : </i>        <code><a href="../classes/Period.html" target="_self" >Period[]</a></code>
+
                     </td>
                 </tr>
-            </tbody>
-        </table>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Valor por defecto : </i><code>[
+            new Period(&#x27;CPUs pre-x86&#x27;,&#x27;Intel originalmente fabricaba solo chips de memoria y se inició en la fabricación de CPUs con estos modelos.\nEstos chips no tienen memoria caché ni tiene sentido hablar de velocidad de bus.&#x27;,
+            &#x27;El 4004 formaba parte de la familia de chips MCS, que complementaban sus funciones.\nSus sucesores 4040, 8080 y 8085 tenían su propia familia de chips de soporte.&#x27;,
+            &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;, 1),
+            new Period(&#x27;8086 y 8088&#x27;, &#x27;En 1981 IBM quería crear su PC con CPUs Intel, pero a condición de que existiese un 2º productor de las mismas.\nPor ello, Intel y AMD hicieron un acuerdo de intercambio tecnológico de 10 años.&#x27;,
+                &#x27;CPUs x86, de 16 bits y primera generación.\nSe diseñaron para que portar programas de su antecesor (Intel 8080) fuera automático.&#x27;,
+                &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;,2)
+        ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Definido en <a href="" data-line="6" class="link-to-prism">src/app/services/testing/mock-periods.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
 </section>
 
             <section>
@@ -196,8 +208,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="16"
-                            class="link-to-prism">src/app/services/period.service.ts:16</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="23"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:23</a></div>
                 </td>
             </tr>
 
@@ -265,8 +277,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="24"
-                            class="link-to-prism">src/app/services/period.service.ts:24</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="43"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:43</a></div>
                 </td>
             </tr>
 
@@ -334,8 +346,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="20"
-                            class="link-to-prism">src/app/services/period.service.ts:20</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="30"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:30</a></div>
                 </td>
             </tr>
 
@@ -403,8 +415,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="36"
-                            class="link-to-prism">src/app/services/period.service.ts:36</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:19</a></div>
                 </td>
             </tr>
 
@@ -433,15 +445,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>getPeriod(pId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getPeriod(id)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/period.service.ts:28</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="15"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:15</a></div>
                 </td>
             </tr>
 
@@ -456,16 +468,12 @@
                             <thead>
                                 <tr>
                                     <td>Nombre</td>
-                                    <td>Tipo</td>
                                     <td>Opcional</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>pId</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                    </td>
+                                    <td>id</td>
 
                                     <td>
                                         No
@@ -509,8 +517,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="32"
-                            class="link-to-prism">src/app/services/period.service.ts:32</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="56"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:56</a></div>
                 </td>
             </tr>
 
@@ -558,90 +566,170 @@
             </tr>
         </tbody>
     </table>
-</section>
-            <section>
-    
-    <h3 id="inputs">
-        Propiedades
-    </h3>
     <table class="table table-sm table-bordered">
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="baseUrl"></a>
+                    <a name="getPeriods"></a>
                     <span class="name">
-                        <span ><b>baseUrl</b></span>
-                        <a href="#baseUrl"><span class="icon ion-ios-link"></span></a>
+                        <span class="modifier">Static</span>
+                        <span ><b>getPeriods</b></span>
+                        <a href="#getPeriods"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Valor por defecto : </i><code>environment.baseUrl</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/period.service.ts:11</a></div>
-                        </td>
-                    </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getPeriods()</code>
+                </td>
+            </tr>
 
 
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="60"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:60</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>    <code>{}</code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetPeriods"></a>
+                    <span class="name">
+                        <span class="modifier">Static</span>
+                        <span ><b>resetPeriods</b></span>
+                        <a href="#resetPeriods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>resetPeriods()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido en <a href="" data-line="64"
+                            class="link-to-prism">src/app/services/testing/mock-periods.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Devuelve : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
         </tbody>
     </table>
 </section>
+
+
+
+
 
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import { Period } from &#x27;../classes/period&#x27;;
-import { environment } from &#x27;src/environments/environment&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { of } from &quot;rxjs&quot;;
+import { Period } from &quot;../../classes/period&quot;;
 
-@Injectable({
-  providedIn: &#x27;root&#x27;
-})
-export class PeriodService {
+export class PeriodMock {
 
-  baseUrl &#x3D; environment.baseUrl;
+    public static periods: Period[] &#x3D; [
+            new Period(&#x27;CPUs pre-x86&#x27;,&#x27;Intel originalmente fabricaba solo chips de memoria y se inició en la fabricación de CPUs con estos modelos.\nEstos chips no tienen memoria caché ni tiene sentido hablar de velocidad de bus.&#x27;,
+            &#x27;El 4004 formaba parte de la familia de chips MCS, que complementaban sus funciones.\nSus sucesores 4040, 8080 y 8085 tenían su propia familia de chips de soporte.&#x27;,
+            &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;, 1),
+            new Period(&#x27;8086 y 8088&#x27;, &#x27;En 1981 IBM quería crear su PC con CPUs Intel, pero a condición de que existiese un 2º productor de las mismas.\nPor ello, Intel y AMD hicieron un acuerdo de intercambio tecnológico de 10 años.&#x27;,
+                &#x27;CPUs x86, de 16 bits y primera generación.\nSe diseñaron para que portar programas de su antecesor (Intel 8080) fuera automático.&#x27;,
+                &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;,2)
+        ];
 
+    getPeriod(id) {
+        return of(PeriodMock.periods[0]);
+    }
 
-  constructor(private http: HttpClient) { }
+    getAll() {
+        return of(PeriodMock.periods);
+    }
 
-  addPeriod(p: Period) {
-    return this.http.post(&#x60;${this.baseUrl}/postPeriod.php&#x60;, p);
-  }
+    addPeriod(p: Period) {
+        if (PeriodMock.periods.filter(e &#x3D;&gt; e.period_name &#x3D;&#x3D; p.period_name).length &gt; 0)
+            return of({error: &quot;error&quot;});
+        PeriodMock.periods.push(p);
+        return of({next: &quot;guardado&quot;});
+    }
 
-  editPeriod(p: Period) {
-    return this.http.put(&#x60;${this.baseUrl}/updatePeriod.php&#x60;, p);
-  }
+    editPeriod(p: Period) {
+        let editado &#x3D; false;
+        PeriodMock.periods.forEach((period, index) &#x3D;&gt; {
+            if (period.period_id &#x3D;&#x3D; p.period_id) {
+                PeriodMock.periods.splice(index, 1, p);
+                editado &#x3D; true;
+            }
+        });
+        if (editado)
+            return of({next: &quot;guardado&quot;});
+        return of({error: &quot;Error&quot;});
+    }
 
-  deletePeriod(p: Period) {
-    return this.http.delete(&#x60;${this.baseUrl}/deletePeriod.php?idPeriod&#x3D;${p.period_id}&#x60;);
-  }
+    deletePeriod(p: Period) {
+        let borrado &#x3D; false;
+        PeriodMock.periods.forEach((period, index) &#x3D;&gt; {
+            if (period.period_id &#x3D;&#x3D; p.period_id) {
+                PeriodMock.periods.splice(index, 1);
+                borrado &#x3D; true;
+            }
+        });
+        if (borrado)
+            return of({next: &quot;borrado&quot;});
+        return of({error: &quot;Error&quot;});
+    }
 
-  getPeriod(pId: number) {
-    return this.http.get(&#x60;${this.baseUrl}/getPeriod.php?idPeriod&#x3D;${pId}&#x60;);
-  }
+    getPeriodByName(pName: string) {
+        return of(PeriodMock.periods[0]);
+    }
 
-  getPeriodByName(pName: string) {
-    return this.http.get(&#x60;${this.baseUrl}/getPeriodName.php?namePeriod&#x3D;${pName}&#x60;);
-  }
+    static getPeriods() {
+        return this.periods;
+    }
 
-  getAll() {
-    return this.http.get(&#x60;${this.baseUrl}/getAllPeriod.php&#x60;);
-  }
-}
-</code></pre>
+    static resetPeriods() {
+        this.periods &#x3D; [
+            new Period(&#x27;CPUs pre-x86&#x27;,&#x27;Intel originalmente fabricaba solo chips de memoria y se inició en la fabricación de CPUs con estos modelos.\nEstos chips no tienen memoria caché ni tiene sentido hablar de velocidad de bus.&#x27;,
+            &#x27;El 4004 formaba parte de la familia de chips MCS, que complementaban sus funciones.\nSus sucesores 4040, 8080 y 8085 tenían su propia familia de chips de soporte.&#x27;,
+            &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;, 1),
+            new Period(&#x27;8086 y 8088&#x27;, &#x27;En 1981 IBM quería crear su PC con CPUs Intel, pero a condición de que existiese un 2º productor de las mismas.\nPor ello, Intel y AMD hicieron un acuerdo de intercambio tecnológico de 10 años.&#x27;,
+                &#x27;CPUs x86, de 16 bits y primera generación.\nSe diseñaron para que portar programas de su antecesor (Intel 8080) fuera automático.&#x27;,
+                &#x27;1970: Apollo 13\n1971: email\n1971: Floppy, pantallas LCD&#x27;,2)
+        ];
+    }
+}</code></pre>
     </div>
-
 </div>
-
-
-
-
 
 
 
@@ -676,8 +764,8 @@ export class PeriodService {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'PeriodService.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'PeriodMock.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

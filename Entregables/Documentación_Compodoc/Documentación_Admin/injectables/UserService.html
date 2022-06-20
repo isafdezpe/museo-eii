@@ -58,7 +58,7 @@
             <h3>Fichero</h3>
         </p>
         <p class="comment">
-            <code>src/app/user.service.ts</code>
+            <code>src/app/services/user.service.ts</code>
         </p>
 
 
@@ -79,10 +79,6 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#baseUrl" >baseUrl</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#userLogged" >userLogged</a>
                             </li>
                         </ul>
                     </td>
@@ -134,7 +130,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/user.service.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/user.service.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -209,8 +205,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="38"
-                            class="link-to-prism">src/app/user.service.ts:38</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="28"
+                            class="link-to-prism">src/app/services/user.service.ts:28</a></div>
                 </td>
             </tr>
 
@@ -246,8 +242,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="34"
-                            class="link-to-prism">src/app/user.service.ts:34</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="24"
+                            class="link-to-prism">src/app/services/user.service.ts:24</a></div>
                 </td>
             </tr>
 
@@ -283,8 +279,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="43"
-                            class="link-to-prism">src/app/user.service.ts:43</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="33"
+                            class="link-to-prism">src/app/services/user.service.ts:33</a></div>
                 </td>
             </tr>
 
@@ -320,8 +316,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="17"
-                            class="link-to-prism">src/app/user.service.ts:17</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="15"
+                            class="link-to-prism">src/app/services/user.service.ts:15</a></div>
                 </td>
             </tr>
 
@@ -401,8 +397,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="29"
-                            class="link-to-prism">src/app/user.service.ts:29</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="19"
+                            class="link-to-prism">src/app/services/user.service.ts:19</a></div>
                 </td>
             </tr>
 
@@ -474,33 +470,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/user.service.ts:11</a></div>
-                        </td>
-                    </tr>
-
-
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="userLogged"></a>
-                    <span class="name">
-                            <span class="modifier">Private</span>
-                        <span ><b>userLogged</b></span>
-                        <a href="#userLogged"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <i>Valor por defecto : </i><code>false</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                                <div class="io-line">Definido en <a href="" data-line="13" class="link-to-prism">src/app/user.service.ts:13</a></div>
+                                <div class="io-line">Definido en <a href="" data-line="11" class="link-to-prism">src/app/services/user.service.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -525,25 +495,15 @@ export class UserService {
 
   baseUrl &#x3D; environment.baseUrl;
 
-  private userLogged &#x3D;  false;
-
   constructor(private http: HttpClient, private cookies: CookieService) { }
 
   login(user: string, password: string) {
     return this.http.post(&#x60;${this.baseUrl}/login.php&#x60;, {user, password});
   }
 
-  // passwordReset(user: string) {
-  //   this.http.get(&#x60;${this.baseUrl}/changePassword.php?email&#x3D;${user}&#x60;);
-  // }
-
-  // changePassword() {
-
-  // }
-
   setToken(token: string) {
     this.cookies.set(&quot;token&quot;, token);
-    this.userLogged &#x3D; true;
+    localStorage.setItem(&quot;session&quot;, JSON.stringify(token));
   }
 
   getToken() {
@@ -552,11 +512,11 @@ export class UserService {
 
   deleteToken() {
     this.cookies.delete(&quot;token&quot;);
-    this.userLogged &#x3D; false;
+    localStorage.removeItem(&quot;session&quot;);
   }
 
   isLogged(): boolean {
-    return this.userLogged;
+    return localStorage.getItem(&quot;session&quot;) ? true : false;
   }
 }
 </code></pre>

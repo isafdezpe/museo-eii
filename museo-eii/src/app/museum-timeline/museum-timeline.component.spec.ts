@@ -51,7 +51,6 @@ describe('MuseumTimelineComponent', () => {
 
   it ('should get components from periods', () => {
     let comps = component.comps;
-    //expect(comps.keys.length).toEqual(2);
     let comps1 = comps.get(1);
     expect(comps1.length).toEqual(3);
     expect(comps1[0].component_name).toEqual('Intel 4004');
