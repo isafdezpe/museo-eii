@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CompTypes, GenericComp, MyComponent, Cpu, MemoryUnits, SpeedUnits, PowerUnits, PriceUnits } from './../classes/comp';
 import { ComponentService } from '../services/component.service';
@@ -34,7 +34,7 @@ export class AddCompComponent implements OnInit {
     fileSource: new FormControl('', [Validators.required])
   }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
-  constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute, private toastService: ToastrService) { }
+  constructor(private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private route: ActivatedRoute, private toastService: ToastrService, public router: Router) { }
 
   ngOnInit(): void {
     this.t = this.types[0];
@@ -66,7 +66,9 @@ export class AddCompComponent implements OnInit {
       periods.forEach((p) => this.periods.push(new Period(p.period_name, p.period_trivia, p.period_details, p.period_events, p.period_id)));
         this.p = this.periods[0];
       this.loaded = true;
-      this.changePeriod(this.p.period_name);
+      //this.changePeriod(this.p.period_name);
+      console.log(this.p)
+      console.log(this.periods)
     });
   }
 
@@ -75,7 +77,7 @@ export class AddCompComponent implements OnInit {
    * @param p : nombre del nuevo periodo seleccionado
    */
   changePeriod(p: string) {
-    this.p = this.periods.filter((e) => e.period_name === p)[0];
+    this.p = this.periods.filter((e) => e.period_name == p)[0];
   }
 
   /**
@@ -108,27 +110,47 @@ export class AddCompComponent implements OnInit {
         fileSource: this.images,
         name: this.imagesNames
       });
-    if (!this.isValid(this.model))
-      this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
-    else 
-      this.componentService.addComponent(this.model).subscribe(() => {
-        this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-          this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
-        });
-        this.resetForm();
-      }, () => {this.toastService.error("No se ha podido añadir el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
+    switch(this.isValid(this.model)) {
+      case -1: 
+        this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case -2: 
+        this.toastService.error("Debe introducir valores válidos para año de inicio y de fin", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case -3: 
+        this.toastService.error("No debe haber valores numéricos negativos", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case 1:
+        this.componentService.addComponent(this.model).subscribe((id: {res}) => {
+          console.log(id)
+          this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
+            this.snackBar.open('Componente guardado', 'Cerrar', { duration: 1500 });
+            //this.router.navigate(['/addComp']).then(() => window.location.reload());
+            this.router.navigate(['/component', id.res]);
+          });
+        }, () => {this.toastService.error("No se ha podido añadir el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
+        break;
+    }
+      
   }
 
-  isValid(comp: MyComponent): boolean {
+  isValid(comp: MyComponent): number {
     const year = new Date().getFullYear();
-    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" 
-    && comp.component_year_init != null && comp.component_year_init > 1900 && comp.component_year_init <= year && comp.component_year_end != null && comp.component_year_end >= comp.component_year_init && comp.component_year_end <= year
-    && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
+    if (comp.component_name == "" || comp.component_family == "" || comp.component_description == "" || comp.component_year_init == null || comp.component_year_end == null || comp.component_period_id == null || comp.component_price == null || comp.component_price_units == "")
+      return -1;
+    if (comp.component_year_init < 1900 || comp.component_year_init > year || comp.component_year_end < comp.component_year_init || comp.component_year_end > year)
+      return -2;
+    if (comp.component_price < 0)
+      return -3;
     
-    if (comp instanceof Cpu) 
-      valid = valid && comp.program_memory != null && comp.program_memory >= 0 && comp.ram_memory != null && comp.ram_memory >= 0 && comp.clockspeed != null && comp.clockspeed >= 0 && comp.cpu_power != null && comp.cpu_power >= 0 
-      && comp.wordsize != null && comp.wordsize >= 0 && comp.transistor_size != null && comp.transistor_size >= 0 && comp.passmark != null && comp.passmark >= 0 && comp.transistors != null && comp.transistors >= 0;
-    return valid;
+    if (comp instanceof Cpu) {
+      if (comp.program_memory == null || comp.ram_memory == null || comp.clockspeed == null || comp.cpu_power == null || comp.wordsize == null || comp.transistor_size == null || comp.passmark == null || comp.transistors == null)
+        return -1;
+      if (comp.program_memory < 0 || comp.ram_memory < 0 || comp.clockspeed < 0 || comp.cpu_power < 0 || comp.wordsize < 0 || comp.transistor_size < 0 || comp.passmark < 0 || comp.transistors < 0)
+        return -3;
+    }
+      
+    return 1;
   }
 
   /**

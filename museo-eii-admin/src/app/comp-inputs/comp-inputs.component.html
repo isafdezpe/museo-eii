@@ -23,11 +23,13 @@
     <label class="col col-lg-2" for="cinityear">Año de salida:</label>
     <div class="col">
         <input class="form-control" type="number" min="1900" id="cinityear" required [(ngModel)]="model.component_year_init" name="initYear" #initYear="ngModel">
+        <p class="info">Min: 1900, max: {{getActualYear()}}</p>
         <div [hidden]="initYear.valid || initYear.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
     <label class="col col-lg-2" for="cendyear">Año de fin:</label>
     <div class="col">
         <input class="form-control" type="number" min="1900" id="cendyear" required [(ngModel)]="model.component_year_end" name="endYear" #endYear="ngModel">
+        <p class="info">Min: 1900, max: {{getActualYear()}}</p>
         <div [hidden]="endYear.valid || endYear.pristine" class="alert alert-danger">Complete este campo</div>
     </div>
 <!-- </div>
@@ -53,9 +55,10 @@
     <label class="upload" for="csystemimg">Subir imagen</label>
 </div>
 <div class="row form-row">
-    <div class="col col-lg-4">
+    <label class="col col-lg-3" for="cimgs">Imágenes del componente</label>
+    <div class="col col-lg-3">
         <input #compImgInput class="col file" type="file" id="cimgs" accept="image/png, image/jpeg" (change)="compImgsChange($event)" style="display:none;" name="files[]" multiple>
-        <label class="upload" for="cimgs">Subir imágenes del componente</label>
+        <label class="upload" for="cimgs">Subir imágenes</label>
     </div>
 </div>
 <div class="row form-row">

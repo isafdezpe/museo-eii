@@ -5,7 +5,7 @@
         <form (ngSubmit)="submit()" #addCompForm="ngForm" class="add" id="addCForm">
             <div class="row form-row">
                 <label class="col col-lg-4" for="pselect">Seleccione el periodo al que pertenece: </label>
-                <select *ngIf="loaded" class="col form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)" [(ngModel)]="p.period_name">
+                <select *ngIf="loaded" class="col form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">
                     <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>
                 </select>
                 <label class="col col-lg-1" for="ctype">Tipo:</label>

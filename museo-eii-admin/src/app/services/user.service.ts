@@ -10,7 +10,7 @@ export class UserService {
 
   baseUrl = environment.baseUrl;
 
-  private userLogged =  false;
+  //private userLogged =  false;
 
   constructor(private http: HttpClient, private cookies: CookieService) { }
 
@@ -20,7 +20,8 @@ export class UserService {
 
   setToken(token: string) {
     this.cookies.set("token", token);
-    this.userLogged = true;
+    localStorage.setItem("session", JSON.stringify(token));
+    //this.userLogged = true;
   }
 
   getToken() {
@@ -29,10 +30,12 @@ export class UserService {
 
   deleteToken() {
     this.cookies.delete("token");
-    this.userLogged = false;
+    localStorage.removeItem("session");
+    //this.userLogged = false;
   }
 
   isLogged(): boolean {
-    return this.userLogged;
+    //return this.userLogged;
+    return localStorage.getItem("session") ? true : false;
   }
 }

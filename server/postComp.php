@@ -18,7 +18,7 @@ try {
 		$res = $sentence->execute([$idComp, $jsonComp->program_memory, $jsonComp->program_memory_units, $jsonComp->ram_memory, $jsonComp->ram_memory_units, $jsonComp->clockspeed, $jsonComp->clockspeed_units, $jsonComp->cpu_power, $jsonComp->cpu_power_units, $jsonComp->wordsize, $jsonComp->wordsize_units, $jsonComp->transistor_size, $jsonComp->transistor_size_units, $jsonComp->passmark, $jsonComp->transistors]);
 	}
 	echo json_encode([
-		"res" => $res
+		"res" => $idComp
 	]);
 } catch (PDOException $e) {
 	error_log('PDOException - ' . $e->getMessage(), 0);

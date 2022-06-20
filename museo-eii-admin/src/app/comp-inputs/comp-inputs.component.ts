@@ -29,6 +29,10 @@ export class CompInputsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getActualYear() {
+    return new Date().getFullYear();
+  }
+
   /**
    * 
    * @returns si el componente es usado en dispositivos de escritorio

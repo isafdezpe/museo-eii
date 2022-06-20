@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'http://156.35.163.193/php',
+  baseImgUrl: 'http://156.35.163.193/php/upload/',
 };

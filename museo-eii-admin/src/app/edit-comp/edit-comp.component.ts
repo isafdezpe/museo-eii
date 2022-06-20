@@ -5,7 +5,7 @@ import { Period } from './../classes/period';
 import { CompTypes, GenericComp, MyComponent, Cpu } from './../classes/comp';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ComponentService } from '../services/component.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PeriodService } from '../services/period.service';
 import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -39,7 +39,7 @@ export class FormEditCompComponent implements OnInit {
     fileSource: new FormControl('', [Validators.required])
   }); // se le asignan las imágenes y sus nombres para luego subirlas a través del php
 
-  constructor(private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
+  constructor(public router: Router, private route: ActivatedRoute, private componentService: ComponentService, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
 
   ngOnInit(): void {
     // saca el id del componente que se va a editar
@@ -115,27 +115,45 @@ export class FormEditCompComponent implements OnInit {
     });
     //if (!this.model.famous_system_img)
       //this.model.famous_system_img = this.c.famous_system_img;
-    if (!this.isValid(this.model))
-      this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
-    else 
-    this.componentService.editComponent(this.model).subscribe(() => {
-      this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
-        this.snackBar.open('Componente actualizado', 'Cerrar', { duration: 1500 });
-      });
-      this.c = this.model.cloneComp();
-    }, () => {this.toastService.error("No se ha podido editar el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
+    switch(this.isValid(this.model)) {
+      case -1: 
+        this.toastService.error("Debe completar el formulario para guardar", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case -2: 
+        this.toastService.error("Debe introducir valores válidos para año de inicio y de fin", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case -3: 
+        this.toastService.error("No debe haber valores numéricos negativos", "Error",  {positionClass: "toast-bottom-full-width"} );
+        break;
+      case 1:
+        this.componentService.editComponent(this.model).subscribe(() => {
+          this.componentService.uploadComponentImgs(this.myForm).subscribe(() => {
+            this.snackBar.open('Componente actualizado', 'Cerrar', { duration: 1500 });
+            this.router.navigate(['/component', this.model.component_id]);
+          });
+          this.c = this.model.cloneComp();
+        }, () => {this.toastService.error("No se ha podido editar el componente", "Error", {positionClass: "toast-bottom-full-width"} )});
+        break;
+    }
   }
 
-  isValid(comp: MyComponent): boolean {
+  isValid(comp: MyComponent): number {
     const year = new Date().getFullYear();
-    let valid: boolean = comp.component_name != "" && comp.component_family != "" && comp.component_description != "" 
-    && comp.component_year_init != null && comp.component_year_init > 1900 && comp.component_year_init <= year && comp.component_year_end != null && comp.component_year_end >= comp.component_year_init && comp.component_year_end <= year
-    && comp.component_period_id && (comp.component_price || comp.component_price == 0) && comp.component_price_units != "";
+    if (comp.component_name == "" || comp.component_family == "" || comp.component_description == "" || comp.component_year_init == null || comp.component_year_end == null || comp.component_period_id == null || comp.component_price == null || comp.component_price_units == "")
+      return -1;
+    if (comp.component_year_init < 1900 || comp.component_year_init > year || comp.component_year_end < comp.component_year_init || comp.component_year_end > year)
+      return -2;
+    if (comp.component_price < 0)
+      return -3;
     
-    if (comp instanceof Cpu) 
-      valid = valid && comp.program_memory != null && comp.program_memory >= 0 && comp.ram_memory != null && comp.ram_memory >= 0 && comp.clockspeed != null && comp.clockspeed >= 0 && comp.cpu_power != null && comp.cpu_power >= 0 
-      && comp.wordsize != null && comp.wordsize >= 0 && comp.transistor_size != null && comp.transistor_size >= 0 && comp.passmark != null && comp.passmark >= 0 && comp.transistors != null && comp.transistors >= 0;
-    return valid;
+    if (comp instanceof Cpu) {
+      if (comp.program_memory == null || comp.ram_memory == null || comp.clockspeed == null || comp.cpu_power == null || comp.wordsize == null || comp.transistor_size == null || comp.passmark == null || comp.transistors == null)
+        return -1;
+      if (comp.program_memory < 0 || comp.ram_memory < 0 || comp.clockspeed < 0 || comp.cpu_power < 0 || comp.wordsize < 0 || comp.transistor_size < 0 || comp.passmark < 0 || comp.transistors < 0)
+        return -3;
+    }
+      
+    return 1;
   }
 
   /**

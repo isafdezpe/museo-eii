@@ -21,3 +21,7 @@ input[type=checkbox] {
 .img-list {
     list-style: none;
 }
+
+.info {
+    font-size: small;
+}

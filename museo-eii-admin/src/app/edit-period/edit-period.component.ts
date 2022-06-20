@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Period } from './../classes/period';
 import { PeriodService } from '../services/period.service';
@@ -18,7 +18,7 @@ export class FormEditPeriodComponent implements OnInit {
   p: Period; // objeto con los valores sin editar
   model: Period; // objeto asignado en el formulario sobre el que se realizan los cambios
 
-  constructor(private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
+  constructor(public router: Router, private route: ActivatedRoute, private periodService: PeriodService, private snackBar: MatSnackBar, private _location: Location, private dialog: MatDialog, private toastService: ToastrService) { }
 
   ngOnInit(): void {
     // saca el id del periodo que se va a editar
@@ -48,6 +48,7 @@ export class FormEditPeriodComponent implements OnInit {
       this.periodService.editPeriod(this.model).subscribe(() => {
         this.snackBar.open('Periodo actualizado', 'Cerrar', { duration: 1500 });
         this.p = this.clonePeriod(this.model);
+        this.router.navigate(["/period", this.model.period_id]);
       }, () => {this.toastService.error("No se ha podido editar el periodo", "Error", {positionClass: "toast-bottom-full-width"} )});
   }
 
