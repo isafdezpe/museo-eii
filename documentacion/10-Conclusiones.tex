@@ -3,8 +3,12 @@
 \newpage
 
 \section{PROBLEMAS ENCONTRADOS DURANTE EL DESARROLLO}
-
-
+El principal problema encontrado fue con las versiones. 
+\begin{itemize}
+\item El proyecto fue creado con Angular 10, y las versiones compatibles de ciertas librerías con Angular 10 no funcionaban del todo bien, como por ejemplo la galería que quería utilizar inicialmente. Al final encontré librerías adecuadas y compatibles con el proyecto, pero habría sido más sencillo realizar esto si la versión de Angular utilizada fuera la 11 o superior.
+\item A la hora de hacer las pruebas unitarias, me encontré con un fallo que salía en cada prueba (``cannot read property 'range' of undefined") cuya solución era actualizar a la última versión de Angular o bajar la versión de NodeJS a una inferior a la 14.5.2. Me decanté por la segunda opción ya que cambiar la versión de Angular con el proyecto casi terminado provocaría muchos problemas.
+\end{itemize}
+\par Otro problema fue que, al utilizar MySQL, en un principio la base de datos estaba instalada en local en el ordenador con el que trabajaba, por tanto si quería utilizarla desde otro dispositivo tendría que crear de nuevo el servidor MySQL y la base de datos. La solución a esto fue solicitar una máquina Ubuntu a la Escuela, donde instalé el servidor Apache y MySQLServer con la base de datos del sistema.
 
 \newpage
 \section{CONCLUSIONES}
