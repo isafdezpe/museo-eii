@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
    
-$folderPath = "upload/";
+$folderPath = "./upload/";
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 $i = 0;   
