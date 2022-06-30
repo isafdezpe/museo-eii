@@ -12,4 +12,7 @@ Para ejecutar esta aplicación en localhost, es necesario instalar Angular sigui
 
 3. Ubicándonos en la carpeta contenedora del proyecto, ejecutamos `npm install` para instalar los paquetes de Node necesarios.
 
+4. Por último, debemos estar conectados a la red de la Universidad de Oviedo, ya sea localmente o mediante una VPN como se explica en [https://sic.uniovi.es/redes/accesoremoto](https://sic.uniovi.es/redes/accesoremoto)
+
 Una vez realizado esto, podemos ejecutar la aplicación mediante el comando `ng serve -o` o `npm run ng serve -o`, lo que hará que esté disponible en [`http://localhost:4200`](`http://localhost:4200`).
+

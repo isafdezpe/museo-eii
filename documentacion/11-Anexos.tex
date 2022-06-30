@@ -80,18 +80,18 @@ Además de este documento, se hace entrega de una carpeta comprimida ``.zip'' en
 		\item \textit{Diagrama\_despliegue.png}
 		\item \textit{Diagrama\_E-R.png}
 	\end{itemize}
-	\item \textbf{Codigo.zip} \(\rightarrow\) Carpeta comprimida con todo el código fuente.
+	\item \textbf{Codigo.zip} \(\rightarrow\) Carpeta comprimida con todo el código fuente. Está dividida a su vez en tres carpetas:
+	\begin{itemize}
+		\item museo-eii \(\rightarrow\) Contiene el proyecto de la aplicación del museo.
+		\item museo-eii-admin \(\rightarrow\) Contiene el proyecto de la administración del museo.
+		\item back-end \(\rightarrow\) Contiene los archivos PHP necesarios para conectarse con la base de datos del sistema, así como el script de creación de la base de datos e inserción de los datos iniciales. También tiene una carpeta \textit{upload}, con las imágenes de los componentes insertados a través del script.
+	\end{itemize}
+	museo-eii y museo-eii-admin tienen la misma estructura en su contenido. Ambas carpetas contienen su respectivo código fuente en la subcarpeta \textit{src}.
+\textcolor{red}{desglosar estructura carpeta src}
+\par
+	Se incluye un archivo \textit{README.md} con las instrucciones para la ejecución de ambos proyectos.
 \end{itemize}
 
-%\textcolor[rgb]{0.65,0.16,0}{Ejemplo de como especificar los contenidos entregados}
-%
-%Ahora se mostrará el contenido de dicha carpeta comprimida que contiene todo el código fuente de la aplicación la cual esta dividida a su vez en dos carpetas:
-%
-%\paragraph*{AuthServerGuardMe}
-%Contiene el código que se aloja en \textit{Heroku} para darle funcionalidad al servidor. La clase principal es la llamada \texttt{mainAuthServer.js}.
-%
-%\paragraph*{GuardMe}
-%Contiene el código fuente de la aplicación y se compone de las siguientes carpetas:
 %\begin{itemize}
 %	\item \textbf{assets} -> Carpeta que contiene los elementos gráficos usados en la aplicación. Se subdivide en una carpeta llamada \textit{images} que contiene todas las imagenes utilizadas para la construcción de la aplicación.
 %	\item \textbf{components} -> Carpeta que contiene el código para todos los componentes creados.
