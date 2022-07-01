@@ -19,7 +19,7 @@ A continuación se describirán los conceptos necesarios para planificar la gest
 Se categorizan los riesgos según la siguiente estructura de desglose:
 \begin{figure}[H]
 \centering
-\centerline{\includegraphics[scale=0.5]{rbs}}
+\centerline{\includegraphics[scale=1.2]{rbs}}
 \caption{Risk Breakdown Structure}
 \end{figure}
 
@@ -27,7 +27,7 @@ Se categorizan los riesgos según la siguiente estructura de desglose:
 Se deben priorizar los riesgos de un proyecto en función de su prioridad de ocurrencia e impacto. A continuación se muestra la definición de las probabilidades y las escalas de impacto para riesgos negativos.
 \begin{figure}[H]
 \centering
-\centerline{\includegraphics[scale=0.6]{def-probabilidades}}
+\centerline{\includegraphics[scale=0.5]{def-probabilidades}}
 \caption{Tabla de definición de probabilidades}
 \end{figure}
 \begin{figure}[H]
@@ -43,6 +43,22 @@ Esta matriz define los valores usados para priorizar los riesgos.
 \centerline{\includegraphics[scale=0.8]{matriz-prob}}
 \caption{Matriz de Probabilidad e Impacto}
 \end{figure}
+
+\paragraph*{Estrategias de riesgo}
+Para afrontar riesgos negativos se definen cuatro estrategias:
+\begin{itemize}
+\item Eliminar el riesgo.
+\item Mitigar el riesgo.
+\item Asumir el riesgo.
+\item Transferir el riesgo.
+\end{itemize}
+Hay otras cuatro para riesgos positivos u oportunidades:
+\begin{itemize}
+\item Aprovechamiento.
+\item Mejora.
+\item Compartición.
+\item Aceptación.
+\end{itemize}
 
 
 \newpage
@@ -82,32 +98,16 @@ Además de este documento, se hace entrega de una carpeta comprimida ``.zip'' en
 	\end{itemize}
 	\item \textbf{Codigo.zip} \(\rightarrow\) Carpeta comprimida con todo el código fuente. Está dividida a su vez en tres carpetas:
 	\begin{itemize}
-		\item museo-eii \(\rightarrow\) Contiene el proyecto de la aplicación del museo.
-		\item museo-eii-admin \(\rightarrow\) Contiene el proyecto de la administración del museo.
-		\item back-end \(\rightarrow\) Contiene los archivos PHP necesarios para conectarse con la base de datos del sistema, así como el script de creación de la base de datos e inserción de los datos iniciales. También tiene una carpeta \textit{upload}, con las imágenes de los componentes insertados a través del script.
+		\item \textbf{museo-eii} \(\rightarrow\) Contiene el proyecto de la aplicación del museo.
+		\item \textbf{museo-eii-admin} \(\rightarrow\) Contiene el proyecto de la administración del museo.
+		\item \textbf{back-end} \(\rightarrow\) Contiene los archivos PHP necesarios para conectarse con la base de datos del sistema, así como el script de creación de la base de datos e inserción de los datos iniciales. También tiene una carpeta \textit{upload}, con las imágenes de los componentes insertados a través del script.
 	\end{itemize}
-	museo-eii y museo-eii-admin tienen la misma estructura en su contenido. Ambas carpetas contienen su respectivo código fuente en la subcarpeta \textit{src}.
-\textcolor{red}{desglosar estructura carpeta src}
-\par
-	Se incluye un archivo \textit{README.md} con las instrucciones para la ejecución de ambos proyectos.
+	museo-eii y museo-eii-admin tienen la misma estructura en su contenido. Ambas carpetas contienen:
+	\begin{itemize}
+		\item Carpeta \textbf{dist}: contiene los archivos necesarios para la distribución del proyecto.
+		\item Carpeta \textbf{src}: contiene el código fuente del proyecto.
+		\item \textbf{src/assets}: contiene las imágenes utilizadas en la aplicación y los archivos de internacionalización.
+		\item \textbf{src/app}: contiene las clases (carpeta classes), los servicios (carpeta services) y los componentes de la aplicación (cada uno de ellos con su propia carpeta). Cada uno de estos elementos es un archivo \textit{.ts} donde se encuentra la funcionalidad correspondiente, al que acompaña un archivo \textit{.spec.ts} con las pruebas unitarias. Además los componentes también tienen asociados un archivo HTML y otro CSS para su visualización.
+	\end{itemize} 
+\par Se incluye un archivo \textit{README.md} con las instrucciones para la ejecución de ambos proyectos.
 \end{itemize}
-
-%\begin{itemize}
-%	\item \textbf{assets} -> Carpeta que contiene los elementos gráficos usados en la aplicación. Se subdivide en una carpeta llamada \textit{images} que contiene todas las imagenes utilizadas para la construcción de la aplicación.
-%	\item \textbf{components} -> Carpeta que contiene el código para todos los componentes creados.
-%	\item \textbf{constants} -> Carpeta que contiene el código
-%	\item \textbf{docs} -> Carpeta que contiene los archivos html generados por JSDoc.
-%	\item \textbf{files} -> Carpeta en la que se encuentras los futuros archivos de Términos y Condiciones y Política de Privacidad entre otros.
-%	\item \textbf{modules\_LICENSES} -> Carpeta que contiene una por una todas las licencias de las librerías utilizadas en el desarrollo.
-%	\item \textbf{navigation} -> Carpeta que contiene las clases relativas a la navegación de la aplicación.
-%	\item \textbf{objects} -> Carpeta que contiene los objetos utilizados en el desarrollo que en este caso ha sido solo Fire.js.
-%	\item \textbf{screens} -> Carpeta que contiene todas las pantallas, agrupadas a su vez en subcarpetas que identifican la pantalla sobre la que están relacionadas.
-%	\item \textbf{styles} -> Carpeta que contiene todos los estilos de las pantallas, agrupadas a su vez en subcarpetas que siguen la misma estructura que \textit{screens}.
-%	\item \textbf{App.js} -> Clase principal y encargada de que comience la aplicación entera.
-%	\item \textbf{LICENSE} -> Licencia sobre el código fuente.
-%	\item \textbf{README.md} -> Archivo con la descripción del proyecto para la documentación y el repositorio de GitHub.
-%	\item \textbf{package.json} -> Archivo que contiene las librerías utilizadas en el proyecto.
-%	\item \textbf{app.json} -> Archivo que contiene la configuración de la aplicación.
-%	\item \textbf{configJSDoc.json} -> Archivo de configuración para la creación de documentación por parte de JSDoc.
-%	\item \textbf{Otros archivos} -> Los demás archivos no son relevantes ya que muchos se generan por defecto y los demás son configuraciones propias de expo.
-%\end{itemize}
