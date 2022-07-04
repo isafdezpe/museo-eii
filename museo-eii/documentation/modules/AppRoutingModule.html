@@ -90,7 +90,7 @@ const routes: Routes &#x3D; [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: &#x27;reload&#x27; })],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: &#x27;reload&#x27;, useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
