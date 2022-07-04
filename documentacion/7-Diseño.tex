@@ -46,6 +46,17 @@
 \newpage
 \section{DSI 5: DISEÑO DE LA ARQUITECTURA DE MÓDULOS DEL SISTEMA}
 
+En la sección \ref{sec:arq-tec} se menciona que la aplicación tendrá una arquitectura MVC, pero al tratarse de una aplicación Angular, seguirá el patrón Modelo Vista Vista-Modelo (MVVM), una variación de este en la que la vista y el modelo son muy dependientes entre sí. \par 
+En este caso la vista estará compuesta por las \textit{templates} de Angular, que son componentes HTML.\par
+El modelo se corresponde con las clases de Angular que modelan las entidades de la base de datos MySQL, a la que se accede desde un servidor Apache que aloja los archivos PHP necesarios.\par
+Por último, la vista-modelo es la propia aplicación de Angular.
+\begin{figure}[H]
+\vspace{4mm}
+\centering
+\centerline{\includegraphics[scale=0.6]{arq-tec}}
+\caption{Diagrama de la arquitectura tecnológica}
+\end{figure}
+
 \subsection{Diagrama de paquetes}
 \begin{figure}[H]
 \centering

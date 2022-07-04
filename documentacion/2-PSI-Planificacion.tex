@@ -17,7 +17,8 @@
 \section{PSI 1: INICIO DEL PLAN DE SISTEMAS DE INFORMACIÓN}
 
 \subsection{PSI 1.1: Análisis de la Necesidad del PSI} 
-El tutor de este trabajo de fin de grado, José Manuel Redondo, ha propuesto el desarrollo de una aplicación web para el Museo de la Informática de Asturias, que contenga toda la información disponible sobre los componentes del museo y la muestre de forma ordenada. Convertir este museo, actualmente en exposición en la Escuela de Ingeniería Informática, a una aplicación web permitirá a más gente acceder a la información, y facilitará la exposición de nuevas piezas, ya que se reducirá el coste en recursos y tiempo, y no dependerá del espacio físico disponible en la Escuela o de su posible traslado al campus del Cristo.  El sistema será gestionado directamente por el tutor del trabajo.
+La creación de un museo de la historia de la informática es algo que da valor a la importancia de nuestra profesión y muestra el desarrollo que ha tenido esta disciplina en un corto espacio de tiempo. El tutor de este trabajo de fin de grado, José Manuel Redondo, tiene pensado crear con el tiempo un museo en esta línea, si bien por limitaciones de tiempo y recursos inicialmente lo ha limitado a CPUs. La crisis sanitaria del COVID-19 ha puesto los planes de seguir desarrollando un museo físico en pausa temporalmente, si bien se siguen recogiendo materiales con el objeto de que no acaban destruidos para ser expuestos en el futuro.\par
+Debido a estas razones, y a la falta de por el momento del tiempo necesario para seguir desarrollando la iniciativa física, el tutor del proyecto ha propuesto el desarrollo de una aplicación web para el Museo de la Informática de Asturias, que contenga toda la información disponible sobre los componentes del museo (por el momento CPUs) y la muestre de forma ordenada. Convertir este museo, cuya primera versión está actualmente en exposición en la Escuela de Ingeniería Informática, a una aplicación web permitirá a más gente acceder a la información, y facilitará la exposición de nuevas piezas, ya que se reducirá el coste en recursos y tiempo, y no dependerá del espacio físico disponible en la Escuela o de su posible traslado al campus del Cristo. El sistema será gestionado directamente por el tutor del trabajo.
 \par El sistema debe identificar cada componente y mostrar la información disponible del mismo. El software permitirá añadir la información de las nuevas piezas que puedan ser incluidas en la exposición en un futuro gracias a donaciones o compras. Los componentes serán ordenados según su tipo y la época a la que pertenecen. 
 
 \subsection{PSI 1.2: Identificación del Alcance del PSI}
@@ -66,14 +67,17 @@ En definitiva, estos objetivos se pueden resumir en:
 %\subsection{PSI 7.1: Identificación de las Necesidades de Infraestructura Tecnológica} 
 
 
-\subsection{PSI 7.2: Selección de la Arquitectura Tecnológica} 
-Al tratarse de una aplicación Angular, seguirá el patrón Modelo Vista Vista-Modelo (MVVM), una variación del Modelo Vista Controlador, patrón arquitectónico que separa los datos y la lógica de una aplicación de su representación. En la variación MVVM, la vista y el modelo son muy dependientes entre sí. \par 
-En este caso la vista estará compuesta por las \textit{templates} de Angular, que son componentes HTML.\par
-El modelo se corresponde con las clases de Angular que modelan las entidades de la base de datos MySQL, a la que se accede desde un servidor Apache que aloja los archivos PHP necesarios.\par
-Por último, la vista-modelo es la propia aplicación de Angular.
+\subsection{PSI 7.2: Selección de la Arquitectura Tecnológica}\label{sec:arq-tec}
+La aplicación seguirá la arquitectura Modelo Vista Controlador (MVC), patrón arquitectónico que separa los datos y la lógica de una aplicación de su representación. Esta elección se debe a que el MVC es uno de los modelos más conocidos en la arquitectura web.
+\begin{itemize}
+\item El modelo es la capa que trabaja con los datos.
+\item La vista permite la visualización de los datos con los que trabaja el modelo.
+\item El controlador es una capa que enlaza la vista y el modelo.
+\end{itemize}
+\par Será alojada en las máquinas de la universidad disponibles para estos proyectos, una máquina Linux con Apache y MySQL.
 \begin{figure}[H]
 \vspace{4mm}
 \centering
-\centerline{\includegraphics[scale=0.6]{arq-tec}}
-\caption{Diagrama de la arquitectura tecnológica}
+\centerline{\includegraphics[scale=0.6]{mvc}}
+\caption{Arquitectura MVC}
 \end{figure}
