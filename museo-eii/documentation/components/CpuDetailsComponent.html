@@ -422,21 +422,21 @@ export class CpuDetailsComponent implements OnInit{
         <pre class="line-numbers"><code class="language-html">&lt;ul *ngIf&#x3D;&quot;comp&quot;&gt;
     &lt;li&gt;
         &lt;ion-icon name&#x3D;&quot;hardware-chip-outline&quot;&gt;&lt;/ion-icon&gt;
-        &lt;span *ngIf&#x3D;&quot;comp.ram_memory!&#x3D;&#x3D;0&quot;&gt;{{comp.ram_memory}} {{comp.ram_memory_units}}&lt;/span&gt;
-        &lt;span *ngIf&#x3D;&quot;comp.ram_memory!&#x3D;&#x3D;0 &amp;&amp; comp.program_memory!&#x3D;&#x3D;0&quot;&gt;,&amp;nbsp;&lt;/span&gt;
-        &lt;span *ngIf&#x3D;&quot;comp.program_memory!&#x3D;&#x3D;0&quot;&gt;{{comp.program_memory}} {{comp.program_memory_units}} (ROM)&lt;/span&gt;
+        &lt;span *ngIf&#x3D;&quot;comp.ram_memory!&#x3D;0&quot;&gt;{{comp.ram_memory}} {{comp.ram_memory_units}}&lt;/span&gt;
+        &lt;span *ngIf&#x3D;&quot;comp.ram_memory!&#x3D;0 &amp;&amp; comp.program_memory!&#x3D;0&quot;&gt;,&amp;nbsp;&lt;/span&gt;
+        &lt;span *ngIf&#x3D;&quot;comp.program_memory!&#x3D;0&quot;&gt;{{comp.program_memory}} {{comp.program_memory_units}} (ROM)&lt;/span&gt;
     &lt;/li&gt;
-    &lt;li class&#x3D;&quot;frequency&quot;&gt;{{comp.clockspeed}} {{comp.clockspeed_units}}&lt;/li&gt;
-    &lt;li&gt;&lt;ion-icon name&#x3D;&quot;flash-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.cpu_power}} {{comp.cpu_power_units}}&lt;/li&gt;
-    &lt;li&gt;Dispositivos:&amp;nbsp;
+    &lt;li *ngIf&#x3D;&quot;comp.clockspeed!&#x3D;0&quot; class&#x3D;&quot;frequency&quot;&gt;{{comp.clockspeed}} {{comp.clockspeed_units}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.cpu_power!&#x3D;0&quot;&gt;&lt;ion-icon name&#x3D;&quot;flash-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.cpu_power}} {{comp.cpu_power_units}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;isPortable() || isDesktop()&quot;&gt;Dispositivos:&amp;nbsp;
         &lt;ion-icon class&#x3D;&quot;icon-big&quot; *ngIf&#x3D;&quot;isPortable()&quot; name&#x3D;&quot;phone-portrait&quot;&gt;&lt;/ion-icon&gt;
         &lt;ion-icon class&#x3D;&quot;icon-big&quot; *ngIf&#x3D;&quot;isDesktop()&quot; name&#x3D;&quot;desktop&quot;&gt;&lt;/ion-icon&gt;
     &lt;/li&gt;
-    &lt;li&gt;&lt;ion-icon name&#x3D;&quot;cash-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.component_price}}{{comp.component_price_units}}&lt;/li&gt;
-    &lt;li class&#x3D;&quot;transistor&quot;&gt;{{comp.transistors}}&lt;/li&gt;
-    &lt;li&gt;&lt;ion-icon name&#x3D;&quot;timer-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.passmark}}&lt;/li&gt;
-    &lt;li&gt;Tamaño de palabra: {{comp.wordsize}} {{comp.wordsize_units}}&lt;/li&gt;
-    &lt;li&gt;Densidad de transistores: {{comp.transistor_size}} {{comp.transistor_size_units}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.component_price!&#x3D;0&quot;&gt;&lt;ion-icon name&#x3D;&quot;cash-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.component_price}}{{comp.component_price_units}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.transistors!&#x3D;0&quot; class&#x3D;&quot;transistor&quot;&gt;{{comp.transistors}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.passmark!&#x3D;0&quot;&gt;&lt;ion-icon name&#x3D;&quot;timer-outline&quot;&gt;&lt;/ion-icon&gt; {{comp.passmark}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.wordsize!&#x3D;0&quot;&gt;Tamaño de palabra: {{comp.wordsize}} {{comp.wordsize_units}}&lt;/li&gt;
+    &lt;li *ngIf&#x3D;&quot;comp.transistor_size!&#x3D;0&quot;&gt;Densidad de transistores: {{comp.transistor_size}} {{comp.transistor_size_units}}&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
     </div>
 
@@ -512,7 +512,7 @@ ul li {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><ul *ngIf="comp">    <li>        <ion-icon name="hardware-chip-outline"></ion-icon>        <span *ngIf="comp.ram_memory!==0">{{comp.ram_memory}} {{comp.ram_memory_units}}</span>        <span *ngIf="comp.ram_memory!==0 && comp.program_memory!==0">,&nbsp;</span>        <span *ngIf="comp.program_memory!==0">{{comp.program_memory}} {{comp.program_memory_units}} (ROM)</span>    </li>    <li class="frequency">{{comp.clockspeed}} {{comp.clockspeed_units}}</li>    <li><ion-icon name="flash-outline"></ion-icon> {{comp.cpu_power}} {{comp.cpu_power_units}}</li>    <li>Dispositivos:&nbsp;        <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>        <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>    </li>    <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>    <li class="transistor">{{comp.transistors}}</li>    <li><ion-icon name="timer-outline"></ion-icon> {{comp.passmark}}</li>    <li>Tamaño de palabra: {{comp.wordsize}} {{comp.wordsize_units}}</li>    <li>Densidad de transistores: {{comp.transistor_size}} {{comp.transistor_size_units}}</li></ul></div>'
+        var COMPONENT_TEMPLATE = '<div><ul *ngIf="comp">    <li>        <ion-icon name="hardware-chip-outline"></ion-icon>        <span *ngIf="comp.ram_memory!=0">{{comp.ram_memory}} {{comp.ram_memory_units}}</span>        <span *ngIf="comp.ram_memory!=0 && comp.program_memory!=0">,&nbsp;</span>        <span *ngIf="comp.program_memory!=0">{{comp.program_memory}} {{comp.program_memory_units}} (ROM)</span>    </li>    <li *ngIf="comp.clockspeed!=0" class="frequency">{{comp.clockspeed}} {{comp.clockspeed_units}}</li>    <li *ngIf="comp.cpu_power!=0"><ion-icon name="flash-outline"></ion-icon> {{comp.cpu_power}} {{comp.cpu_power_units}}</li>    <li *ngIf="isPortable() || isDesktop()">Dispositivos:&nbsp;        <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>        <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>    </li>    <li *ngIf="comp.component_price!=0"><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>    <li *ngIf="comp.transistors!=0" class="transistor">{{comp.transistors}}</li>    <li *ngIf="comp.passmark!=0"><ion-icon name="timer-outline"></ion-icon> {{comp.passmark}}</li>    <li *ngIf="comp.wordsize!=0">Tamaño de palabra: {{comp.wordsize}} {{comp.wordsize_units}}</li>    <li *ngIf="comp.transistor_size!=0">Densidad de transistores: {{comp.transistor_size}} {{comp.transistor_size_units}}</li></ul></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompDetailsComponent', 'selector': 'app-comp-details'},{'name': 'CpuDetailsComponent', 'selector': 'app-cpu-details'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'MainNavComponent', 'selector': 'app-main-nav'},{'name': 'MuseumTimelineComponent', 'selector': 'app-museum-timeline'},{'name': 'PeriodComponent', 'selector': 'app-period'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'CpuDetailsComponent'};

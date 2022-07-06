@@ -1399,7 +1399,7 @@ export class FormEditCompComponent implements OnInit {
    */
   changePeriod(p: string) {
     this.p &#x3D; this.periods.filter((e) &#x3D;&gt; e.period_name &#x3D;&#x3D;&#x3D; p)[0];
-    this.c.component_period_id &#x3D; this.p.period_id;
+    this.model.component_period_id &#x3D; this.p.period_id;
   }
 
   /**

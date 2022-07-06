@@ -33,11 +33,11 @@
         </div>
         <div class="row second-row">
           <ul [hidden]="type==='CPU'">
-            <li>
+            <li *ngIf="isPortable() || isDesktop()">Dispositivos:&nbsp;
               <ion-icon class="icon-big" *ngIf="isPortable()" name="phone-portrait"></ion-icon>
               <ion-icon class="icon-big" *ngIf="isDesktop()" name="desktop"></ion-icon>
             </li>
-            <li><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
+            <li *ngIf="comp.component_price!=0"><ion-icon name="cash-outline"></ion-icon> {{comp.component_price}}{{comp.component_price_units}}</li>
           </ul>
           <app-cpu-details [hidden]="type!=='CPU'" [comp]="comp"></app-cpu-details>
         </div>
