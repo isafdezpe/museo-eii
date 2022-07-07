@@ -52,7 +52,7 @@ XAMPP es una distribución de Apache gratuita que contiene MariaDB, PHP y Perl\c
 	\caption{Logo de XAMPP}
 \end{figure}
 \subsubsection{MobaXTerm}
-MobaXTerm permite trabajar con herramientas de red remotas, como SSH, utilizando una terminal Unix desde Windows. Se ha usado para configurar el servidor Ubuntu 20.04 que aloja el servidor MySQL con la base de datos del sistema, y el servidor Apache con los PHP que se utilizan para trabajar con esta base de datos.
+MobaXTerm permite trabajar con herramientas de red remotas, como SSH, utilizando una terminal Unix desde Windows. Se ha usado para configurar la máquina Ubuntu 20.04 que aloja el servidor MySQL con la base de datos del sistema, y el servidor Apache con las aplicaciones y los archivos PHP desarrollados.
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.5]{MobaXTerm}
@@ -187,7 +187,7 @@ Como se mencionó en la especificación del plan de pruebas (sección \ref{sec:p
     \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Modificar periodo}} \\ \midrule
     \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
     \textbf{Modificar periodo existente (periodo 1)} & El sistema actualizará los datos del periodo. & Sí  \\ \midrule
-    \textbf{Modificar un periodo que no existe (periodo 25)} & El sistemá responderá con un error.  & Sí \\ \midrule
+    \textbf{Modificar un periodo que no existe (periodo 25)} & El sistema responderá con un error.  & Sí \\ \midrule
     \textbf{Modificar periodo dejando campos vacíos} & El sistema no actualizará el periodo y responderá con un error.  & Sí \\ \bottomrule
     \end{tabular}%
 \end{table}%
@@ -237,7 +237,7 @@ Como se mencionó en la especificación del plan de pruebas (sección \ref{sec:p
     \rowcolor[rgb]{ .851,  .886,  .953} \multicolumn{3}{p{36em}}{\textbf{Modificar componente}} \\ \midrule
     \rowcolor[rgb]{ .949,  .949,  .949} \textbf{Prueba} & \textbf{Resultado esperado} & \textbf{¿Superado?} \\ \midrule
     \textbf{Modificar componente existente (CPU 1)} & El sistema actualizará los datos del componente.  & Sí \\ \midrule
-    \textbf{Modificar un componente que no existe (CPU 30)} & El sistemá responderá con un error.  & Sí \\ \midrule
+    \textbf{Modificar un componente que no existe (CPU 30)} & El sistema responderá con un error.  & Sí \\ \midrule
     \textbf{Modificar componente dejando campos obligatorios vacíos} &  El sistema no actualizará el componente y responderá con un error.  & Sí \\ \bottomrule
     \end{tabular}%
 \end{table}%

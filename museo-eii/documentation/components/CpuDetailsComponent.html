@@ -450,8 +450,8 @@ export class CpuDetailsComponent implements OnInit{
 
 ul li {
     list-style: none;
-    padding: 2%;
-    min-width: fit-content;
+    padding-bottom: 2%;
+    width: 700px;
   }
     
   ul ul {
@@ -474,12 +474,12 @@ ul li {
 
   .transistor::before {
     background-image: url(&quot;../../assets/img/transistor.png&quot;);
-    transform: translateX(16px);
+    transform: translateX(17px);
   }
 
   .frequency::before {
     background-image: url(&quot;../../assets/img/frequency.png&quot;);
-    transform: translateX(20px);
+    transform: translateX(15px) translateY(5px);
   }
 
   .transistor, .frequency {

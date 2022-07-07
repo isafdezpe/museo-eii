@@ -653,8 +653,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="171"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:171</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="172"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:172</a></div>
                 </td>
             </tr>
 
@@ -692,8 +692,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="185"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:185</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="186"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:186</a></div>
                 </td>
             </tr>
 
@@ -735,8 +735,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="137"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:137</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="138"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:138</a></div>
                 </td>
             </tr>
 
@@ -841,8 +841,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="196"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:196</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="197"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:197</a></div>
                 </td>
             </tr>
 
@@ -917,8 +917,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="159"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:159</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="160"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:160</a></div>
                 </td>
             </tr>
 
@@ -956,8 +956,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Definido en <a href="" data-line="110"
-                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:110</a></div>
+                    <div class="io-line">Definido en <a href="" data-line="111"
+                            class="link-to-prism">src/app/edit-comp/edit-comp.component.ts:111</a></div>
                 </td>
             </tr>
 
@@ -1400,6 +1400,7 @@ export class FormEditCompComponent implements OnInit {
   changePeriod(p: string) {
     this.p &#x3D; this.periods.filter((e) &#x3D;&gt; e.period_name &#x3D;&#x3D;&#x3D; p)[0];
     this.model.component_period_id &#x3D; this.p.period_id;
+    
   }
 
   /**
@@ -1522,7 +1523,7 @@ export class FormEditCompComponent implements OnInit {
             &lt;div class&#x3D;&quot;row form-row&quot;&gt;
                 &lt;label class&#x3D;&quot;col col-lg-4&quot; for&#x3D;&quot;pselect&quot;&gt;Seleccione el periodo al que pertenece: &lt;/label&gt;
                 &lt;select class&#x3D;&quot;col col-lg-4 form-control&quot; name&#x3D;&quot;period-select&quot; id&#x3D;&quot;pselect&quot; #periodSelect (change)&#x3D;&quot;changePeriod(periodSelect.value)&quot;&gt;
-                    &lt;option [value]&#x3D;&quot;p.period_name&quot; *ngFor&#x3D;&quot;let p of periods&quot;&gt;{{ p.period_name }}&lt;/option&gt;
+                    &lt;option [value]&#x3D;&quot;pe.period_name&quot; *ngFor&#x3D;&quot;let pe of periods&quot; [selected]&#x3D;&quot;pe.period_id &#x3D;&#x3D; model.component_period_id&quot;&gt;{{ pe.period_name }}&lt;/option&gt;
                 &lt;/select&gt;
             &lt;/div&gt;
             &lt;app-comp-inputs [model]&#x3D;&quot;model&quot; [images]&#x3D;&quot;images&quot; [imagesNames]&#x3D;&quot;imagesNames&quot; [compImgsInDB]&#x3D;&quot;compImgsInDB&quot;&gt;&lt;/app-comp-inputs&gt;
@@ -1574,7 +1575,7 @@ export class FormEditCompComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="row container" *ngIf="model">    <app-menu class="col col-lg-2 border-right"  [initialObject]="c" [model]="model"></app-menu>    <div class="col content-page">        <div class="row">            <button class="button-link" (click)="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>            <h2>Editar componente</h2>        </div>        <form (ngSubmit)="submit()" #editCompForm="ngForm" class="edit" id="editCForm">            <div class="row form-row">                <label class="col col-lg-4" for="pselect">Seleccione el periodo al que pertenece: </label>                <select class="col col-lg-4 form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">                    <option [value]="p.period_name" *ngFor="let p of periods">{{ p.period_name }}</option>                </select>            </div>            <app-comp-inputs [model]="model" [images]="images" [imagesNames]="imagesNames" [compImgsInDB]="compImgsInDB"></app-comp-inputs>            <div class="row form-row">                <div (click)="removeImage(url)" class="rm-img-btn" *ngFor=\'let url of compImgsInDB\'>                    <button  ><img class="row" src="{{imgUrl}}{{url}}" height="100" style="margin: 3px;"></button>                    <div><ion-icon name="trash"></ion-icon></div>                </div><br/>            </div>            <app-cpu-type-form [hidden]="type!==\'CPU\'" [model]="model"></app-cpu-type-form>            <div class="row buttons-row">                <input class="col col-lg-2" type="button" value="Cancelar" (click)="resetForm()">                <input class="col col-lg-2" type="submit" value="Guardar" class="submit" [disabled]="!editCompForm.valid">            </div>        </form>    </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="row container" *ngIf="model">    <app-menu class="col col-lg-2 border-right"  [initialObject]="c" [model]="model"></app-menu>    <div class="col content-page">        <div class="row">            <button class="button-link" (click)="goBack()"><ion-icon name="arrow-back-outline"></ion-icon></button>            <h2>Editar componente</h2>        </div>        <form (ngSubmit)="submit()" #editCompForm="ngForm" class="edit" id="editCForm">            <div class="row form-row">                <label class="col col-lg-4" for="pselect">Seleccione el periodo al que pertenece: </label>                <select class="col col-lg-4 form-control" name="period-select" id="pselect" #periodSelect (change)="changePeriod(periodSelect.value)">                    <option [value]="pe.period_name" *ngFor="let pe of periods" [selected]="pe.period_id == model.component_period_id">{{ pe.period_name }}</option>                </select>            </div>            <app-comp-inputs [model]="model" [images]="images" [imagesNames]="imagesNames" [compImgsInDB]="compImgsInDB"></app-comp-inputs>            <div class="row form-row">                <div (click)="removeImage(url)" class="rm-img-btn" *ngFor=\'let url of compImgsInDB\'>                    <button  ><img class="row" src="{{imgUrl}}{{url}}" height="100" style="margin: 3px;"></button>                    <div><ion-icon name="trash"></ion-icon></div>                </div><br/>            </div>            <app-cpu-type-form [hidden]="type!==\'CPU\'" [model]="model"></app-cpu-type-form>            <div class="row buttons-row">                <input class="col col-lg-2" type="button" value="Cancelar" (click)="resetForm()">                <input class="col col-lg-2" type="submit" value="Guardar" class="submit" [disabled]="!editCompForm.valid">            </div>        </form>    </div></div></div>'
     var COMPONENTS = [{'name': 'AddCompComponent', 'selector': 'app-add-comp'},{'name': 'AddPeriodComponent', 'selector': 'app-add-period'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CompInputsComponent', 'selector': 'app-comp-inputs'},{'name': 'ConfirmationDialogComponent', 'selector': 'app-confirmation-dialog'},{'name': 'CpuTypeDetailsComponent', 'selector': 'app-cpu-type-details'},{'name': 'CpuTypeFormComponent', 'selector': 'app-cpu-type-form'},{'name': 'FormEditCompComponent', 'selector': 'app-edit-comp'},{'name': 'FormEditPeriodComponent', 'selector': 'app-edit-period'},{'name': 'ListPeriodsComponent', 'selector': 'app-list-periods'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'MenuComponent', 'selector': 'app-menu'},{'name': 'MyComponentComponent', 'selector': 'app-my-component'},{'name': 'PeriodComponent', 'selector': 'app-period'},{'name': 'PeriodInputsComponent', 'selector': 'app-period-inputs'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FormEditCompComponent'};

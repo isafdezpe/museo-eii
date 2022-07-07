@@ -17,10 +17,10 @@ export class MuseumTimelineComponent implements OnInit {
   comps: Map<number, MyComponent[]> = new Map<number, MyComponent[]>(); // componentes de cada periodo
 
   initYear: number = 1970;
-  endYear: number = 2000;
+  endYear: number = 2022;
   options: Options = {
     floor: 1970,
-    ceil: 2000,
+    ceil: 2022,
     step: 1
   };
 

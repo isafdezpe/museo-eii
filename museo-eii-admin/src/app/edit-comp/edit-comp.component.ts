@@ -101,6 +101,7 @@ export class FormEditCompComponent implements OnInit {
   changePeriod(p: string) {
     this.p = this.periods.filter((e) => e.period_name === p)[0];
     this.model.component_period_id = this.p.period_id;
+    
   }
 
   /**
