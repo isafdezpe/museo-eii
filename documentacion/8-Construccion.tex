@@ -297,7 +297,13 @@ Por último, desde la carpeta que ubica tanto el proyecto del museo (museo-eii) 
 
 
 \subsection{Manual de Ejecución} 
-Una vez completada la instalación siguiendo los pasos descritos en el apartado anterior, se pueden ejecutar ambas aplicaciones utilizando el comando \textit{ng serve -o}, \textit{npm start} o \textit{npm run ng serve -o}. Esto hará que la aplicación esté disponible en \url{http://localhost:4200}.
+Las aplicaciones se encuentran desplegadas en un servidor Apache instalado en una máquina de la escuela:
+\begin{itemize}
+\item El museo en la dirección \url{http://156.35.163.193/museoeii.com}. 
+\item La administración del museo en \url{http://156.35.163.193/museoeiiadmin.com}.
+\end{itemize}
+Para acceder a estas direcciones se debe estar conectado desde la  red de la Universidad de Oviedo, por lo que es necesario usar una VPN si queremos conectarnos desde una red externa, como se explica en \url{https://sic.uniovi.es/redes/accesoremoto}. 
+\par Una vez completada la instalación siguiendo los pasos descritos en el apartado anterior, se pueden ejecutar ambas aplicaciones utilizando el comando \textit{ng serve -o}, \textit{npm start} o \textit{npm run ng serve -o}. Esto hará que la aplicación esté disponible en \url{http://localhost:4200}. Para ejecutarla de esta forma también es necesario estar conectado a la red de la Universidad, ya que la base de datos del sistema está alojada en la misma máquina que las aplicaciones desplegadas.
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.65]{ngservemuseo}
@@ -308,12 +314,7 @@ Una vez completada la instalación siguiendo los pasos descritos en el apartado 
 \includegraphics[scale=0.65]{ngserveadmin}
 \caption{Ejecución de la aplicación de administración}
 \end{figure}
-\par Las aplicaciones también se encuentran desplegadas en un servidor Apache instalado en una máquina de la escuela:
-\begin{itemize}
-\item El museo en la dirección \url{http://156.35.163.193/museoeii.com}. 
-\item La administración del museo en \url{http://156.35.163.193/museoeiiadmin.com}.
-\end{itemize}
-Para acceder a estas direcciones se debe estar conectado desde la  red de la Universidad de Oviedo, por lo que es necesario usar una VPN si queremos conectarnos desde una red externa, como se explica en \url{https://sic.uniovi.es/redes/accesoremoto}.
+
 
 
 \subsection{Manual de Usuario} 
